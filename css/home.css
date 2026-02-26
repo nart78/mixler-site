@@ -62,7 +62,7 @@
    ========================================== */
 .hero-dark {
   position: relative;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, #300843 0%, #3d0a54 50%, #4a0f65 100%);
