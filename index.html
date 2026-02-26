@@ -251,7 +251,7 @@
         .eq('status', 'published')
         .gte('event_date', new Date().toISOString().split('T')[0])
         .order('event_date', { ascending: true })
-        .limit(3);
+        .limit(4);
 
       if (error || !events || events.length === 0) {
         container.innerHTML = '<p class="empty-state" style="color:rgba(255,255,255,0.5);">No upcoming events right now. Check back soon!</p>';

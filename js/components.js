@@ -109,19 +109,18 @@ function renderEventCard(event) {
   const priceStr = (event.price_cents / 100).toFixed(2);
 
   return `
-    <div class="event-card">
-      <div class="event-image" ${event.image_url ? `style="background-image:url('${event.image_url}');background-size:cover;background-position:center;"` : ''}></div>
-      <div class="event-content">
-        <span class="event-tag">${soldOut ? 'Sold Out' : '$' + priceStr}</span>
+    <a href="/event.html?slug=${event.slug}" class="event-card" style="${event.image_url ? `background-image:url('${event.image_url}')` : ''}">
+      <div class="event-card-overlay"></div>
+      <div class="event-card-content">
         <h3>${event.title}</h3>
-        <div class="event-meta">${dateStr} &bull; ${timeStr} &bull; ${event.location_name || ''}</div>
         <p class="event-short-desc">${event.short_description || ''}</p>
-        ${soldOut
-          ? `<a href="/event.html?slug=${event.slug}" class="btn btn-outline">Join Waitlist</a>`
-          : `<a href="/event.html?slug=${event.slug}" class="btn btn-primary">Get Tickets</a>`
-        }
+        <span class="event-card-btn">${soldOut ? 'Join waitlist' : 'See details'} <span class="btn-arrow">&rarr;</span></span>
       </div>
-    </div>
+      <div class="event-card-meta">
+        <span class="event-tag">${soldOut ? 'Sold Out' : '$' + priceStr}</span>
+        <span class="event-date-tag">${dateStr}</span>
+      </div>
+    </a>
   `;
 }
 

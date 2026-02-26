@@ -367,35 +367,7 @@
   font-weight: 300;
 }
 
-/* ==========================================
-   EVENT CARDS (dark override)
-   ========================================== */
-.dark-body .event-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.dark-body .event-card:hover {
-  border-color: rgba(245, 9, 120, 0.3);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-}
-
-.dark-body .event-content h3 {
-  color: #ffffff;
-}
-
-.dark-body .event-meta {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.dark-body .event-tag {
-  background: rgba(245, 9, 120, 0.15);
-  color: var(--color-accent);
-}
-
-.dark-body .event-short-desc {
-  color: rgba(255, 255, 255, 0.5);
-}
+/* Event cards now use overlay style globally - no dark overrides needed */
 
 /* ==========================================
    HOW IT WORKS (dark)
