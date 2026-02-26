@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Mixler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="admin-body">
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <a href="/" class="nav-logo" style="padding:24px;">Mixler<span>.</span></a>
+      <nav class="admin-nav">
+        <a href="/admin/" class="admin-nav-link active">Dashboard</a>
+        <a href="/admin/events.html" class="admin-nav-link">Events</a>
+        <a href="/admin/attendees.html" class="admin-nav-link">Attendees</a>
+        <a href="/admin/messages.html" class="admin-nav-link">Messages</a>
+      </nav>
+      <div class="admin-sidebar-footer">
+        <a href="/" class="admin-nav-link">Back to Site</a>
+        <a href="#" id="admin-logout" class="admin-nav-link">Log Out</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <div class="admin-header">
+        <h1>Dashboard</h1>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="admin-stats" id="stats-grid">
+        <div class="stat-card">
+          <div class="stat-card-label">Total Revenue</div>
+          <div class="stat-card-value" id="stat-revenue">$0.00</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">This Month</div>
+          <div class="stat-card-value" id="stat-month-revenue">$0.00</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Tickets Sold</div>
+          <div class="stat-card-value" id="stat-tickets">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Active Events</div>
+          <div class="stat-card-value" id="stat-events">0</div>
+        </div>
+      </div>
+
+      <!-- Upcoming Events -->
+      <div class="admin-card">
+        <h3>Upcoming Events</h3>
+        <div id="upcoming-events-list">
+          <div class="loading-spinner"><div class="spinner"></div></div>
+        </div>
+      </div>
+
+      <!-- Recent Orders -->
+      <div class="admin-card">
+        <h3>Recent Orders</h3>
+        <div id="recent-orders">
+          <div class="loading-spinner"><div class="spinner"></div></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module">
+    import { requireAdmin, signOut } from '../js/auth.js';
+    import { db } from '../js/supabase-client.js';
+    import { formatPrice, formatDate, formatTime } from '../js/utils.js';
+
+    await requireAdmin();
+
+    // Logout
+    document.getElementById('admin-logout').addEventListener('click', async (e) => {
+      e.preventDefault();
+      await signOut();
+    });
+
+    // Load stats
+    async function loadDashboard() {
+      // All completed orders
+      const { data: orders } = await db
+        .from('orders')
+        .select('total_cents, quantity, created_at')
+        .eq('payment_status', 'completed');
+
+      const totalRevenue = (orders || []).reduce((sum, o) => sum + o.total_cents, 0);
+      const totalTickets = (orders || []).reduce((sum, o) => sum + o.quantity, 0);
+
+      const monthStart = new Date();
+      monthStart.setDate(1);
+      monthStart.setHours(0, 0, 0, 0);
+      const monthRevenue = (orders || [])
+        .filter(o => new Date(o.created_at) >= monthStart)
+        .reduce((sum, o) => sum + o.total_cents, 0);
+
+      document.getElementById('stat-revenue').textContent = formatPrice(totalRevenue);
+      document.getElementById('stat-month-revenue').textContent = formatPrice(monthRevenue);
+      document.getElementById('stat-tickets').textContent = totalTickets;
+
+      // Active events
+      const { data: events } = await db
+        .from('events')
+        .select('*')
+        .eq('status', 'published')
+        .gte('event_date', new Date().toISOString().split('T')[0])
+        .order('event_date', { ascending: true });
+
+      document.getElementById('stat-events').textContent = (events || []).length;
+
+      // Render upcoming events
+      const eventsEl = document.getElementById('upcoming-events-list');
+      if (!events || events.length === 0) {
+        eventsEl.innerHTML = '<p class="empty-state">No upcoming events.</p>';
+      } else {
+        eventsEl.innerHTML = `
+          <table class="admin-table">
+            <thead><tr><th>Event</th><th>Date</th><th>Sold</th><th>Capacity</th><th>Revenue</th></tr></thead>
+            <tbody>
+              ${events.map(e => `
+                <tr>
+                  <td><a href="/admin/event-edit.html?id=${e.id}">${e.title}</a></td>
+                  <td>${formatDate(e.event_date)}</td>
+                  <td>${e.tickets_sold}</td>
+                  <td>${e.capacity}</td>
+                  <td>${formatPrice(e.tickets_sold * e.price_cents)}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        `;
+      }
+
+      // Recent orders
+      const { data: recentOrders } = await db
+        .from('orders')
+        .select('*, events(title)')
+        .order('created_at', { ascending: false })
+        .limit(10);
+
+      const ordersEl = document.getElementById('recent-orders');
+      if (!recentOrders || recentOrders.length === 0) {
+        ordersEl.innerHTML = '<p class="empty-state">No orders yet.</p>';
+      } else {
+        ordersEl.innerHTML = `
+          <table class="admin-table">
+            <thead><tr><th>Order</th><th>Customer</th><th>Event</th><th>Qty</th><th>Total</th><th>Status</th></tr></thead>
+            <tbody>
+              ${recentOrders.map(o => `
+                <tr>
+                  <td>${o.order_number}</td>
+                  <td>${o.buyer_name}<br><small>${o.buyer_email}</small></td>
+                  <td>${o.events?.title || ''}</td>
+                  <td>${o.quantity}</td>
+                  <td>${formatPrice(o.total_cents)}</td>
+                  <td><span class="status-badge status-${o.payment_status}">${o.payment_status}</span></td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        `;
+      }
+    }
+
+    loadDashboard();
+  </script>
+</body>
+</html>

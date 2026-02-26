@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account | Mixler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <section class="account-section">
+    <div class="container">
+      <h1>My Account</h1>
+      <div class="account-grid">
+        <!-- Profile -->
+        <div class="account-card">
+          <h3>Profile</h3>
+          <div id="profile-content">
+            <div class="loading-spinner"><div class="spinner"></div></div>
+          </div>
+        </div>
+
+        <!-- Upcoming Events -->
+        <div class="account-card">
+          <h3>My Upcoming Events</h3>
+          <div id="upcoming-tickets">
+            <div class="loading-spinner"><div class="spinner"></div></div>
+          </div>
+        </div>
+
+        <!-- Order History -->
+        <div class="account-card full-width">
+          <h3>Order History</h3>
+          <div id="order-history">
+            <div class="loading-spinner"><div class="spinner"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script type="module">
+    import { renderNav, renderFooter, showToast } from './js/components.js';
+    import { requireAuth, getCurrentUser } from './js/auth.js';
+    import { db } from './js/supabase-client.js';
+    import { formatDate, formatTime, formatPrice } from './js/utils.js';
+
+    renderNav('account');
+    renderFooter();
+
+    const session = await requireAuth();
+    if (!session) throw new Error('Not authenticated');
+
+    const user = await getCurrentUser();
+
+    // Load profile
+    const profileEl = document.getElementById('profile-content');
+    profileEl.innerHTML = `
+      <div class="profile-info">
+        <div class="profile-row"><strong>Name</strong><span>${user.profile?.full_name || 'Not set'}</span></div>
+        <div class="profile-row"><strong>Email</strong><span>${user.email}</span></div>
+        <div class="profile-row"><strong>Phone</strong><span>${user.profile?.phone || 'Not set'}</span></div>
+      </div>
+    `;
+
+    // Load orders with event details
+    const { data: orders } = await db
+      .from('orders')
+      .select('*, events(title, slug, event_date, start_time, location_name)')
+      .eq('user_id', user.id)
+      .order('created_at', { ascending: false });
+
+    // Upcoming tickets
+    const upcomingEl = document.getElementById('upcoming-tickets');
+    const today = new Date().toISOString().split('T')[0];
+    const upcoming = (orders || []).filter(o =>
+      o.payment_status === 'completed' && o.events && o.events.event_date >= today
+    );
+
+    if (upcoming.length === 0) {
+      upcomingEl.innerHTML = '<p class="empty-state">No upcoming events. <a href="/events.html">Browse events</a></p>';
+    } else {
+      upcomingEl.innerHTML = upcoming.map(o => `
+        <a href="/event.html?slug=${o.events.slug}" class="upcoming-ticket">
+          <div>
+            <strong>${o.events.title}</strong>
+            <span>${formatDate(o.events.event_date)} at ${formatTime(o.events.start_time)}</span>
+          </div>
+          <span class="ticket-qty">${o.quantity} ticket${o.quantity > 1 ? 's' : ''}</span>
+        </a>
+      `).join('');
+    }
+
+    // Order history
+    const historyEl = document.getElementById('order-history');
+    if (!orders || orders.length === 0) {
+      historyEl.innerHTML = '<p class="empty-state">No orders yet.</p>';
+    } else {
+      historyEl.innerHTML = `
+        <table class="orders-table">
+          <thead>
+            <tr>
+              <th>Order</th>
+              <th>Event</th>
+              <th>Date</th>
+              <th>Qty</th>
+              <th>Total</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${orders.map(o => `
+              <tr>
+                <td>${o.order_number}</td>
+                <td>${o.events?.title || 'Unknown'}</td>
+                <td>${new Date(o.created_at).toLocaleDateString()}</td>
+                <td>${o.quantity}</td>
+                <td>${formatPrice(o.total_cents)}</td>
+                <td><span class="status-badge status-${o.payment_status}">${o.payment_status}</span></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+    }
+  </script>
+</body>
+</html>

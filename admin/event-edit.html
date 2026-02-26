@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Event | Mixler Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="admin-body">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a href="/" class="nav-logo" style="padding:24px;">Mixler<span>.</span></a>
+      <nav class="admin-nav">
+        <a href="/admin/" class="admin-nav-link">Dashboard</a>
+        <a href="/admin/events.html" class="admin-nav-link active">Events</a>
+        <a href="/admin/attendees.html" class="admin-nav-link">Attendees</a>
+        <a href="/admin/messages.html" class="admin-nav-link">Messages</a>
+      </nav>
+      <div class="admin-sidebar-footer">
+        <a href="/" class="admin-nav-link">Back to Site</a>
+        <a href="#" id="admin-logout" class="admin-nav-link">Log Out</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-header">
+        <h1 id="page-title">New Event</h1>
+      </div>
+
+      <div class="admin-card">
+        <form id="event-form" class="admin-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="title">Event Title</label>
+              <input type="text" id="title" required placeholder="Friday Night Mixer">
+            </div>
+            <div class="form-group">
+              <label for="slug">URL Slug</label>
+              <input type="text" id="slug" required placeholder="friday-night-mixer-mar-2026">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="short_description">Short Description</label>
+            <input type="text" id="short_description" placeholder="One-liner for event cards" maxlength="200">
+          </div>
+
+          <div class="form-group">
+            <label for="description">Full Description</label>
+            <textarea id="description" rows="6" placeholder="Detailed event description..."></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="event_date">Date</label>
+              <input type="date" id="event_date" required>
+            </div>
+            <div class="form-group">
+              <label for="start_time">Start Time</label>
+              <input type="time" id="start_time" required>
+            </div>
+            <div class="form-group">
+              <label for="end_time">End Time</label>
+              <input type="time" id="end_time">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="location_name">Venue Name</label>
+              <input type="text" id="location_name" placeholder="The National on 10th">
+            </div>
+            <div class="form-group">
+              <label for="location_address">Address</label>
+              <input type="text" id="location_address" placeholder="341 10 Ave SW, Calgary, AB">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="capacity">Capacity</label>
+              <input type="number" id="capacity" required min="1" placeholder="40">
+            </div>
+            <div class="form-group">
+              <label for="price">Price ($)</label>
+              <input type="number" id="price" required min="0" step="0.01" placeholder="25.00">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="early_bird_price">Early Bird Price ($)</label>
+              <input type="number" id="early_bird_price" min="0" step="0.01" placeholder="Optional">
+            </div>
+            <div class="form-group">
+              <label for="early_bird_deadline">Early Bird Deadline</label>
+              <input type="datetime-local" id="early_bird_deadline">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="image_url">Image URL</label>
+            <input type="url" id="image_url" placeholder="https://...">
+          </div>
+
+          <div class="form-group">
+            <label for="status">Status</label>
+            <select id="status">
+              <option value="draft">Draft</option>
+              <option value="published">Published</option>
+              <option value="cancelled">Cancelled</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+
+          <div id="form-error" class="form-error"></div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save Event</button>
+            <a href="/admin/events.html" class="btn btn-outline">Cancel</a>
+            <button type="button" id="duplicate-btn" class="btn btn-outline" style="display:none;">Duplicate</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script type="module">
+    import { requireAdmin, signOut } from '../js/auth.js';
+    import { db } from '../js/supabase-client.js';
+    import { getParam } from '../js/utils.js';
+    import { showToast } from '../js/components.js';
+
+    await requireAdmin();
+
+    document.getElementById('admin-logout').addEventListener('click', async (e) => {
+      e.preventDefault();
+      await signOut();
+    });
+
+    const eventId = getParam('id');
+    const isEdit = !!eventId;
+
+    if (isEdit) {
+      document.getElementById('page-title').textContent = 'Edit Event';
+      document.getElementById('duplicate-btn').style.display = '';
+    }
+
+    // Auto-generate slug from title
+    document.getElementById('title').addEventListener('input', (e) => {
+      if (!isEdit) {
+        document.getElementById('slug').value = e.target.value
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/^-|-$/g, '');
+      }
+    });
+
+    // Load existing event
+    if (isEdit) {
+      const { data: event } = await db.from('events').select('*').eq('id', eventId).single();
+      if (event) {
+        document.getElementById('title').value = event.title;
+        document.getElementById('slug').value = event.slug;
+        document.getElementById('short_description').value = event.short_description || '';
+        document.getElementById('description').value = event.description || '';
+        document.getElementById('event_date').value = event.event_date;
+        document.getElementById('start_time').value = event.start_time;
+        document.getElementById('end_time').value = event.end_time || '';
+        document.getElementById('location_name').value = event.location_name || '';
+        document.getElementById('location_address').value = event.location_address || '';
+        document.getElementById('capacity').value = event.capacity;
+        document.getElementById('price').value = (event.price_cents / 100).toFixed(2);
+        document.getElementById('early_bird_price').value = event.early_bird_price_cents ? (event.early_bird_price_cents / 100).toFixed(2) : '';
+        document.getElementById('early_bird_deadline').value = event.early_bird_deadline ? event.early_bird_deadline.slice(0, 16) : '';
+        document.getElementById('image_url').value = event.image_url || '';
+        document.getElementById('status').value = event.status;
+      }
+    }
+
+    // Save
+    document.getElementById('event-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const errorEl = document.getElementById('form-error');
+      errorEl.textContent = '';
+
+      const price = parseFloat(document.getElementById('price').value);
+      const earlyBirdPrice = document.getElementById('early_bird_price').value;
+
+      const eventData = {
+        title: document.getElementById('title').value.trim(),
+        slug: document.getElementById('slug').value.trim(),
+        short_description: document.getElementById('short_description').value.trim() || null,
+        description: document.getElementById('description').value.trim() || null,
+        event_date: document.getElementById('event_date').value,
+        start_time: document.getElementById('start_time').value,
+        end_time: document.getElementById('end_time').value || null,
+        location_name: document.getElementById('location_name').value.trim() || null,
+        location_address: document.getElementById('location_address').value.trim() || null,
+        capacity: parseInt(document.getElementById('capacity').value),
+        price_cents: Math.round(price * 100),
+        early_bird_price_cents: earlyBirdPrice ? Math.round(parseFloat(earlyBirdPrice) * 100) : null,
+        early_bird_deadline: document.getElementById('early_bird_deadline').value || null,
+        image_url: document.getElementById('image_url').value.trim() || null,
+        status: document.getElementById('status').value
+      };
+
+      let result;
+      if (isEdit) {
+        result = await db.from('events').update(eventData).eq('id', eventId);
+      } else {
+        result = await db.from('events').insert(eventData);
+      }
+
+      if (result.error) {
+        errorEl.textContent = result.error.message;
+        return;
+      }
+
+      showToast(isEdit ? 'Event updated!' : 'Event created!', 'success');
+      setTimeout(() => window.location.href = '/admin/events.html', 500);
+    });
+
+    // Duplicate
+    document.getElementById('duplicate-btn').addEventListener('click', () => {
+      const url = new URL(window.location);
+      url.searchParams.delete('id');
+      window.location.href = url.toString();
+      // Fields stay filled, but saves as new
+    });
+  </script>
+</body>
+</html>

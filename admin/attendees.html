@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendees | Mixler Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="admin-body">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a href="/" class="nav-logo" style="padding:24px;">Mixler<span>.</span></a>
+      <nav class="admin-nav">
+        <a href="/admin/" class="admin-nav-link">Dashboard</a>
+        <a href="/admin/events.html" class="admin-nav-link">Events</a>
+        <a href="/admin/attendees.html" class="admin-nav-link active">Attendees</a>
+        <a href="/admin/messages.html" class="admin-nav-link">Messages</a>
+      </nav>
+      <div class="admin-sidebar-footer">
+        <a href="/" class="admin-nav-link">Back to Site</a>
+        <a href="#" id="admin-logout" class="admin-nav-link">Log Out</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-header">
+        <h1>Attendees</h1>
+        <button id="export-csv" class="btn btn-outline" style="display:none;">Export CSV</button>
+      </div>
+
+      <!-- Event Selector -->
+      <div class="admin-card">
+        <div class="form-group">
+          <label for="event-select">Select Event</label>
+          <select id="event-select">
+            <option value="">Choose an event...</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Event Stats -->
+      <div class="admin-stats" id="event-stats" style="display:none;">
+        <div class="stat-card">
+          <div class="stat-card-label">Tickets Sold</div>
+          <div class="stat-card-value" id="stat-sold">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Capacity</div>
+          <div class="stat-card-value" id="stat-cap">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Revenue</div>
+          <div class="stat-card-value" id="stat-rev">$0.00</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Waitlist</div>
+          <div class="stat-card-value" id="stat-waitlist">0</div>
+        </div>
+      </div>
+
+      <!-- Attendee List -->
+      <div class="admin-card" id="attendee-card" style="display:none;">
+        <h3>Guest List</h3>
+        <div id="attendee-list"></div>
+      </div>
+
+      <!-- Waitlist -->
+      <div class="admin-card" id="waitlist-card" style="display:none;">
+        <h3>Waitlist</h3>
+        <div id="waitlist-list"></div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module">
+    import { requireAdmin, signOut } from '../js/auth.js';
+    import { db } from '../js/supabase-client.js';
+    import { formatPrice, getParam } from '../js/utils.js';
+    import { showToast } from '../js/components.js';
+
+    await requireAdmin();
+
+    document.getElementById('admin-logout').addEventListener('click', async (e) => {
+      e.preventDefault();
+      await signOut();
+    });
+
+    // Load events for selector
+    const { data: events } = await db.from('events').select('id, title, event_date').order('event_date', { ascending: false });
+    const select = document.getElementById('event-select');
+    (events || []).forEach(e => {
+      const opt = document.createElement('option');
+      opt.value = e.id;
+      opt.textContent = `${e.title} (${e.event_date})`;
+      select.appendChild(opt);
+    });
+
+    // Pre-select if ?event= param
+    const preselect = getParam('event');
+    if (preselect) {
+      select.value = preselect;
+      loadAttendees(preselect);
+    }
+
+    select.addEventListener('change', () => {
+      if (select.value) loadAttendees(select.value);
+    });
+
+    let currentAttendees = [];
+
+    async function loadAttendees(eventId) {
+      // Get event details
+      const { data: event } = await db.from('events').select('*').eq('id', eventId).single();
+
+      // Get attendees via completed orders
+      const { data: attendees } = await db
+        .from('attendees')
+        .select('*, orders!inner(order_number, buyer_name, buyer_email, payment_status)')
+        .eq('event_id', eventId)
+        .eq('orders.payment_status', 'completed');
+
+      // Get waitlist
+      const { data: waitlist } = await db
+        .from('waitlist')
+        .select('*')
+        .eq('event_id', eventId)
+        .order('position', { ascending: true });
+
+      currentAttendees = attendees || [];
+
+      // Stats
+      document.getElementById('event-stats').style.display = '';
+      document.getElementById('stat-sold').textContent = event.tickets_sold;
+      document.getElementById('stat-cap').textContent = event.capacity;
+      document.getElementById('stat-rev').textContent = formatPrice(event.tickets_sold * event.price_cents);
+      document.getElementById('stat-waitlist').textContent = (waitlist || []).length;
+
+      // Attendee list
+      const attendeeCard = document.getElementById('attendee-card');
+      const attendeeList = document.getElementById('attendee-list');
+      attendeeCard.style.display = '';
+
+      if (!attendees || attendees.length === 0) {
+        attendeeList.innerHTML = '<p class="empty-state">No attendees yet.</p>';
+      } else {
+        attendeeList.innerHTML = `
+          <table class="admin-table">
+            <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Order</th><th>Checked In</th></tr></thead>
+            <tbody>
+              ${attendees.map(a => `
+                <tr>
+                  <td>${a.full_name}</td>
+                  <td>${a.email || ''}</td>
+                  <td>${a.phone || ''}</td>
+                  <td>${a.orders.order_number}<br><small>by ${a.orders.buyer_name}</small></td>
+                  <td>
+                    <label class="checkin-toggle">
+                      <input type="checkbox" ${a.checked_in ? 'checked' : ''} data-id="${a.id}">
+                      <span>${a.checked_in ? 'Yes' : 'No'}</span>
+                    </label>
+                  </td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        `;
+
+        // Check-in toggle handlers
+        attendeeList.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+          cb.addEventListener('change', async () => {
+            const id = cb.dataset.id;
+            const checked = cb.checked;
+            await db.from('attendees').update({
+              checked_in: checked,
+              checked_in_at: checked ? new Date().toISOString() : null
+            }).eq('id', id);
+            cb.nextElementSibling.textContent = checked ? 'Yes' : 'No';
+          });
+        });
+      }
+
+      // Waitlist
+      const waitlistCard = document.getElementById('waitlist-card');
+      const waitlistList = document.getElementById('waitlist-list');
+
+      if (waitlist && waitlist.length > 0) {
+        waitlistCard.style.display = '';
+        waitlistList.innerHTML = `
+          <table class="admin-table">
+            <thead><tr><th>#</th><th>Name</th><th>Email</th><th>Phone</th><th>Notified</th></tr></thead>
+            <tbody>
+              ${waitlist.map(w => `
+                <tr>
+                  <td>${w.position}</td>
+                  <td>${w.full_name}</td>
+                  <td>${w.email}</td>
+                  <td>${w.phone || ''}</td>
+                  <td>${w.notified ? 'Yes' : 'No'}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        `;
+      } else {
+        waitlistCard.style.display = 'none';
+      }
+
+      // Show export button
+      document.getElementById('export-csv').style.display = '';
+    }
+
+    // CSV Export
+    document.getElementById('export-csv').addEventListener('click', () => {
+      if (currentAttendees.length === 0) return;
+
+      const headers = ['Name', 'Email', 'Phone', 'Order', 'Purchased By', 'Checked In'];
+      const rows = currentAttendees.map(a => [
+        a.full_name,
+        a.email || '',
+        a.phone || '',
+        a.orders.order_number,
+        a.orders.buyer_name,
+        a.checked_in ? 'Yes' : 'No'
+      ]);
+
+      const csv = [headers, ...rows].map(r => r.map(c => `"${c}"`).join(',')).join('\n');
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'attendees.csv';
+      link.click();
+      URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+</html>

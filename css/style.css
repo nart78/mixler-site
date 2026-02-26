@@ -631,3 +631,646 @@ section {
     text-align: center;
   }
 }
+
+/* ========================================
+   Page-specific Styles
+   ======================================== */
+
+/* --- Page Hero (inner pages) --- */
+.page-hero {
+  padding: 140px 0 60px;
+  background: linear-gradient(135deg, #f0f4ff 0%, #fdf2f8 100%);
+}
+
+.page-hero h1 {
+  margin-bottom: 12px;
+}
+
+/* --- Events Page --- */
+.events-section {
+  padding: 60px 0 100px;
+}
+
+.events-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 32px;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 4px;
+  background: var(--color-light);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.view-btn {
+  padding: 8px 20px;
+  border: none;
+  background: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--color-body);
+}
+
+.view-btn.active {
+  background: var(--color-white);
+  color: var(--color-primary);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* --- Calendar View --- */
+.calendar-view {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cal-day-name {
+  background: var(--color-light);
+  padding: 12px;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-body);
+}
+
+.cal-day {
+  background: var(--color-white);
+  min-height: 80px;
+  padding: 8px;
+  position: relative;
+}
+
+.cal-day.empty {
+  background: var(--color-light);
+}
+
+.cal-day.has-event {
+  background: #f0f4ff;
+}
+
+.cal-day-num {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-body);
+}
+
+.cal-event-dot {
+  display: block;
+  font-size: 0.7rem;
+  background: var(--color-accent);
+  color: var(--color-white);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cal-event-dot:hover {
+  background: var(--color-primary);
+}
+
+/* --- Event Detail Page --- */
+.back-link {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.event-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.event-detail-image {
+  width: 100%;
+  height: 350px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #e0e7ff, #fce7f3);
+  margin-bottom: 32px;
+}
+
+.event-detail-main h1 {
+  margin-bottom: 24px;
+}
+
+.event-detail-meta {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 32px;
+  padding: 24px;
+  background: var(--color-light);
+  border-radius: 12px;
+}
+
+.meta-item strong {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-accent);
+  margin-bottom: 4px;
+}
+
+.meta-item span {
+  font-size: 0.95rem;
+  color: var(--color-dark);
+}
+
+.event-description p {
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+/* Ticket Sidebar */
+.ticket-box {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 32px;
+  position: sticky;
+  top: 96px;
+}
+
+.ticket-price {
+  margin-bottom: 16px;
+}
+
+.ticket-price .price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-dark);
+}
+
+.ticket-price .original-price {
+  font-size: 1rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+
+.ticket-price .per-ticket {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-body);
+}
+
+.early-bird-badge {
+  display: inline-block;
+  background: #fef3c7;
+  color: #92400e;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.ticket-availability {
+  margin-bottom: 24px;
+}
+
+.spots-left {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.sold-out {
+  font-weight: 600;
+  color: #dc2626;
+}
+
+.add-to-calendar {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+.add-to-calendar strong {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+  color: var(--color-dark);
+}
+
+.calendar-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.cal-btn {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+  background: var(--color-white);
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--color-body);
+}
+
+.cal-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Waitlist form in ticket box */
+.waitlist-form h4 {
+  margin-bottom: 4px;
+}
+
+.waitlist-form p {
+  font-size: 0.85rem;
+  color: var(--color-body);
+  margin-bottom: 16px;
+}
+
+.waitlist-form input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+/* Event card short description */
+.event-short-desc {
+  font-size: 0.875rem;
+  color: var(--color-body);
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* --- Auth Page --- */
+.auth-section {
+  padding: 140px 0 100px;
+  background: var(--color-light);
+  min-height: 100vh;
+}
+
+.auth-card {
+  max-width: 440px;
+  margin: 0 auto;
+  background: var(--color-white);
+  border-radius: 16px;
+  padding: 40px;
+  border: 1px solid var(--color-border);
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 32px;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--color-body);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: var(--transition);
+}
+
+.auth-tab.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.auth-form .form-group {
+  margin-bottom: 20px;
+}
+
+.auth-form label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--color-dark);
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(21, 61, 182, 0.1);
+}
+
+/* --- Form Shared --- */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--color-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(21, 61, 182, 0.1);
+}
+
+.form-error {
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+  min-height: 20px;
+}
+
+.form-success {
+  color: #16a34a;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+/* --- Account Page --- */
+.account-section {
+  padding: 120px 0 100px;
+}
+
+.account-section h1 {
+  margin-bottom: 32px;
+}
+
+.account-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.account-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.account-card.full-width {
+  grid-column: 1 / -1;
+}
+
+.account-card h3 {
+  margin-bottom: 20px;
+}
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.profile-row:last-child {
+  border-bottom: none;
+}
+
+.upcoming-ticket {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: var(--transition);
+}
+
+.upcoming-ticket:hover {
+  border-color: var(--color-primary);
+  background: #f0f4ff;
+}
+
+.upcoming-ticket strong {
+  display: block;
+  color: var(--color-dark);
+}
+
+.upcoming-ticket span {
+  font-size: 0.85rem;
+  color: var(--color-body);
+}
+
+.ticket-qty {
+  background: var(--color-light);
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* --- Orders Table --- */
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.orders-table th {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 2px solid var(--color-border);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--color-body);
+}
+
+.orders-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* --- Status Badges --- */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-completed, .status-published { background: #dcfce7; color: #16a34a; }
+.status-pending { background: #fef3c7; color: #92400e; }
+.status-failed, .status-cancelled { background: #fee2e2; color: #dc2626; }
+.status-refunded { background: #e0e7ff; color: #4338ca; }
+.status-draft { background: #f3f4f6; color: #6b7280; }
+.status-sent { background: #dcfce7; color: #16a34a; }
+
+/* --- Toast Notifications --- */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.toast.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast-info { background: var(--color-primary); color: white; }
+.toast-success { background: #16a34a; color: white; }
+.toast-error { background: #dc2626; color: white; }
+
+/* --- Loading Spinner --- */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* --- Empty State --- */
+.empty-state {
+  text-align: center;
+  padding: 32px;
+  color: var(--color-body);
+}
+
+.empty-state a {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+/* --- Nav active link --- */
+.nav-links a.active {
+  color: var(--color-primary);
+}
+
+/* --- Mobile nav open --- */
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  padding: 24px;
+  gap: 16px;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+/* --- Responsive: Event Detail --- */
+@media (max-width: 968px) {
+  .event-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-detail-meta {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .account-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}

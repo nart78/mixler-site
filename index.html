@@ -9,27 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <nav class="nav container">
-      <a href="/" class="nav-logo">Mixler<span>.</span></a>
-      <ul class="nav-links">
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#" class="btn btn-primary">Get Tickets</a></li>
-      </ul>
-      <button class="mobile-menu-btn" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
-  </header>
+  <!-- Dynamic Nav -->
+  <div id="site-nav"></div>
 
   <!-- Hero -->
   <section class="hero">
@@ -38,7 +23,7 @@
       <h1>Fun Nights Out for Adults Who Want <span class="accent">Real Connections</span></h1>
       <p>Curated social events in Calgary where you can meet new people, have a great time, and actually enjoy going out again.</p>
       <div class="hero-buttons">
-        <a href="#events" class="btn btn-primary">Browse Events</a>
+        <a href="/events.html" class="btn btn-primary">Browse Events</a>
         <a href="#how-it-works" class="btn btn-outline">How It Works</a>
       </div>
     </div>
@@ -70,40 +55,17 @@
     </div>
   </section>
 
-  <!-- Events -->
+  <!-- Upcoming Events (loaded from Supabase) -->
   <section class="events" id="events">
     <div class="container text-center">
       <div class="section-label">Upcoming Events</div>
       <h2 class="section-title">What's Coming Up</h2>
       <p class="section-subtitle">Fresh events every month. Grab your spot before they sell out.</p>
-      <div class="events-grid">
-        <div class="event-card">
-          <div class="event-image"></div>
-          <div class="event-content">
-            <span class="event-tag">Social Mixer</span>
-            <h3>Friday Night Mixer</h3>
-            <div class="event-meta">Mar 7, 2026 &bull; 7:00 PM &bull; Downtown Calgary</div>
-            <a href="#" class="btn btn-primary">Get Tickets</a>
-          </div>
-        </div>
-        <div class="event-card">
-          <div class="event-image"></div>
-          <div class="event-content">
-            <span class="event-tag">Activity Night</span>
-            <h3>Trivia &amp; Drinks</h3>
-            <div class="event-meta">Mar 14, 2026 &bull; 7:30 PM &bull; Kensington</div>
-            <a href="#" class="btn btn-primary">Get Tickets</a>
-          </div>
-        </div>
-        <div class="event-card">
-          <div class="event-image"></div>
-          <div class="event-content">
-            <span class="event-tag">Speed Social</span>
-            <h3>Speed Friending</h3>
-            <div class="event-meta">Mar 21, 2026 &bull; 7:00 PM &bull; Beltline</div>
-            <a href="#" class="btn btn-primary">Get Tickets</a>
-          </div>
-        </div>
+      <div class="events-grid" id="upcoming-events">
+        <!-- Loaded dynamically from Supabase -->
+      </div>
+      <div style="margin-top: 40px;">
+        <a href="/events.html" class="btn btn-outline">View All Events</a>
       </div>
     </div>
   </section>
@@ -185,50 +147,59 @@
     <div class="container">
       <h2>Ready for Your Next Great Night Out?</h2>
       <p>Join hundreds of Calgarians who are tired of the same routine and ready for something better.</p>
-      <a href="#events" class="btn btn-primary">Browse Upcoming Events</a>
+      <a href="/events.html" class="btn btn-primary">Browse Upcoming Events</a>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="/" class="nav-logo">Mixler<span>.</span></a>
-          <p>Calgary's go-to for fun nights out and real connections. Come for the event, stay for the people.</p>
-          <div class="footer-social">
-            <a href="#" aria-label="Instagram">IG</a>
-            <a href="#" aria-label="Facebook">FB</a>
-            <a href="#" aria-label="TikTok">TT</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <a href="#events">Events</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#about">About</a>
-          <a href="#testimonials">Reviews</a>
-        </div>
-        <div class="footer-col">
-          <h4>Events</h4>
-          <a href="#">Social Mixers</a>
-          <a href="#">Activity Nights</a>
-          <a href="#">Speed Friending</a>
-          <a href="#">Couples Events</a>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <a href="mailto:hello@mixler.ca">hello@mixler.ca</a>
-          <a href="#">Calgary, AB</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Mixler. All rights reserved.</span>
-        <span><a href="#">Privacy</a> &bull; <a href="#">Terms</a></span>
-      </div>
-    </div>
-  </footer>
+  <!-- Dynamic Footer -->
+  <div id="site-footer"></div>
 
-  <script src="js/main.js"></script>
+  <script type="module">
+    import { renderNav, renderFooter, renderEventCard } from './js/components.js';
+    import { db } from './js/supabase-client.js';
+
+    // Render shared components
+    renderNav('home');
+    renderFooter();
+
+    // Load upcoming events from Supabase
+    async function loadUpcomingEvents() {
+      const container = document.getElementById('upcoming-events');
+      const { data: events, error } = await db
+        .from('events')
+        .select('*')
+        .eq('status', 'published')
+        .gte('event_date', new Date().toISOString().split('T')[0])
+        .order('event_date', { ascending: true })
+        .limit(3);
+
+      if (error || !events || events.length === 0) {
+        container.innerHTML = '<p style="color: var(--color-body);">No upcoming events right now. Check back soon!</p>';
+        return;
+      }
+
+      container.innerHTML = events.map(renderEventCard).join('');
+    }
+
+    loadUpcomingEvents();
+
+    // Scroll reveal animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.step-card, .event-card, .testimonial-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
+  <style>.visible { opacity: 1 !important; transform: translateY(0) !important; }</style>
 </body>
 </html>

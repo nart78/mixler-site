@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Events | Mixler Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="admin-body">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a href="/" class="nav-logo" style="padding:24px;">Mixler<span>.</span></a>
+      <nav class="admin-nav">
+        <a href="/admin/" class="admin-nav-link">Dashboard</a>
+        <a href="/admin/events.html" class="admin-nav-link active">Events</a>
+        <a href="/admin/attendees.html" class="admin-nav-link">Attendees</a>
+        <a href="/admin/messages.html" class="admin-nav-link">Messages</a>
+      </nav>
+      <div class="admin-sidebar-footer">
+        <a href="/" class="admin-nav-link">Back to Site</a>
+        <a href="#" id="admin-logout" class="admin-nav-link">Log Out</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-header">
+        <h1>Events</h1>
+        <a href="/admin/event-edit.html" class="btn btn-primary">+ New Event</a>
+      </div>
+
+      <div class="admin-card">
+        <div id="events-list">
+          <div class="loading-spinner"><div class="spinner"></div></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module">
+    import { requireAdmin, signOut } from '../js/auth.js';
+    import { db } from '../js/supabase-client.js';
+    import { formatDate, formatPrice } from '../js/utils.js';
+
+    await requireAdmin();
+
+    document.getElementById('admin-logout').addEventListener('click', async (e) => {
+      e.preventDefault();
+      await signOut();
+    });
+
+    async function loadEvents() {
+      const container = document.getElementById('events-list');
+
+      const { data: events, error } = await db
+        .from('events')
+        .select('*')
+        .order('event_date', { ascending: false });
+
+      if (!events || events.length === 0) {
+        container.innerHTML = '<p class="empty-state">No events yet. <a href="/admin/event-edit.html">Create your first event.</a></p>';
+        return;
+      }
+
+      container.innerHTML = `
+        <table class="admin-table">
+          <thead>
+            <tr><th>Event</th><th>Date</th><th>Sold / Cap</th><th>Price</th><th>Status</th><th>Actions</th></tr>
+          </thead>
+          <tbody>
+            ${events.map(e => `
+              <tr>
+                <td><a href="/admin/event-edit.html?id=${e.id}">${e.title}</a></td>
+                <td>${formatDate(e.event_date)}</td>
+                <td>${e.tickets_sold} / ${e.capacity}</td>
+                <td>${formatPrice(e.price_cents)}</td>
+                <td><span class="status-badge status-${e.status}">${e.status}</span></td>
+                <td>
+                  <a href="/admin/event-edit.html?id=${e.id}" class="btn-sm">Edit</a>
+                  <a href="/admin/attendees.html?event=${e.id}" class="btn-sm">Attendees</a>
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+    }
+
+    loadEvents();
+  </script>
+</body>
+</html>

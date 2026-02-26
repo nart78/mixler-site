@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages | Mixler Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="admin-body">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a href="/" class="nav-logo" style="padding:24px;">Mixler<span>.</span></a>
+      <nav class="admin-nav">
+        <a href="/admin/" class="admin-nav-link">Dashboard</a>
+        <a href="/admin/events.html" class="admin-nav-link">Events</a>
+        <a href="/admin/attendees.html" class="admin-nav-link">Attendees</a>
+        <a href="/admin/messages.html" class="admin-nav-link active">Messages</a>
+      </nav>
+      <div class="admin-sidebar-footer">
+        <a href="/" class="admin-nav-link">Back to Site</a>
+        <a href="#" id="admin-logout" class="admin-nav-link">Log Out</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-header">
+        <h1>Scheduled Messages</h1>
+      </div>
+
+      <!-- New Message Form -->
+      <div class="admin-card">
+        <h3>Schedule a New Message</h3>
+        <form id="message-form" class="admin-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="msg-event">Event</label>
+              <select id="msg-event" required>
+                <option value="">Choose event...</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="msg-type">Type</label>
+              <select id="msg-type">
+                <option value="sms">SMS</option>
+                <option value="email">Email</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="msg-body">Message</label>
+            <textarea id="msg-body" rows="4" required placeholder="Hey! Just a reminder that [Event] is happening tomorrow at [Time]. See you there!"></textarea>
+            <small id="msg-char-count">0 / 160 characters</small>
+          </div>
+          <div class="form-group">
+            <label for="msg-send-at">Send At</label>
+            <input type="datetime-local" id="msg-send-at" required>
+          </div>
+          <div id="msg-error" class="form-error"></div>
+          <button type="submit" class="btn btn-primary">Schedule Message</button>
+        </form>
+      </div>
+
+      <!-- Message History -->
+      <div class="admin-card">
+        <h3>Message History</h3>
+        <div id="message-list">
+          <div class="loading-spinner"><div class="spinner"></div></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module">
+    import { requireAdmin, signOut, getCurrentUser } from '../js/auth.js';
+    import { db } from '../js/supabase-client.js';
+    import { showToast } from '../js/components.js';
+
+    const session = await requireAdmin();
+
+    document.getElementById('admin-logout').addEventListener('click', async (e) => {
+      e.preventDefault();
+      await signOut();
+    });
+
+    // Load events
+    const { data: events } = await db.from('events').select('id, title, event_date').order('event_date', { ascending: false });
+    const select = document.getElementById('msg-event');
+    (events || []).forEach(e => {
+      const opt = document.createElement('option');
+      opt.value = e.id;
+      opt.textContent = `${e.title} (${e.event_date})`;
+      select.appendChild(opt);
+    });
+
+    // Character count
+    const bodyEl = document.getElementById('msg-body');
+    const countEl = document.getElementById('msg-char-count');
+    bodyEl.addEventListener('input', () => {
+      countEl.textContent = `${bodyEl.value.length} / 160 characters`;
+    });
+
+    // Submit message
+    document.getElementById('message-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const errorEl = document.getElementById('msg-error');
+      errorEl.textContent = '';
+
+      const user = await getCurrentUser();
+
+      const messageData = {
+        event_id: document.getElementById('msg-event').value,
+        type: document.getElementById('msg-type').value,
+        message_body: bodyEl.value.trim(),
+        send_at: document.getElementById('msg-send-at').value,
+        created_by: user.id
+      };
+
+      const { error } = await db.from('scheduled_messages').insert(messageData);
+      if (error) {
+        errorEl.textContent = error.message;
+        return;
+      }
+
+      showToast('Message scheduled!', 'success');
+      document.getElementById('message-form').reset();
+      countEl.textContent = '0 / 160 characters';
+      loadMessages();
+    });
+
+    // Load message history
+    async function loadMessages() {
+      const container = document.getElementById('message-list');
+
+      const { data: messages } = await db
+        .from('scheduled_messages')
+        .select('*, events(title)')
+        .order('send_at', { ascending: false })
+        .limit(50);
+
+      if (!messages || messages.length === 0) {
+        container.innerHTML = '<p class="empty-state">No messages scheduled yet.</p>';
+        return;
+      }
+
+      container.innerHTML = `
+        <table class="admin-table">
+          <thead><tr><th>Event</th><th>Type</th><th>Message</th><th>Send At</th><th>Status</th></tr></thead>
+          <tbody>
+            ${messages.map(m => `
+              <tr>
+                <td>${m.events?.title || ''}</td>
+                <td>${m.type.toUpperCase()}</td>
+                <td>${m.message_body.substring(0, 80)}${m.message_body.length > 80 ? '...' : ''}</td>
+                <td>${new Date(m.send_at).toLocaleString()}</td>
+                <td><span class="status-badge status-${m.status}">${m.status}</span></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+    }
+
+    loadMessages();
+  </script>
+</body>
+</html>

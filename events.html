@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | Mixler - Calgary Social Events</title>
+  <meta name="description" content="Browse upcoming Mixler events in Calgary. Social mixers, trivia nights, speed friending, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <section class="page-hero">
+    <div class="container text-center">
+      <h1>Upcoming Events</h1>
+      <p class="section-subtitle">Find your next great night out. New events added monthly.</p>
+    </div>
+  </section>
+
+  <!-- Calendar View Toggle -->
+  <section class="events-section">
+    <div class="container">
+      <div class="events-toolbar">
+        <div class="view-toggle">
+          <button class="view-btn active" data-view="grid" aria-label="Grid view">Grid</button>
+          <button class="view-btn" data-view="calendar" aria-label="Calendar view">Calendar</button>
+        </div>
+      </div>
+
+      <!-- Grid View -->
+      <div id="events-grid-view" class="events-grid">
+        <!-- Loaded from Supabase -->
+      </div>
+
+      <!-- Calendar View -->
+      <div id="events-calendar-view" class="calendar-view" style="display:none;">
+        <div class="calendar-header">
+          <button id="cal-prev" class="btn btn-outline" style="padding:8px 16px;">&larr;</button>
+          <h3 id="cal-month-label"></h3>
+          <button id="cal-next" class="btn btn-outline" style="padding:8px 16px;">&rarr;</button>
+        </div>
+        <div class="calendar-grid" id="calendar-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script type="module">
+    import { renderNav, renderFooter, renderEventCard } from './js/components.js';
+    import { db } from './js/supabase-client.js';
+
+    renderNav('events');
+    renderFooter();
+
+    let allEvents = [];
+    let currentMonth = new Date();
+
+    // Load all published events
+    async function loadEvents() {
+      const gridContainer = document.getElementById('events-grid-view');
+      gridContainer.innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
+
+      const { data: events, error } = await db
+        .from('events')
+        .select('*')
+        .eq('status', 'published')
+        .gte('event_date', new Date().toISOString().split('T')[0])
+        .order('event_date', { ascending: true });
+
+      if (error || !events || events.length === 0) {
+        gridContainer.innerHTML = '<p class="empty-state">No upcoming events right now. Check back soon!</p>';
+        return;
+      }
+
+      allEvents = events;
+      gridContainer.innerHTML = events.map(renderEventCard).join('');
+      renderCalendar();
+    }
+
+    // Calendar rendering
+    function renderCalendar() {
+      const grid = document.getElementById('calendar-grid');
+      const label = document.getElementById('cal-month-label');
+      const year = currentMonth.getFullYear();
+      const month = currentMonth.getMonth();
+
+      label.textContent = currentMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+      let html = dayNames.map(d => `<div class="cal-day-name">${d}</div>`).join('');
+
+      // Empty cells before first day
+      for (let i = 0; i < firstDay; i++) {
+        html += '<div class="cal-day empty"></div>';
+      }
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        const dayEvents = allEvents.filter(e => e.event_date === dateStr);
+        const hasEvents = dayEvents.length > 0;
+
+        html += `<div class="cal-day ${hasEvents ? 'has-event' : ''}">
+          <span class="cal-day-num">${day}</span>
+          ${dayEvents.map(e => `<a href="/event.html?slug=${e.slug}" class="cal-event-dot" title="${e.title}">${e.title}</a>`).join('')}
+        </div>`;
+      }
+
+      grid.innerHTML = html;
+    }
+
+    // View toggle
+    document.querySelectorAll('.view-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const view = btn.dataset.view;
+        document.getElementById('events-grid-view').style.display = view === 'grid' ? '' : 'none';
+        document.getElementById('events-calendar-view').style.display = view === 'calendar' ? '' : 'none';
+      });
+    });
+
+    // Calendar nav
+    document.getElementById('cal-prev').addEventListener('click', () => {
+      currentMonth.setMonth(currentMonth.getMonth() - 1);
+      renderCalendar();
+    });
+    document.getElementById('cal-next').addEventListener('click', () => {
+      currentMonth.setMonth(currentMonth.getMonth() + 1);
+      renderCalendar();
+    });
+
+    loadEvents();
+  </script>
+</body>
+</html>

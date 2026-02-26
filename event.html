@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event | Mixler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <section class="event-detail" style="padding-top: 120px;">
+    <div class="container">
+      <div id="event-content">
+        <div class="loading-spinner"><div class="spinner"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script type="module">
+    import { renderNav, renderFooter, showToast } from './js/components.js';
+    import { db } from './js/supabase-client.js';
+    import { getSession } from './js/auth.js';
+    import { formatDate, formatTime, formatPrice, googleCalendarUrl, downloadICS, outlookCalendarUrl, getParam } from './js/utils.js';
+
+    renderNav('events');
+    renderFooter();
+
+    const slug = getParam('slug');
+    if (!slug) {
+      window.location.href = '/events.html';
+    }
+
+    async function loadEvent() {
+      const container = document.getElementById('event-content');
+
+      const { data: event, error } = await db
+        .from('events')
+        .select('*')
+        .eq('slug', slug)
+        .eq('status', 'published')
+        .single();
+
+      if (error || !event) {
+        container.innerHTML = `
+          <div class="text-center" style="padding: 60px 0;">
+            <h2>Event not found</h2>
+            <p style="margin: 16px 0 32px;">This event may have been removed or hasn't been published yet.</p>
+            <a href="/events.html" class="btn btn-primary">Browse Events</a>
+          </div>`;
+        return;
+      }
+
+      // Update page title
+      document.title = `${event.title} | Mixler`;
+
+      const spotsLeft = event.capacity - event.tickets_sold;
+      const soldOut = spotsLeft <= 0;
+      const price = formatPrice(event.price_cents);
+      const earlyBirdActive = event.early_bird_price_cents && event.early_bird_deadline && new Date(event.early_bird_deadline) > new Date();
+      const displayPrice = earlyBirdActive ? formatPrice(event.early_bird_price_cents) : price;
+
+      container.innerHTML = `
+        <a href="/events.html" class="back-link">&larr; All Events</a>
+        <div class="event-detail-grid">
+          <div class="event-detail-main">
+            <div class="event-detail-image" ${event.image_url ? `style="background-image:url('${event.image_url}');background-size:cover;background-position:center;"` : ''}></div>
+            <h1>${event.title}</h1>
+            <div class="event-detail-meta">
+              <div class="meta-item">
+                <strong>Date</strong>
+                <span>${formatDate(event.event_date)}</span>
+              </div>
+              <div class="meta-item">
+                <strong>Time</strong>
+                <span>${formatTime(event.start_time)}${event.end_time ? ' - ' + formatTime(event.end_time) : ''}</span>
+              </div>
+              <div class="meta-item">
+                <strong>Location</strong>
+                <span>${event.location_name || ''}${event.location_address ? '<br>' + event.location_address : ''}</span>
+              </div>
+            </div>
+            <div class="event-description">
+              ${event.description ? event.description.split('\n').map(p => `<p>${p}</p>`).join('') : ''}
+            </div>
+          </div>
+          <div class="event-detail-sidebar">
+            <div class="ticket-box">
+              <div class="ticket-price">
+                ${earlyBirdActive ? `<span class="early-bird-badge">Early Bird</span>` : ''}
+                <span class="price">${displayPrice}</span>
+                ${earlyBirdActive ? `<span class="original-price">${price}</span>` : ''}
+                <span class="per-ticket">per ticket</span>
+              </div>
+              <div class="ticket-availability">
+                ${soldOut
+                  ? '<span class="sold-out">Sold Out</span>'
+                  : `<span class="spots-left">${spotsLeft} spot${spotsLeft !== 1 ? 's' : ''} left</span>`
+                }
+              </div>
+              ${soldOut ? `
+                <div class="waitlist-form" id="waitlist-form">
+                  <h4>Join the Waitlist</h4>
+                  <p>Get notified if a spot opens up.</p>
+                  <input type="text" id="wl-name" placeholder="Full name" required>
+                  <input type="email" id="wl-email" placeholder="Email" required>
+                  <input type="tel" id="wl-phone" placeholder="Phone (optional)">
+                  <button class="btn btn-primary" id="wl-submit" style="width:100%;">Join Waitlist</button>
+                </div>
+              ` : `
+                <a href="/checkout.html?slug=${event.slug}" class="btn btn-primary" style="width:100%;padding:16px;">Get Tickets</a>
+              `}
+              <div class="add-to-calendar">
+                <strong>Add to Calendar</strong>
+                <div class="calendar-buttons">
+                  <a href="${googleCalendarUrl(event)}" target="_blank" class="cal-btn">Google</a>
+                  <button class="cal-btn" id="ics-download">Apple</button>
+                  <a href="${outlookCalendarUrl(event)}" target="_blank" class="cal-btn">Outlook</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // ICS download handler
+      const icsBtn = document.getElementById('ics-download');
+      if (icsBtn) {
+        icsBtn.addEventListener('click', () => downloadICS(event));
+      }
+
+      // Waitlist submit handler
+      const wlSubmit = document.getElementById('wl-submit');
+      if (wlSubmit) {
+        wlSubmit.addEventListener('click', async () => {
+          const name = document.getElementById('wl-name').value.trim();
+          const email = document.getElementById('wl-email').value.trim();
+          const phone = document.getElementById('wl-phone').value.trim();
+
+          if (!name || !email) {
+            showToast('Please fill in your name and email.', 'error');
+            return;
+          }
+
+          wlSubmit.disabled = true;
+          wlSubmit.textContent = 'Joining...';
+
+          const { error } = await db.from('waitlist').insert({
+            event_id: event.id,
+            full_name: name,
+            email,
+            phone: phone || null
+          });
+
+          if (error) {
+            if (error.code === '23505') {
+              showToast('You\'re already on the waitlist for this event.', 'info');
+            } else {
+              showToast('Something went wrong. Please try again.', 'error');
+            }
+            wlSubmit.disabled = false;
+            wlSubmit.textContent = 'Join Waitlist';
+            return;
+          }
+
+          document.getElementById('waitlist-form').innerHTML = `
+            <div class="text-center" style="padding: 20px 0;">
+              <h4>You're on the list!</h4>
+              <p>We'll email you at ${email} if a spot opens up.</p>
+            </div>
+          `;
+          showToast('Added to waitlist!', 'success');
+        });
+      }
+    }
+
+    loadEvent();
+  </script>
+</body>
+</html>
