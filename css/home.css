@@ -452,12 +452,11 @@
   align-items: center;
 }
 
-.about-image-placeholder {
+.about-image {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  background: linear-gradient(160deg, rgba(245, 9, 120, 0.1) 0%, rgba(21, 61, 182, 0.2) 100%);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  object-fit: cover;
 }
 
 .about-dark-content h2 {
