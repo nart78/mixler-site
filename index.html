@@ -152,13 +152,11 @@
         <h2>Scenes from <span class="text-pink">Mixler Nights</span></h2>
         <p class="section-subtitle-dark">Real moments from real events. Follow us to see what you're missing.</p>
       </div>
-      <div class="social-gallery-grid">
-        <div class="social-gallery-item"><div class="gallery-placeholder"></div></div>
-        <div class="social-gallery-item"><div class="gallery-placeholder"></div></div>
-        <div class="social-gallery-item"><div class="gallery-placeholder"></div></div>
-        <div class="social-gallery-item"><div class="gallery-placeholder"></div></div>
-        <div class="social-gallery-item"><div class="gallery-placeholder"></div></div>
-        <div class="social-gallery-item"><div class="gallery-placeholder"></div></div>
+      <div class="video-gallery-grid">
+        <div class="video-gallery-item"><div class="video-placeholder"><svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M8 5v14l11-7z"/></svg></div></div>
+        <div class="video-gallery-item"><div class="video-placeholder"><svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M8 5v14l11-7z"/></svg></div></div>
+        <div class="video-gallery-item"><div class="video-placeholder"><svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M8 5v14l11-7z"/></svg></div></div>
+        <div class="video-gallery-item"><div class="video-placeholder"><svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
       <div class="social-links-row">
         <a href="https://www.instagram.com/mixler.ca" target="_blank" rel="noopener" class="social-link-btn">
@@ -322,7 +320,7 @@
         if (entry.isIntersecting) { entry.target.classList.add('revealed'); observer.unobserve(entry.target); }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.step-dark-card, .event-card, .social-gallery-item, .about-check').forEach(el => {
+    document.querySelectorAll('.step-dark-card, .event-card, .video-gallery-item, .about-check').forEach(el => {
       el.classList.add('reveal-on-scroll');
       observer.observe(el);
     });
