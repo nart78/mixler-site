@@ -28,6 +28,7 @@
   backdrop-filter: none;
   border-bottom: none !important;
   box-shadow: 0 2px 20px rgba(48, 8, 67, 0.3);
+  padding-bottom: 60px;
 }
 
 .dark-header .nav-links a {
