@@ -62,9 +62,7 @@
    ========================================== */
 .hero-dark {
   position: relative;
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
+  height: 800px;
   background: linear-gradient(135deg, #300843 0%, #3d0a54 50%, #4a0f65 100%);
   overflow: hidden;
   padding: 0;
@@ -147,10 +145,12 @@
 }
 
 .hero-left {
-  position: relative;
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 3;
-  max-width: 40%;
-  padding: 120px 0 60px;
+  max-width: 480px;
 }
 
 .hero-eyebrow {
@@ -776,7 +776,7 @@
    ========================================== */
 @media (max-width: 968px) {
   .hero-dark {
-    min-height: auto;
+    height: auto;
     padding: 120px 0 80px;
   }
 
@@ -785,8 +785,11 @@
   }
 
   .hero-left {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
     max-width: 100%;
-    padding: 0;
   }
 
   .hero-right {
