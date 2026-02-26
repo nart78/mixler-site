@@ -11,13 +11,13 @@
 
 :root {
   --color-primary: #153db6;
-  --color-accent: #f50978;
+  --color-accent: #ff3465;
   --color-dark: #2d1b2e;
   --color-body: #374151;
   --color-light: #f9fafb;
   --color-white: #ffffff;
   --color-border: #e5e7eb;
-  --color-navy: #0c0f1a;
+  --color-navy: #300843;
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Poppins', sans-serif;
   --max-width: 1240px;
@@ -355,7 +355,7 @@ section {
   overflow: hidden;
   background-size: cover;
   background-position: center;
-  background-color: #1a1f35;
+  background-color: #300843;
   text-decoration: none;
   transition: var(--transition);
 }
@@ -415,7 +415,7 @@ section {
 }
 
 .event-card:hover .event-card-btn {
-  background: #d4076a;
+  background: #e02d5a;
 }
 
 .event-card-meta {
