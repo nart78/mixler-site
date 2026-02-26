@@ -289,13 +289,15 @@
   transform: translateY(-2px);
 }
 
-/* --- Hero Right: Full-bleed image --- */
+/* --- Hero Right: Fixed-size image container --- */
 .hero-right {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 25%;
-  height: 100%;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  width: 1060px;
+  height: 800px;
+  max-width: 50%;
   z-index: 2;
 }
 
@@ -311,7 +313,6 @@
   object-position: center top;
   border-radius: 16px;
   border: none;
-  max-height: none;
 }
 
 /* ==========================================
