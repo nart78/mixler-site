@@ -286,61 +286,12 @@
   position: relative;
 }
 
-.hero-image-placeholder {
+.hero-image {
   width: 100%;
-  aspect-ratio: 3 / 4;
   max-height: 580px;
-  background: linear-gradient(160deg, rgba(245, 9, 120, 0.15) 0%, rgba(21, 61, 182, 0.25) 100%);
-  border-radius: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  overflow: hidden;
-}
-
-.hero-image-placeholder span {
-  color: rgba(255, 255, 255, 0.2);
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.hero-image-placeholder img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
-}
-
-/* Floating badge on image */
-.hero-float-badge {
-  position: absolute;
-  bottom: 32px;
-  left: -20px;
-  background: rgba(10, 14, 26, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  animation: float-slow 4s ease-in-out infinite;
-}
-
-.float-badge-icon {
-  font-size: 1.5rem;
-  color: #fbbf24;
-}
-
-.hero-float-badge strong {
-  display: block;
-  color: #ffffff;
-  font-size: 0.9rem;
-}
-
-.hero-float-badge span {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.8rem;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* ==========================================
