@@ -17,6 +17,12 @@
 }
 
 /* --- Header: Transparent over hero, solid on scroll --- */
+.dark-header .nav {
+  max-width: none;
+  margin: 0;
+  padding: 0 40px;
+}
+
 .dark-header {
   background: transparent !important;
   border-bottom: none !important;
@@ -142,6 +148,12 @@
 }
 
 /* --- Hero Split Layout (BeEvent8 style) --- */
+.hero-dark .container {
+  max-width: none;
+  margin: 0;
+  padding: 0 40px;
+}
+
 .hero-split {
   display: block;
 }
@@ -149,7 +161,7 @@
 .hero-left {
   position: relative;
   z-index: 3;
-  max-width: 45%;
+  max-width: 46%;
   padding: 160px 0 100px;
 }
 
