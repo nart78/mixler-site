@@ -16,9 +16,9 @@
   color: #300843;
 }
 
-/* --- Header: Deep Purple --- */
+/* --- Header: Transparent over hero, solid on scroll --- */
 .dark-header {
-  background: #300843 !important;
+  background: transparent !important;
   border-bottom: none !important;
   backdrop-filter: none;
 }
@@ -67,20 +67,7 @@
   align-items: center;
   background: linear-gradient(135deg, #300843 0%, #3d0a54 50%, #4a0f65 100%);
   overflow: hidden;
-  padding: 120px 0 80px;
-}
-
-/* Smooth fade from hero purple into white events section */
-.hero-dark::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 120px;
-  background: linear-gradient(180deg, transparent, #ffffff);
-  pointer-events: none;
-  z-index: 1;
+  padding: 0;
 }
 
 /* --- Decorative floating elements --- */
@@ -154,17 +141,16 @@
   50% { opacity: 1; transform: scale(1.2); }
 }
 
-/* --- Hero Split Layout --- */
+/* --- Hero Split Layout (BeEvent8 style) --- */
 .hero-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+  display: block;
 }
 
 .hero-left {
   position: relative;
-  z-index: 2;
+  z-index: 3;
+  max-width: 50%;
+  padding: 160px 0 100px;
 }
 
 .hero-eyebrow {
@@ -242,9 +228,9 @@
 .btn-ghost-light {
   background: transparent;
   color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 16px 32px;
-  border-radius: 8px;
+  border: none;
+  padding: 16px 8px;
+  border-radius: 0;
   font-weight: 500;
   font-size: 0.95rem;
   cursor: pointer;
@@ -252,12 +238,14 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
 }
 
 .btn-ghost-light:hover {
   color: #ffffff;
-  border-color: #ffffff;
-  background: rgba(255, 255, 255, 0.05);
+  text-decoration-color: #ffffff;
 }
 
 .btn-arrow {
@@ -301,22 +289,29 @@
   transform: translateY(-2px);
 }
 
-/* --- Hero Right: Image --- */
+/* --- Hero Right: Full-bleed image (right 50%, top to bottom) --- */
 .hero-right {
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
   z-index: 2;
 }
 
 .hero-image-wrapper {
-  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-image {
   width: 100%;
-  max-height: 580px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  object-position: center top;
+  border-radius: 0;
+  border: none;
+  max-height: none;
 }
 
 /* ==========================================
@@ -780,13 +775,18 @@
    RESPONSIVE
    ========================================== */
 @media (max-width: 968px) {
+  .hero-dark {
+    min-height: auto;
+    padding: 120px 0 80px;
+  }
+
   .hero-dark h1 {
     font-size: 3rem;
   }
 
-  .hero-split {
-    grid-template-columns: 1fr;
-    gap: 48px;
+  .hero-left {
+    max-width: 100%;
+    padding: 0;
   }
 
   .hero-right {
@@ -832,8 +832,7 @@
 
 @media (max-width: 640px) {
   .hero-dark {
-    padding: 100px 0 60px;
-    min-height: auto;
+    padding: 80px 0 60px;
   }
 
   .hero-dark h1 {
@@ -846,6 +845,10 @@
 
   .hero-buttons .btn {
     width: 100%;
+    justify-content: center;
+  }
+
+  .btn-ghost-light {
     justify-content: center;
   }
 
