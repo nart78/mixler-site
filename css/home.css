@@ -146,7 +146,7 @@
 
 .hero-left {
   position: absolute;
-  left: 24px;
+  left: max(24px, calc((100% - 1240px) / 2 + 24px));
   top: 50%;
   transform: translateY(-50%);
   z-index: 3;
