@@ -548,6 +548,151 @@
 }
 
 /* ==========================================
+   SOCIAL GALLERY
+   ========================================== */
+.social-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.social-gallery-item {
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: var(--transition);
+}
+
+.social-gallery-item:hover {
+  border-color: rgba(245, 9, 120, 0.3);
+  transform: translateY(-4px);
+}
+
+.gallery-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(160deg, rgba(245, 9, 120, 0.08) 0%, rgba(21, 61, 182, 0.15) 100%);
+}
+
+.social-gallery-item img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+.social-links-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.social-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.social-link-btn:hover {
+  background: rgba(245, 9, 120, 0.15);
+  border-color: rgba(245, 9, 120, 0.3);
+  color: #ffffff;
+}
+
+.social-link-btn svg {
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   NEWSLETTER SIGNUP
+   ========================================== */
+.newsletter-dark {
+  padding: 80px 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.newsletter-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.newsletter-content h2 {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.newsletter-content p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.newsletter-form-row {
+  display: flex;
+  gap: 12px;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  transition: var(--transition);
+}
+
+.newsletter-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.newsletter-btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.newsletter-note {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.newsletter-msg {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  min-height: 1.2em;
+}
+
+.msg-success { color: #34d399; }
+.msg-error { color: #f87171; }
+.msg-info { color: #60a5fa; }
+
+/* ==========================================
    FINAL CTA (dark)
    ========================================== */
 .cta-dark {
@@ -678,8 +823,7 @@
     display: none;
   }
 
-  .steps-dark-grid,
-  .testimonials-dark-grid {
+  .steps-dark-grid {
     grid-template-columns: 1fr;
   }
 
@@ -688,14 +832,14 @@
     gap: 40px;
   }
 
-  .stats-bar-grid {
-    flex-wrap: wrap;
-    gap: 32px;
+  .social-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .stat-divider { display: none; }
-
-  .stat-item { flex: 1; min-width: 120px; }
+  .newsletter-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
 
   .section-dark h2 {
     font-size: 2.2rem;
@@ -751,5 +895,24 @@
     flex-direction: column;
     gap: 12px;
     text-align: center;
+  }
+
+  .social-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .newsletter-form-row {
+    flex-direction: column;
+  }
+
+  .social-links-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-link-btn {
+    width: 100%;
+    justify-content: center;
   }
 }
