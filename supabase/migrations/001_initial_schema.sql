@@ -252,6 +252,15 @@ ALTER TABLE waitlist ENABLE ROW LEVEL SECURITY;
 ALTER TABLE scheduled_messages ENABLE ROW LEVEL SECURITY;
 ALTER TABLE message_log ENABLE ROW LEVEL SECURITY;
 
+-- Admin check function (SECURITY DEFINER to avoid infinite recursion on profiles RLS)
+CREATE OR REPLACE FUNCTION public.is_admin()
+RETURNS BOOLEAN AS $$
+  SELECT EXISTS (
+    SELECT 1 FROM public.profiles
+    WHERE id = auth.uid() AND is_admin = TRUE
+  );
+$$ LANGUAGE sql SECURITY DEFINER STABLE;
+
 -- Profiles: users can read/update their own profile, admins can read all
 CREATE POLICY profiles_select_own ON profiles
   FOR SELECT USING (auth.uid() = id);
@@ -260,18 +269,14 @@ CREATE POLICY profiles_update_own ON profiles
   FOR UPDATE USING (auth.uid() = id);
 
 CREATE POLICY profiles_admin_select ON profiles
-  FOR SELECT USING (
-    EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND is_admin = TRUE)
-  );
+  FOR SELECT USING (public.is_admin());
 
 -- Events: anyone can read published events, admins can do everything
 CREATE POLICY events_select_published ON events
   FOR SELECT USING (status = 'published');
 
 CREATE POLICY events_admin_all ON events
-  FOR ALL USING (
-    EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND is_admin = TRUE)
-  );
+  FOR ALL USING (public.is_admin());
 
 -- Orders: users can read their own, admins can read all
 CREATE POLICY orders_select_own ON orders
@@ -281,9 +286,7 @@ CREATE POLICY orders_insert ON orders
   FOR INSERT WITH CHECK (user_id = auth.uid());
 
 CREATE POLICY orders_admin_all ON orders
-  FOR ALL USING (
-    EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND is_admin = TRUE)
-  );
+  FOR ALL USING (public.is_admin());
 
 -- Attendees: users can read attendees for their orders, admins can read all
 CREATE POLICY attendees_select_own ON attendees
@@ -292,29 +295,21 @@ CREATE POLICY attendees_select_own ON attendees
   );
 
 CREATE POLICY attendees_admin_all ON attendees
-  FOR ALL USING (
-    EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND is_admin = TRUE)
-  );
+  FOR ALL USING (public.is_admin());
 
 -- Waitlist: anyone can insert (signup), admins can manage
 CREATE POLICY waitlist_insert ON waitlist
   FOR INSERT WITH CHECK (TRUE);
 
 CREATE POLICY waitlist_admin_all ON waitlist
-  FOR ALL USING (
-    EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND is_admin = TRUE)
-  );
+  FOR ALL USING (public.is_admin());
 
 -- Scheduled Messages & Log: admin only
 CREATE POLICY messages_admin_all ON scheduled_messages
-  FOR ALL USING (
-    EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND is_admin = TRUE)
-  );
+  FOR ALL USING (public.is_admin());
 
 CREATE POLICY message_log_admin_all ON message_log
-  FOR ALL USING (
-    EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND is_admin = TRUE)
-  );
+  FOR ALL USING (public.is_admin());
 
 -- ============================================
 -- SEED: Sample events for testing
