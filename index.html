@@ -7,91 +7,286 @@
   <meta name="description" content="Join Calgary's favourite social events for adults. Meet new people, enjoy curated nights out, and build real connections. No awkward networking, just good vibes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
-  <!-- Dynamic Nav -->
-  <div id="site-nav"></div>
+  <!-- Navigation -->
+  <header class="site-header dark-header">
+    <nav class="nav container">
+      <a href="/" class="nav-logo">Mixler<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#events">Events</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#event-types">Experience</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="/events.html" class="btn btn-primary btn-nav">Browse Events</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
 
-  <!-- Hero -->
-  <section class="hero">
+  <!-- Hero Section -->
+  <section class="hero-v2">
     <div class="container">
-      <div class="hero-badge">Calgary's #1 Social Events</div>
-      <h1>Fun Nights Out for Adults Who Want <span class="accent">Real Connections</span></h1>
-      <p>Curated social events in Calgary where you can meet new people, have a great time, and actually enjoy going out again.</p>
-      <div class="hero-buttons">
-        <a href="/events.html" class="btn btn-primary">Browse Events</a>
-        <a href="#how-it-works" class="btn btn-outline">How It Works</a>
+      <div class="hero-v2-grid">
+        <div class="hero-v2-content">
+          <div class="hero-badge-v2">Calgary's #1 Social Events Platform</div>
+          <h1>Meet New People. <span class="accent-gradient">Have Real Fun.</span> Build Real Connections.</h1>
+          <p class="hero-desc">Curated social events in Calgary where adults actually enjoy going out again. No awkward networking. No dating app vibes. Just great people and unforgettable nights.</p>
+          <div class="hero-ctas">
+            <a href="/events.html" class="btn btn-primary btn-lg">Browse Upcoming Events</a>
+            <a href="#how-it-works" class="btn btn-ghost btn-lg">See How It Works</a>
+          </div>
+          <div class="hero-social-proof">
+            <div class="avatar-stack">
+              <div class="avatar" style="background:#e0e7ff;"></div>
+              <div class="avatar" style="background:#fce7f3;"></div>
+              <div class="avatar" style="background:#dbeafe;"></div>
+              <div class="avatar" style="background:#fde68a;"></div>
+              <div class="avatar" style="background:#c7d2fe;"></div>
+            </div>
+            <div class="proof-text">
+              <strong>500+ Calgarians</strong> have attended Mixler events
+              <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733; <span>4.9 avg rating</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-v2-visual">
+          <div class="hero-card-stack">
+            <div class="hero-float-card card-1">
+              <div class="float-icon">&#127881;</div>
+              <div>
+                <strong>Friday Night Mixer</strong>
+                <span>40 spots, March 7</span>
+              </div>
+            </div>
+            <div class="hero-float-card card-2">
+              <div class="float-icon">&#127942;</div>
+              <div>
+                <strong>Trivia & Drinks</strong>
+                <span>36 spots, March 14</span>
+              </div>
+            </div>
+            <div class="hero-float-card card-3">
+              <div class="float-icon">&#9889;</div>
+              <div>
+                <strong>Speed Friending</strong>
+                <span>30 spots, March 21</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-bar-grid">
+        <div class="stat-item">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Happy Attendees</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Events Hosted</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">4.9</div>
+          <div class="stat-label">Average Rating</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">3x</div>
+          <div class="stat-label">More Fun Than Bars</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Types - Tabbed Section -->
+  <section class="event-types" id="event-types">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-label">The Mixler Experience</div>
+        <h2>One Platform, Endless Ways to Connect</h2>
+        <p class="section-subtitle">Whether you're looking for a chill evening or a high-energy night, we've got the vibe for you.</p>
+      </div>
+      <div class="tabs-container">
+        <div class="tabs-nav">
+          <button class="tab-btn active" data-tab="mixers">
+            <span class="tab-icon">&#127864;</span>
+            <span class="tab-text">Social Mixers</span>
+          </button>
+          <button class="tab-btn" data-tab="trivia">
+            <span class="tab-icon">&#129504;</span>
+            <span class="tab-text">Trivia Nights</span>
+          </button>
+          <button class="tab-btn" data-tab="speed">
+            <span class="tab-icon">&#9889;</span>
+            <span class="tab-text">Speed Friending</span>
+          </button>
+          <button class="tab-btn" data-tab="couples">
+            <span class="tab-icon">&#128149;</span>
+            <span class="tab-text">Couples Events</span>
+          </button>
+          <button class="tab-btn" data-tab="activity">
+            <span class="tab-icon">&#127923;</span>
+            <span class="tab-text">Activity Nights</span>
+          </button>
+        </div>
+        <div class="tabs-content">
+          <div class="tab-panel active" id="tab-mixers">
+            <div class="tab-panel-grid">
+              <div class="tab-panel-text">
+                <h3>Social Mixers</h3>
+                <p>Our signature events. Walk into a curated venue, grab a drink, and let our hosts guide the conversation. Icebreakers keep things flowing, small group sizes keep things personal. You'll leave with at least 5 new connections every time.</p>
+                <ul class="feature-list">
+                  <li>Curated venues across Calgary</li>
+                  <li>Structured icebreakers (no awkward silence)</li>
+                  <li>Groups of 30-40 for the perfect vibe</li>
+                  <li>Complimentary welcome drink</li>
+                </ul>
+                <a href="/events.html" class="btn btn-primary">Find a Mixer</a>
+              </div>
+              <div class="tab-panel-visual">
+                <div class="tab-visual-placeholder gradient-1"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" id="tab-trivia">
+            <div class="tab-panel-grid">
+              <div class="tab-panel-text">
+                <h3>Trivia & Drinks</h3>
+                <p>Teams of strangers battle it out over five rounds of trivia at Calgary's best spots. You don't need to know everything. You just need to show up and have a good time. Winners get bragging rights and a round on us.</p>
+                <ul class="feature-list">
+                  <li>5 rounds of themed trivia</li>
+                  <li>Random team assignment (meet new people)</li>
+                  <li>Prizes for top teams</li>
+                  <li>Kensington's best venues</li>
+                </ul>
+                <a href="/events.html" class="btn btn-primary">Find Trivia Night</a>
+              </div>
+              <div class="tab-panel-visual">
+                <div class="tab-visual-placeholder gradient-2"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" id="tab-speed">
+            <div class="tab-panel-grid">
+              <div class="tab-panel-text">
+                <h3>Speed Friending</h3>
+                <p>Like speed dating, but for friendships. Rotate through short, fun conversations with a room full of interesting people. By the end of the night, you'll have met everyone and found your people. No pressure, just real connections.</p>
+                <ul class="feature-list">
+                  <li>5-minute rotating conversations</li>
+                  <li>Guided prompts (deeper than small talk)</li>
+                  <li>Meet everyone in the room</li>
+                  <li>Connection cards to exchange info</li>
+                </ul>
+                <a href="/events.html" class="btn btn-primary">Find Speed Friending</a>
+              </div>
+              <div class="tab-panel-visual">
+                <div class="tab-visual-placeholder gradient-3"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" id="tab-couples">
+            <div class="tab-panel-grid">
+              <div class="tab-panel-text">
+                <h3>Couples Events</h3>
+                <p>Date night just got an upgrade. Meet other couples, play games, swap stories, and build the kind of friendships where you actually do dinner together after. Because couples need couple friends too.</p>
+                <ul class="feature-list">
+                  <li>Structured couples activities</li>
+                  <li>Perfect for new-to-Calgary couples</li>
+                  <li>Intimate groups (10-15 couples)</li>
+                  <li>Premium venues with reserved seating</li>
+                </ul>
+                <a href="/events.html" class="btn btn-primary">Find Couples Event</a>
+              </div>
+              <div class="tab-panel-visual">
+                <div class="tab-visual-placeholder gradient-4"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" id="tab-activity">
+            <div class="tab-panel-grid">
+              <div class="tab-panel-text">
+                <h3>Activity Nights</h3>
+                <p>Bowling, axe throwing, cooking classes, escape rooms. Do something fun with a group of strangers and bond over shared experiences. The activity breaks the ice so you don't have to.</p>
+                <ul class="feature-list">
+                  <li>Different activity every month</li>
+                  <li>All skill levels welcome</li>
+                  <li>Equipment and materials included</li>
+                  <li>Post-activity drinks together</li>
+                </ul>
+                <a href="/events.html" class="btn btn-primary">Find Activity Night</a>
+              </div>
+              <div class="tab-panel-visual">
+                <div class="tab-visual-placeholder gradient-5"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events -->
+  <section class="upcoming-events" id="events">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-label">What's Coming Up</div>
+        <h2>Upcoming Events</h2>
+        <p class="section-subtitle">Fresh events every month. Grab your spot before they sell out.</p>
+      </div>
+      <div class="events-grid" id="upcoming-events"></div>
+      <div class="text-center" style="margin-top:48px;">
+        <a href="/events.html" class="btn btn-outline btn-lg">View All Events</a>
       </div>
     </div>
   </section>
 
   <!-- How It Works -->
-  <section class="how-it-works" id="how-it-works">
-    <div class="container text-center">
-      <div class="section-label">How It Works</div>
-      <h2 class="section-title">Three Steps to Your Next Great Night</h2>
-      <p class="section-subtitle">No awkward networking. No pressure. Just show up, have fun, and let the connections happen naturally.</p>
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <h3>Pick an Event</h3>
-          <p>Browse our curated lineup and choose the vibe that fits you. From chill mixers to high-energy nights, there's something for everyone.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <h3>Grab Your Ticket</h3>
-          <p>Secure your spot in seconds. Small group sizes keep things personal so you actually get to know people.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <h3>Show Up &amp; Connect</h3>
-          <p>We handle the venue, the icebreakers, and the energy. You just bring yourself and leave with new friends.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Upcoming Events (loaded from Supabase) -->
-  <section class="events" id="events">
-    <div class="container text-center">
-      <div class="section-label">Upcoming Events</div>
-      <h2 class="section-title">What's Coming Up</h2>
-      <p class="section-subtitle">Fresh events every month. Grab your spot before they sell out.</p>
-      <div class="events-grid" id="upcoming-events">
-        <!-- Loaded dynamically from Supabase -->
-      </div>
-      <div style="margin-top: 40px;">
-        <a href="/events.html" class="btn btn-outline">View All Events</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section class="about" id="about">
+  <section class="how-it-works-v2" id="how-it-works">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-image"></div>
-        <div class="about-content">
-          <div class="section-label">About Mixler</div>
-          <h2 class="section-title">Built for People Who Are Done with the Same Old Routine</h2>
-          <p class="section-subtitle">Mixler started because going out in Calgary shouldn't feel like a chore. We create events where real conversations happen, real friendships form, and real fun is had. Whether you're new to the city or just looking to expand your circle, you belong here.</p>
-          <div class="about-stats">
-            <div class="stat">
-              <h3>500+</h3>
-              <p>Happy Attendees</p>
-            </div>
-            <div class="stat">
-              <h3>50+</h3>
-              <p>Events Hosted</p>
-            </div>
-            <div class="stat">
-              <h3>4.9</h3>
-              <p>Avg Rating</p>
-            </div>
+      <div class="section-header text-center">
+        <div class="section-label">Simple as 1-2-3</div>
+        <h2>How Mixler Works</h2>
+        <p class="section-subtitle">No apps to download. No profiles to build. Just show up and have fun.</p>
+      </div>
+      <div class="steps-v2-grid">
+        <div class="step-v2">
+          <div class="step-v2-number">01</div>
+          <div class="step-v2-content">
+            <h3>Pick Your Event</h3>
+            <p>Browse our curated lineup and choose the vibe that fits you. From chill mixers to high-energy activity nights, there's something for everyone.</p>
+          </div>
+        </div>
+        <div class="step-v2-connector"></div>
+        <div class="step-v2">
+          <div class="step-v2-number">02</div>
+          <div class="step-v2-content">
+            <h3>Grab Your Ticket</h3>
+            <p>Secure your spot in seconds. Small group sizes keep things personal so you actually get to know people. Bring a friend or come solo.</p>
+          </div>
+        </div>
+        <div class="step-v2-connector"></div>
+        <div class="step-v2">
+          <div class="step-v2-number">03</div>
+          <div class="step-v2-content">
+            <h3>Show Up & Connect</h3>
+            <p>We handle the venue, the icebreakers, and the energy. You just bring yourself and leave with new friends you'll actually hang out with again.</p>
           </div>
         </div>
       </div>
@@ -99,42 +294,106 @@
   </section>
 
   <!-- Testimonials -->
-  <section class="testimonials" id="testimonials">
+  <section class="testimonials-v2" id="testimonials">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-label">Social Proof</div>
+        <h2>Listen to What Our Attendees Say</h2>
+        <div class="testimonial-rating-bar">
+          <span class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="rating-text">500+ attendees rated us <strong>4.9 / 5</strong></span>
+        </div>
+      </div>
+      <div class="testimonial-carousel">
+        <button class="carousel-arrow carousel-prev" aria-label="Previous">&#8592;</button>
+        <div class="carousel-track-wrapper">
+          <div class="carousel-track">
+            <div class="testimonial-card-v2">
+              <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>"I moved to Calgary last year and had no idea how to meet people. Mixler changed that in one night. I've been to five events now and made friends I actually hang out with."</p>
+              <div class="tc-author">
+                <div class="tc-avatar" style="background:linear-gradient(135deg,#c7d2fe,#e0e7ff);"></div>
+                <div><strong>Sarah M.</strong><span>Calgary, AB</span></div>
+              </div>
+              <div class="tc-tags"><span>Social Mixer</span><span>Great Vibes</span></div>
+            </div>
+            <div class="testimonial-card-v2">
+              <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>"Finally, something that isn't a dating app or awkward networking event. Just good people, good vibes, and a genuinely fun time. Highly recommend."</p>
+              <div class="tc-author">
+                <div class="tc-avatar" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);"></div>
+                <div><strong>James K.</strong><span>Calgary, AB</span></div>
+              </div>
+              <div class="tc-tags"><span>Speed Friending</span><span>New Friends</span></div>
+            </div>
+            <div class="testimonial-card-v2">
+              <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>"My wife and I went to the couples mixer and had a blast. We met two other couples we now do dinner with monthly. This is what Calgary needed."</p>
+              <div class="tc-author">
+                <div class="tc-avatar" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);"></div>
+                <div><strong>David & Lisa R.</strong><span>Calgary, AB</span></div>
+              </div>
+              <div class="tc-tags"><span>Couples Event</span><span>Made Friends</span></div>
+            </div>
+            <div class="testimonial-card-v2">
+              <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>"I was nervous going alone but the hosts made everyone feel welcome instantly. By the second drink I forgot I came solo. Signed up for the next three events on the spot."</p>
+              <div class="tc-author">
+                <div class="tc-avatar" style="background:linear-gradient(135deg,#fef3c7,#fde68a);"></div>
+                <div><strong>Amanda T.</strong><span>Calgary, AB</span></div>
+              </div>
+              <div class="tc-tags"><span>Social Mixer</span><span>Welcoming</span></div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-arrow carousel-next" aria-label="Next">&#8594;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Venues -->
+  <section class="venues-section">
     <div class="container text-center">
-      <div class="section-label">Testimonials</div>
-      <h2 class="section-title">What People Are Saying</h2>
-      <p class="section-subtitle">Don't take our word for it. Hear from people who've been there.</p>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p>"I moved to Calgary last year and had no idea how to meet people. Mixler changed that in one night. I've been to five events now and made friends I actually hang out with."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar"></div>
-            <div>
-              <div class="testimonial-name">Sarah M.</div>
-              <div class="testimonial-role">Calgary, AB</div>
-            </div>
-          </div>
+      <div class="section-label">Where We Go</div>
+      <h2>Calgary's Best Venues, Curated for Connection</h2>
+      <p class="section-subtitle">We partner with the city's top spots to create the perfect atmosphere.</p>
+      <div class="venues-grid">
+        <div class="venue-card">The National on 10th</div>
+        <div class="venue-card">The Brasserie</div>
+        <div class="venue-card">Craft Beer Market</div>
+        <div class="venue-card">Trolley 5</div>
+        <div class="venue-card">National on 8th</div>
+        <div class="venue-card">Analog Coffee</div>
+        <div class="venue-card">Last Best Brewing</div>
+        <div class="venue-card">Cold Garden</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about-v2" id="about">
+    <div class="container">
+      <div class="about-v2-grid">
+        <div class="about-v2-visual">
+          <div class="about-visual-placeholder"></div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p>"Finally, something that isn't a dating app or awkward networking event. Just good people, good vibes, and a genuinely fun time. Highly recommend."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar"></div>
-            <div>
-              <div class="testimonial-name">James K.</div>
-              <div class="testimonial-role">Calgary, AB</div>
+        <div class="about-v2-content">
+          <div class="section-label">About Mixler</div>
+          <h2>Built for People Who Are Done with the Same Old Routine</h2>
+          <p>Mixler started because going out in Calgary shouldn't feel like a chore. We create events where real conversations happen, real friendships form, and real fun is had.</p>
+          <p>Whether you're new to the city, recently single, or just looking to expand your circle, you belong here. Every event is designed with one goal: make it ridiculously easy to meet great people.</p>
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="af-icon">&#10003;</div>
+              <div><strong>No Awkward Silence</strong><span>Our hosts and icebreakers keep things flowing</span></div>
             </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p>"My wife and I went to the couples mixer and had a blast. We met two other couples we now do dinner with monthly. This is what Calgary needed."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar"></div>
-            <div>
-              <div class="testimonial-name">David &amp; Lisa R.</div>
-              <div class="testimonial-role">Calgary, AB</div>
+            <div class="about-feature">
+              <div class="af-icon">&#10003;</div>
+              <div><strong>Small Groups, Big Connections</strong><span>30-40 people max so you actually meet everyone</span></div>
+            </div>
+            <div class="about-feature">
+              <div class="af-icon">&#10003;</div>
+              <div><strong>Premium Venues Only</strong><span>We pick the best spots in Calgary, every time</span></div>
             </div>
           </div>
         </div>
@@ -142,27 +401,62 @@
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <div class="container">
-      <h2>Ready for Your Next Great Night Out?</h2>
-      <p>Join hundreds of Calgarians who are tired of the same routine and ready for something better.</p>
-      <a href="/events.html" class="btn btn-primary">Browse Upcoming Events</a>
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="container text-center">
+      <h2>Work Less at Socializing. <span class="accent-gradient">Enjoy It More.</span></h2>
+      <p>Join hundreds of Calgarians who stopped scrolling, started showing up, and found their people.</p>
+      <a href="/events.html" class="btn btn-primary btn-xl">Browse Upcoming Events</a>
+      <div class="cta-note">New events added every month. All events in Calgary, AB.</div>
     </div>
   </section>
 
-  <!-- Dynamic Footer -->
-  <div id="site-footer"></div>
+  <!-- Footer -->
+  <footer class="site-footer-v2">
+    <div class="container">
+      <div class="footer-v2-grid">
+        <div class="footer-brand-v2">
+          <a href="/" class="nav-logo">Mixler<span>.</span></a>
+          <p>Calgary's go-to for fun nights out and real connections. Come for the event, stay for the people.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="/events.html">All Events</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#event-types">Event Types</a>
+          <a href="#about">About</a>
+        </div>
+        <div class="footer-col">
+          <h4>Events</h4>
+          <a href="/events.html">Social Mixers</a>
+          <a href="/events.html">Trivia Nights</a>
+          <a href="/events.html">Speed Friending</a>
+          <a href="/events.html">Couples Events</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="mailto:hello@mixler.ca">hello@mixler.ca</a>
+          <a href="#">FAQ</a>
+          <a href="/login.html">My Account</a>
+        </div>
+      </div>
+      <div class="footer-bottom-v2">
+        <span>&copy; 2026 Mixler. All rights reserved.</span>
+        <div class="footer-social-v2">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="TikTok">TT</a>
+        </div>
+        <span><a href="#">Privacy</a> &bull; <a href="#">Terms</a></span>
+      </div>
+    </div>
+  </footer>
 
   <script type="module">
-    import { renderNav, renderFooter, renderEventCard } from './js/components.js';
+    import { renderEventCard } from './js/components.js';
     import { db } from './js/supabase-client.js';
 
-    // Render shared components
-    renderNav('home');
-    renderFooter();
-
-    // Load upcoming events from Supabase
+    // Load upcoming events
     async function loadUpcomingEvents() {
       const container = document.getElementById('upcoming-events');
       const { data: events, error } = await db
@@ -174,32 +468,87 @@
         .limit(3);
 
       if (error || !events || events.length === 0) {
-        container.innerHTML = '<p style="color: var(--color-body);">No upcoming events right now. Check back soon!</p>';
+        container.innerHTML = '<p class="empty-state">No upcoming events right now. Check back soon!</p>';
         return;
       }
-
       container.innerHTML = events.map(renderEventCard).join('');
     }
-
     loadUpcomingEvents();
 
-    // Scroll reveal animation
+    // Tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    // Testimonial carousel
+    const track = document.querySelector('.carousel-track');
+    const cards = document.querySelectorAll('.testimonial-card-v2');
+    let currentSlide = 0;
+    function getVisibleCards() {
+      if (window.innerWidth < 640) return 1;
+      if (window.innerWidth < 968) return 2;
+      return 3;
+    }
+    function updateCarousel() {
+      const visible = getVisibleCards();
+      const maxSlide = Math.max(0, cards.length - visible);
+      currentSlide = Math.min(currentSlide, maxSlide);
+      const cardWidth = cards[0].offsetWidth + 24;
+      track.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+    }
+    document.querySelector('.carousel-prev').addEventListener('click', () => {
+      currentSlide = Math.max(0, currentSlide - 1);
+      updateCarousel();
+    });
+    document.querySelector('.carousel-next').addEventListener('click', () => {
+      const visible = getVisibleCards();
+      currentSlide = Math.min(cards.length - visible, currentSlide + 1);
+      updateCarousel();
+    });
+    window.addEventListener('resize', updateCarousel);
+
+    // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) { entry.target.classList.add('revealed'); observer.unobserve(entry.target); }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-    document.querySelectorAll('.step-card, .event-card, .testimonial-card').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.step-v2, .event-card, .testimonial-card-v2, .tab-panel-grid, .about-feature, .venue-card, .stat-item').forEach(el => {
+      el.classList.add('reveal-on-scroll');
       observer.observe(el);
     });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+
+    // Mobile menu
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); menuBtn.classList.toggle('active'); });
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => { navLinks.classList.remove('active'); menuBtn.classList.remove('active'); });
+      });
+    }
+
+    // Header scroll
+    window.addEventListener('scroll', () => {
+      document.querySelector('.site-header').classList.toggle('scrolled', window.scrollY > 50);
+    });
   </script>
-  <style>.visible { opacity: 1 !important; transform: translateY(0) !important; }</style>
+  <style>
+    .reveal-on-scroll { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .revealed { opacity: 1 !important; transform: translateY(0) !important; }
+  </style>
 </body>
 </html>
