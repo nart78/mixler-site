@@ -149,7 +149,7 @@
 .hero-left {
   position: relative;
   z-index: 3;
-  max-width: 500px;
+  max-width: 42%;
   padding: 160px 0 100px;
 }
 
@@ -289,14 +289,13 @@
   transform: translateY(-2px);
 }
 
-/* --- Hero Right: Fixed-size image, top-right flush --- */
+/* --- Hero Right: Image, top-right flush --- */
 .hero-right {
   position: absolute;
   top: 0;
   right: 0;
-  width: 1060px;
-  height: 800px;
-  max-width: 50%;
+  width: 42%;
+  height: 100%;
   z-index: 2;
 }
 
