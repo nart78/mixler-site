@@ -149,7 +149,7 @@
 .hero-left {
   position: relative;
   z-index: 3;
-  max-width: 50%;
+  max-width: 60%;
   padding: 160px 0 100px;
 }
 
@@ -289,12 +289,12 @@
   transform: translateY(-2px);
 }
 
-/* --- Hero Right: Full-bleed image (right 50%, top to bottom) --- */
+/* --- Hero Right: Full-bleed image --- */
 .hero-right {
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 25%;
   height: 100%;
   z-index: 2;
 }
