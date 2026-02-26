@@ -149,7 +149,7 @@
 .hero-left {
   position: relative;
   z-index: 3;
-  max-width: 60%;
+  max-width: 500px;
   padding: 160px 0 100px;
 }
 
