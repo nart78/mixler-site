@@ -1,0 +1,805 @@
+/* ========================================
+   Mixler Homepage - Dark Premium Theme
+   Inspired by: BeEvent nightlife aesthetic
+   ======================================== */
+
+/* --- Dark Body Override --- */
+.dark-body {
+  background: #0a0e1a;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Inter', sans-serif;
+}
+
+.dark-body h1, .dark-body h2, .dark-body h3, .dark-body h4 {
+  font-family: 'League Spartan', sans-serif;
+  color: #ffffff;
+}
+
+/* --- Dark Header --- */
+.dark-header {
+  background: transparent !important;
+  border-bottom: none !important;
+  backdrop-filter: none;
+}
+
+.dark-header.scrolled {
+  background: rgba(10, 14, 26, 0.95) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+.dark-header .nav-links a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-header .nav-links a:hover {
+  color: #ffffff;
+}
+
+.dark-header .nav-links a::after {
+  background: var(--color-accent);
+}
+
+.dark-header .mobile-menu-btn span {
+  background: #ffffff;
+}
+
+.dark-header .btn-nav {
+  padding: 10px 24px;
+  font-size: 0.85rem;
+}
+
+/* ==========================================
+   HERO - Dark Split Layout
+   ========================================== */
+.hero-dark {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #0a0e1a 0%, #111938 40%, #153db6 100%);
+  overflow: hidden;
+  padding: 120px 0 80px;
+}
+
+/* --- Decorative floating elements --- */
+.hero-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.decor-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(245, 9, 120, 0.25);
+}
+
+.dot-1 { width: 8px; height: 8px; top: 18%; left: 8%; animation: float-slow 6s ease-in-out infinite; }
+.dot-2 { width: 5px; height: 5px; top: 30%; left: 15%; background: rgba(255,255,255,0.2); animation: float-slow 8s ease-in-out infinite reverse; }
+.dot-3 { width: 6px; height: 6px; top: 55%; left: 5%; background: rgba(255,255,255,0.15); animation: float-slow 7s ease-in-out infinite; }
+.dot-4 { width: 10px; height: 10px; top: 12%; left: 45%; background: rgba(245, 9, 120, 0.15); animation: float-slow 9s ease-in-out infinite reverse; }
+.dot-5 { width: 4px; height: 4px; top: 70%; left: 42%; background: rgba(255,255,255,0.25); animation: float-slow 5s ease-in-out infinite; }
+
+.decor-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(245, 9, 120, 0.2);
+}
+
+.ring-1 { width: 80px; height: 80px; top: 10%; left: 3%; border-style: dashed; animation: spin-slow 20s linear infinite; }
+.ring-2 { width: 40px; height: 40px; top: 65%; left: 48%; border-color: rgba(255,255,255,0.1); animation: spin-slow 15s linear infinite reverse; }
+
+.decor-sparkle {
+  position: absolute;
+  color: rgba(245, 9, 120, 0.4);
+  font-size: 1.2rem;
+  font-weight: 300;
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.sparkle-1 { top: 25%; left: 12%; }
+.sparkle-2 { top: 60%; left: 2%; font-size: 0.9rem; color: rgba(255,255,255,0.2); animation-delay: 1.5s; }
+
+.decor-cross {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 40%; left: 10%;
+}
+
+.decor-cross::before, .decor-cross::after {
+  content: '';
+  position: absolute;
+  background: rgba(245, 9, 120, 0.2);
+}
+
+.decor-cross::before { width: 100%; height: 2px; top: 50%; left: 0; transform: translateY(-50%); }
+.decor-cross::after { width: 2px; height: 100%; left: 50%; top: 0; transform: translateX(-50%); }
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* --- Hero Split Layout --- */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-left {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-accent);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+
+.eyebrow-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: var(--color-accent);
+  border-radius: 50%;
+}
+
+.hero-dark h1 {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 4.2rem;
+  font-weight: 800;
+  line-height: 1.05;
+  color: #ffffff;
+  margin-bottom: 28px;
+  letter-spacing: -1px;
+}
+
+.text-white { color: #ffffff; }
+.text-pink { color: var(--color-accent); }
+.text-pink-soft { color: rgba(245, 9, 120, 0.85); }
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 520px;
+  margin-bottom: 36px;
+  font-weight: 300;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* --- Buttons (dark theme) --- */
+.btn-pink {
+  background: var(--color-accent);
+  color: #ffffff;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-pink:hover {
+  background: #d4076a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245, 9, 120, 0.35);
+}
+
+.btn-ghost-light {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-ghost-light:hover {
+  color: #ffffff;
+}
+
+.btn-arrow {
+  transition: transform 0.3s ease;
+}
+
+.btn-pink:hover .btn-arrow,
+.btn-ghost-light:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  font-size: 0.95rem;
+}
+
+.btn-xl {
+  padding: 20px 48px;
+  font-size: 1.05rem;
+}
+
+.btn-outline-light {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-outline-light:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+}
+
+/* --- Hero Right: Image --- */
+.hero-right {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-image-wrapper {
+  position: relative;
+}
+
+.hero-image-placeholder {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  max-height: 580px;
+  background: linear-gradient(160deg, rgba(245, 9, 120, 0.15) 0%, rgba(21, 61, 182, 0.25) 100%);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.hero-image-placeholder span {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.hero-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Floating badge on image */
+.hero-float-badge {
+  position: absolute;
+  bottom: 32px;
+  left: -20px;
+  background: rgba(10, 14, 26, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+.float-badge-icon {
+  font-size: 1.5rem;
+  color: #fbbf24;
+}
+
+.hero-float-badge strong {
+  display: block;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.hero-float-badge span {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+}
+
+/* ==========================================
+   STATS BAR
+   ========================================== */
+.stats-bar-dark {
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 48px 0;
+}
+
+.stats-bar-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+}
+
+.stat-item { text-align: center; }
+
+.stat-number {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================
+   DARK SECTIONS (shared)
+   ========================================== */
+.section-dark {
+  padding: 100px 0;
+}
+
+.section-label-dark {
+  display: inline-block;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.section-dark h2 {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle-dark {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 560px;
+  margin: 0 auto 60px;
+  font-weight: 300;
+}
+
+/* ==========================================
+   EVENT CARDS (dark override)
+   ========================================== */
+.dark-body .event-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dark-body .event-card:hover {
+  border-color: rgba(245, 9, 120, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.dark-body .event-content h3 {
+  color: #ffffff;
+}
+
+.dark-body .event-meta {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.dark-body .event-tag {
+  background: rgba(245, 9, 120, 0.15);
+  color: var(--color-accent);
+}
+
+.dark-body .event-short-desc {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ==========================================
+   HOW IT WORKS (dark)
+   ========================================== */
+.steps-dark-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.step-dark-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 40px 32px;
+  transition: var(--transition);
+}
+
+.step-dark-card:hover {
+  border-color: rgba(245, 9, 120, 0.25);
+  transform: translateY(-4px);
+}
+
+.step-dark-num {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+}
+
+.step-dark-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.step-dark-card p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ==========================================
+   ABOUT (dark)
+   ========================================== */
+.about-dark-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-image-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(160deg, rgba(245, 9, 120, 0.1) 0%, rgba(21, 61, 182, 0.2) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-dark-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.about-dark-content p {
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 16px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.about-checks {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-check {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(245, 9, 120, 0.15);
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   TESTIMONIALS (dark)
+   ========================================== */
+.testimonials-dark-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.testimonial-dark-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px;
+  transition: var(--transition);
+}
+
+.testimonial-dark-card:hover {
+  border-color: rgba(245, 9, 120, 0.2);
+}
+
+.td-stars {
+  color: #fbbf24;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.testimonial-dark-card p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.td-author strong {
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.td-author span {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.8rem;
+  margin-left: 8px;
+}
+
+/* ==========================================
+   FINAL CTA (dark)
+   ========================================== */
+.cta-dark {
+  padding: 120px 0;
+  background: linear-gradient(180deg, #0a0e1a 0%, #111938 100%);
+  position: relative;
+}
+
+.cta-dark h2 {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.cta-dark p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.05rem;
+  max-width: 500px;
+  margin: 0 auto 40px;
+  font-weight: 300;
+}
+
+/* ==========================================
+   FOOTER (dark)
+   ========================================== */
+.footer-dark {
+  background: #060810;
+  padding: 64px 0 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-dark-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer-brand-dark .nav-logo {
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.footer-brand-dark p {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.footer-col-dark h4 {
+  color: #ffffff;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.footer-col-dark a {
+  display: block;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
+  padding: 4px 0;
+  transition: var(--transition);
+}
+
+.footer-col-dark a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom-dark {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8rem;
+}
+
+.footer-social-dark {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social-dark a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  transition: var(--transition);
+}
+
+.footer-social-dark a:hover {
+  background: var(--color-accent);
+  color: #ffffff;
+}
+
+.footer-bottom-dark a {
+  color: rgba(255, 255, 255, 0.3);
+  transition: var(--transition);
+}
+
+.footer-bottom-dark a:hover {
+  color: #ffffff;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 968px) {
+  .hero-dark h1 {
+    font-size: 3rem;
+  }
+
+  .hero-split {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero-right {
+    display: none;
+  }
+
+  .steps-dark-grid,
+  .testimonials-dark-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-dark-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .stats-bar-grid {
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .stat-divider { display: none; }
+
+  .stat-item { flex: 1; min-width: 120px; }
+
+  .section-dark h2 {
+    font-size: 2.2rem;
+  }
+
+  .footer-dark-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .dark-body .nav-links.active {
+    background: #0a0e1a;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .dark-body .nav-links.active a {
+    color: rgba(255,255,255,0.7);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-dark {
+    padding: 100px 0 60px;
+    min-height: auto;
+  }
+
+  .hero-dark h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cta-dark h2 {
+    font-size: 2rem;
+  }
+
+  .section-dark {
+    padding: 60px 0;
+  }
+
+  .footer-dark-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom-dark {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
