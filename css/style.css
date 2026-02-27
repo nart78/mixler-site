@@ -391,8 +391,9 @@ section {
 }
 
 .event-short-desc {
-  color: rgba(255, 255, 255, 0.65);
+  color: #ffffff;
   font-size: 0.9rem;
+  font-weight: 600;
   line-height: 1.6;
   margin-bottom: 20px;
   display: -webkit-box;
