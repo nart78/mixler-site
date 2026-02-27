@@ -84,20 +84,20 @@
 
 .decor-svg {
   position: absolute;
-  opacity: 0.15;
+  opacity: 0.45;
   filter: brightness(0) saturate(100%) invert(27%) sepia(82%) saturate(4200%) hue-rotate(327deg) brightness(97%) contrast(101%);
 }
 
 .svg-1  { width: 50px;  top: 8%;  left: 3%;  animation: float-slow 6s ease-in-out infinite; }
-.svg-2  { width: 40px;  top: 25%; left: 12%; opacity: 0.12; animation: float-slow 8s ease-in-out infinite reverse; }
+.svg-2  { width: 40px;  top: 25%; left: 12%; opacity: 0.35; animation: float-slow 8s ease-in-out infinite reverse; }
 .svg-3  { width: 55px;  top: 50%; left: 5%;  animation: float-slow 7s ease-in-out infinite; }
-.svg-4  { width: 35px;  top: 15%; left: 42%; opacity: 0.1; animation: float-slow 9s ease-in-out infinite reverse; }
+.svg-4  { width: 35px;  top: 15%; left: 42%; opacity: 0.3; animation: float-slow 9s ease-in-out infinite reverse; }
 .svg-5  { width: 45px;  top: 70%; left: 8%;  animation: float-slow 5s ease-in-out infinite; }
-.svg-6  { width: 30px;  top: 35%; left: 18%; opacity: 0.12; animation: float-slow 7.5s ease-in-out infinite reverse; }
-.svg-7  { width: 40px;  top: 60%; left: 40%; opacity: 0.08; animation: float-slow 6.5s ease-in-out infinite; }
-.svg-8  { width: 50px;  top: 5%;  left: 25%; opacity: 0.1; animation: float-slow 8.5s ease-in-out infinite reverse; }
+.svg-6  { width: 30px;  top: 35%; left: 18%; opacity: 0.35; animation: float-slow 7.5s ease-in-out infinite reverse; }
+.svg-7  { width: 40px;  top: 60%; left: 40%; opacity: 0.25; animation: float-slow 6.5s ease-in-out infinite; }
+.svg-8  { width: 50px;  top: 5%;  left: 25%; opacity: 0.3; animation: float-slow 8.5s ease-in-out infinite reverse; }
 .svg-9  { width: 35px;  top: 80%; left: 15%; animation: float-slow 5.5s ease-in-out infinite; }
-.svg-10 { width: 45px;  top: 40%; left: 2%;  opacity: 0.12; animation: float-slow 9.5s ease-in-out infinite reverse; }
+.svg-10 { width: 45px;  top: 40%; left: 2%;  opacity: 0.35; animation: float-slow 9.5s ease-in-out infinite reverse; }
 
 @keyframes float-slow {
   0%, 100% { transform: translateY(0); }
