@@ -30,10 +30,10 @@
 }
 
 .dark-header.scrolled {
-  background: rgba(21, 61, 182, 0.85) !important;
-  backdrop-filter: none;
+  background: rgba(21, 61, 182, 0.95) !important;
+  backdrop-filter: blur(10px);
   border-bottom: none !important;
-  box-shadow: 0 2px 20px rgba(48, 8, 67, 0.3);
+  box-shadow: 0 2px 20px rgba(21, 61, 182, 0.3);
 }
 
 .dark-header .nav-links a {
