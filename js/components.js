@@ -101,12 +101,14 @@ function renderFooter() {
 
 // Render an event card
 function renderEventCard(event) {
+  const isComingSoon = event.event_date >= '2099-01-01';
   const date = new Date(event.event_date + 'T' + event.start_time);
-  const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-  const timeStr = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+  const dateStr = isComingSoon ? 'Date TBD' : date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
   const spotsLeft = event.capacity - event.tickets_sold;
   const soldOut = spotsLeft <= 0;
   const priceStr = (event.price_cents / 100).toFixed(2);
+  const priceDisplay = isComingSoon ? 'Coming Soon' : (soldOut ? 'Sold Out' : '$' + priceStr);
+  const btnText = isComingSoon ? 'Notify Me' : (soldOut ? 'Join waitlist' : 'See details');
 
   return `
     <a href="/event.html?slug=${event.slug}" class="event-card" style="${event.image_url ? `background-image:url('${event.image_url}')` : ''}">
@@ -114,10 +116,10 @@ function renderEventCard(event) {
       <div class="event-card-content">
         <h3>${event.title}</h3>
         <p class="event-short-desc">${event.short_description || ''}</p>
-        <span class="event-card-btn">${soldOut ? 'Join waitlist' : 'See details'} <span class="btn-arrow">&rarr;</span></span>
+        <span class="event-card-btn">${btnText} <span class="btn-arrow">&rarr;</span></span>
       </div>
       <div class="event-card-meta">
-        <span class="event-tag">${soldOut ? 'Sold Out' : '$' + priceStr}</span>
+        <span class="event-tag">${priceDisplay}</span>
         <span class="event-date-tag">${dateStr}</span>
       </div>
     </a>
