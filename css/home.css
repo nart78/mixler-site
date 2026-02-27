@@ -384,24 +384,22 @@
   font-family: 'League Spartan', sans-serif;
   font-size: 3rem;
   font-weight: 900;
-  background: linear-gradient(135deg, #ff3465, #300843);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #153db6;
+  -webkit-text-fill-color: #153db6;
   margin-bottom: 20px;
 }
 
 .step-dark-card h3 {
   font-size: 1.3rem;
   margin-bottom: 12px;
-  color: #300843;
+  color: #ff3465 !important;
 }
 
 .step-dark-card p {
   color: #666;
   font-size: 0.95rem;
   line-height: 1.7;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 /* ==========================================
