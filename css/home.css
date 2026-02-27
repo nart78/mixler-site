@@ -24,6 +24,11 @@
 
 /* --- Header: Transparent over hero, solid on scroll --- */
 .dark-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   background: transparent !important;
   border-bottom: none !important;
   backdrop-filter: none;
