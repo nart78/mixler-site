@@ -63,7 +63,7 @@
 .hero-dark {
   position: relative;
   height: 920px;
-  background: linear-gradient(135deg, #300843 0%, #3d0a54 50%, #4a0f65 100%);
+  background: #add1ff;
   overflow: hidden;
   padding: 0;
 }
