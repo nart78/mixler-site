@@ -28,7 +28,6 @@
   backdrop-filter: none;
   border-bottom: none !important;
   box-shadow: 0 2px 20px rgba(48, 8, 67, 0.3);
-  padding-bottom: 60px;
 }
 
 .dark-header .nav-links a {
@@ -63,7 +62,7 @@
    ========================================== */
 .hero-dark {
   position: relative;
-  height: 800px;
+  height: 860px;
   background: linear-gradient(135deg, #300843 0%, #3d0a54 50%, #4a0f65 100%);
   overflow: hidden;
   padding: 0;
