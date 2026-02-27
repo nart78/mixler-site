@@ -16,6 +16,12 @@
   color: #300843;
 }
 
+/* --- Nav Logo Image --- */
+.nav-logo-img {
+  height: 32px;
+  width: auto;
+}
+
 /* --- Header: Transparent over hero, solid on scroll --- */
 .dark-header {
   background: transparent !important;
