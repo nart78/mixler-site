@@ -104,6 +104,31 @@
   50% { transform: translateY(-15px); }
 }
 
+/* --- Hero entrance animation (BeEvent8 style) --- */
+@keyframes hero-slide-up {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-left .hero-eyebrow,
+.hero-left h1,
+.hero-left .hero-subtitle,
+.hero-left .hero-buttons {
+  opacity: 0;
+  animation: hero-slide-up 0.7s ease forwards;
+}
+
+.hero-left .hero-eyebrow   { animation-delay: 0.1s; }
+.hero-left h1              { animation-delay: 0.2s; }
+.hero-left .hero-subtitle  { animation-delay: 0.35s; }
+.hero-left .hero-buttons   { animation-delay: 0.45s; }
+
+.hero-right {
+  opacity: 0;
+  animation: hero-slide-up 0.8s ease forwards;
+  animation-delay: 0s;
+}
+
 /* --- Hero Split Layout (BeEvent8 style) --- */
 .hero-split {
   display: block;
