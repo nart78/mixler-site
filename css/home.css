@@ -27,13 +27,23 @@
   background: transparent !important;
   border-bottom: none !important;
   backdrop-filter: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .dark-header.scrolled {
-  background: rgba(21, 61, 182, 0.95) !important;
-  backdrop-filter: blur(10px);
+  background: rgba(21, 61, 182, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: none !important;
   box-shadow: 0 2px 20px rgba(21, 61, 182, 0.3);
+}
+
+.dark-header.scrolled .nav-links a {
+  color: #ffffff;
+}
+
+.dark-header.scrolled .nav-logo-img {
+  filter: brightness(10);
 }
 
 .dark-header .nav-links a {
