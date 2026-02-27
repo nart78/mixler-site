@@ -30,7 +30,7 @@
 }
 
 .dark-header.scrolled {
-  background: #300843 !important;
+  background: rgba(21, 61, 182, 0.85) !important;
   backdrop-filter: none;
   border-bottom: none !important;
   box-shadow: 0 2px 20px rgba(48, 8, 67, 0.3);
