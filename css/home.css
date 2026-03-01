@@ -671,7 +671,7 @@
    ========================================== */
 .cta-dark {
   padding: 120px 0;
-  background: linear-gradient(135deg, #300843 0%, #4a0f65 100%);
+  background: #ffffff;
   position: relative;
   overflow: hidden;
 }
@@ -693,18 +693,18 @@
   font-family: 'League Spartan', sans-serif;
   font-size: 3rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #300843;
   margin-bottom: 16px;
   position: relative;
   z-index: 1;
 }
 
 .cta-dark p {
-  color: rgba(255, 255, 255, 0.6);
+  color: #555;
   font-size: 1.05rem;
   max-width: 500px;
   margin: 0 auto 40px;
-  font-weight: 300;
+  font-weight: 400;
   position: relative;
   z-index: 1;
 }
