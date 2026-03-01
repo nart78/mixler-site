@@ -129,6 +129,27 @@ h1, h2, h3, h4 {
 }
 
 /* --- Calendar styling --- */
+.calendar-view {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.calendar-grid {
+  table-layout: fixed;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.cal-day {
+  overflow: hidden;
+}
+
+.cal-event-dot {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .calendar-header h3 {
   font-family: 'League Spartan', sans-serif;
 }
