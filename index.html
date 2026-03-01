@@ -182,6 +182,7 @@
         <form class="newsletter-form" id="newsletter-form">
           <div class="newsletter-form-row">
             <input type="text" name="name" placeholder="First name" required class="newsletter-input">
+            <input type="text" name="last_name" placeholder="Last name" required class="newsletter-input">
             <input type="email" name="email" placeholder="Email address" required class="newsletter-input">
             <button type="submit" class="btn btn-pink newsletter-btn">Subscribe <span class="btn-arrow">&rarr;</span></button>
           </div>
@@ -268,12 +269,13 @@
       nlForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const name = nlForm.name.value.trim();
+        const last_name = nlForm.last_name.value.trim();
         const email = nlForm.email.value.trim();
         if (!email) return;
         nlMsg.textContent = 'Subscribing...';
         nlMsg.className = 'newsletter-msg';
         try {
-          const { error } = await db.from('newsletter_subscribers').insert({ name, email });
+          const { error } = await db.from('newsletter_subscribers').insert({ name, last_name, email });
           if (error && error.code === '23505') {
             nlMsg.textContent = "You're already subscribed!";
             nlMsg.className = 'newsletter-msg msg-info';
