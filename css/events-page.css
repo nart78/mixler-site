@@ -1,0 +1,103 @@
+/* ========================================
+   Events Page Styles
+   ======================================== */
+
+/* --- Font overrides --- */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'League Spartan', sans-serif;
+}
+
+/* --- Nav: blue background, white text --- */
+.events-header {
+  background: #153db6 !important;
+  border-bottom: none !important;
+  backdrop-filter: none;
+}
+
+.events-header .nav-logo-img {
+  height: 32px;
+  width: auto;
+}
+
+.events-header .nav-links a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.events-header .nav-links a:hover {
+  color: #ffffff;
+}
+
+.events-header .nav-links a::after {
+  background: #ffffff;
+}
+
+.events-header.scrolled {
+  background: rgba(21, 61, 182, 0.95) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* --- Hero: blue background, white text --- */
+.events-hero {
+  background: #153db6 !important;
+  padding: 160px 0 80px;
+}
+
+.events-hero h1 {
+  color: #ffffff;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+
+.events-hero .section-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+/* --- Events grid section --- */
+.events-section {
+  padding: 60px 0 100px;
+}
+
+/* --- View toggle buttons --- */
+.view-btn {
+  font-family: 'Inter', sans-serif;
+}
+
+.view-btn.active {
+  color: #153db6;
+}
+
+/* --- Event card styling --- */
+.event-card-content h3 {
+  font-family: 'League Spartan', sans-serif;
+  color: #ffffff !important;
+}
+
+.event-short-desc {
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.event-tag,
+.event-date-tag {
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- Calendar styling --- */
+.calendar-header h3 {
+  font-family: 'League Spartan', sans-serif;
+}
+
+/* --- Mobile menu spans (white for blue bg) --- */
+.events-header .mobile-menu-btn span {
+  background: #ffffff;
+}
