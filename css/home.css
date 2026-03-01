@@ -87,6 +87,7 @@
   background: #153db6;
   overflow: hidden;
   padding: 0;
+  border-radius: 0 0 40px 40px;
 }
 
 /* --- Decorative floating SVG elements --- */
