@@ -41,10 +41,11 @@ h1, h2, h3, h4 {
   -webkit-backdrop-filter: blur(10px);
 }
 
-/* --- Hero: blue background, white text --- */
+/* --- Hero: blue background, white text, rounded bottom --- */
 .events-hero {
   background: #153db6 !important;
   padding: 160px 0 80px;
+  border-radius: 0 0 40px 40px;
 }
 
 .events-hero h1 {
