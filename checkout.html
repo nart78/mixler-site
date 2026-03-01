@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Mixler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/events-page.css">
+  <link rel="stylesheet" href="css/checkout.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header events-header">
+    <nav class="nav container">
+      <a href="/" class="nav-logo"><img src="images/mixler-white-wide.png" alt="Mixler" class="nav-logo-img"></a>
+      <ul class="nav-links">
+        <li><a href="/#events">Events</a></li>
+        <li><a href="/#how-it-works">How It Works</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="#social">Gallery</a></li>
+        <li><a href="/events.html" class="btn btn-pink btn-nav">Get Tickets</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <section class="checkout-section">
+    <div class="container">
+      <a href="javascript:history.back()" class="back-link">&larr; Back to event</a>
+      <div id="checkout-content">
+        <div class="loading-spinner"><div class="spinner"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script type="module">
+    import { renderFooter, showToast } from './js/components.js';
+    import { db, SUPABASE_URL } from './js/supabase-client.js';
+    import { getSession } from './js/auth.js';
+    import { formatDate, formatTime, formatPrice, getParam } from './js/utils.js';
+
+    renderFooter();
+
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      document.querySelector('.site-header').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); menuBtn.classList.toggle('active'); });
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => { navLinks.classList.remove('active'); menuBtn.classList.remove('active'); });
+      });
+    }
+
+    const slug = getParam('slug');
+    if (!slug) {
+      window.location.href = '/events.html';
+    }
+
+    let currentEvent = null;
+    let ticketTypes = [];
+    let selectedTicketType = null;
+    let quantity = 1;
+    let couponResult = null;
+
+    async function loadCheckout() {
+      const container = document.getElementById('checkout-content');
+
+      // Fetch event
+      const { data: event, error } = await db
+        .from('events')
+        .select('*')
+        .eq('slug', slug)
+        .eq('status', 'published')
+        .single();
+
+      if (error || !event) {
+        container.innerHTML = `
+          <div class="text-center" style="padding: 60px 0;">
+            <h2>Event not found</h2>
+            <p style="margin: 16px 0 32px;">This event may have been removed or hasn't been published yet.</p>
+            <a href="/events.html" class="btn btn-primary">Browse Events</a>
+          </div>`;
+        return;
+      }
+
+      currentEvent = event;
+      document.title = `Checkout - ${event.title} | Mixler`;
+
+      // Fetch ticket types
+      const { data: types } = await db
+        .from('ticket_types')
+        .select('*')
+        .eq('event_id', event.id)
+        .eq('is_active', true)
+        .order('sort_order', { ascending: true });
+
+      ticketTypes = types || [];
+      if (ticketTypes.length > 0) {
+        selectedTicketType = ticketTypes[0];
+      }
+
+      renderCheckoutForm();
+    }
+
+    function renderCheckoutForm() {
+      const event = currentEvent;
+      const container = document.getElementById('checkout-content');
+      const spotsLeft = event.capacity - event.tickets_sold;
+      const maxQty = Math.min(spotsLeft, event.max_tickets_per_order || 10);
+
+      // Determine pricing
+      let pricePerTicket = event.price_cents;
+      if (selectedTicketType) {
+        pricePerTicket = selectedTicketType.price_cents;
+      } else {
+        const earlyBirdActive = event.early_bird_price_cents && event.early_bird_deadline && new Date(event.early_bird_deadline) > new Date();
+        if (earlyBirdActive) pricePerTicket = event.early_bird_price_cents;
+      }
+
+      container.innerHTML = `
+        <div class="checkout-grid">
+          <div class="checkout-form">
+            <h1>Get Your Tickets</h1>
+
+            ${ticketTypes.length > 1 ? `
+              <div class="form-section">
+                <h3>Select Ticket Type</h3>
+                <div class="ticket-type-options">
+                  ${ticketTypes.map(tt => {
+                    const ttSpotsLeft = tt.capacity > 0 ? tt.capacity - tt.tickets_sold : 999;
+                    const available = ttSpotsLeft > 0;
+                    return `
+                      <label class="ticket-type-option ${tt.id === selectedTicketType?.id ? 'selected' : ''} ${!available ? 'sold-out' : ''}" data-tt-id="${tt.id}">
+                        <input type="radio" name="ticket_type" value="${tt.id}" ${tt.id === selectedTicketType?.id ? 'checked' : ''} ${!available ? 'disabled' : ''}>
+                        <div class="tt-info">
+                          <strong>${tt.name}</strong>
+                          ${tt.description ? `<span class="tt-desc">${tt.description}</span>` : ''}
+                        </div>
+                        <div class="tt-price">
+                          ${available ? formatPrice(tt.price_cents) : 'Sold Out'}
+                        </div>
+                      </label>
+                    `;
+                  }).join('')}
+                </div>
+              </div>
+            ` : ''}
+
+            <div class="form-section">
+              <h3>How many tickets?</h3>
+              <div class="quantity-picker">
+                <button class="qty-btn" id="qty-minus" ${quantity <= 1 ? 'disabled' : ''}>-</button>
+                <span class="qty-value" id="qty-value">${quantity}</span>
+                <button class="qty-btn" id="qty-plus" ${quantity >= maxQty ? 'disabled' : ''}>+</button>
+                <span class="qty-note">${spotsLeft} spot${spotsLeft !== 1 ? 's' : ''} left</span>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>Your Information</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="buyer-name">Full Name *</label>
+                  <input type="text" id="buyer-name" placeholder="Your full name" required>
+                </div>
+                <div class="form-group">
+                  <label for="buyer-email">Email *</label>
+                  <input type="email" id="buyer-email" placeholder="you@email.com" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="buyer-phone">Phone (optional)</label>
+                <input type="tel" id="buyer-phone" placeholder="(403) 555-1234">
+              </div>
+            </div>
+
+            <div class="form-section" id="attendees-section">
+              <h3>Attendee Details</h3>
+              <p class="form-note">We need the name of each person attending. Email is optional but helps us send them event updates.</p>
+              <div id="attendee-fields"></div>
+            </div>
+
+            <div class="form-section">
+              <h3>Have a coupon?</h3>
+              <div class="coupon-row">
+                <input type="text" id="coupon-code" placeholder="Enter code" class="coupon-input">
+                <button class="btn btn-outline coupon-apply" id="apply-coupon">Apply</button>
+              </div>
+              <div id="coupon-result"></div>
+            </div>
+          </div>
+
+          <div class="checkout-sidebar">
+            <div class="order-summary">
+              <h3>Order Summary</h3>
+              <div class="summary-event">
+                <div class="summary-event-image" ${event.image_url ? `style="background-image:url('${event.image_url}')"` : ''}></div>
+                <div class="summary-event-info">
+                  <strong>${event.title}</strong>
+                  <span>${formatDate(event.event_date)}</span>
+                  <span>${formatTime(event.start_time)}${event.end_time ? ' - ' + formatTime(event.end_time) : ''}</span>
+                  <span>${event.location_name || ''}</span>
+                </div>
+              </div>
+              <div class="summary-lines" id="summary-lines"></div>
+              <button class="btn btn-primary checkout-btn" id="checkout-btn">Proceed to Payment</button>
+              <p class="checkout-note">You'll be redirected to Stripe for secure payment. Your tickets are held for 15 minutes.</p>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Render attendee fields and summary
+      renderAttendeeFields();
+      updateSummary();
+      attachEventListeners();
+    }
+
+    function renderAttendeeFields() {
+      const container = document.getElementById('attendee-fields');
+      if (!container) return;
+
+      let html = '';
+      for (let i = 0; i < quantity; i++) {
+        const isFirst = i === 0;
+        html += `
+          <div class="attendee-card" data-index="${i}">
+            <div class="attendee-header">Attendee ${i + 1} ${isFirst ? '<span class="badge-you">You</span>' : ''}</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Name *</label>
+                <input type="text" class="attendee-name" data-index="${i}" placeholder="Full name" required>
+              </div>
+              <div class="form-group">
+                <label>Email (optional)</label>
+                <input type="email" class="attendee-email" data-index="${i}" placeholder="Email address">
+              </div>
+            </div>
+          </div>
+        `;
+      }
+      container.innerHTML = html;
+
+      // Auto-fill first attendee from buyer info
+      syncBuyerToAttendee();
+    }
+
+    function syncBuyerToAttendee() {
+      const buyerName = document.getElementById('buyer-name');
+      const buyerEmail = document.getElementById('buyer-email');
+      const firstAttendeeName = document.querySelector('.attendee-name[data-index="0"]');
+      const firstAttendeeEmail = document.querySelector('.attendee-email[data-index="0"]');
+
+      if (firstAttendeeName && buyerName) {
+        firstAttendeeName.value = buyerName.value;
+      }
+      if (firstAttendeeEmail && buyerEmail) {
+        firstAttendeeEmail.value = buyerEmail.value;
+      }
+    }
+
+    function updateSummary() {
+      const container = document.getElementById('summary-lines');
+      if (!container || !currentEvent) return;
+
+      let pricePerTicket = currentEvent.price_cents;
+      let ticketLabel = 'General Admission';
+
+      if (selectedTicketType) {
+        pricePerTicket = selectedTicketType.price_cents;
+        ticketLabel = selectedTicketType.name;
+      } else {
+        const earlyBirdActive = currentEvent.early_bird_price_cents && currentEvent.early_bird_deadline && new Date(currentEvent.early_bird_deadline) > new Date();
+        if (earlyBirdActive) {
+          pricePerTicket = currentEvent.early_bird_price_cents;
+          ticketLabel = 'Early Bird';
+        }
+      }
+
+      const subtotal = pricePerTicket * quantity;
+      const discount = couponResult?.discount_cents || 0;
+      const afterDiscount = subtotal - discount;
+      const taxRate = currentEvent.tax_rate_bps || 500;
+      const tax = Math.round(afterDiscount * taxRate / 10000);
+      const total = afterDiscount + tax;
+
+      container.innerHTML = `
+        <div class="summary-line">
+          <span>${ticketLabel} x ${quantity}</span>
+          <span>${formatPrice(subtotal)}</span>
+        </div>
+        ${discount > 0 ? `
+          <div class="summary-line discount">
+            <span>Discount</span>
+            <span>-${formatPrice(discount)}</span>
+          </div>
+        ` : ''}
+        <div class="summary-line">
+          <span>GST (5%)</span>
+          <span>${formatPrice(tax)}</span>
+        </div>
+        <div class="summary-line total">
+          <span>Total</span>
+          <span>${formatPrice(total)}</span>
+        </div>
+      `;
+    }
+
+    function attachEventListeners() {
+      // Quantity buttons
+      const minusBtn = document.getElementById('qty-minus');
+      const plusBtn = document.getElementById('qty-plus');
+      const qtyValue = document.getElementById('qty-value');
+      const maxQty = Math.min(
+        currentEvent.capacity - currentEvent.tickets_sold,
+        currentEvent.max_tickets_per_order || 10
+      );
+
+      if (minusBtn) {
+        minusBtn.addEventListener('click', () => {
+          if (quantity > 1) {
+            quantity--;
+            qtyValue.textContent = quantity;
+            minusBtn.disabled = quantity <= 1;
+            plusBtn.disabled = quantity >= maxQty;
+            renderAttendeeFields();
+            updateSummary();
+          }
+        });
+      }
+
+      if (plusBtn) {
+        plusBtn.addEventListener('click', () => {
+          if (quantity < maxQty) {
+            quantity++;
+            qtyValue.textContent = quantity;
+            minusBtn.disabled = quantity <= 1;
+            plusBtn.disabled = quantity >= maxQty;
+            renderAttendeeFields();
+            updateSummary();
+          }
+        });
+      }
+
+      // Ticket type selection
+      document.querySelectorAll('.ticket-type-option input[name="ticket_type"]').forEach(radio => {
+        radio.addEventListener('change', (e) => {
+          const ttId = e.target.value;
+          selectedTicketType = ticketTypes.find(t => t.id === ttId);
+          document.querySelectorAll('.ticket-type-option').forEach(el => el.classList.remove('selected'));
+          e.target.closest('.ticket-type-option').classList.add('selected');
+          couponResult = null;
+          document.getElementById('coupon-result').innerHTML = '';
+          document.getElementById('coupon-code').value = '';
+          updateSummary();
+        });
+      });
+
+      // Buyer info sync to first attendee
+      const buyerName = document.getElementById('buyer-name');
+      const buyerEmail = document.getElementById('buyer-email');
+      if (buyerName) buyerName.addEventListener('input', syncBuyerToAttendee);
+      if (buyerEmail) buyerEmail.addEventListener('input', syncBuyerToAttendee);
+
+      // Coupon apply
+      const couponBtn = document.getElementById('apply-coupon');
+      if (couponBtn) {
+        couponBtn.addEventListener('click', applyCoupon);
+      }
+
+      // Checkout button
+      const checkoutBtn = document.getElementById('checkout-btn');
+      if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', handleCheckout);
+      }
+    }
+
+    async function applyCoupon() {
+      const codeInput = document.getElementById('coupon-code');
+      const resultDiv = document.getElementById('coupon-result');
+      const code = codeInput.value.trim();
+
+      if (!code) {
+        resultDiv.innerHTML = '';
+        couponResult = null;
+        updateSummary();
+        return;
+      }
+
+      let pricePerTicket = selectedTicketType?.price_cents || currentEvent.price_cents;
+      const subtotal = pricePerTicket * quantity;
+
+      try {
+        const response = await fetch(`${SUPABASE_URL}/functions/v1/validate-coupon`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            code,
+            event_id: currentEvent.id,
+            subtotal_cents: subtotal,
+          }),
+        });
+
+        const data = await response.json();
+
+        if (data.valid) {
+          couponResult = data;
+          resultDiv.innerHTML = `<div class="coupon-success">Coupon applied: ${data.coupon.description || data.coupon.code} (-${formatPrice(data.discount_cents)})</div>`;
+        } else {
+          couponResult = null;
+          resultDiv.innerHTML = `<div class="coupon-error">${data.error}</div>`;
+        }
+      } catch (err) {
+        couponResult = null;
+        resultDiv.innerHTML = `<div class="coupon-error">Could not validate coupon</div>`;
+      }
+
+      updateSummary();
+    }
+
+    async function handleCheckout() {
+      const btn = document.getElementById('checkout-btn');
+      const buyerName = document.getElementById('buyer-name').value.trim();
+      const buyerEmail = document.getElementById('buyer-email').value.trim();
+      const buyerPhone = document.getElementById('buyer-phone').value.trim();
+
+      // Validate buyer info
+      if (!buyerName || !buyerEmail) {
+        showToast('Please fill in your name and email.', 'error');
+        return;
+      }
+
+      // Validate attendee names
+      const attendees = [];
+      for (let i = 0; i < quantity; i++) {
+        const nameInput = document.querySelector(`.attendee-name[data-index="${i}"]`);
+        const emailInput = document.querySelector(`.attendee-email[data-index="${i}"]`);
+        const name = nameInput?.value?.trim();
+        const email = emailInput?.value?.trim();
+
+        if (!name) {
+          showToast(`Please enter a name for Attendee ${i + 1}.`, 'error');
+          nameInput?.focus();
+          return;
+        }
+
+        attendees.push({ full_name: name, email: email || null });
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Processing...';
+
+      try {
+        // Get auth token if logged in
+        const session = await getSession();
+        const headers = { 'Content-Type': 'application/json' };
+        if (session?.access_token) {
+          headers['Authorization'] = `Bearer ${session.access_token}`;
+        }
+
+        const response = await fetch(`${SUPABASE_URL}/functions/v1/create-checkout-session`, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({
+            event_slug: slug,
+            ticket_type_id: selectedTicketType?.id || null,
+            quantity,
+            attendees,
+            coupon_code: couponResult?.coupon?.code || null,
+            buyer_name: buyerName,
+            buyer_email: buyerEmail,
+            buyer_phone: buyerPhone || null,
+          }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || 'Checkout failed');
+        }
+
+        // Redirect to Stripe Checkout
+        window.location.href = data.checkout_url;
+
+      } catch (err) {
+        showToast(err.message || 'Something went wrong. Please try again.', 'error');
+        btn.disabled = false;
+        btn.textContent = 'Proceed to Payment';
+      }
+    }
+
+    // Pre-fill buyer info if logged in
+    async function prefillFromSession() {
+      const session = await getSession();
+      if (session) {
+        const { data: profile } = await db
+          .from('profiles')
+          .select('*')
+          .eq('id', session.user.id)
+          .single();
+
+        if (profile) {
+          const nameInput = document.getElementById('buyer-name');
+          const emailInput = document.getElementById('buyer-email');
+          const phoneInput = document.getElementById('buyer-phone');
+
+          if (nameInput && profile.full_name) nameInput.value = profile.full_name;
+          if (emailInput && session.user.email) emailInput.value = session.user.email;
+          if (phoneInput && profile.phone) phoneInput.value = profile.phone;
+
+          syncBuyerToAttendee();
+        }
+      }
+    }
+
+    loadCheckout().then(() => prefillFromSession());
+  </script>
+</body>
+</html>

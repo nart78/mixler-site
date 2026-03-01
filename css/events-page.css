@@ -158,3 +158,46 @@ h1, h2, h3, h4 {
 .events-header .mobile-menu-btn span {
   background: #ffffff;
 }
+
+/* --- Ticket type rows on event detail page --- */
+.ticket-types-list {
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ticket-type-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.ticket-type-row.sold-out {
+  opacity: 0.5;
+}
+
+.ticket-type-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket-type-info strong {
+  font-size: 0.9rem;
+  color: #1f2937;
+}
+
+.ticket-type-info span {
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+.ticket-type-price {
+  font-weight: 700;
+  color: #153db6;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}

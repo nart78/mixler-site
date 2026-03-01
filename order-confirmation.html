@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmed | Mixler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/events-page.css">
+  <link rel="stylesheet" href="css/checkout.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header events-header">
+    <nav class="nav container">
+      <a href="/" class="nav-logo"><img src="images/mixler-white-wide.png" alt="Mixler" class="nav-logo-img"></a>
+      <ul class="nav-links">
+        <li><a href="/#events">Events</a></li>
+        <li><a href="/#how-it-works">How It Works</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="#social">Gallery</a></li>
+        <li><a href="/events.html" class="btn btn-pink btn-nav">Get Tickets</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <section class="confirmation-section">
+    <div class="container">
+      <div id="confirmation-content">
+        <div class="loading-spinner"><div class="spinner"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script type="module">
+    import { renderFooter } from './js/components.js';
+    import { db } from './js/supabase-client.js';
+    import { formatDate, formatTime, formatPrice, googleCalendarUrl, downloadICS, outlookCalendarUrl, getParam } from './js/utils.js';
+
+    renderFooter();
+
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      document.querySelector('.site-header').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); menuBtn.classList.toggle('active'); });
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => { navLinks.classList.remove('active'); menuBtn.classList.remove('active'); });
+      });
+    }
+
+    const orderNumber = getParam('order');
+    if (!orderNumber) {
+      window.location.href = '/events.html';
+    }
+
+    async function loadConfirmation() {
+      const container = document.getElementById('confirmation-content');
+
+      // Fetch order with event details
+      const { data: order, error: orderError } = await db
+        .from('orders')
+        .select('*, events(*)')
+        .eq('order_number', orderNumber)
+        .single();
+
+      if (orderError || !order) {
+        container.innerHTML = `
+          <div class="text-center" style="padding: 60px 0;">
+            <h2>Order not found</h2>
+            <p style="margin: 16px 0 32px;">We couldn't find this order. Check your email for confirmation details.</p>
+            <a href="/events.html" class="btn btn-primary">Browse Events</a>
+          </div>`;
+        return;
+      }
+
+      const event = order.events;
+      document.title = `Order ${order.order_number} | Mixler`;
+
+      // Fetch attendees for this order
+      const { data: attendees } = await db
+        .from('attendees')
+        .select('*')
+        .eq('order_id', order.id);
+
+      const isPending = order.payment_status === 'pending';
+      const isCompleted = order.payment_status === 'completed';
+
+      container.innerHTML = `
+        <div class="confirmation-card">
+          <div class="confirmation-header">
+            ${isCompleted ? `
+              <div class="success-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+              </div>
+              <h1>You're in!</h1>
+              <p class="confirmation-subtitle">Your tickets for <strong>${event.title}</strong> are confirmed.</p>
+            ` : isPending ? `
+              <div class="pending-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <h1>Payment Processing</h1>
+              <p class="confirmation-subtitle">Your payment is being processed. You'll receive a confirmation email shortly.</p>
+            ` : `
+              <h1>Order ${order.order_number}</h1>
+              <p class="confirmation-subtitle">Status: ${order.payment_status}</p>
+            `}
+          </div>
+
+          <div class="confirmation-details">
+            <div class="detail-section">
+              <h3>Event Details</h3>
+              <div class="detail-grid">
+                <div class="detail-item">
+                  <span class="detail-label">Event</span>
+                  <span class="detail-value">${event.title}</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Date</span>
+                  <span class="detail-value">${formatDate(event.event_date)}</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Time</span>
+                  <span class="detail-value">${formatTime(event.start_time)}${event.end_time ? ' - ' + formatTime(event.end_time) : ''}</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Location</span>
+                  <span class="detail-value">${event.location_name || ''}${event.location_address ? ', ' + event.location_address : ''}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Order Details</h3>
+              <div class="detail-grid">
+                <div class="detail-item">
+                  <span class="detail-label">Order Number</span>
+                  <span class="detail-value">${order.order_number}</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Tickets</span>
+                  <span class="detail-value">${order.quantity}</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Total Paid</span>
+                  <span class="detail-value">${formatPrice(order.total_cents)}</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Buyer</span>
+                  <span class="detail-value">${order.buyer_name} (${order.buyer_email})</span>
+                </div>
+              </div>
+            </div>
+
+            ${attendees && attendees.length > 0 ? `
+              <div class="detail-section">
+                <h3>Attendees</h3>
+                <div class="attendee-list">
+                  ${attendees.map((a, i) => `
+                    <div class="attendee-row">
+                      <div class="attendee-info">
+                        <strong>${a.full_name}</strong>
+                        ${a.email ? `<span>${a.email}</span>` : ''}
+                      </div>
+                      ${a.qr_code ? `
+                        <div class="qr-badge" title="QR Code: ${a.qr_code}">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"/>
+                            <rect x="14" y="3" width="7" height="7"/>
+                            <rect x="3" y="14" width="7" height="7"/>
+                            <rect x="14" y="14" width="3" height="3"/>
+                            <rect x="18" y="14" width="3" height="3"/>
+                            <rect x="14" y="18" width="3" height="3"/>
+                            <rect x="18" y="18" width="3" height="3"/>
+                          </svg>
+                          Ticket ${i + 1}
+                        </div>
+                      ` : ''}
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
+
+            <div class="detail-section">
+              <h3>Add to Calendar</h3>
+              <div class="calendar-buttons">
+                <a href="${googleCalendarUrl(event)}" target="_blank" class="btn btn-outline cal-action-btn">Google Calendar</a>
+                <button class="btn btn-outline cal-action-btn" id="ics-download">Apple Calendar</button>
+                <a href="${outlookCalendarUrl(event)}" target="_blank" class="btn btn-outline cal-action-btn">Outlook</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="confirmation-footer">
+            <p>A confirmation email has been sent to <strong>${order.buyer_email}</strong>.</p>
+            <div class="confirmation-actions">
+              <a href="/event.html?slug=${event.slug}" class="btn btn-outline">View Event</a>
+              <a href="/events.html" class="btn btn-primary">Browse More Events</a>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // ICS download handler
+      const icsBtn = document.getElementById('ics-download');
+      if (icsBtn) {
+        icsBtn.addEventListener('click', () => downloadICS(event));
+      }
+    }
+
+    loadConfirmation();
+  </script>
+</body>
+</html>

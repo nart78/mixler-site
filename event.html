@@ -90,6 +90,14 @@
         return;
       }
 
+      // Fetch ticket types for this event
+      const { data: ticketTypes } = await db
+        .from('ticket_types')
+        .select('*')
+        .eq('event_id', event.id)
+        .eq('is_active', true)
+        .order('sort_order', { ascending: true });
+
       // Update page title
       document.title = `${event.title} | Mixler`;
 
@@ -98,6 +106,39 @@
       const price = formatPrice(event.price_cents);
       const earlyBirdActive = event.early_bird_price_cents && event.early_bird_deadline && new Date(event.early_bird_deadline) > new Date();
       const displayPrice = earlyBirdActive ? formatPrice(event.early_bird_price_cents) : price;
+
+      // Build ticket types HTML
+      const hasMultipleTypes = ticketTypes && ticketTypes.length > 1;
+      let ticketTypesHtml = '';
+      if (hasMultipleTypes) {
+        ticketTypesHtml = `
+          <div class="ticket-types-list">
+            ${ticketTypes.map(tt => {
+              const ttSpotsLeft = tt.capacity > 0 ? tt.capacity - tt.tickets_sold : 999;
+              const ttSoldOut = ttSpotsLeft <= 0;
+              return `
+                <div class="ticket-type-row ${ttSoldOut ? 'sold-out' : ''}">
+                  <div class="ticket-type-info">
+                    <strong>${tt.name}</strong>
+                    ${tt.description ? `<span>${tt.description}</span>` : ''}
+                  </div>
+                  <div class="ticket-type-price">${ttSoldOut ? 'Sold Out' : formatPrice(tt.price_cents)}</div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        `;
+      }
+
+      // Determine the lowest available price for the "from" display
+      let lowestPrice = event.price_cents;
+      if (ticketTypes && ticketTypes.length > 0) {
+        const availableTypes = ticketTypes.filter(tt => tt.capacity <= 0 || tt.tickets_sold < tt.capacity);
+        if (availableTypes.length > 0) {
+          lowestPrice = Math.min(...availableTypes.map(tt => tt.price_cents));
+        }
+      }
+      if (earlyBirdActive && !hasMultipleTypes) lowestPrice = event.early_bird_price_cents;
 
       container.innerHTML = `
         <a href="/events.html" class="back-link">&larr; All Events</a>
@@ -126,11 +167,12 @@
           <div class="event-detail-sidebar">
             <div class="ticket-box">
               <div class="ticket-price">
-                ${earlyBirdActive ? `<span class="early-bird-badge">Early Bird</span>` : ''}
-                <span class="price">${displayPrice}</span>
-                ${earlyBirdActive ? `<span class="original-price">${price}</span>` : ''}
+                ${earlyBirdActive && !hasMultipleTypes ? `<span class="early-bird-badge">Early Bird</span>` : ''}
+                <span class="price">${hasMultipleTypes ? 'From ' : ''}${formatPrice(lowestPrice)}</span>
+                ${earlyBirdActive && !hasMultipleTypes ? `<span class="original-price">${price}</span>` : ''}
                 <span class="per-ticket">per ticket</span>
               </div>
+              ${ticketTypesHtml}
               <div class="ticket-availability">
                 ${soldOut
                   ? '<span class="sold-out">Sold Out</span>'
