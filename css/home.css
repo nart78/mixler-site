@@ -1,7 +1,7 @@
 /* ========================================
    Mixler Homepage - Light Premium Theme
    Inspired by: BeEvent8 (muffingroup)
-   Palette: purple #300843 / pink #ff3465
+   Palette: purple #153db6 / pink #ff3465
    ======================================== */
 
 /* --- Body Override --- */
@@ -13,7 +13,7 @@
 
 .dark-body h1, .dark-body h2, .dark-body h3, .dark-body h4 {
   font-family: 'League Spartan', sans-serif;
-  color: #300843;
+  color: #153db6;
 }
 
 /* --- Nav Logo Image --- */
@@ -276,8 +276,8 @@
 /* Outline button for light backgrounds */
 .btn-outline-light {
   background: transparent;
-  color: #300843;
-  border: 2px solid #300843;
+  color: #153db6;
+  border: 2px solid #153db6;
   padding: 14px 32px;
   border-radius: 8px;
   font-weight: 600;
@@ -290,7 +290,7 @@
 }
 
 .btn-outline-light:hover {
-  background: #300843;
+  background: #153db6;
   color: #ffffff;
   transform: translateY(-2px);
 }
@@ -342,7 +342,7 @@
   font-family: 'League Spartan', sans-serif;
   font-size: 2.8rem;
   font-weight: 800;
-  color: #300843;
+  color: #153db6;
   margin-bottom: 16px;
   letter-spacing: -0.5px;
 }
@@ -439,7 +439,7 @@
 .about-dark-content h2 {
   font-size: 2.2rem;
   margin-bottom: 20px;
-  color: #300843;
+  color: #153db6;
 }
 
 .about-dark-content p {
@@ -693,7 +693,7 @@
   font-family: 'League Spartan', sans-serif;
   font-size: 3rem;
   font-weight: 800;
-  color: #300843;
+  color: #153db6;
   margin-bottom: 16px;
   position: relative;
   z-index: 1;
@@ -733,7 +733,7 @@
 .footer-brand-dark .nav-logo {
   margin-bottom: 16px;
   display: inline-block;
-  color: #300843;
+  color: #153db6;
 }
 
 .footer-brand-dark p {
@@ -785,7 +785,7 @@
   height: 36px;
   border-radius: 8px;
   background: rgba(48, 8, 67, 0.06);
-  color: #300843;
+  color: #153db6;
   font-size: 0.8rem;
   transition: var(--transition);
 }
@@ -857,7 +857,7 @@
   }
 
   .dark-body .nav-links.active {
-    background: #300843;
+    background: #153db6;
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
 
