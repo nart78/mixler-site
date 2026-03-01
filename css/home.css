@@ -715,96 +715,6 @@
 }
 
 /* ==========================================
-   FOOTER (Light)
-   ========================================== */
-.footer-dark {
-  background: #ffffff;
-  padding: 64px 0 24px;
-  border-top: 1px solid #eee;
-}
-
-.footer-dark-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 48px;
-}
-
-.footer-brand-dark .nav-logo {
-  margin-bottom: 16px;
-  display: inline-block;
-  color: #153db6;
-}
-
-.footer-brand-dark p {
-  color: #888;
-  font-size: 0.9rem;
-  line-height: 1.7;
-  font-weight: 300;
-}
-
-.footer-col-dark h4 {
-  color: #153db6;
-  font-family: 'League Spartan', sans-serif;
-  font-size: 0.95rem;
-  margin-bottom: 20px;
-}
-
-.footer-col-dark a {
-  display: block;
-  color: #888;
-  font-size: 0.9rem;
-  padding: 4px 0;
-  transition: var(--transition);
-}
-
-.footer-col-dark a:hover {
-  color: #ff3465;
-}
-
-.footer-bottom-dark {
-  border-top: 1px solid #eee;
-  padding-top: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #aaa;
-  font-size: 0.8rem;
-}
-
-.footer-social-dark {
-  display: flex;
-  gap: 12px;
-}
-
-.footer-social-dark a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  background: rgba(21, 61, 182, 0.08);
-  color: #153db6;
-  font-size: 0.8rem;
-  transition: var(--transition);
-}
-
-.footer-social-dark a:hover {
-  background: #ff3465;
-  color: #ffffff;
-}
-
-.footer-bottom-dark a {
-  color: #aaa;
-  transition: var(--transition);
-}
-
-.footer-bottom-dark a:hover {
-  color: #ff3465;
-}
-
-/* ==========================================
    RESPONSIVE
    ========================================== */
 @media (max-width: 968px) {
@@ -851,11 +761,6 @@
     font-size: 2.2rem;
   }
 
-  .footer-dark-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-  }
-
   .dark-body .nav-links.active {
     background: #153db6;
     border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -894,16 +799,6 @@
 
   .section-dark {
     padding: 60px 0;
-  }
-
-  .footer-dark-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-bottom-dark {
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
   }
 
   .video-gallery-grid {

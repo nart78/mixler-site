@@ -6,12 +6,31 @@
   <title>Event | Mixler</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/events-page.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
-  <div id="site-nav"></div>
+
+  <!-- Navigation -->
+  <header class="site-header events-header">
+    <nav class="nav container">
+      <a href="/" class="nav-logo"><img src="images/mixler-white-wide.png" alt="Mixler" class="nav-logo-img"></a>
+      <ul class="nav-links">
+        <li><a href="/#events">Events</a></li>
+        <li><a href="/#how-it-works">How It Works</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="#social">Gallery</a></li>
+        <li><a href="/events.html" class="btn btn-pink btn-nav">Get Tickets</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
 
   <section class="event-detail" style="padding-top: 120px;">
     <div class="container">
@@ -24,13 +43,27 @@
   <div id="site-footer"></div>
 
   <script type="module">
-    import { renderNav, renderFooter, showToast } from './js/components.js';
+    import { renderFooter, showToast } from './js/components.js';
     import { db } from './js/supabase-client.js';
     import { getSession } from './js/auth.js';
     import { formatDate, formatTime, formatPrice, googleCalendarUrl, downloadICS, outlookCalendarUrl, getParam } from './js/utils.js';
 
-    renderNav('events');
     renderFooter();
+
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      document.querySelector('.site-header').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); menuBtn.classList.toggle('active'); });
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => { navLinks.classList.remove('active'); menuBtn.classList.remove('active'); });
+      });
+    }
 
     const slug = getParam('slug');
     if (!slug) {
