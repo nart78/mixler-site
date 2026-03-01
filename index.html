@@ -180,10 +180,14 @@
           <p>Get first dibs on new events, exclusive deals, and Calgary social scene updates. No spam, just the good stuff.</p>
         </div>
         <form class="newsletter-form" id="newsletter-form">
-          <div class="newsletter-form-row">
-            <input type="text" name="name" placeholder="First name" required class="newsletter-input">
-            <input type="text" name="last_name" placeholder="Last name" required class="newsletter-input">
-            <input type="email" name="email" placeholder="Email address" required class="newsletter-input">
+          <div class="newsletter-form-grid">
+            <div class="newsletter-fields">
+              <div class="newsletter-name-row">
+                <input type="text" name="name" placeholder="First name" required class="newsletter-input">
+                <input type="text" name="last_name" placeholder="Last name" required class="newsletter-input">
+              </div>
+              <input type="email" name="email" placeholder="Email address" required class="newsletter-input newsletter-email">
+            </div>
             <button type="submit" class="btn btn-pink newsletter-btn">Subscribe <span class="btn-arrow">&rarr;</span></button>
           </div>
           <p class="newsletter-note">Join 0+ subscribers. Unsubscribe anytime.</p>
