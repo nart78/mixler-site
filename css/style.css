@@ -185,6 +185,62 @@ h3 { font-size: 1.5rem; }
   transition: var(--transition);
 }
 
+/* --- Nav Logo Image (shared) --- */
+.nav-logo-img {
+  height: 32px;
+  width: auto;
+}
+
+/* --- Blue Header (shared nav component) --- */
+.events-header {
+  background: #153db6 !important;
+  border-bottom: none !important;
+  backdrop-filter: none;
+}
+
+.events-header .nav-logo-img {
+  height: 32px;
+  width: auto;
+}
+
+.events-header .nav-links a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.events-header .nav-links a:hover {
+  color: #ffffff;
+}
+
+.events-header .nav-links a::after {
+  background: #ffffff;
+}
+
+.events-header .mobile-menu-btn span {
+  background: #ffffff;
+}
+
+/* --- Pink Button (shared) --- */
+.btn-pink {
+  background: #ff3465;
+  color: #ffffff;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-pink:hover {
+  background: #e02d5a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 52, 101, 0.35);
+}
+
 /* --- Hero --- */
 .hero {
   padding: 160px 0 100px;
