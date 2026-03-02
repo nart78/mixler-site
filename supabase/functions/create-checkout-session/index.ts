@@ -4,7 +4,7 @@ import Stripe from 'https://esm.sh/stripe@14.14.0?target=deno';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-user-token',
 };
 
 serve(async (req) => {
@@ -189,12 +189,11 @@ serve(async (req) => {
     const ccFeeCents = event.pass_cc_fee ? Math.round((afterDiscount + taxCents) * 300 / 10000) : 0; // 3% CC fee
     const totalCents = afterDiscount + taxCents + ccFeeCents;
 
-    // Get user ID from auth header if logged in
+    // Get user ID from custom header if logged in
     let userId = null;
-    const authHeader = req.headers.get('Authorization');
-    if (authHeader) {
-      const token = authHeader.replace('Bearer ', '');
-      const { data: { user } } = await supabase.auth.getUser(token);
+    const userToken = req.headers.get('x-user-token');
+    if (userToken) {
+      const { data: { user } } = await supabase.auth.getUser(userToken);
       if (user) userId = user.id;
     }
 
@@ -299,8 +298,8 @@ serve(async (req) => {
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-      success_url: `${req.headers.get('origin')}/order-confirmation.html?order=${order.order_number}`,
-      cancel_url: `${req.headers.get('origin')}/checkout.html?slug=${event_slug}`,
+      success_url: `${req.headers.get('origin') || 'https://staging.mixler.ca'}/order-confirmation.html?order=${order.order_number}`,
+      cancel_url: `${req.headers.get('origin') || 'https://staging.mixler.ca'}/checkout.html?slug=${event_slug}`,
       customer_email: buyer_email,
       metadata: {
         order_id: order.id,

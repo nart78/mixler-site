@@ -46,7 +46,7 @@
 
   <script type="module">
     import { renderFooter, showToast } from './js/components.js';
-    import { db, SUPABASE_URL } from './js/supabase-client.js';
+    import { db, SUPABASE_URL, SUPABASE_ANON_KEY } from './js/supabase-client.js';
     import { getSession } from './js/auth.js';
     import { formatDate, formatTime, formatPrice, getParam } from './js/utils.js';
 
@@ -477,9 +477,13 @@
       try {
         // Get auth token if logged in
         const session = await getSession();
-        const headers = { 'Content-Type': 'application/json' };
+        const headers = {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        };
         if (session?.access_token) {
-          headers['Authorization'] = `Bearer ${session.access_token}`;
+          headers['x-user-token'] = session.access_token;
         }
 
         const response = await fetch(`${SUPABASE_URL}/functions/v1/create-checkout-session`, {
