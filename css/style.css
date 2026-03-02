@@ -1238,6 +1238,63 @@ section {
   font-weight: 600;
 }
 
+.upcoming-ticket-card {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.upcoming-ticket-card:hover {
+  border-color: var(--color-primary);
+}
+
+.upcoming-ticket-card .upcoming-ticket {
+  border: none;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.upcoming-ticket-card .upcoming-ticket:hover {
+  background: transparent;
+}
+
+.ticket-actions {
+  display: flex;
+  gap: 8px;
+  padding: 0 16px 12px;
+}
+
+.btn-sm {
+  font-size: 0.78rem !important;
+  padding: 6px 14px !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.btn-link:hover {
+  color: #0f2e8a;
+}
+
+.btn-link:disabled {
+  color: var(--color-body);
+  cursor: wait;
+}
+
 /* --- Orders Table --- */
 .orders-table {
   width: 100%;
