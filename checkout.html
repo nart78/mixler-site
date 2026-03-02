@@ -297,8 +297,10 @@
       const discount = couponResult?.discount_cents || 0;
       const afterDiscount = subtotal - discount;
       const taxRate = currentEvent.tax_rate_bps || 500;
+      const taxPct = (taxRate / 100).toFixed(1).replace(/\.0$/, '');
       const tax = Math.round(afterDiscount * taxRate / 10000);
-      const total = afterDiscount + tax;
+      const ccFee = currentEvent.pass_cc_fee ? Math.round((afterDiscount + tax) * 300 / 10000) : 0;
+      const total = afterDiscount + tax + ccFee;
 
       container.innerHTML = `
         <div class="summary-line">
@@ -312,9 +314,15 @@
           </div>
         ` : ''}
         <div class="summary-line">
-          <span>GST (5%)</span>
+          <span>GST (${taxPct}%)</span>
           <span>${formatPrice(tax)}</span>
         </div>
+        ${ccFee > 0 ? `
+          <div class="summary-line">
+            <span>Card processing fee (3%)</span>
+            <span>${formatPrice(ccFee)}</span>
+          </div>
+        ` : ''}
         <div class="summary-line total">
           <span>Total</span>
           <span>${formatPrice(total)}</span>

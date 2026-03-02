@@ -158,10 +158,17 @@
                 <input type="datetime-local" id="early_bird_deadline">
               </div>
               <div class="form-group">
-                <label for="tax_rate_bps">Tax Rate (basis points)</label>
-                <input type="number" id="tax_rate_bps" min="0" value="500">
-                <small>500 = 5% GST</small>
+                <label for="tax_rate_pct">Tax Rate (%)</label>
+                <input type="number" id="tax_rate_pct" min="0" max="100" step="0.1" value="5">
+                <small>e.g. 5 for GST</small>
               </div>
+            </div>
+
+            <div style="margin-top:12px;">
+              <label class="checkin-toggle">
+                <input type="checkbox" id="pass_cc_fee">
+                <span>Pass credit card fee (3%) to buyer</span>
+              </label>
             </div>
           </div>
         </div>
@@ -444,7 +451,8 @@
         document.getElementById('image_url').value = event.image_url || '';
         document.getElementById('status').value = event.status;
         document.getElementById('category_id').value = event.category_id || '';
-        document.getElementById('tax_rate_bps').value = event.tax_rate_bps ?? 500;
+        document.getElementById('tax_rate_pct').value = (event.tax_rate_bps ?? 500) / 100;
+        document.getElementById('pass_cc_fee').checked = event.pass_cc_fee === true;
         document.getElementById('is_cancellable').value = event.is_cancellable !== false ? 'true' : 'false';
         document.getElementById('cancellation_cutoff_hours').value = event.cancellation_cutoff_hours ?? 48;
         document.getElementById('cancellation_policy').value = event.cancellation_policy || '';
@@ -490,7 +498,8 @@
         image_url: document.getElementById('image_url').value.trim() || null,
         status: document.getElementById('status').value,
         category_id: document.getElementById('category_id').value || null,
-        tax_rate_bps: parseInt(document.getElementById('tax_rate_bps').value) || 500,
+        tax_rate_bps: Math.round(parseFloat(document.getElementById('tax_rate_pct').value || 5) * 100),
+        pass_cc_fee: document.getElementById('pass_cc_fee').checked,
         is_cancellable: document.getElementById('is_cancellable').value === 'true',
         cancellation_cutoff_hours: parseInt(document.getElementById('cancellation_cutoff_hours').value) || 48,
         cancellation_policy: document.getElementById('cancellation_policy').value.trim() || null,

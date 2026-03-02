@@ -186,7 +186,8 @@ serve(async (req) => {
     const afterDiscount = subtotalCents - discountCents;
     const taxRateBps = event.tax_rate_bps || 500; // 500 = 5% GST
     const taxCents = Math.round(afterDiscount * taxRateBps / 10000);
-    const totalCents = afterDiscount + taxCents;
+    const ccFeeCents = event.pass_cc_fee ? Math.round((afterDiscount + taxCents) * 300 / 10000) : 0; // 3% CC fee
+    const totalCents = afterDiscount + taxCents + ccFeeCents;
 
     // Get user ID from auth header if logged in
     let userId = null;
@@ -210,6 +211,7 @@ serve(async (req) => {
         subtotal_cents: subtotalCents,
         discount_cents: discountCents,
         tax_cents: taxCents,
+        cc_fee_cents: ccFeeCents,
         total_cents: totalCents,
         coupon_id: couponId,
         payment_status: 'pending',
