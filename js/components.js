@@ -10,9 +10,9 @@ async function renderNav(activeLink) {
   if (!nav) return;
 
   nav.innerHTML = `
-    <header class="site-header">
+    <header class="site-header events-header">
       <nav class="nav container">
-        <a href="/" class="nav-logo">Mixler<span>.</span></a>
+        <a href="/" class="nav-logo"><img src="/images/mixler-white-wide.png" alt="Mixler" class="nav-logo-img"></a>
         <ul class="nav-links">
           <li><a href="/events.html" class="${activeLink === 'events' ? 'active' : ''}">Events</a></li>
           <li><a href="/#how-it-works">How It Works</a></li>
@@ -22,7 +22,7 @@ async function renderNav(activeLink) {
             <li><a href="#" id="nav-logout" class="btn btn-outline">Log Out</a></li>
           ` : `
             <li><a href="/login.html" class="${activeLink === 'login' ? 'active' : ''}">Log In</a></li>
-            <li><a href="/login.html?tab=signup" class="btn btn-primary">Sign Up</a></li>
+            <li><a href="/login.html?tab=signup" class="btn btn-pink btn-nav">Sign Up</a></li>
           `}
         </ul>
         <button class="mobile-menu-btn" aria-label="Menu">
