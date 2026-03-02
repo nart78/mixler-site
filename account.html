@@ -62,7 +62,9 @@
 
     // Load profile
     const profileEl = document.getElementById('profile-content');
+    const isAdmin = user.profile?.is_admin === true;
     profileEl.innerHTML = `
+      ${isAdmin ? '<a href="/admin/" class="btn btn-pink" style="width:100%;margin-bottom:20px;justify-content:center;">Admin Dashboard</a>' : ''}
       <div class="profile-info">
         <div class="profile-row"><strong>Name</strong><span>${user.profile?.full_name || 'Not set'}</span></div>
         <div class="profile-row"><strong>Email</strong><span>${user.email}</span></div>
