@@ -197,8 +197,8 @@ serve(async (req) => {
       if (user) userId = user.id;
     }
 
-    // Create pending order with inventory hold (15 min)
-    const reservedUntil = new Date(Date.now() + 15 * 60 * 1000).toISOString();
+    // Create pending order with inventory hold (30 min)
+    const reservedUntil = new Date(Date.now() + 30 * 60 * 1000).toISOString();
 
     const { data: order, error: orderError } = await supabase
       .from('orders')
@@ -306,7 +306,7 @@ serve(async (req) => {
         event_id: event.id,
         event_slug: event_slug,
       },
-      expires_at: Math.floor(Date.now() / 1000) + 15 * 60, // 15 min expiry
+      expires_at: Math.floor(Date.now() / 1000) + 30 * 60, // 30 min expiry (Stripe minimum)
     };
 
     if (stripeCouponId) {
