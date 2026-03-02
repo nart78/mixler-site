@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coupons | Mixler Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="admin-body">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a href="/" class="nav-logo" style="padding:24px;">Mixler<span>.</span></a>
+      <nav class="admin-nav">
+        <a href="/admin/" class="admin-nav-link">Dashboard</a>
+        <a href="/admin/events.html" class="admin-nav-link">Events</a>
+        <a href="/admin/orders.html" class="admin-nav-link">Orders</a>
+        <a href="/admin/coupons.html" class="admin-nav-link active">Coupons</a>
+        <a href="/admin/attendees.html" class="admin-nav-link">Attendees</a>
+        <a href="/admin/messages.html" class="admin-nav-link">Messages</a>
+      </nav>
+      <div class="admin-sidebar-footer">
+        <a href="/" class="admin-nav-link">Back to Site</a>
+        <a href="#" id="admin-logout" class="admin-nav-link">Log Out</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-header">
+        <h1>Coupons</h1>
+        <button id="new-coupon-btn" class="btn btn-primary">+ New Coupon</button>
+      </div>
+
+      <!-- Coupon Form (hidden by default) -->
+      <div class="admin-card" id="coupon-form-card" style="display:none;">
+        <h3 id="coupon-form-title">New Coupon</h3>
+        <form id="coupon-form" class="admin-form">
+          <input type="hidden" id="coupon-id">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="coupon-code">Code</label>
+              <input type="text" id="coupon-code" required placeholder="SPRING25" style="text-transform:uppercase;">
+            </div>
+            <div class="form-group">
+              <label for="coupon-description">Description</label>
+              <input type="text" id="coupon-description" placeholder="Spring 2026 promo">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="discount-type">Discount Type</label>
+              <select id="discount-type">
+                <option value="percentage">Percentage (%)</option>
+                <option value="fixed">Fixed Amount ($)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="discount-value">Discount Value</label>
+              <input type="number" id="discount-value" required min="0" step="0.01" placeholder="25 for 25% or $25">
+            </div>
+            <div class="form-group">
+              <label for="min-order">Minimum Order ($)</label>
+              <input type="number" id="min-order" min="0" step="0.01" placeholder="0 for no minimum">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="max-uses">Max Total Uses</label>
+              <input type="number" id="max-uses" min="0" placeholder="0 for unlimited">
+            </div>
+            <div class="form-group">
+              <label for="max-uses-per-user">Max Uses Per Customer</label>
+              <input type="number" id="max-uses-per-user" min="0" placeholder="0 for unlimited">
+            </div>
+            <div class="form-group">
+              <label for="coupon-event">Restrict to Event</label>
+              <select id="coupon-event">
+                <option value="">All Events</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="valid-from">Valid From</label>
+              <input type="datetime-local" id="valid-from">
+            </div>
+            <div class="form-group">
+              <label for="valid-until">Valid Until</label>
+              <input type="datetime-local" id="valid-until">
+            </div>
+            <div class="form-group">
+              <label for="coupon-active">Status</label>
+              <select id="coupon-active">
+                <option value="true">Active</option>
+                <option value="false">Inactive</option>
+              </select>
+            </div>
+          </div>
+          <div id="coupon-error" class="form-error"></div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save Coupon</button>
+            <button type="button" id="cancel-coupon" class="btn btn-outline">Cancel</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Coupons Table -->
+      <div class="admin-card">
+        <div id="coupons-list">
+          <div class="loading-spinner"><div class="spinner"></div></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module">
+    import { requireAdmin, signOut } from '../js/auth.js';
+    import { db } from '../js/supabase-client.js';
+    import { formatPrice } from '../js/utils.js';
+    import { showToast } from '../js/components.js';
+
+    await requireAdmin();
+
+    document.getElementById('admin-logout').addEventListener('click', async (e) => {
+      e.preventDefault();
+      await signOut();
+    });
+
+    // Load events for the restrict dropdown
+    const { data: events } = await db.from('events').select('id, title, event_date').order('event_date', { ascending: false });
+    const eventSelect = document.getElementById('coupon-event');
+    (events || []).forEach(e => {
+      const opt = document.createElement('option');
+      opt.value = e.id;
+      opt.textContent = `${e.title} (${e.event_date})`;
+      eventSelect.appendChild(opt);
+    });
+
+    const formCard = document.getElementById('coupon-form-card');
+
+    // Show/hide form
+    document.getElementById('new-coupon-btn').addEventListener('click', () => {
+      resetForm();
+      document.getElementById('coupon-form-title').textContent = 'New Coupon';
+      formCard.style.display = '';
+      formCard.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('cancel-coupon').addEventListener('click', () => {
+      formCard.style.display = 'none';
+    });
+
+    function resetForm() {
+      document.getElementById('coupon-form').reset();
+      document.getElementById('coupon-id').value = '';
+      document.getElementById('coupon-error').textContent = '';
+    }
+
+    // Save coupon
+    document.getElementById('coupon-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const errorEl = document.getElementById('coupon-error');
+      errorEl.textContent = '';
+
+      const id = document.getElementById('coupon-id').value;
+      const discountType = document.getElementById('discount-type').value;
+      const discountValue = parseFloat(document.getElementById('discount-value').value);
+      const minOrder = document.getElementById('min-order').value;
+
+      const data = {
+        code: document.getElementById('coupon-code').value.toUpperCase().trim(),
+        description: document.getElementById('coupon-description').value.trim() || null,
+        discount_type: discountType,
+        discount_value: discountType === 'fixed' ? Math.round(discountValue * 100) : discountValue,
+        min_order_cents: minOrder ? Math.round(parseFloat(minOrder) * 100) : null,
+        max_uses: parseInt(document.getElementById('max-uses').value) || null,
+        max_uses_per_user: parseInt(document.getElementById('max-uses-per-user').value) || null,
+        event_id: document.getElementById('coupon-event').value || null,
+        valid_from: document.getElementById('valid-from').value || null,
+        valid_until: document.getElementById('valid-until').value || null,
+        is_active: document.getElementById('coupon-active').value === 'true',
+      };
+
+      let result;
+      if (id) {
+        result = await db.from('coupons').update(data).eq('id', id);
+      } else {
+        result = await db.from('coupons').insert({ ...data, times_used: 0 });
+      }
+
+      if (result.error) {
+        errorEl.textContent = result.error.message;
+        return;
+      }
+
+      showToast(id ? 'Coupon updated!' : 'Coupon created!', 'success');
+      formCard.style.display = 'none';
+      loadCoupons();
+    });
+
+    async function loadCoupons() {
+      const container = document.getElementById('coupons-list');
+
+      const { data: coupons, error } = await db
+        .from('coupons')
+        .select('*, events(title)')
+        .order('created_at', { ascending: false });
+
+      if (!coupons || coupons.length === 0) {
+        container.innerHTML = '<p class="empty-state">No coupons yet. Click "+ New Coupon" to create one.</p>';
+        return;
+      }
+
+      container.innerHTML = `
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Discount</th>
+              <th>Event</th>
+              <th>Uses</th>
+              <th>Valid Until</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${coupons.map(c => {
+              const discountStr = c.discount_type === 'percentage'
+                ? `${c.discount_value}%`
+                : formatPrice(c.discount_value);
+              const usesStr = c.max_uses ? `${c.times_used} / ${c.max_uses}` : `${c.times_used}`;
+              const validUntil = c.valid_until ? new Date(c.valid_until).toLocaleDateString() : 'No expiry';
+              const isExpired = c.valid_until && new Date(c.valid_until) < new Date();
+
+              return `
+                <tr>
+                  <td><strong style="font-family:monospace;letter-spacing:1px;">${c.code}</strong>
+                    ${c.description ? `<br><small>${c.description}</small>` : ''}</td>
+                  <td>${discountStr}${c.min_order_cents ? `<br><small>Min: ${formatPrice(c.min_order_cents)}</small>` : ''}</td>
+                  <td>${c.events?.title || 'All Events'}</td>
+                  <td>${usesStr}</td>
+                  <td>${validUntil}</td>
+                  <td>
+                    <span class="status-badge ${c.is_active && !isExpired ? 'status-completed' : 'status-failed'}">
+                      ${isExpired ? 'Expired' : c.is_active ? 'Active' : 'Inactive'}
+                    </span>
+                  </td>
+                  <td>
+                    <a href="#" class="btn-sm edit-coupon" data-id="${c.id}">Edit</a>
+                    <a href="#" class="btn-sm btn-danger-sm toggle-coupon" data-id="${c.id}" data-active="${c.is_active}">
+                      ${c.is_active ? 'Disable' : 'Enable'}
+                    </a>
+                  </td>
+                </tr>
+              `;
+            }).join('')}
+          </tbody>
+        </table>
+      `;
+
+      // Edit handler
+      container.querySelectorAll('.edit-coupon').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const coupon = coupons.find(c => c.id === link.dataset.id);
+          if (!coupon) return;
+
+          document.getElementById('coupon-id').value = coupon.id;
+          document.getElementById('coupon-code').value = coupon.code;
+          document.getElementById('coupon-description').value = coupon.description || '';
+          document.getElementById('discount-type').value = coupon.discount_type;
+          document.getElementById('discount-value').value = coupon.discount_type === 'fixed' ? (coupon.discount_value / 100).toFixed(2) : coupon.discount_value;
+          document.getElementById('min-order').value = coupon.min_order_cents ? (coupon.min_order_cents / 100).toFixed(2) : '';
+          document.getElementById('max-uses').value = coupon.max_uses || '';
+          document.getElementById('max-uses-per-user').value = coupon.max_uses_per_user || '';
+          document.getElementById('coupon-event').value = coupon.event_id || '';
+          document.getElementById('valid-from').value = coupon.valid_from ? coupon.valid_from.slice(0, 16) : '';
+          document.getElementById('valid-until').value = coupon.valid_until ? coupon.valid_until.slice(0, 16) : '';
+          document.getElementById('coupon-active').value = coupon.is_active ? 'true' : 'false';
+
+          document.getElementById('coupon-form-title').textContent = 'Edit Coupon';
+          formCard.style.display = '';
+          formCard.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      // Toggle active handler
+      container.querySelectorAll('.toggle-coupon').forEach(link => {
+        link.addEventListener('click', async (e) => {
+          e.preventDefault();
+          const isActive = link.dataset.active === 'true';
+          await db.from('coupons').update({ is_active: !isActive }).eq('id', link.dataset.id);
+          showToast(isActive ? 'Coupon disabled' : 'Coupon enabled', 'success');
+          loadCoupons();
+        });
+      });
+    }
+
+    loadCoupons();
+  </script>
+</body>
+</html>

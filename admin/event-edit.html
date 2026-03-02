@@ -18,6 +18,8 @@
       <nav class="admin-nav">
         <a href="/admin/" class="admin-nav-link">Dashboard</a>
         <a href="/admin/events.html" class="admin-nav-link active">Events</a>
+        <a href="/admin/orders.html" class="admin-nav-link">Orders</a>
+        <a href="/admin/coupons.html" class="admin-nav-link">Coupons</a>
         <a href="/admin/attendees.html" class="admin-nav-link">Attendees</a>
         <a href="/admin/messages.html" class="admin-nav-link">Messages</a>
       </nav>
@@ -30,110 +32,196 @@
     <main class="admin-main">
       <div class="admin-header">
         <h1 id="page-title">New Event</h1>
+        <div style="display:flex;gap:8px;">
+          <button type="button" id="duplicate-btn" class="btn btn-outline" style="display:none;">Duplicate</button>
+          <a href="/admin/events.html" class="btn btn-outline">Back to Events</a>
+        </div>
       </div>
 
-      <div class="admin-card">
-        <form id="event-form" class="admin-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="title">Event Title</label>
-              <input type="text" id="title" required placeholder="Friday Night Mixer">
+      <form id="event-form">
+        <!-- Basic Info -->
+        <div class="admin-card">
+          <h3>Basic Info</h3>
+          <div class="admin-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="title">Event Title</label>
+                <input type="text" id="title" required placeholder="Friday Night Mixer">
+              </div>
+              <div class="form-group">
+                <label for="slug">URL Slug</label>
+                <input type="text" id="slug" required placeholder="friday-night-mixer-mar-2026">
+              </div>
             </div>
+
             <div class="form-group">
-              <label for="slug">URL Slug</label>
-              <input type="text" id="slug" required placeholder="friday-night-mixer-mar-2026">
+              <label for="short_description">Short Description</label>
+              <input type="text" id="short_description" placeholder="One-liner for event cards" maxlength="200">
+            </div>
+
+            <div class="form-group">
+              <label for="description">Full Description</label>
+              <textarea id="description" rows="6" placeholder="Detailed event description..."></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status">
+                  <option value="draft">Draft</option>
+                  <option value="published">Published</option>
+                  <option value="cancelled">Cancelled</option>
+                  <option value="completed">Completed</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="category_id">Category</label>
+                <select id="category_id">
+                  <option value="">No Category</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="image_url">Image URL</label>
+              <div style="display:flex;gap:8px;">
+                <input type="text" id="image_url" placeholder="https://... or use upload">
+                <label class="btn btn-outline" style="cursor:pointer;white-space:nowrap;flex-shrink:0;display:flex;align-items:center;">
+                  Upload
+                  <input type="file" id="image-upload" accept="image/*" style="display:none;">
+                </label>
+              </div>
+              <div id="image-preview" style="margin-top:8px;"></div>
             </div>
           </div>
+        </div>
 
-          <div class="form-group">
-            <label for="short_description">Short Description</label>
-            <input type="text" id="short_description" placeholder="One-liner for event cards" maxlength="200">
-          </div>
+        <!-- Date & Location -->
+        <div class="admin-card">
+          <h3>Date & Location</h3>
+          <div class="admin-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="event_date">Date</label>
+                <input type="date" id="event_date" required>
+              </div>
+              <div class="form-group">
+                <label for="start_time">Start Time</label>
+                <input type="time" id="start_time" required>
+              </div>
+              <div class="form-group">
+                <label for="end_time">End Time</label>
+                <input type="time" id="end_time">
+              </div>
+            </div>
 
-          <div class="form-group">
-            <label for="description">Full Description</label>
-            <textarea id="description" rows="6" placeholder="Detailed event description..."></textarea>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="event_date">Date</label>
-              <input type="date" id="event_date" required>
-            </div>
-            <div class="form-group">
-              <label for="start_time">Start Time</label>
-              <input type="time" id="start_time" required>
-            </div>
-            <div class="form-group">
-              <label for="end_time">End Time</label>
-              <input type="time" id="end_time">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="location_name">Venue Name</label>
-              <input type="text" id="location_name" placeholder="The National on 10th">
-            </div>
-            <div class="form-group">
-              <label for="location_address">Address</label>
-              <input type="text" id="location_address" placeholder="341 10 Ave SW, Calgary, AB">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="location_name">Venue Name</label>
+                <input type="text" id="location_name" placeholder="The National on 10th">
+              </div>
+              <div class="form-group">
+                <label for="location_address">Address</label>
+                <input type="text" id="location_address" placeholder="341 10 Ave SW, Calgary, AB">
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="capacity">Capacity</label>
-              <input type="number" id="capacity" required min="1" placeholder="40">
+        <!-- Capacity & Pricing -->
+        <div class="admin-card">
+          <h3>Capacity & Pricing</h3>
+          <div class="admin-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="capacity">Total Capacity</label>
+                <input type="number" id="capacity" required min="1" placeholder="40">
+              </div>
+              <div class="form-group">
+                <label for="price">Base Price ($)</label>
+                <input type="number" id="price" required min="0" step="0.01" placeholder="25.00">
+                <small>Used as fallback if no ticket types are defined</small>
+              </div>
+              <div class="form-group">
+                <label for="max_tickets_per_order">Max Tickets Per Order</label>
+                <input type="number" id="max_tickets_per_order" min="1" max="20" value="10">
+              </div>
             </div>
-            <div class="form-group">
-              <label for="price">Price ($)</label>
-              <input type="number" id="price" required min="0" step="0.01" placeholder="25.00">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="early_bird_price">Early Bird Price ($)</label>
+                <input type="number" id="early_bird_price" min="0" step="0.01" placeholder="Optional">
+              </div>
+              <div class="form-group">
+                <label for="early_bird_deadline">Early Bird Deadline</label>
+                <input type="datetime-local" id="early_bird_deadline">
+              </div>
+              <div class="form-group">
+                <label for="tax_rate_bps">Tax Rate (basis points)</label>
+                <input type="number" id="tax_rate_bps" min="0" value="500">
+                <small>500 = 5% GST</small>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="early_bird_price">Early Bird Price ($)</label>
-              <input type="number" id="early_bird_price" min="0" step="0.01" placeholder="Optional">
+        <!-- Ticket Types -->
+        <div class="admin-card">
+          <h3>Ticket Types</h3>
+          <p style="font-size:0.85rem;color:#6b7280;margin-bottom:16px;">Add multiple pricing tiers. If none are added, the base price above is used.</p>
+          <div id="ticket-types-list"></div>
+          <button type="button" id="add-ticket-type" class="btn btn-outline" style="margin-top:12px;">+ Add Ticket Type</button>
+        </div>
+
+        <!-- Cancellation Policy -->
+        <div class="admin-card">
+          <h3>Cancellation Policy</h3>
+          <div class="admin-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="is_cancellable">Allow Cancellations</label>
+                <select id="is_cancellable">
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="cancellation_cutoff_hours">Cutoff (hours before event)</label>
+                <input type="number" id="cancellation_cutoff_hours" min="0" value="48">
+              </div>
             </div>
             <div class="form-group">
-              <label for="early_bird_deadline">Early Bird Deadline</label>
-              <input type="datetime-local" id="early_bird_deadline">
+              <label for="cancellation_policy">Policy Text</label>
+              <textarea id="cancellation_policy" rows="3" placeholder="Full refund if cancelled 48 hours before the event."></textarea>
             </div>
           </div>
+        </div>
 
-          <div class="form-group">
-            <label for="image_url">Image URL</label>
-            <input type="url" id="image_url" placeholder="https://...">
-          </div>
+        <!-- Custom Fields -->
+        <div class="admin-card">
+          <h3>Custom Fields</h3>
+          <p style="font-size:0.85rem;color:#6b7280;margin-bottom:16px;">Add extra info displayed on the event page (e.g. Dress Code, Age Requirement).</p>
+          <div id="custom-fields-list"></div>
+          <button type="button" id="add-custom-field" class="btn btn-outline" style="margin-top:12px;">+ Add Field</button>
+        </div>
 
-          <div class="form-group">
-            <label for="status">Status</label>
-            <select id="status">
-              <option value="draft">Draft</option>
-              <option value="published">Published</option>
-              <option value="cancelled">Cancelled</option>
-              <option value="completed">Completed</option>
-            </select>
-          </div>
-
+        <!-- Save -->
+        <div class="admin-card">
           <div id="form-error" class="form-error"></div>
-
           <div class="form-actions">
             <button type="submit" class="btn btn-primary">Save Event</button>
             <a href="/admin/events.html" class="btn btn-outline">Cancel</a>
-            <button type="button" id="duplicate-btn" class="btn btn-outline" style="display:none;">Duplicate</button>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </main>
   </div>
 
   <script type="module">
     import { requireAdmin, signOut } from '../js/auth.js';
-    import { db } from '../js/supabase-client.js';
-    import { getParam } from '../js/utils.js';
+    import { db, SUPABASE_URL, SUPABASE_ANON_KEY } from '../js/supabase-client.js';
+    import { getParam, formatPrice } from '../js/utils.js';
     import { showToast } from '../js/components.js';
 
     await requireAdmin();
@@ -151,6 +239,16 @@
       document.getElementById('duplicate-btn').style.display = '';
     }
 
+    // Load categories for dropdown
+    const { data: categories } = await db.from('event_categories').select('*').order('sort_order');
+    const catSelect = document.getElementById('category_id');
+    (categories || []).forEach(c => {
+      const opt = document.createElement('option');
+      opt.value = c.id;
+      opt.textContent = c.name;
+      catSelect.appendChild(opt);
+    });
+
     // Auto-generate slug from title
     document.getElementById('title').addEventListener('input', (e) => {
       if (!isEdit) {
@@ -161,7 +259,171 @@
       }
     });
 
-    // Load existing event
+    // ============================================
+    // TICKET TYPES MANAGER
+    // ============================================
+    let ticketTypes = [];
+    let ticketTypesToDelete = [];
+
+    function renderTicketTypes() {
+      const container = document.getElementById('ticket-types-list');
+      if (ticketTypes.length === 0) {
+        container.innerHTML = '<p class="empty-state" style="padding:8px 0;">No ticket types added. Base price will be used.</p>';
+        return;
+      }
+      container.innerHTML = ticketTypes.map((tt, i) => `
+        <div class="ticket-type-editor" data-index="${i}">
+          <div class="form-row admin-form" style="align-items:end;">
+            <div class="form-group" style="flex:2;">
+              <label>Name</label>
+              <input type="text" value="${tt.name || ''}" data-field="name" placeholder="General Admission" required>
+            </div>
+            <div class="form-group" style="flex:1;">
+              <label>Price ($)</label>
+              <input type="number" value="${tt.price_cents ? (tt.price_cents / 100).toFixed(2) : ''}" data-field="price" step="0.01" min="0" required>
+            </div>
+            <div class="form-group" style="flex:1;">
+              <label>Capacity</label>
+              <input type="number" value="${tt.capacity || ''}" data-field="capacity" min="0" placeholder="0 = unlimited">
+            </div>
+            <div class="form-group" style="flex:0 0 auto;">
+              <button type="button" class="btn btn-outline btn-danger remove-tt" style="padding:8px 12px;">Remove</button>
+            </div>
+          </div>
+          <div class="form-row admin-form" style="margin-top:-8px;">
+            <div class="form-group" style="flex:2;">
+              <input type="text" value="${tt.description || ''}" data-field="description" placeholder="Description (optional)">
+            </div>
+            <div class="form-group" style="flex:1;">
+              <input type="number" value="${tt.max_per_order || ''}" data-field="max_per_order" min="1" placeholder="Max per order">
+            </div>
+            <div class="form-group" style="flex:1;">
+              <select data-field="is_active">
+                <option value="true" ${tt.is_active !== false ? 'selected' : ''}>Active</option>
+                <option value="false" ${tt.is_active === false ? 'selected' : ''}>Inactive</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      // Bind remove buttons
+      container.querySelectorAll('.remove-tt').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.closest('.ticket-type-editor').dataset.index);
+          if (ticketTypes[idx].id) ticketTypesToDelete.push(ticketTypes[idx].id);
+          ticketTypes.splice(idx, 1);
+          renderTicketTypes();
+        });
+      });
+
+      // Bind input changes
+      container.querySelectorAll('input, select').forEach(input => {
+        input.addEventListener('change', () => {
+          const idx = parseInt(input.closest('.ticket-type-editor').dataset.index);
+          const field = input.dataset.field;
+          if (field === 'price') {
+            ticketTypes[idx].price_cents = Math.round(parseFloat(input.value || 0) * 100);
+          } else if (field === 'capacity' || field === 'max_per_order') {
+            ticketTypes[idx][field] = input.value ? parseInt(input.value) : 0;
+          } else if (field === 'is_active') {
+            ticketTypes[idx].is_active = input.value === 'true';
+          } else {
+            ticketTypes[idx][field] = input.value;
+          }
+        });
+      });
+    }
+
+    document.getElementById('add-ticket-type').addEventListener('click', () => {
+      ticketTypes.push({
+        name: '',
+        price_cents: 0,
+        capacity: 0,
+        description: '',
+        is_active: true,
+        sort_order: ticketTypes.length,
+        max_per_order: null,
+        tickets_sold: 0,
+      });
+      renderTicketTypes();
+    });
+
+    // ============================================
+    // CUSTOM FIELDS MANAGER
+    // ============================================
+    let customFields = [];
+
+    function renderCustomFields() {
+      const container = document.getElementById('custom-fields-list');
+      if (customFields.length === 0) {
+        container.innerHTML = '<p class="empty-state" style="padding:8px 0;">No custom fields added.</p>';
+        return;
+      }
+      container.innerHTML = customFields.map((cf, i) => `
+        <div class="custom-field-row admin-form" data-index="${i}" style="display:flex;gap:12px;margin-bottom:8px;align-items:end;">
+          <div class="form-group" style="flex:1;margin-bottom:0;">
+            <input type="text" value="${cf.label || ''}" data-field="label" placeholder="Label (e.g. Dress Code)">
+          </div>
+          <div class="form-group" style="flex:2;margin-bottom:0;">
+            <input type="text" value="${cf.value || ''}" data-field="value" placeholder="Value (e.g. Smart Casual)">
+          </div>
+          <button type="button" class="btn btn-outline btn-danger remove-cf" style="padding:8px 12px;">Remove</button>
+        </div>
+      `).join('');
+
+      container.querySelectorAll('.remove-cf').forEach(btn => {
+        btn.addEventListener('click', () => {
+          customFields.splice(parseInt(btn.closest('.custom-field-row').dataset.index), 1);
+          renderCustomFields();
+        });
+      });
+
+      container.querySelectorAll('input').forEach(input => {
+        input.addEventListener('change', () => {
+          const idx = parseInt(input.closest('.custom-field-row').dataset.index);
+          customFields[idx][input.dataset.field] = input.value;
+        });
+      });
+    }
+
+    document.getElementById('add-custom-field').addEventListener('click', () => {
+      customFields.push({ label: '', value: '' });
+      renderCustomFields();
+    });
+
+    // ============================================
+    // IMAGE UPLOAD (placeholder for R2)
+    // ============================================
+    document.getElementById('image-upload').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      // For now, show preview and set a local URL. Full R2 upload can be added later.
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        document.getElementById('image-preview').innerHTML = `<img src="${ev.target.result}" style="max-width:300px;border-radius:8px;">`;
+        // Store as images/ path placeholder
+        document.getElementById('image_url').value = `images/${file.name}`;
+        showToast('Image selected. Save event to apply.', 'info');
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // Show image preview for existing URL
+    function updateImagePreview() {
+      const url = document.getElementById('image_url').value;
+      const preview = document.getElementById('image-preview');
+      if (url) {
+        preview.innerHTML = `<img src="${url}" style="max-width:300px;border-radius:8px;" onerror="this.style.display='none'">`;
+      } else {
+        preview.innerHTML = '';
+      }
+    }
+    document.getElementById('image_url').addEventListener('change', updateImagePreview);
+
+    // ============================================
+    // LOAD EXISTING EVENT
+    // ============================================
     if (isEdit) {
       const { data: event } = await db.from('events').select('*').eq('id', eventId).single();
       if (event) {
@@ -176,14 +438,32 @@
         document.getElementById('location_address').value = event.location_address || '';
         document.getElementById('capacity').value = event.capacity;
         document.getElementById('price').value = (event.price_cents / 100).toFixed(2);
+        document.getElementById('max_tickets_per_order').value = event.max_tickets_per_order || 10;
         document.getElementById('early_bird_price').value = event.early_bird_price_cents ? (event.early_bird_price_cents / 100).toFixed(2) : '';
         document.getElementById('early_bird_deadline').value = event.early_bird_deadline ? event.early_bird_deadline.slice(0, 16) : '';
         document.getElementById('image_url').value = event.image_url || '';
         document.getElementById('status').value = event.status;
+        document.getElementById('category_id').value = event.category_id || '';
+        document.getElementById('tax_rate_bps').value = event.tax_rate_bps ?? 500;
+        document.getElementById('is_cancellable').value = event.is_cancellable !== false ? 'true' : 'false';
+        document.getElementById('cancellation_cutoff_hours').value = event.cancellation_cutoff_hours ?? 48;
+        document.getElementById('cancellation_policy').value = event.cancellation_policy || '';
+
+        customFields = event.custom_fields || [];
+        updateImagePreview();
+
+        // Load ticket types
+        const { data: tts } = await db.from('ticket_types').select('*').eq('event_id', eventId).order('sort_order');
+        ticketTypes = tts || [];
       }
     }
 
-    // Save
+    renderTicketTypes();
+    renderCustomFields();
+
+    // ============================================
+    // SAVE EVENT
+    // ============================================
     document.getElementById('event-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       const errorEl = document.getElementById('form-error');
@@ -204,22 +484,55 @@
         location_address: document.getElementById('location_address').value.trim() || null,
         capacity: parseInt(document.getElementById('capacity').value),
         price_cents: Math.round(price * 100),
+        max_tickets_per_order: parseInt(document.getElementById('max_tickets_per_order').value) || 10,
         early_bird_price_cents: earlyBirdPrice ? Math.round(parseFloat(earlyBirdPrice) * 100) : null,
         early_bird_deadline: document.getElementById('early_bird_deadline').value || null,
         image_url: document.getElementById('image_url').value.trim() || null,
-        status: document.getElementById('status').value
+        status: document.getElementById('status').value,
+        category_id: document.getElementById('category_id').value || null,
+        tax_rate_bps: parseInt(document.getElementById('tax_rate_bps').value) || 500,
+        is_cancellable: document.getElementById('is_cancellable').value === 'true',
+        cancellation_cutoff_hours: parseInt(document.getElementById('cancellation_cutoff_hours').value) || 48,
+        cancellation_policy: document.getElementById('cancellation_policy').value.trim() || null,
+        custom_fields: customFields.filter(cf => cf.label && cf.value),
       };
 
-      let result;
+      let savedEventId = eventId;
+
       if (isEdit) {
-        result = await db.from('events').update(eventData).eq('id', eventId);
+        const { error } = await db.from('events').update(eventData).eq('id', eventId);
+        if (error) { errorEl.textContent = error.message; return; }
       } else {
-        result = await db.from('events').insert(eventData);
+        const { data: newEvent, error } = await db.from('events').insert(eventData).select().single();
+        if (error) { errorEl.textContent = error.message; return; }
+        savedEventId = newEvent.id;
       }
 
-      if (result.error) {
-        errorEl.textContent = result.error.message;
-        return;
+      // Save ticket types
+      // Delete removed ones
+      for (const id of ticketTypesToDelete) {
+        await db.from('ticket_types').delete().eq('id', id);
+      }
+
+      // Upsert ticket types
+      for (let i = 0; i < ticketTypes.length; i++) {
+        const tt = ticketTypes[i];
+        const ttData = {
+          event_id: savedEventId,
+          name: tt.name,
+          description: tt.description || null,
+          price_cents: tt.price_cents || 0,
+          capacity: tt.capacity || 0,
+          sort_order: i,
+          is_active: tt.is_active !== false,
+          max_per_order: tt.max_per_order || null,
+        };
+
+        if (tt.id) {
+          await db.from('ticket_types').update(ttData).eq('id', tt.id);
+        } else {
+          await db.from('ticket_types').insert({ ...ttData, tickets_sold: 0 });
+        }
       }
 
       showToast(isEdit ? 'Event updated!' : 'Event created!', 'success');
@@ -231,7 +544,6 @@
       const url = new URL(window.location);
       url.searchParams.delete('id');
       window.location.href = url.toString();
-      // Fields stay filled, but saves as new
     });
   </script>
 </body>

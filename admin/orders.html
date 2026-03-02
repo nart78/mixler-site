@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orders | Mixler Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="admin-body">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a href="/" class="nav-logo" style="padding:24px;">Mixler<span>.</span></a>
+      <nav class="admin-nav">
+        <a href="/admin/" class="admin-nav-link">Dashboard</a>
+        <a href="/admin/events.html" class="admin-nav-link">Events</a>
+        <a href="/admin/orders.html" class="admin-nav-link active">Orders</a>
+        <a href="/admin/coupons.html" class="admin-nav-link">Coupons</a>
+        <a href="/admin/attendees.html" class="admin-nav-link">Attendees</a>
+        <a href="/admin/messages.html" class="admin-nav-link">Messages</a>
+      </nav>
+      <div class="admin-sidebar-footer">
+        <a href="/" class="admin-nav-link">Back to Site</a>
+        <a href="#" id="admin-logout" class="admin-nav-link">Log Out</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-header">
+        <h1>Orders</h1>
+        <button id="export-csv" class="btn btn-outline">Export CSV</button>
+      </div>
+
+      <!-- Filters -->
+      <div class="admin-card" style="padding:16px 24px;">
+        <div class="admin-form" style="display:flex;gap:16px;flex-wrap:wrap;align-items:end;">
+          <div class="form-group" style="margin-bottom:0;flex:1;min-width:180px;">
+            <label for="filter-event">Event</label>
+            <select id="filter-event">
+              <option value="">All Events</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom:0;flex:1;min-width:140px;">
+            <label for="filter-status">Status</label>
+            <select id="filter-status">
+              <option value="">All</option>
+              <option value="completed">Completed</option>
+              <option value="pending">Pending</option>
+              <option value="failed">Failed</option>
+              <option value="refunded">Refunded</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom:0;flex:1;min-width:180px;">
+            <label for="filter-search">Search</label>
+            <input type="text" id="filter-search" placeholder="Name, email, or order #">
+          </div>
+          <button type="button" id="filter-btn" class="btn btn-primary" style="height:40px;">Filter</button>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="admin-stats" id="order-stats">
+        <div class="stat-card">
+          <div class="stat-card-label">Total Orders</div>
+          <div class="stat-card-value" id="stat-count">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Revenue</div>
+          <div class="stat-card-value" id="stat-revenue">$0.00</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Tickets</div>
+          <div class="stat-card-value" id="stat-tickets">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Refunds</div>
+          <div class="stat-card-value" id="stat-refunds">$0.00</div>
+        </div>
+      </div>
+
+      <!-- Orders Table -->
+      <div class="admin-card">
+        <div id="orders-list">
+          <div class="loading-spinner"><div class="spinner"></div></div>
+        </div>
+      </div>
+
+      <!-- Order Detail Modal -->
+      <div id="order-modal" class="admin-modal" style="display:none;">
+        <div class="admin-modal-content">
+          <div class="admin-modal-header">
+            <h3 id="modal-title">Order Details</h3>
+            <button class="modal-close" id="modal-close">&times;</button>
+          </div>
+          <div id="modal-body"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module">
+    import { requireAdmin, signOut } from '../js/auth.js';
+    import { db, SUPABASE_URL, SUPABASE_ANON_KEY } from '../js/supabase-client.js';
+    import { formatPrice, formatDate, getParam } from '../js/utils.js';
+    import { showToast } from '../js/components.js';
+
+    await requireAdmin();
+
+    document.getElementById('admin-logout').addEventListener('click', async (e) => {
+      e.preventDefault();
+      await signOut();
+    });
+
+    // Load events for filter
+    const { data: events } = await db.from('events').select('id, title, event_date').order('event_date', { ascending: false });
+    const eventSelect = document.getElementById('filter-event');
+    (events || []).forEach(e => {
+      const opt = document.createElement('option');
+      opt.value = e.id;
+      opt.textContent = `${e.title} (${e.event_date})`;
+      eventSelect.appendChild(opt);
+    });
+
+    // Pre-select event from URL param
+    const eventParam = getParam('event');
+    if (eventParam) eventSelect.value = eventParam;
+
+    let allOrders = [];
+
+    async function loadOrders() {
+      const container = document.getElementById('orders-list');
+      const eventFilter = document.getElementById('filter-event').value;
+      const statusFilter = document.getElementById('filter-status').value;
+      const searchFilter = document.getElementById('filter-search').value.toLowerCase().trim();
+
+      let query = db
+        .from('orders')
+        .select('*, events(title, slug)')
+        .order('created_at', { ascending: false })
+        .limit(200);
+
+      if (eventFilter) query = query.eq('event_id', eventFilter);
+      if (statusFilter) query = query.eq('payment_status', statusFilter);
+
+      const { data: orders, error } = await query;
+
+      if (error) {
+        container.innerHTML = `<p class="form-error">${error.message}</p>`;
+        return;
+      }
+
+      // Client-side search filter
+      allOrders = (orders || []).filter(o => {
+        if (!searchFilter) return true;
+        return o.order_number.toLowerCase().includes(searchFilter) ||
+               o.buyer_name.toLowerCase().includes(searchFilter) ||
+               o.buyer_email.toLowerCase().includes(searchFilter);
+      });
+
+      // Update stats
+      const completed = allOrders.filter(o => o.payment_status === 'completed');
+      document.getElementById('stat-count').textContent = allOrders.length;
+      document.getElementById('stat-revenue').textContent = formatPrice(completed.reduce((s, o) => s + o.total_cents, 0));
+      document.getElementById('stat-tickets').textContent = completed.reduce((s, o) => s + o.quantity, 0);
+      document.getElementById('stat-refunds').textContent = formatPrice(allOrders.reduce((s, o) => s + (o.refund_amount_cents || 0), 0));
+
+      if (allOrders.length === 0) {
+        container.innerHTML = '<p class="empty-state">No orders match your filters.</p>';
+        return;
+      }
+
+      container.innerHTML = `
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Order</th>
+              <th>Customer</th>
+              <th>Event</th>
+              <th>Qty</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${allOrders.map(o => `
+              <tr>
+                <td><a href="#" class="view-order" data-id="${o.id}">${o.order_number}</a></td>
+                <td>${o.buyer_name}<br><small>${o.buyer_email}</small></td>
+                <td>${o.events?.title || ''}</td>
+                <td>${o.quantity}</td>
+                <td>${formatPrice(o.total_cents)}</td>
+                <td><span class="status-badge status-${o.payment_status}">${o.payment_status}</span></td>
+                <td><small>${new Date(o.created_at).toLocaleDateString()}</small></td>
+                <td>
+                  <a href="#" class="btn-sm view-order" data-id="${o.id}">View</a>
+                  ${o.payment_status === 'completed' ? `<a href="#" class="btn-sm btn-danger-sm refund-order" data-id="${o.id}" data-number="${o.order_number}">Refund</a>` : ''}
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+
+      // Bind view order
+      container.querySelectorAll('.view-order').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          viewOrder(link.dataset.id);
+        });
+      });
+
+      // Bind refund
+      container.querySelectorAll('.refund-order').forEach(link => {
+        link.addEventListener('click', async (e) => {
+          e.preventDefault();
+          if (!confirm(`Refund order ${link.dataset.number}? This will process the refund through Stripe.`)) return;
+          link.textContent = 'Processing...';
+          link.style.pointerEvents = 'none';
+
+          // Call the cancel-order Edge Function (when built) or update directly for now
+          const { error } = await db
+            .from('orders')
+            .update({
+              payment_status: 'refunded',
+              refund_amount_cents: allOrders.find(o => o.id === link.dataset.id)?.total_cents || 0,
+              refunded_at: new Date().toISOString(),
+            })
+            .eq('id', link.dataset.id);
+
+          if (error) {
+            showToast('Refund failed: ' + error.message, 'error');
+            link.textContent = 'Refund';
+            link.style.pointerEvents = '';
+          } else {
+            showToast('Order refunded (manual). Process Stripe refund separately.', 'success');
+            loadOrders();
+          }
+        });
+      });
+    }
+
+    async function viewOrder(orderId) {
+      const order = allOrders.find(o => o.id === orderId);
+      if (!order) return;
+
+      // Fetch attendees
+      const { data: attendees } = await db
+        .from('attendees')
+        .select('*')
+        .eq('order_id', orderId);
+
+      const modal = document.getElementById('order-modal');
+      const modalBody = document.getElementById('modal-body');
+      document.getElementById('modal-title').textContent = `Order ${order.order_number}`;
+
+      modalBody.innerHTML = `
+        <div class="detail-grid" style="margin-bottom:20px;">
+          <div class="detail-item"><span class="detail-label">Customer</span><span class="detail-value">${order.buyer_name}</span></div>
+          <div class="detail-item"><span class="detail-label">Email</span><span class="detail-value">${order.buyer_email}</span></div>
+          <div class="detail-item"><span class="detail-label">Phone</span><span class="detail-value">${order.buyer_phone || 'N/A'}</span></div>
+          <div class="detail-item"><span class="detail-label">Event</span><span class="detail-value">${order.events?.title || ''}</span></div>
+          <div class="detail-item"><span class="detail-label">Quantity</span><span class="detail-value">${order.quantity}</span></div>
+          <div class="detail-item"><span class="detail-label">Status</span><span class="detail-value"><span class="status-badge status-${order.payment_status}">${order.payment_status}</span></span></div>
+          <div class="detail-item"><span class="detail-label">Subtotal</span><span class="detail-value">${formatPrice(order.subtotal_cents || order.total_cents)}</span></div>
+          <div class="detail-item"><span class="detail-label">Discount</span><span class="detail-value">${formatPrice(order.discount_cents || 0)}</span></div>
+          <div class="detail-item"><span class="detail-label">Tax</span><span class="detail-value">${formatPrice(order.tax_cents || 0)}</span></div>
+          <div class="detail-item"><span class="detail-label">Total</span><span class="detail-value"><strong>${formatPrice(order.total_cents)}</strong></span></div>
+          <div class="detail-item"><span class="detail-label">Stripe ID</span><span class="detail-value" style="font-size:0.8rem;">${order.stripe_payment_id || 'N/A'}</span></div>
+          <div class="detail-item"><span class="detail-label">Created</span><span class="detail-value">${new Date(order.created_at).toLocaleString()}</span></div>
+        </div>
+        ${attendees && attendees.length > 0 ? `
+          <h4 style="margin-bottom:12px;">Attendees</h4>
+          <table class="admin-table" style="font-size:0.8rem;">
+            <thead><tr><th>Name</th><th>Email</th><th>QR Code</th><th>Checked In</th></tr></thead>
+            <tbody>
+              ${attendees.map(a => `
+                <tr>
+                  <td>${a.full_name}</td>
+                  <td>${a.email || ''}</td>
+                  <td style="font-family:monospace;font-size:0.7rem;">${a.qr_code ? a.qr_code.substring(0, 12) + '...' : 'N/A'}</td>
+                  <td>${a.checked_in ? 'Yes' : 'No'}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        ` : '<p class="empty-state">No attendees recorded.</p>'}
+      `;
+
+      modal.style.display = 'flex';
+    }
+
+    // Close modal
+    document.getElementById('modal-close').addEventListener('click', () => {
+      document.getElementById('order-modal').style.display = 'none';
+    });
+    document.getElementById('order-modal').addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) e.currentTarget.style.display = 'none';
+    });
+
+    // Filter handlers
+    document.getElementById('filter-btn').addEventListener('click', loadOrders);
+    document.getElementById('filter-search').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') loadOrders();
+    });
+
+    // Export CSV
+    document.getElementById('export-csv').addEventListener('click', () => {
+      if (allOrders.length === 0) return;
+      const headers = ['Order #', 'Customer', 'Email', 'Phone', 'Event', 'Qty', 'Subtotal', 'Discount', 'Tax', 'Total', 'Status', 'Date'];
+      const rows = allOrders.map(o => [
+        o.order_number, o.buyer_name, o.buyer_email, o.buyer_phone || '',
+        o.events?.title || '', o.quantity,
+        (o.subtotal_cents / 100).toFixed(2), ((o.discount_cents || 0) / 100).toFixed(2),
+        ((o.tax_cents || 0) / 100).toFixed(2), (o.total_cents / 100).toFixed(2),
+        o.payment_status, new Date(o.created_at).toLocaleDateString()
+      ]);
+      const csv = [headers, ...rows].map(r => r.map(c => `"${c}"`).join(',')).join('\n');
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'orders.csv';
+      link.click();
+      URL.revokeObjectURL(url);
+    });
+
+    loadOrders();
+  </script>
+</body>
+</html>

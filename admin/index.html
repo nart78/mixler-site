@@ -10,15 +10,17 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/admin.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body class="admin-body">
   <div class="admin-layout">
-    <!-- Sidebar -->
     <aside class="admin-sidebar">
       <a href="/" class="nav-logo" style="padding:24px;">Mixler<span>.</span></a>
       <nav class="admin-nav">
         <a href="/admin/" class="admin-nav-link active">Dashboard</a>
         <a href="/admin/events.html" class="admin-nav-link">Events</a>
+        <a href="/admin/orders.html" class="admin-nav-link">Orders</a>
+        <a href="/admin/coupons.html" class="admin-nav-link">Coupons</a>
         <a href="/admin/attendees.html" class="admin-nav-link">Attendees</a>
         <a href="/admin/messages.html" class="admin-nav-link">Messages</a>
       </nav>
@@ -28,7 +30,6 @@
       </div>
     </aside>
 
-    <!-- Main Content -->
     <main class="admin-main">
       <div class="admin-header">
         <h1>Dashboard</h1>
@@ -54,18 +55,38 @@
         </div>
       </div>
 
-      <!-- Upcoming Events -->
+      <!-- Revenue Chart -->
       <div class="admin-card">
-        <h3>Upcoming Events</h3>
-        <div id="upcoming-events-list">
-          <div class="loading-spinner"><div class="spinner"></div></div>
+        <h3>Revenue (Last 30 Days)</h3>
+        <div style="height:280px;position:relative;">
+          <canvas id="revenue-chart"></canvas>
         </div>
       </div>
 
-      <!-- Recent Orders -->
+      <!-- Two Column: Upcoming Events + Recent Orders -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <div class="admin-card">
+          <h3>Upcoming Events</h3>
+          <div id="upcoming-events-list">
+            <div class="loading-spinner"><div class="spinner"></div></div>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+            <h3 style="margin-bottom:0;">Recent Orders</h3>
+            <a href="/admin/orders.html" class="btn-sm">View All</a>
+          </div>
+          <div id="recent-orders">
+            <div class="loading-spinner"><div class="spinner"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity Feed -->
       <div class="admin-card">
-        <h3>Recent Orders</h3>
-        <div id="recent-orders">
+        <h3>Recent Activity</h3>
+        <div id="activity-feed">
           <div class="loading-spinner"><div class="spinner"></div></div>
         </div>
       </div>
@@ -79,33 +100,80 @@
 
     await requireAdmin();
 
-    // Logout
     document.getElementById('admin-logout').addEventListener('click', async (e) => {
       e.preventDefault();
       await signOut();
     });
 
-    // Load stats
     async function loadDashboard() {
       // All completed orders
       const { data: orders } = await db
         .from('orders')
-        .select('total_cents, quantity, created_at')
-        .eq('payment_status', 'completed');
+        .select('total_cents, quantity, created_at, payment_status, buyer_name, buyer_email, order_number, events(title)')
+        .order('created_at', { ascending: false });
 
-      const totalRevenue = (orders || []).reduce((sum, o) => sum + o.total_cents, 0);
-      const totalTickets = (orders || []).reduce((sum, o) => sum + o.quantity, 0);
+      const completed = (orders || []).filter(o => o.payment_status === 'completed');
+      const totalRevenue = completed.reduce((sum, o) => sum + o.total_cents, 0);
+      const totalTickets = completed.reduce((sum, o) => sum + o.quantity, 0);
 
       const monthStart = new Date();
       monthStart.setDate(1);
       monthStart.setHours(0, 0, 0, 0);
-      const monthRevenue = (orders || [])
+      const monthRevenue = completed
         .filter(o => new Date(o.created_at) >= monthStart)
         .reduce((sum, o) => sum + o.total_cents, 0);
 
       document.getElementById('stat-revenue').textContent = formatPrice(totalRevenue);
       document.getElementById('stat-month-revenue').textContent = formatPrice(monthRevenue);
       document.getElementById('stat-tickets').textContent = totalTickets;
+
+      // Revenue chart - last 30 days
+      const now = new Date();
+      const labels = [];
+      const data = [];
+      for (let i = 29; i >= 0; i--) {
+        const date = new Date(now);
+        date.setDate(date.getDate() - i);
+        const dateStr = date.toISOString().split('T')[0];
+        labels.push(date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
+        const dayRevenue = completed
+          .filter(o => o.created_at.startsWith(dateStr))
+          .reduce((sum, o) => sum + o.total_cents, 0);
+        data.push(dayRevenue / 100);
+      }
+
+      new Chart(document.getElementById('revenue-chart'), {
+        type: 'bar',
+        data: {
+          labels,
+          datasets: [{
+            label: 'Revenue ($)',
+            data,
+            backgroundColor: 'rgba(21, 61, 182, 0.7)',
+            borderRadius: 4,
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              ticks: { maxTicksLimit: 10, font: { size: 11 } },
+            },
+            y: {
+              beginAtZero: true,
+              ticks: {
+                callback: v => '$' + v,
+                font: { size: 11 },
+              },
+            },
+          },
+        },
+      });
 
       // Active events
       const { data: events } = await db
@@ -124,43 +192,36 @@
       } else {
         eventsEl.innerHTML = `
           <table class="admin-table">
-            <thead><tr><th>Event</th><th>Date</th><th>Sold</th><th>Capacity</th><th>Revenue</th></tr></thead>
+            <thead><tr><th>Event</th><th>Date</th><th>Sold</th><th>Cap</th></tr></thead>
             <tbody>
-              ${events.map(e => `
+              ${events.slice(0, 5).map(e => `
                 <tr>
                   <td><a href="/admin/event-edit.html?id=${e.id}">${e.title}</a></td>
-                  <td>${formatDate(e.event_date)}</td>
+                  <td>${formatDate(e.event_date).split(',').slice(0, 2).join(',')}</td>
                   <td>${e.tickets_sold}</td>
                   <td>${e.capacity}</td>
-                  <td>${formatPrice(e.tickets_sold * e.price_cents)}</td>
                 </tr>
               `).join('')}
             </tbody>
           </table>
+          ${events.length > 5 ? `<a href="/admin/events.html" style="display:block;text-align:center;margin-top:12px;font-size:0.85rem;">View all ${events.length} events</a>` : ''}
         `;
       }
 
       // Recent orders
-      const { data: recentOrders } = await db
-        .from('orders')
-        .select('*, events(title)')
-        .order('created_at', { ascending: false })
-        .limit(10);
-
+      const recentOrders = (orders || []).slice(0, 8);
       const ordersEl = document.getElementById('recent-orders');
-      if (!recentOrders || recentOrders.length === 0) {
+      if (recentOrders.length === 0) {
         ordersEl.innerHTML = '<p class="empty-state">No orders yet.</p>';
       } else {
         ordersEl.innerHTML = `
-          <table class="admin-table">
-            <thead><tr><th>Order</th><th>Customer</th><th>Event</th><th>Qty</th><th>Total</th><th>Status</th></tr></thead>
+          <table class="admin-table" style="font-size:0.8rem;">
+            <thead><tr><th>Order</th><th>Customer</th><th>Total</th><th>Status</th></tr></thead>
             <tbody>
               ${recentOrders.map(o => `
                 <tr>
-                  <td>${o.order_number}</td>
-                  <td>${o.buyer_name}<br><small>${o.buyer_email}</small></td>
-                  <td>${o.events?.title || ''}</td>
-                  <td>${o.quantity}</td>
+                  <td><a href="/admin/orders.html">${o.order_number}</a></td>
+                  <td>${o.buyer_name}</td>
                   <td>${formatPrice(o.total_cents)}</td>
                   <td><span class="status-badge status-${o.payment_status}">${o.payment_status}</span></td>
                 </tr>
@@ -169,6 +230,69 @@
           </table>
         `;
       }
+
+      // Activity feed (recent orders + waitlist signups)
+      const { data: waitlistEntries } = await db
+        .from('waitlist')
+        .select('full_name, email, created_at, events(title)')
+        .order('created_at', { ascending: false })
+        .limit(10);
+
+      const activities = [];
+
+      // Add orders to activity
+      (orders || []).slice(0, 10).forEach(o => {
+        activities.push({
+          type: o.payment_status === 'completed' ? 'purchase' : o.payment_status,
+          text: `${o.buyer_name} ${o.payment_status === 'completed' ? 'purchased' : o.payment_status} ${o.quantity} ticket${o.quantity > 1 ? 's' : ''} for ${o.events?.title || 'event'}`,
+          detail: formatPrice(o.total_cents),
+          time: o.created_at,
+        });
+      });
+
+      // Add waitlist to activity
+      (waitlistEntries || []).forEach(w => {
+        activities.push({
+          type: 'waitlist',
+          text: `${w.full_name} joined waitlist for ${w.events?.title || 'event'}`,
+          detail: w.email,
+          time: w.created_at,
+        });
+      });
+
+      // Sort by time
+      activities.sort((a, b) => new Date(b.time) - new Date(a.time));
+
+      const feedEl = document.getElementById('activity-feed');
+      if (activities.length === 0) {
+        feedEl.innerHTML = '<p class="empty-state">No recent activity.</p>';
+      } else {
+        feedEl.innerHTML = `
+          <div class="activity-list">
+            ${activities.slice(0, 15).map(a => `
+              <div class="activity-item">
+                <div class="activity-dot activity-dot-${a.type}"></div>
+                <div class="activity-content">
+                  <span>${a.text}</span>
+                  <small>${a.detail}</small>
+                </div>
+                <div class="activity-time">${timeAgo(a.time)}</div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      }
+    }
+
+    function timeAgo(dateStr) {
+      const diff = Date.now() - new Date(dateStr).getTime();
+      const mins = Math.floor(diff / 60000);
+      if (mins < 1) return 'just now';
+      if (mins < 60) return `${mins}m ago`;
+      const hours = Math.floor(mins / 60);
+      if (hours < 24) return `${hours}h ago`;
+      const days = Math.floor(hours / 24);
+      return `${days}d ago`;
     }
 
     loadDashboard();
