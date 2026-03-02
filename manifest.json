@@ -1,0 +1,22 @@
+{
+  "name": "Mixler Check-In",
+  "short_name": "Mixler Scan",
+  "description": "QR code scanner for Mixler event check-in",
+  "start_url": "/admin/scan.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#153db6",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/images/mixler-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/mixler-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

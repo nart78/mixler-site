@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Check-In Scanner | Mixler Admin</title>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#153db6">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+  <style>
+    .scan-layout {
+      min-height: 100vh;
+      background: #0f172a;
+      color: white;
+    }
+
+    .scan-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: #153db6;
+    }
+
+    .scan-topbar a { color: rgba(255,255,255,0.8); font-size: 0.85rem; }
+    .scan-topbar a:hover { color: white; }
+    .scan-topbar h1 { font-size: 1.1rem; font-weight: 700; color: white; margin: 0; }
+
+    .scan-event-select {
+      padding: 12px 16px;
+      background: #1e293b;
+      border-bottom: 1px solid #334155;
+    }
+
+    .scan-event-select select {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #475569;
+      background: #0f172a;
+      color: white;
+      font-size: 0.9rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .scan-stats {
+      display: flex;
+      gap: 12px;
+      padding: 12px 16px;
+      background: #1e293b;
+    }
+
+    .scan-stat {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      background: #0f172a;
+      border-radius: 8px;
+    }
+
+    .scan-stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .scan-stat-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    /* Scanner area */
+    .scan-area {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #qr-reader {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    #qr-reader video { border-radius: 12px; }
+
+    /* Override html5-qrcode styles */
+    #qr-reader__scan_region { background: transparent !important; }
+    #qr-reader__dashboard { display: none !important; }
+    #qr-reader img[alt="Info icon"] { display: none !important; }
+    #qr-reader__header_message { display: none !important; }
+
+    .scan-controls {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .scan-controls button {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-scan-start { background: #22c55e; color: white; }
+    .btn-scan-start:hover { background: #16a34a; }
+    .btn-scan-stop { background: #ef4444; color: white; }
+    .btn-scan-stop:hover { background: #dc2626; }
+    .btn-scan-search { background: #3b82f6; color: white; }
+    .btn-scan-search:hover { background: #2563eb; }
+
+    /* Result display */
+    .scan-result {
+      width: 100%;
+      max-width: 400px;
+      margin-top: 16px;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .scan-result-success {
+      background: #052e16;
+      border: 2px solid #22c55e;
+    }
+
+    .scan-result-already {
+      background: #431407;
+      border: 2px solid #f97316;
+    }
+
+    .scan-result-error {
+      background: #450a0a;
+      border: 2px solid #ef4444;
+    }
+
+    .scan-result-info {
+      background: #0c1426;
+      border: 2px solid #3b82f6;
+    }
+
+    .scan-result-icon {
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+    }
+
+    .scan-result-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .scan-result-detail {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-bottom: 2px;
+    }
+
+    .scan-result-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+      justify-content: center;
+    }
+
+    .scan-result-actions button {
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-checkin { background: #22c55e; color: white; }
+    .btn-checkin:hover { background: #16a34a; }
+    .btn-undo { background: #475569; color: white; }
+    .btn-undo:hover { background: #64748b; }
+    .btn-dismiss { background: #334155; color: #94a3b8; }
+    .btn-dismiss:hover { background: #475569; color: white; }
+
+    /* Search modal */
+    .search-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.8);
+      z-index: 1000;
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 20px;
+      padding-top: 60px;
+    }
+
+    .search-overlay.active { display: flex; }
+
+    .search-panel {
+      background: #1e293b;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 500px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .search-header {
+      display: flex;
+      gap: 8px;
+      padding: 16px;
+      border-bottom: 1px solid #334155;
+    }
+
+    .search-header input {
+      flex: 1;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #475569;
+      background: #0f172a;
+      color: white;
+      font-size: 0.9rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .search-header input::placeholder { color: #64748b; }
+
+    .search-header button {
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .search-results {
+      padding: 8px;
+    }
+
+    .search-result-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .search-result-item:hover { background: #334155; }
+
+    .search-result-item-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .search-result-item-name {
+      font-weight: 600;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    .search-result-item-detail {
+      font-size: 0.78rem;
+      color: #94a3b8;
+    }
+
+    .search-result-item-status {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .checkin-yes { background: #052e16; color: #22c55e; }
+    .checkin-no { background: #1e293b; color: #94a3b8; border: 1px solid #475569; }
+
+    /* History log */
+    .scan-history {
+      padding: 16px;
+      max-width: 400px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .scan-history h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #64748b;
+      margin-bottom: 8px;
+    }
+
+    .history-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid #1e293b;
+      font-size: 0.85rem;
+    }
+
+    .history-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .history-dot-success { background: #22c55e; }
+    .history-dot-already { background: #f97316; }
+    .history-dot-error { background: #ef4444; }
+    .history-name { color: white; font-weight: 500; flex: 1; }
+    .history-time { color: #64748b; font-size: 0.78rem; }
+
+    /* Mobile responsive */
+    @media (max-width: 480px) {
+      .scan-stats { gap: 6px; padding: 8px 12px; }
+      .scan-stat { padding: 8px; }
+      .scan-stat-value { font-size: 1.2rem; }
+      .scan-area { padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="scan-layout">
+    <!-- Top bar -->
+    <div class="scan-topbar">
+      <a href="/admin/">Back</a>
+      <h1>Check-In</h1>
+      <a href="#" id="admin-logout">Log Out</a>
+    </div>
+
+    <!-- Event selector -->
+    <div class="scan-event-select">
+      <select id="event-select">
+        <option value="">Choose event...</option>
+      </select>
+    </div>
+
+    <!-- Stats -->
+    <div class="scan-stats" id="scan-stats" style="display:none;">
+      <div class="scan-stat">
+        <div class="scan-stat-value" id="stat-checked">0</div>
+        <div class="scan-stat-label">Checked In</div>
+      </div>
+      <div class="scan-stat">
+        <div class="scan-stat-value" id="stat-total">0</div>
+        <div class="scan-stat-label">Total</div>
+      </div>
+      <div class="scan-stat">
+        <div class="scan-stat-value" id="stat-remaining">0</div>
+        <div class="scan-stat-label">Remaining</div>
+      </div>
+    </div>
+
+    <!-- Scanner -->
+    <div class="scan-area">
+      <div id="qr-reader"></div>
+
+      <div class="scan-controls">
+        <button class="btn-scan-start" id="btn-start">Start Scanner</button>
+        <button class="btn-scan-stop" id="btn-stop" style="display:none;">Stop</button>
+        <button class="btn-scan-search" id="btn-search">Search</button>
+      </div>
+
+      <div id="scan-result"></div>
+    </div>
+
+    <!-- Recent check-ins -->
+    <div class="scan-history">
+      <h3>Recent Scans</h3>
+      <div id="history-list">
+        <p style="color:#64748b;font-size:0.85rem;">No scans yet.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-panel">
+      <div class="search-header">
+        <input type="text" id="search-input" placeholder="Search by name, email, or order #...">
+        <button class="btn-scan-search" id="search-go">Go</button>
+        <button class="btn-dismiss" id="search-close">X</button>
+      </div>
+      <div class="search-results" id="search-results">
+        <p style="color:#64748b;font-size:0.85rem;padding:12px;">Type a name or order number to search.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio feedback -->
+  <audio id="sound-success" preload="auto">
+    <source src="data:audio/wav;base64,UklGRjIAAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YQ4AAABkAMgA/AD8AMgAZAAA" type="audio/wav">
+  </audio>
+
+  <script type="module">
+    import { requireAdmin, signOut } from '../js/auth.js';
+    import { db, SUPABASE_URL, SUPABASE_ANON_KEY } from '../js/supabase-client.js';
+
+    await requireAdmin();
+
+    document.getElementById('admin-logout').addEventListener('click', async (e) => {
+      e.preventDefault();
+      await signOut();
+    });
+
+    const FUNCTION_URL = `${SUPABASE_URL}/functions/v1/validate-checkin`;
+    let selectedEventId = null;
+    let scanner = null;
+    let scanning = false;
+    let lastScannedCode = null;
+    let scanCooldown = false;
+    const history = [];
+
+    // Load events
+    const { data: events } = await db.from('events').select('id, title, event_date, start_time').order('event_date', { ascending: false });
+    const select = document.getElementById('event-select');
+    (events || []).forEach(e => {
+      const opt = document.createElement('option');
+      opt.value = e.id;
+      opt.textContent = `${e.title} (${e.event_date})`;
+      select.appendChild(opt);
+    });
+
+    // Auto-select today's event if there is one
+    const today = new Date().toISOString().split('T')[0];
+    const todayEvent = (events || []).find(e => e.event_date === today);
+    if (todayEvent) {
+      select.value = todayEvent.id;
+      selectEvent(todayEvent.id);
+    }
+
+    select.addEventListener('change', () => {
+      if (select.value) selectEvent(select.value);
+    });
+
+    async function selectEvent(eventId) {
+      selectedEventId = eventId;
+      await refreshStats();
+      document.getElementById('scan-stats').style.display = '';
+    }
+
+    async function refreshStats() {
+      if (!selectedEventId) return;
+
+      const { data: attendees } = await db
+        .from('attendees')
+        .select('checked_in, orders!inner(payment_status)')
+        .eq('event_id', selectedEventId)
+        .eq('orders.payment_status', 'completed');
+
+      const total = (attendees || []).length;
+      const checked = (attendees || []).filter(a => a.checked_in).length;
+
+      document.getElementById('stat-checked').textContent = checked;
+      document.getElementById('stat-total').textContent = total;
+      document.getElementById('stat-remaining').textContent = total - checked;
+    }
+
+    // Scanner
+    const startBtn = document.getElementById('btn-start');
+    const stopBtn = document.getElementById('btn-stop');
+
+    startBtn.addEventListener('click', startScanner);
+    stopBtn.addEventListener('click', stopScanner);
+
+    async function startScanner() {
+      if (!selectedEventId) {
+        showResult('error', 'Select an event first', '');
+        return;
+      }
+
+      if (scanner) {
+        try { await scanner.stop(); } catch(e) {}
+      }
+
+      scanner = new Html5Qrcode('qr-reader');
+
+      try {
+        await scanner.start(
+          { facingMode: 'environment' },
+          { fps: 10, qrbox: { width: 250, height: 250 }, aspectRatio: 1.0 },
+          onScanSuccess,
+          () => {} // ignore errors (no QR in frame)
+        );
+        scanning = true;
+        startBtn.style.display = 'none';
+        stopBtn.style.display = '';
+      } catch (err) {
+        showResult('error', 'Camera access denied', 'Please allow camera access and try again.');
+      }
+    }
+
+    async function stopScanner() {
+      if (scanner) {
+        try { await scanner.stop(); } catch(e) {}
+      }
+      scanning = false;
+      startBtn.style.display = '';
+      stopBtn.style.display = 'none';
+      document.getElementById('qr-reader').innerHTML = '';
+    }
+
+    async function onScanSuccess(qrCode) {
+      // Prevent duplicate rapid scans
+      if (scanCooldown || qrCode === lastScannedCode) return;
+      scanCooldown = true;
+      lastScannedCode = qrCode;
+
+      // Haptic feedback
+      if (navigator.vibrate) navigator.vibrate(100);
+
+      try {
+        // First lookup the attendee
+        const lookupRes = await fetch(FUNCTION_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'apikey': SUPABASE_ANON_KEY,
+          },
+          body: JSON.stringify({ qr_code: qrCode, action: 'lookup' }),
+        });
+
+        if (!lookupRes.ok) {
+          const err = await lookupRes.json();
+          playFeedback('error');
+          showResult('error', 'Invalid Ticket', err.error || 'QR code not recognized');
+          addHistory('error', 'Unknown', 'Invalid QR');
+          setTimeout(() => { scanCooldown = false; lastScannedCode = null; }, 2000);
+          return;
+        }
+
+        const { attendee } = await lookupRes.json();
+
+        if (attendee.checked_in) {
+          playFeedback('already');
+          if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
+          showResult('already', attendee.full_name, `Already checked in`, attendee);
+          addHistory('already', attendee.full_name, 'Already in');
+          setTimeout(() => { scanCooldown = false; lastScannedCode = null; }, 2000);
+          return;
+        }
+
+        // Auto check-in
+        const checkinRes = await fetch(FUNCTION_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'apikey': SUPABASE_ANON_KEY,
+          },
+          body: JSON.stringify({ qr_code: qrCode, action: 'checkin' }),
+        });
+
+        if (checkinRes.ok) {
+          playFeedback('success');
+          showResult('success', attendee.full_name, `${attendee.ticket_types?.name || 'General'} - ${attendee.orders?.order_number}`, attendee, qrCode);
+          addHistory('success', attendee.full_name, 'Checked in');
+          refreshStats();
+        } else {
+          const err = await checkinRes.json();
+          if (err.already_checked_in) {
+            playFeedback('already');
+            showResult('already', attendee.full_name, 'Already checked in', attendee);
+            addHistory('already', attendee.full_name, 'Already in');
+          } else {
+            playFeedback('error');
+            showResult('error', 'Check-in Failed', err.error);
+            addHistory('error', attendee.full_name, 'Failed');
+          }
+        }
+      } catch (err) {
+        playFeedback('error');
+        showResult('error', 'Error', err.message);
+      }
+
+      setTimeout(() => { scanCooldown = false; lastScannedCode = null; }, 2000);
+    }
+
+    function showResult(type, name, detail, attendee, qrCode) {
+      const container = document.getElementById('scan-result');
+
+      const icons = { success: '&#10003;', already: '&#9888;', error: '&#10007;', info: '&#8505;' };
+      const labels = { success: 'Checked In!', already: 'Already Checked In', error: 'Error', info: 'Info' };
+
+      let actions = '';
+      if (type === 'success' && qrCode) {
+        actions = `<div class="scan-result-actions">
+          <button class="btn-undo" onclick="window.undoCheckin('${qrCode}')">Undo</button>
+          <button class="btn-dismiss" onclick="document.getElementById('scan-result').innerHTML=''">OK</button>
+        </div>`;
+      } else if (type === 'already' || type === 'error') {
+        actions = `<div class="scan-result-actions">
+          <button class="btn-dismiss" onclick="document.getElementById('scan-result').innerHTML=''">Dismiss</button>
+        </div>`;
+      }
+
+      container.innerHTML = `
+        <div class="scan-result scan-result-${type}">
+          <div class="scan-result-icon">${icons[type]}</div>
+          <div class="scan-result-name">${name}</div>
+          <div class="scan-result-detail">${detail}</div>
+          ${attendee ? `<div class="scan-result-detail">${attendee.events?.title || ''}</div>` : ''}
+          ${actions}
+        </div>
+      `;
+
+      // Auto-dismiss after 5 seconds
+      setTimeout(() => {
+        if (container.querySelector(`.scan-result-${type}`)) {
+          container.innerHTML = '';
+        }
+      }, 5000);
+    }
+
+    // Expose undo globally for onclick
+    window.undoCheckin = async function(qrCode) {
+      await fetch(FUNCTION_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'apikey': SUPABASE_ANON_KEY,
+        },
+        body: JSON.stringify({ qr_code: qrCode, action: 'undo_checkin' }),
+      });
+      document.getElementById('scan-result').innerHTML = '';
+      refreshStats();
+    };
+
+    function addHistory(type, name, status) {
+      history.unshift({ type, name, status, time: new Date() });
+      if (history.length > 20) history.pop();
+      renderHistory();
+    }
+
+    function renderHistory() {
+      const container = document.getElementById('history-list');
+      if (history.length === 0) {
+        container.innerHTML = '<p style="color:#64748b;font-size:0.85rem;">No scans yet.</p>';
+        return;
+      }
+      container.innerHTML = history.map(h => `
+        <div class="history-item">
+          <div class="history-dot history-dot-${h.type}"></div>
+          <span class="history-name">${h.name}</span>
+          <span class="history-time">${h.time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+        </div>
+      `).join('');
+    }
+
+    function playFeedback(type) {
+      // Use Web Audio API for instant feedback
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        gain.gain.value = 0.3;
+
+        if (type === 'success') {
+          osc.frequency.value = 800;
+          osc.start();
+          osc.frequency.setValueAtTime(1200, ctx.currentTime + 0.1);
+          osc.stop(ctx.currentTime + 0.2);
+        } else if (type === 'already') {
+          osc.frequency.value = 400;
+          osc.start();
+          osc.stop(ctx.currentTime + 0.3);
+        } else {
+          osc.frequency.value = 200;
+          osc.start();
+          osc.stop(ctx.currentTime + 0.4);
+        }
+      } catch(e) {}
+    }
+
+    // Search functionality
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchInput = document.getElementById('search-input');
+
+    document.getElementById('btn-search').addEventListener('click', () => {
+      if (!selectedEventId) {
+        showResult('error', 'Select an event first', '');
+        return;
+      }
+      searchOverlay.classList.add('active');
+      searchInput.focus();
+    });
+
+    document.getElementById('search-close').addEventListener('click', () => {
+      searchOverlay.classList.remove('active');
+    });
+
+    searchOverlay.addEventListener('click', (e) => {
+      if (e.target === searchOverlay) searchOverlay.classList.remove('active');
+    });
+
+    async function doSearch() {
+      const query = searchInput.value.trim();
+      if (!query || query.length < 2) return;
+
+      const resultsEl = document.getElementById('search-results');
+      resultsEl.innerHTML = '<p style="color:#64748b;font-size:0.85rem;padding:12px;">Searching...</p>';
+
+      const res = await fetch(FUNCTION_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'apikey': SUPABASE_ANON_KEY,
+        },
+        body: JSON.stringify({ action: 'search', search_query: query, event_id: selectedEventId }),
+      });
+
+      const data = await res.json();
+      const results = data.results || [];
+
+      if (results.length === 0) {
+        resultsEl.innerHTML = '<p style="color:#64748b;font-size:0.85rem;padding:12px;">No results found.</p>';
+        return;
+      }
+
+      resultsEl.innerHTML = results.map(a => `
+        <div class="search-result-item" data-qr="${a.qr_code}" data-name="${a.full_name}">
+          <div class="search-result-item-info">
+            <div class="search-result-item-name">${a.full_name}</div>
+            <div class="search-result-item-detail">${a.email || ''} ${a.orders?.order_number ? '| ' + a.orders.order_number : ''}</div>
+          </div>
+          <span class="search-result-item-status ${a.checked_in ? 'checkin-yes' : 'checkin-no'}">
+            ${a.checked_in ? 'Checked In' : 'Not In'}
+          </span>
+        </div>
+      `).join('');
+
+      // Click to check in from search
+      resultsEl.querySelectorAll('.search-result-item').forEach(item => {
+        item.addEventListener('click', async () => {
+          const qr = item.dataset.qr;
+          const name = item.dataset.name;
+          searchOverlay.classList.remove('active');
+          await onScanSuccess(qr);
+        });
+      });
+    }
+
+    document.getElementById('search-go').addEventListener('click', doSearch);
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') doSearch();
+    });
+  </script>
+</body>
+</html>
