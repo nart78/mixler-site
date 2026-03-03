@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customers | Mixler Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="admin-body">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a href="/" class="nav-logo" style="padding:24px;"><img src="/images/mixler-white-wide.png" alt="Mixler" class="nav-logo-img"></a>
+      <nav class="admin-nav">
+        <a href="/admin/" class="admin-nav-link">Dashboard</a>
+        <a href="/admin/events.html" class="admin-nav-link">Events</a>
+        <a href="/admin/orders.html" class="admin-nav-link">Orders</a>
+        <a href="/admin/coupons.html" class="admin-nav-link">Coupons</a>
+        <a href="/admin/attendees.html" class="admin-nav-link">Attendees</a>
+        <a href="/admin/customers.html" class="admin-nav-link active">Customers</a>
+        <a href="/admin/messages.html" class="admin-nav-link">Messages</a>
+        <a href="/admin/scan.html" class="admin-nav-link">Scan</a>
+      </nav>
+      <div class="admin-sidebar-footer">
+        <a href="/" class="admin-nav-link">Back to Site</a>
+        <a href="#" id="admin-logout" class="admin-nav-link">Log Out</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-header">
+        <h1>Customers</h1>
+        <button class="btn btn-outline" id="export-csv">Export CSV</button>
+      </div>
+
+      <!-- Stats -->
+      <div class="admin-stats" id="customer-stats" style="grid-template-columns:repeat(3,1fr);">
+        <div class="stat-card">
+          <div class="stat-card-label">Total Customers</div>
+          <div class="stat-card-value" id="stat-total">-</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Total Revenue</div>
+          <div class="stat-card-value" id="stat-revenue">-</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Repeat Customers</div>
+          <div class="stat-card-value" id="stat-repeat">-</div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="admin-card" style="margin-bottom:16px;">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:end;">
+          <div class="form-group" style="margin-bottom:0;flex:2;min-width:220px;">
+            <label style="font-size:0.78rem;font-weight:600;margin-bottom:4px;display:block;">Search</label>
+            <input type="text" id="filter-search" placeholder="Name, email, or phone..." style="width:100%;">
+          </div>
+          <div class="form-group" style="margin-bottom:0;flex:1;min-width:160px;">
+            <label style="font-size:0.78rem;font-weight:600;margin-bottom:4px;display:block;">Event</label>
+            <select id="filter-event" style="width:100%;">
+              <option value="">All Events</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom:0;flex:1;min-width:140px;">
+            <label style="font-size:0.78rem;font-weight:600;margin-bottom:4px;display:block;">Sort By</label>
+            <select id="filter-sort" style="width:100%;">
+              <option value="recent">Most Recent</option>
+              <option value="name">Name A-Z</option>
+              <option value="spent">Most Spent</option>
+              <option value="events">Most Events</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Customer List -->
+      <div class="admin-card">
+        <div style="overflow-x:auto;">
+          <table class="admin-table" id="customers-table">
+            <thead>
+              <tr>
+                <th>Customer</th>
+                <th>Phone</th>
+                <th>Events</th>
+                <th>Total Spent</th>
+                <th>Last Order</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="customers-body">
+              <tr><td colspan="6" class="empty-state">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="pagination" style="display:flex;justify-content:space-between;align-items:center;padding-top:16px;"></div>
+      </div>
+
+      <!-- Customer Detail Panel (hidden by default) -->
+      <div class="admin-modal" id="customer-modal" style="display:none;">
+        <div class="admin-modal-content" style="max-width:600px;">
+          <div class="admin-modal-header">
+            <h3 id="modal-customer-name">Customer</h3>
+            <button class="modal-close" id="modal-close">&times;</button>
+          </div>
+          <div id="modal-body" style="padding:24px;">
+            <div class="loading-spinner"><div class="spinner"></div></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module">
+    import { requireAdmin, signOut } from '../js/auth.js';
+    import { db } from '../js/supabase-client.js';
+    import { formatPrice } from '../js/utils.js';
+
+    await requireAdmin();
+
+    document.getElementById('admin-logout').addEventListener('click', async (e) => {
+      e.preventDefault();
+      await signOut();
+    });
+
+    // ============================================
+    // LOAD DATA
+    // ============================================
+    let allCustomers = [];
+    let filteredCustomers = [];
+    const PAGE_SIZE = 25;
+    let currentPage = 0;
+
+    // Load events for filter dropdown
+    const { data: events } = await db.from('events').select('id, title').order('event_date', { ascending: false });
+    const eventSelect = document.getElementById('filter-event');
+    (events || []).forEach(e => {
+      const opt = document.createElement('option');
+      opt.value = e.id;
+      opt.textContent = e.title;
+      eventSelect.appendChild(opt);
+    });
+
+    // Build customer list from orders (aggregated by buyer_email)
+    async function loadCustomers() {
+      const { data: orders, error } = await db
+        .from('orders')
+        .select('id, buyer_name, buyer_email, buyer_phone, total_cents, payment_status, created_at, event_id, events(title, event_date)')
+        .in('payment_status', ['completed', 'refunded'])
+        .order('created_at', { ascending: false });
+
+      if (error) {
+        document.getElementById('customers-body').innerHTML =
+          '<tr><td colspan="6" class="empty-state">Error loading customers.</td></tr>';
+        return;
+      }
+
+      // Aggregate by email
+      const customerMap = {};
+      (orders || []).forEach(order => {
+        const email = order.buyer_email.toLowerCase();
+        if (!customerMap[email]) {
+          customerMap[email] = {
+            name: order.buyer_name,
+            email: order.buyer_email,
+            phone: order.buyer_phone || '',
+            totalSpent: 0,
+            orderCount: 0,
+            eventIds: new Set(),
+            events: [],
+            lastOrderDate: order.created_at,
+            orders: [],
+          };
+        }
+        const c = customerMap[email];
+        // Keep the most complete name
+        if (order.buyer_name && order.buyer_name.length > c.name.length) {
+          c.name = order.buyer_name;
+        }
+        if (order.buyer_phone && !c.phone) c.phone = order.buyer_phone;
+        if (order.payment_status === 'completed') {
+          c.totalSpent += order.total_cents;
+        }
+        c.orderCount++;
+        if (order.event_id && !c.eventIds.has(order.event_id)) {
+          c.eventIds.add(order.event_id);
+          c.events.push({
+            id: order.event_id,
+            title: order.events?.title || 'Unknown',
+            date: order.events?.event_date || '',
+          });
+        }
+        c.orders.push(order);
+        if (order.created_at > c.lastOrderDate) c.lastOrderDate = order.created_at;
+      });
+
+      allCustomers = Object.values(customerMap);
+
+      // Stats
+      document.getElementById('stat-total').textContent = allCustomers.length;
+      const totalRevenue = allCustomers.reduce((sum, c) => sum + c.totalSpent, 0);
+      document.getElementById('stat-revenue').textContent = formatPrice(totalRevenue);
+      const repeatCount = allCustomers.filter(c => c.eventIds.size > 1).length;
+      document.getElementById('stat-repeat').textContent = repeatCount;
+
+      applyFilters();
+    }
+
+    // ============================================
+    // FILTERS & SORT
+    // ============================================
+    function applyFilters() {
+      const search = document.getElementById('filter-search').value.toLowerCase().trim();
+      const eventId = document.getElementById('filter-event').value;
+      const sort = document.getElementById('filter-sort').value;
+
+      filteredCustomers = allCustomers.filter(c => {
+        if (search && !c.name.toLowerCase().includes(search) && !c.email.toLowerCase().includes(search) && !c.phone.includes(search)) {
+          return false;
+        }
+        if (eventId && !c.eventIds.has(eventId)) return false;
+        return true;
+      });
+
+      // Sort
+      if (sort === 'name') {
+        filteredCustomers.sort((a, b) => a.name.localeCompare(b.name));
+      } else if (sort === 'spent') {
+        filteredCustomers.sort((a, b) => b.totalSpent - a.totalSpent);
+      } else if (sort === 'events') {
+        filteredCustomers.sort((a, b) => b.eventIds.size - a.eventIds.size);
+      } else {
+        filteredCustomers.sort((a, b) => new Date(b.lastOrderDate) - new Date(a.lastOrderDate));
+      }
+
+      currentPage = 0;
+      renderTable();
+    }
+
+    document.getElementById('filter-search').addEventListener('input', applyFilters);
+    document.getElementById('filter-event').addEventListener('change', applyFilters);
+    document.getElementById('filter-sort').addEventListener('change', applyFilters);
+
+    // ============================================
+    // RENDER TABLE
+    // ============================================
+    function renderTable() {
+      const tbody = document.getElementById('customers-body');
+      const start = currentPage * PAGE_SIZE;
+      const page = filteredCustomers.slice(start, start + PAGE_SIZE);
+
+      if (filteredCustomers.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" class="empty-state">No customers found.</td></tr>';
+        document.getElementById('pagination').innerHTML = '';
+        return;
+      }
+
+      tbody.innerHTML = page.map(c => {
+        const eventCount = c.eventIds.size;
+        const lastDate = new Date(c.lastOrderDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        return `
+          <tr class="customer-row" data-email="${c.email}">
+            <td>
+              <div style="display:flex;flex-direction:column;gap:2px;">
+                <a href="#" class="view-customer" data-email="${c.email}" style="font-weight:600;">${c.name}</a>
+                <small>${c.email}</small>
+              </div>
+            </td>
+            <td>${c.phone || '<span style="color:#9ca3af;">-</span>'}</td>
+            <td><span class="status-badge status-published">${eventCount} event${eventCount !== 1 ? 's' : ''}</span></td>
+            <td style="font-weight:600;">${formatPrice(c.totalSpent)}</td>
+            <td><small>${lastDate}</small></td>
+            <td><a href="#" class="btn-sm view-customer" data-email="${c.email}">View</a></td>
+          </tr>
+        `;
+      }).join('');
+
+      // Pagination
+      const totalPages = Math.ceil(filteredCustomers.length / PAGE_SIZE);
+      const pag = document.getElementById('pagination');
+      if (totalPages <= 1) {
+        pag.innerHTML = `<small style="color:#6b7280;">${filteredCustomers.length} customer${filteredCustomers.length !== 1 ? 's' : ''}</small>`;
+      } else {
+        pag.innerHTML = `
+          <small style="color:#6b7280;">Showing ${start + 1}-${Math.min(start + PAGE_SIZE, filteredCustomers.length)} of ${filteredCustomers.length}</small>
+          <div style="display:flex;gap:4px;">
+            <button class="btn-sm" id="prev-page" ${currentPage === 0 ? 'disabled style="opacity:0.4;pointer-events:none;"' : ''}>Prev</button>
+            <button class="btn-sm" id="next-page" ${currentPage >= totalPages - 1 ? 'disabled style="opacity:0.4;pointer-events:none;"' : ''}>Next</button>
+          </div>
+        `;
+        document.getElementById('prev-page')?.addEventListener('click', () => { currentPage--; renderTable(); });
+        document.getElementById('next-page')?.addEventListener('click', () => { currentPage++; renderTable(); });
+      }
+
+      // Bind view buttons
+      tbody.querySelectorAll('.view-customer').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const email = btn.dataset.email;
+          const customer = filteredCustomers.find(c => c.email === email) || allCustomers.find(c => c.email === email);
+          if (customer) openCustomerModal(customer);
+        });
+      });
+    }
+
+    // ============================================
+    // CUSTOMER DETAIL MODAL
+    // ============================================
+    const modal = document.getElementById('customer-modal');
+    const modalBody = document.getElementById('modal-body');
+
+    document.getElementById('modal-close').addEventListener('click', () => modal.style.display = 'none');
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
+
+    async function openCustomerModal(customer) {
+      document.getElementById('modal-customer-name').textContent = customer.name;
+      modal.style.display = 'flex';
+
+      // Load attendee check-in data for this customer
+      const { data: attendees } = await db
+        .from('attendees')
+        .select('id, full_name, checked_in, checked_in_at, event_id, ticket_type_id, ticket_types(name), events(title, event_date)')
+        .eq('email', customer.email)
+        .order('created_at', { ascending: false });
+
+      const eventsHtml = customer.events
+        .sort((a, b) => (b.date || '').localeCompare(a.date || ''))
+        .map(ev => {
+          const att = (attendees || []).find(a => a.event_id === ev.id);
+          const checkedIn = att?.checked_in;
+          const ticketType = att?.ticket_types?.name || '';
+          const statusBadge = checkedIn
+            ? '<span class="status-badge status-completed">Attended</span>'
+            : '<span class="status-badge status-pending">Not checked in</span>';
+          const dateStr = ev.date && ev.date < '2099-01-01'
+            ? new Date(ev.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+            : 'TBD';
+          return `
+            <tr>
+              <td><a href="/admin/event-edit.html?id=${ev.id}">${ev.title}</a></td>
+              <td><small>${dateStr}</small></td>
+              <td><small>${ticketType}</small></td>
+              <td>${statusBadge}</td>
+            </tr>
+          `;
+        }).join('');
+
+      // Calculate summary stats
+      const orderCount = customer.orderCount;
+      const eventCount = customer.eventIds.size;
+      const checkedInCount = (attendees || []).filter(a => a.checked_in).length;
+
+      modalBody.innerHTML = `
+        <div class="detail-grid" style="margin-bottom:24px;">
+          <div class="detail-item">
+            <span class="detail-label">Email</span>
+            <span class="detail-value">${customer.email}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Phone</span>
+            <span class="detail-value">${customer.phone || 'Not provided'}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Total Spent</span>
+            <span class="detail-value">${formatPrice(customer.totalSpent)}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Orders</span>
+            <span class="detail-value">${orderCount}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Events</span>
+            <span class="detail-value">${eventCount}</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Checked In</span>
+            <span class="detail-value">${checkedInCount} of ${eventCount}</span>
+          </div>
+        </div>
+
+        <h4 style="margin-bottom:12px;color:#374151;">Event History</h4>
+        ${customer.events.length > 0 ? `
+          <table class="admin-table" style="font-size:0.82rem;">
+            <thead>
+              <tr>
+                <th>Event</th>
+                <th>Date</th>
+                <th>Ticket</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>${eventsHtml}</tbody>
+          </table>
+        ` : '<p class="empty-state">No events yet.</p>'}
+
+        <h4 style="margin:24px 0 12px;color:#374151;">Order History</h4>
+        <table class="admin-table" style="font-size:0.82rem;">
+          <thead>
+            <tr>
+              <th>Order</th>
+              <th>Event</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${customer.orders.map(o => {
+              const statusClass = o.payment_status === 'completed' ? 'status-completed' : 'status-refunded';
+              const dateStr = new Date(o.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+              return `
+                <tr>
+                  <td><small>${o.id.slice(0, 8)}</small></td>
+                  <td><small>${o.events?.title || ''}</small></td>
+                  <td style="font-weight:600;">${formatPrice(o.total_cents)}</td>
+                  <td><span class="status-badge ${statusClass}">${o.payment_status}</span></td>
+                  <td><small>${dateStr}</small></td>
+                </tr>
+              `;
+            }).join('')}
+          </tbody>
+        </table>
+      `;
+    }
+
+    // ============================================
+    // EXPORT CSV
+    // ============================================
+    document.getElementById('export-csv').addEventListener('click', () => {
+      if (filteredCustomers.length === 0) return;
+      const headers = ['Name', 'Email', 'Phone', 'Events Attended', 'Total Spent', 'Last Order'];
+      const rows = filteredCustomers.map(c => [
+        `"${c.name}"`,
+        c.email,
+        c.phone || '',
+        c.eventIds.size,
+        (c.totalSpent / 100).toFixed(2),
+        new Date(c.lastOrderDate).toISOString().split('T')[0],
+      ]);
+      const csv = [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `mixler-customers-${new Date().toISOString().split('T')[0]}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    loadCustomers();
+  </script>
+</body>
+</html>
