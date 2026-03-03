@@ -324,7 +324,7 @@
               <button type="button" class="btn btn-outline btn-danger remove-tt" style="padding:8px 12px;">Remove</button>
             </div>
           </div>
-          <div class="form-row admin-form" style="margin-top:-8px;">
+          <div class="form-row admin-form" style="margin-top:4px;">
             <div class="form-group" style="flex:2;">
               <input type="text" value="${tt.description || ''}" data-field="description" placeholder="Description (optional)">
             </div>
@@ -337,6 +337,7 @@
                 <option value="false" ${tt.is_active === false ? 'selected' : ''}>Inactive</option>
               </select>
             </div>
+            <div style="flex:0 0 auto;width:82px;"></div>
           </div>
         </div>
       `).join('');
