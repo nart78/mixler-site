@@ -99,8 +99,14 @@
 
         <!-- Date & Location -->
         <div class="admin-card">
-          <h3>Date & Location</h3>
-          <div class="admin-form">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+            <h3 style="margin-bottom:0;">Date & Location</h3>
+            <label class="checkin-toggle">
+              <input type="checkbox" id="date_tbd">
+              <span>TBD</span>
+            </label>
+          </div>
+          <div class="admin-form" id="date-location-fields">
             <div class="form-row">
               <div class="form-group">
                 <label for="event_date">Date</label>
@@ -256,6 +262,25 @@
       opt.textContent = c.name;
       catSelect.appendChild(opt);
     });
+
+    // ============================================
+    // TBD TOGGLE
+    // ============================================
+    const tbdCheckbox = document.getElementById('date_tbd');
+    const dateLocationFields = document.getElementById('date-location-fields');
+
+    function toggleTBD(isTBD) {
+      dateLocationFields.style.display = isTBD ? 'none' : '';
+      if (isTBD) {
+        document.getElementById('event_date').removeAttribute('required');
+        document.getElementById('start_time').removeAttribute('required');
+      } else {
+        document.getElementById('event_date').setAttribute('required', '');
+        document.getElementById('start_time').setAttribute('required', '');
+      }
+    }
+
+    tbdCheckbox.addEventListener('change', () => toggleTBD(tbdCheckbox.checked));
 
     // Auto-generate slug from title
     document.getElementById('title').addEventListener('input', (e) => {
@@ -439,9 +464,16 @@
         document.getElementById('slug').value = event.slug;
         document.getElementById('short_description').value = event.short_description || '';
         document.getElementById('description').value = event.description || '';
-        document.getElementById('event_date').value = event.event_date;
-        document.getElementById('start_time').value = event.start_time;
-        document.getElementById('end_time').value = event.end_time || '';
+        // Detect TBD event
+        const isTBD = event.event_date >= '2099-01-01';
+        tbdCheckbox.checked = isTBD;
+        toggleTBD(isTBD);
+
+        if (!isTBD) {
+          document.getElementById('event_date').value = event.event_date;
+          document.getElementById('start_time').value = event.start_time;
+          document.getElementById('end_time').value = event.end_time || '';
+        }
         document.getElementById('location_name').value = event.location_name || '';
         document.getElementById('location_address').value = event.location_address || '';
         document.getElementById('capacity').value = event.capacity;
@@ -481,16 +513,18 @@
       const price = parseFloat(document.getElementById('price').value);
       const earlyBirdPrice = document.getElementById('early_bird_price').value;
 
+      const isTBDChecked = tbdCheckbox.checked;
+
       const eventData = {
         title: document.getElementById('title').value.trim(),
         slug: document.getElementById('slug').value.trim(),
         short_description: document.getElementById('short_description').value.trim() || null,
         description: document.getElementById('description').value.trim() || null,
-        event_date: document.getElementById('event_date').value,
-        start_time: document.getElementById('start_time').value,
-        end_time: document.getElementById('end_time').value || null,
-        location_name: document.getElementById('location_name').value.trim() || null,
-        location_address: document.getElementById('location_address').value.trim() || null,
+        event_date: isTBDChecked ? '2099-12-31' : document.getElementById('event_date').value,
+        start_time: isTBDChecked ? '00:00' : document.getElementById('start_time').value,
+        end_time: isTBDChecked ? null : (document.getElementById('end_time').value || null),
+        location_name: isTBDChecked ? null : (document.getElementById('location_name').value.trim() || null),
+        location_address: isTBDChecked ? null : (document.getElementById('location_address').value.trim() || null),
         capacity: parseInt(document.getElementById('capacity').value),
         price_cents: Math.round(price * 100),
         max_tickets_per_order: parseInt(document.getElementById('max_tickets_per_order').value) || 10,
