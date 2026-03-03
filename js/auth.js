@@ -48,6 +48,19 @@ async function signIn(email, password) {
   return data;
 }
 
+// Sign in with OAuth provider (google, facebook)
+async function signInWithProvider(provider) {
+  const returnUrl = new URLSearchParams(window.location.search).get('return') || '/account.html';
+  const { data, error } = await db.auth.signInWithOAuth({
+    provider,
+    options: {
+      redirectTo: window.location.origin + returnUrl,
+    }
+  });
+  if (error) throw error;
+  return data;
+}
+
 // Sign out
 async function signOut() {
   const { error } = await db.auth.signOut();
@@ -92,4 +105,4 @@ function onAuthChange(callback) {
   });
 }
 
-export { getSession, getCurrentUser, signUp, signIn, signOut, isAdmin, requireAuth, requireAdmin, onAuthChange };
+export { getSession, getCurrentUser, signUp, signIn, signInWithProvider, signOut, isAdmin, requireAuth, requireAdmin, onAuthChange };
