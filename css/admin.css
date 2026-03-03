@@ -14,7 +14,7 @@
 /* --- Sidebar --- */
 .admin-sidebar {
   width: 240px;
-  background: var(--color-dark);
+  background: #153db6;
   color: rgba(255, 255, 255, 0.7);
   display: flex;
   flex-direction: column;
@@ -23,6 +23,11 @@
   left: 0;
   bottom: 0;
   z-index: 100;
+}
+
+.admin-sidebar .nav-logo-img {
+  height: 28px;
+  width: auto;
 }
 
 .admin-nav {
@@ -45,8 +50,8 @@
 
 .admin-nav-link.active {
   color: white;
-  background: rgba(255, 255, 255, 0.1);
-  border-left: 3px solid var(--color-accent);
+  background: rgba(255, 255, 255, 0.15);
+  border-left: 3px solid #ffffff;
 }
 
 .admin-sidebar-footer {
@@ -70,6 +75,7 @@
 
 .admin-header h1 {
   font-size: 1.75rem;
+  color: #374151;
 }
 
 /* --- Stats Grid --- */
@@ -113,6 +119,7 @@
 
 .admin-card h3 {
   margin-bottom: 20px;
+  color: #374151;
 }
 
 /* --- Admin Table --- */
