@@ -233,7 +233,8 @@
           msgEl.className = 'notify-msg';
 
           try {
-            const { error } = await db.from('newsletter_subscribers').insert({ name, last_name, email });
+            const fullName = (name + ' ' + last_name).trim();
+            const { error } = await db.from('newsletter_subscribers').insert({ name: fullName, email });
             if (error && error.code === '23505') {
               msgEl.textContent = "You're already subscribed!";
               msgEl.className = 'notify-msg msg-info';

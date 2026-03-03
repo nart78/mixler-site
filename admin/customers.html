@@ -100,18 +100,6 @@
         <div id="pagination" style="display:flex;justify-content:space-between;align-items:center;padding-top:16px;"></div>
       </div>
 
-      <!-- Customer Detail Panel (hidden by default) -->
-      <div class="admin-modal" id="customer-modal" style="display:none;">
-        <div class="admin-modal-content" style="max-width:600px;">
-          <div class="admin-modal-header">
-            <h3 id="modal-customer-name">Customer</h3>
-            <button class="modal-close" id="modal-close">&times;</button>
-          </div>
-          <div id="modal-body" style="padding:24px;">
-            <div class="loading-spinner"><div class="spinner"></div></div>
-          </div>
-        </div>
-      </div>
     </main>
   </div>
 
@@ -248,6 +236,8 @@
     // ============================================
     // RENDER TABLE
     // ============================================
+    let expandedEmail = null; // track which row is expanded
+
     function renderTable() {
       const tbody = document.getElementById('customers-body');
       const start = currentPage * PAGE_SIZE;
@@ -262,11 +252,12 @@
       tbody.innerHTML = page.map(c => {
         const eventCount = c.eventIds.size;
         const lastDate = new Date(c.lastOrderDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        const isExpanded = expandedEmail === c.email;
         return `
           <tr class="customer-row" data-email="${c.email}">
             <td>
               <div style="display:flex;flex-direction:column;gap:2px;">
-                <a href="#" class="view-customer" data-email="${c.email}" style="font-weight:600;">${c.name}</a>
+                <span style="font-weight:600;">${c.name}</span>
                 <small>${c.email}</small>
               </div>
             </td>
@@ -274,7 +265,14 @@
             <td><span class="status-badge status-published">${eventCount} event${eventCount !== 1 ? 's' : ''}</span></td>
             <td style="font-weight:600;">${formatPrice(c.totalSpent)}</td>
             <td><small>${lastDate}</small></td>
-            <td><a href="#" class="btn-sm view-customer" data-email="${c.email}">View</a></td>
+            <td><button class="btn-sm toggle-detail" data-email="${c.email}">${isExpanded ? 'Hide' : 'View'}</button></td>
+          </tr>
+          <tr class="detail-row" data-detail="${c.email}" style="display:${isExpanded ? 'table-row' : 'none'};">
+            <td colspan="6" style="padding:0;">
+              <div class="customer-detail-inner" id="detail-${c.email.replace(/[^a-zA-Z0-9]/g, '_')}">
+                <div class="loading-spinner" style="padding:20px;"><div class="spinner"></div></div>
+              </div>
+            </td>
           </tr>
         `;
       }).join('');
@@ -296,134 +294,93 @@
         document.getElementById('next-page')?.addEventListener('click', () => { currentPage++; renderTable(); });
       }
 
-      // Bind view buttons
-      tbody.querySelectorAll('.view-customer').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
+      // Bind toggle buttons
+      tbody.querySelectorAll('.toggle-detail').forEach(btn => {
+        btn.addEventListener('click', () => {
           const email = btn.dataset.email;
-          const customer = filteredCustomers.find(c => c.email === email) || allCustomers.find(c => c.email === email);
-          if (customer) openCustomerModal(customer);
+          const detailRow = tbody.querySelector(`tr[data-detail="${email}"]`);
+          if (expandedEmail === email) {
+            // Collapse
+            expandedEmail = null;
+            detailRow.style.display = 'none';
+            btn.textContent = 'View';
+          } else {
+            // Collapse any previously open row
+            if (expandedEmail) {
+              const prevRow = tbody.querySelector(`tr[data-detail="${expandedEmail}"]`);
+              const prevBtn = tbody.querySelector(`.toggle-detail[data-email="${expandedEmail}"]`);
+              if (prevRow) prevRow.style.display = 'none';
+              if (prevBtn) prevBtn.textContent = 'View';
+            }
+            // Expand this row
+            expandedEmail = email;
+            detailRow.style.display = 'table-row';
+            btn.textContent = 'Hide';
+            const customer = filteredCustomers.find(c => c.email === email) || allCustomers.find(c => c.email === email);
+            if (customer) loadCustomerDetail(customer);
+          }
         });
       });
+
+      // If a row was expanded, reload its detail
+      if (expandedEmail) {
+        const customer = filteredCustomers.find(c => c.email === expandedEmail) || allCustomers.find(c => c.email === expandedEmail);
+        if (customer) loadCustomerDetail(customer);
+      }
     }
 
     // ============================================
-    // CUSTOMER DETAIL MODAL
+    // INLINE DETAIL EXPANSION
     // ============================================
-    const modal = document.getElementById('customer-modal');
-    const modalBody = document.getElementById('modal-body');
+    async function loadCustomerDetail(customer) {
+      const containerId = 'detail-' + customer.email.replace(/[^a-zA-Z0-9]/g, '_');
+      const container = document.getElementById(containerId);
+      if (!container) return;
 
-    document.getElementById('modal-close').addEventListener('click', () => modal.style.display = 'none');
-    modal.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
-
-    async function openCustomerModal(customer) {
-      document.getElementById('modal-customer-name').textContent = customer.name;
-      modal.style.display = 'flex';
-
-      // Load attendee check-in data for this customer
+      // Load attendee check-in data
       const { data: attendees } = await db
         .from('attendees')
-        .select('id, full_name, checked_in, checked_in_at, event_id, ticket_type_id, ticket_types(name), events(title, event_date)')
-        .eq('email', customer.email)
-        .order('created_at', { ascending: false });
+        .select('id, checked_in, event_id, order_id')
+        .eq('email', customer.email);
 
-      const eventsHtml = customer.events
-        .sort((a, b) => (b.date || '').localeCompare(a.date || ''))
-        .map(ev => {
-          const att = (attendees || []).find(a => a.event_id === ev.id);
-          const checkedIn = att?.checked_in;
-          const ticketType = att?.ticket_types?.name || '';
-          const statusBadge = checkedIn
-            ? '<span class="status-badge status-completed">Attended</span>'
-            : '<span class="status-badge status-pending">Not checked in</span>';
-          const dateStr = ev.date && ev.date < '2099-01-01'
-            ? new Date(ev.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
-            : 'TBD';
+      // Build a lookup: event_id -> checked_in
+      const checkinMap = {};
+      (attendees || []).forEach(a => {
+        checkinMap[a.event_id] = a.checked_in;
+      });
+
+      // Build transaction rows from orders
+      const rows = customer.orders
+        .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+        .map(o => {
+          const eventTitle = o.events?.title || 'Unknown';
+          const eventId = o.event_id;
+          const checkedIn = checkinMap[eventId];
+          const checkinBadge = checkedIn
+            ? '<span class="status-badge status-completed">Yes</span>'
+            : '<span class="status-badge status-pending">No</span>';
           return `
             <tr>
-              <td><a href="/admin/event-edit.html?id=${ev.id}">${ev.title}</a></td>
-              <td><small>${dateStr}</small></td>
-              <td><small>${ticketType}</small></td>
-              <td>${statusBadge}</td>
+              <td><a href="/admin/event-edit.html?id=${eventId}">${eventTitle}</a></td>
+              <td style="font-weight:600;">${formatPrice(o.total_cents)}</td>
+              <td>${checkinBadge}</td>
             </tr>
           `;
         }).join('');
 
-      // Calculate summary stats
-      const orderCount = customer.orderCount;
-      const eventCount = customer.eventIds.size;
-      const checkedInCount = (attendees || []).filter(a => a.checked_in).length;
-
-      modalBody.innerHTML = `
-        <div class="detail-grid" style="margin-bottom:24px;">
-          <div class="detail-item">
-            <span class="detail-label">Email</span>
-            <span class="detail-value">${customer.email}</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-label">Phone</span>
-            <span class="detail-value">${customer.phone || 'Not provided'}</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-label">Total Spent</span>
-            <span class="detail-value">${formatPrice(customer.totalSpent)}</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-label">Orders</span>
-            <span class="detail-value">${orderCount}</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-label">Events</span>
-            <span class="detail-value">${eventCount}</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-label">Checked In</span>
-            <span class="detail-value">${checkedInCount} of ${eventCount}</span>
-          </div>
-        </div>
-
-        <h4 style="margin-bottom:12px;color:#374151;">Event History</h4>
-        ${customer.events.length > 0 ? `
-          <table class="admin-table" style="font-size:0.82rem;">
+      container.innerHTML = `
+        <div style="padding:16px 24px 20px;background:#f9fafb;border-top:1px solid #e5e7eb;">
+          <table class="admin-table" style="font-size:0.85rem;margin:0;">
             <thead>
               <tr>
                 <th>Event</th>
-                <th>Date</th>
-                <th>Ticket</th>
-                <th>Status</th>
+                <th>Amount Paid</th>
+                <th>Checked In</th>
               </tr>
             </thead>
-            <tbody>${eventsHtml}</tbody>
+            <tbody>${rows || '<tr><td colspan="3" class="empty-state">No transactions.</td></tr>'}</tbody>
           </table>
-        ` : '<p class="empty-state">No events yet.</p>'}
-
-        <h4 style="margin:24px 0 12px;color:#374151;">Order History</h4>
-        <table class="admin-table" style="font-size:0.82rem;">
-          <thead>
-            <tr>
-              <th>Order</th>
-              <th>Event</th>
-              <th>Amount</th>
-              <th>Status</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${customer.orders.map(o => {
-              const statusClass = o.payment_status === 'completed' ? 'status-completed' : 'status-refunded';
-              const dateStr = new Date(o.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-              return `
-                <tr>
-                  <td><small>${o.id.slice(0, 8)}</small></td>
-                  <td><small>${o.events?.title || ''}</small></td>
-                  <td style="font-weight:600;">${formatPrice(o.total_cents)}</td>
-                  <td><span class="status-badge ${statusClass}">${o.payment_status}</span></td>
-                  <td><small>${dateStr}</small></td>
-                </tr>
-              `;
-            }).join('')}
-          </tbody>
-        </table>
+        </div>
       `;
     }
 
