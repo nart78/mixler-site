@@ -241,6 +241,23 @@ h3 { font-size: 1.5rem; }
   box-shadow: 0 8px 24px rgba(255, 52, 101, 0.35);
 }
 
+/* --- Blue Button --- */
+.btn-blue {
+  background: #153db6;
+  color: #ffffff;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-blue:hover {
+  background: #1034a0;
+}
+
 /* --- Hero --- */
 .hero {
   padding: 160px 0 100px;
