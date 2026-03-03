@@ -323,6 +323,26 @@
   margin-bottom: 0;
 }
 
+/* --- Image Dropzone --- */
+.image-dropzone {
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 32px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.image-dropzone:hover {
+  border-color: #9ca3af;
+  background: #f9fafb;
+}
+
+.image-dropzone.dragover {
+  border-color: #153db6;
+  background: rgba(21, 61, 182, 0.04);
+}
+
 /* --- Admin Modal --- */
 .admin-modal {
   position: fixed;
