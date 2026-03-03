@@ -532,7 +532,7 @@
       document.getElementById('qr-reader').innerHTML = '';
     }
 
-    async function onScanSuccess(qrCode) {
+    function onScanSuccess(qrCode) {
       // Prevent duplicate rapid scans
       if (scanCooldown || qrCode === lastScannedCode) return;
       scanCooldown = true;
@@ -541,72 +541,76 @@
       // Haptic feedback
       if (navigator.vibrate) navigator.vibrate(100);
 
-      try {
-        // First lookup the attendee
-        const lookupRes = await fetch(FUNCTION_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-            'apikey': SUPABASE_ANON_KEY,
-          },
-          body: JSON.stringify({ qr_code: qrCode, action: 'lookup' }),
-        });
+      // Show immediate processing indicator
+      showResult('info', 'Scanning...', 'Looking up ticket');
 
-        if (!lookupRes.ok) {
-          const err = await lookupRes.json();
-          playFeedback('error');
-          showResult('error', 'Invalid Ticket', err.error || 'QR code not recognized');
-          addHistory('error', 'Unknown', 'Invalid QR');
-          setTimeout(() => { scanCooldown = false; lastScannedCode = null; }, 2000);
-          return;
-        }
-
-        const { attendee } = await lookupRes.json();
-
-        if (attendee.checked_in) {
-          playFeedback('already');
-          if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
-          showResult('already', attendee.full_name, `Already checked in`, attendee);
-          addHistory('already', attendee.full_name, 'Already in');
-          setTimeout(() => { scanCooldown = false; lastScannedCode = null; }, 2000);
-          return;
-        }
-
-        // Auto check-in
-        const checkinRes = await fetch(FUNCTION_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-            'apikey': SUPABASE_ANON_KEY,
-          },
-          body: JSON.stringify({ qr_code: qrCode, action: 'checkin' }),
-        });
-
-        if (checkinRes.ok) {
-          playFeedback('success');
-          showResult('success', attendee.full_name, `${attendee.ticket_types?.name || 'General'} - ${attendee.orders?.order_number}`, attendee, qrCode);
-          addHistory('success', attendee.full_name, 'Checked in');
-          refreshStats();
-        } else {
-          const err = await checkinRes.json();
-          if (err.already_checked_in) {
-            playFeedback('already');
-            showResult('already', attendee.full_name, 'Already checked in', attendee);
-            addHistory('already', attendee.full_name, 'Already in');
-          } else {
-            playFeedback('error');
-            showResult('error', 'Check-in Failed', err.error);
-            addHistory('error', attendee.full_name, 'Failed');
-          }
-        }
-      } catch (err) {
+      handleScan(qrCode).catch(err => {
+        console.error('Scan error:', err);
         playFeedback('error');
-        showResult('error', 'Error', err.message);
+        showResult('error', 'Error', err.message || 'Something went wrong');
+      }).finally(() => {
+        setTimeout(() => { scanCooldown = false; lastScannedCode = null; }, 2000);
+      });
+    }
+
+    async function handleScan(qrCode) {
+      // First lookup the attendee
+      const lookupRes = await fetch(FUNCTION_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'apikey': SUPABASE_ANON_KEY,
+        },
+        body: JSON.stringify({ qr_code: qrCode, action: 'lookup' }),
+      });
+
+      if (!lookupRes.ok) {
+        const err = await lookupRes.json().catch(() => ({}));
+        playFeedback('error');
+        showResult('error', 'Invalid Ticket', err.error || 'QR code not recognized');
+        addHistory('error', 'Unknown', 'Invalid QR');
+        return;
       }
 
-      setTimeout(() => { scanCooldown = false; lastScannedCode = null; }, 2000);
+      const { attendee } = await lookupRes.json();
+
+      if (attendee.checked_in) {
+        playFeedback('already');
+        if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
+        showResult('already', attendee.full_name, `Already checked in`, attendee);
+        addHistory('already', attendee.full_name, 'Already in');
+        return;
+      }
+
+      // Auto check-in
+      const checkinRes = await fetch(FUNCTION_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'apikey': SUPABASE_ANON_KEY,
+        },
+        body: JSON.stringify({ qr_code: qrCode, action: 'checkin' }),
+      });
+
+      if (checkinRes.ok) {
+        playFeedback('success');
+        showResult('success', attendee.full_name, `${attendee.ticket_types?.name || 'General'} - ${attendee.orders?.order_number}`, attendee, qrCode);
+        addHistory('success', attendee.full_name, 'Checked in');
+        refreshStats();
+      } else {
+        const err = await checkinRes.json().catch(() => ({}));
+        if (err.already_checked_in) {
+          playFeedback('already');
+          showResult('already', attendee.full_name, 'Already checked in', attendee);
+          addHistory('already', attendee.full_name, 'Already in');
+        } else {
+          playFeedback('error');
+          showResult('error', 'Check-in Failed', err.error || 'Unknown error');
+          addHistory('error', attendee.full_name, 'Failed');
+        }
+      }
     }
 
     function showResult(type, name, detail, attendee, qrCode) {
@@ -637,12 +641,17 @@
         </div>
       `;
 
-      // Auto-dismiss after 5 seconds
-      setTimeout(() => {
-        if (container.querySelector(`.scan-result-${type}`)) {
-          container.innerHTML = '';
-        }
-      }, 5000);
+      // Scroll result into view on mobile
+      container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      // Auto-dismiss after 5 seconds (except info/processing)
+      if (type !== 'info') {
+        setTimeout(() => {
+          if (container.querySelector(`.scan-result-${type}`)) {
+            container.innerHTML = '';
+          }
+        }, 5000);
+      }
     }
 
     // Expose undo globally for onclick
