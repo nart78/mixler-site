@@ -209,16 +209,11 @@ h1, h2, h3, h4 {
 }
 
 .coming-soon-badge {
-  display: inline-block;
-  background: #153db6;
-  color: #ffffff;
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 12px;
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
 }
 
 .coming-soon-text {
