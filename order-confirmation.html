@@ -16,24 +16,7 @@
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header class="site-header events-header">
-    <nav class="nav container">
-      <a href="/" class="nav-logo"><img src="images/mixler-white-wide.png" alt="Mixler" class="nav-logo-img"></a>
-      <ul class="nav-links">
-        <li><a href="/#events">Events</a></li>
-        <li><a href="/#how-it-works">How It Works</a></li>
-        <li><a href="/#about">About</a></li>
-        <li><a href="#social">Gallery</a></li>
-        <li><a href="/events.html" class="btn btn-pink btn-nav">Get Tickets</a></li>
-      </ul>
-      <button class="mobile-menu-btn" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
-  </header>
+  <div id="site-nav"></div>
 
   <section class="confirmation-section">
     <div class="container">
@@ -46,27 +29,13 @@
   <div id="site-footer"></div>
 
   <script type="module">
-    import { renderFooter } from './js/components.js';
+    import { renderNav, renderFooter } from './js/components.js';
     import { db } from './js/supabase-client.js';
     import { formatDate, formatTime, formatPrice, googleCalendarUrl, downloadICS, outlookCalendarUrl, getParam } from './js/utils.js';
     import { generateTicketPDF } from './js/ticket-pdf.js';
 
+    renderNav();
     renderFooter();
-
-    // Header scroll effect
-    window.addEventListener('scroll', () => {
-      document.querySelector('.site-header').classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    // Mobile menu
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    if (menuBtn) {
-      menuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); menuBtn.classList.toggle('active'); });
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => { navLinks.classList.remove('active'); menuBtn.classList.remove('active'); });
-      });
-    }
 
     const orderNumber = getParam('order');
     if (!orderNumber) {
