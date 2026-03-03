@@ -2,15 +2,18 @@
 import { getSession, signOut } from './auth.js';
 
 // Render the site header/nav on every page
-async function renderNav(activeLink) {
+// activeLink: 'events' | 'account' | 'login' | etc.
+// options: { headerClass: 'dark-header' | 'events-header' (default) }
+async function renderNav(activeLink, options = {}) {
   const session = await getSession();
   const isLoggedIn = !!session;
+  const headerClass = options.headerClass || 'events-header';
 
   const nav = document.getElementById('site-nav');
   if (!nav) return;
 
   nav.innerHTML = `
-    <header class="site-header events-header">
+    <header class="site-header ${headerClass}">
       <nav class="nav container">
         <a href="/" class="nav-logo"><img src="/images/mixler-white-wide.png" alt="Mixler" class="nav-logo-img"></a>
         <ul class="nav-links">
@@ -41,6 +44,20 @@ async function renderNav(activeLink) {
     menuBtn.addEventListener('click', () => {
       navLinks.classList.toggle('active');
       menuBtn.classList.toggle('active');
+    });
+    nav.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuBtn.classList.remove('active');
+      });
+    });
+  }
+
+  // Scroll effect
+  const header = nav.querySelector('.site-header');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
     });
   }
 

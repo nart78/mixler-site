@@ -14,24 +14,7 @@
 </head>
 <body class="dark-body">
 
-  <!-- Navigation -->
-  <header class="site-header dark-header">
-    <nav class="nav container">
-      <a href="/" class="nav-logo"><img src="images/mixler-white-wide.png" alt="Mixler" class="nav-logo-img"></a>
-      <ul class="nav-links">
-        <li><a href="#events">Events</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#social">Gallery</a></li>
-        <li><a href="/events.html" class="btn btn-primary btn-nav">Get Tickets</a></li>
-      </ul>
-      <button class="mobile-menu-btn" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
-  </header>
+  <div id="site-nav"></div>
 
   <!-- ===================== HERO ===================== -->
   <section class="hero-dark">
@@ -244,8 +227,10 @@
   </footer>
 
   <script type="module">
-    import { renderEventCard } from './js/components.js';
+    import { renderNav, renderEventCard } from './js/components.js';
     import { db } from './js/supabase-client.js';
+
+    renderNav(null, { headerClass: 'dark-header' });
 
     // Load upcoming events
     async function loadUpcomingEvents() {
@@ -303,21 +288,6 @@
         const target = document.querySelector(a.getAttribute('href'));
         if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
       });
-    });
-
-    // Mobile menu
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    if (menuBtn) {
-      menuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); menuBtn.classList.toggle('active'); });
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => { navLinks.classList.remove('active'); menuBtn.classList.remove('active'); });
-      });
-    }
-
-    // Header scroll
-    window.addEventListener('scroll', () => {
-      document.querySelector('.site-header').classList.toggle('scrolled', window.scrollY > 50);
     });
 
     // Scroll reveal

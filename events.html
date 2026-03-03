@@ -14,24 +14,7 @@
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header class="site-header events-header">
-    <nav class="nav container">
-      <a href="/" class="nav-logo"><img src="images/mixler-white-wide.png" alt="Mixler" class="nav-logo-img"></a>
-      <ul class="nav-links">
-        <li><a href="/#events">Events</a></li>
-        <li><a href="/#how-it-works">How It Works</a></li>
-        <li><a href="/#about">About</a></li>
-        <li><a href="#social">Gallery</a></li>
-        <li><a href="/events.html" class="btn btn-pink btn-nav">Get Tickets</a></li>
-      </ul>
-      <button class="mobile-menu-btn" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
-  </header>
+  <div id="site-nav"></div>
 
   <section class="page-hero events-hero">
     <div class="hero-decor">
@@ -82,25 +65,11 @@
   <div id="site-footer"></div>
 
   <script type="module">
-    import { renderFooter, renderEventCard } from './js/components.js';
+    import { renderNav, renderFooter, renderEventCard } from './js/components.js';
     import { db } from './js/supabase-client.js';
 
+    renderNav('events');
     renderFooter();
-
-    // Header scroll effect
-    window.addEventListener('scroll', () => {
-      document.querySelector('.site-header').classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    // Mobile menu
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    if (menuBtn) {
-      menuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); menuBtn.classList.toggle('active'); });
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => { navLinks.classList.remove('active'); menuBtn.classList.remove('active'); });
-      });
-    }
 
     let allEvents = [];
     let currentMonth = new Date();
