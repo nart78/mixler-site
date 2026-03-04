@@ -1132,16 +1132,6 @@ section {
   border-color: #9ca3af;
 }
 
-.btn-facebook {
-  background: #1877F2;
-  color: #ffffff;
-  border: 1px solid #1877F2;
-}
-
-.btn-facebook:hover {
-  background: #166fe5;
-}
-
 .auth-divider {
   display: flex;
   align-items: center;
