@@ -267,8 +267,12 @@
             <div class="attendee-header">Attendee ${i + 1} ${isFirst ? '<span class="badge-you">You</span>' : ''}</div>
             <div class="form-row">
               <div class="form-group">
-                <label>Name *</label>
-                <input type="text" class="attendee-name" data-index="${i}" placeholder="Full name" required>
+                <label>First Name *</label>
+                <input type="text" class="attendee-first" data-index="${i}" placeholder="First name" required>
+              </div>
+              <div class="form-group">
+                <label>Last Name *</label>
+                <input type="text" class="attendee-last" data-index="${i}" placeholder="Last name" required>
               </div>
               <div class="form-group">
                 <label>Email (optional)</label>
@@ -285,11 +289,14 @@
     }
 
     function syncBuyerToAttendee() {
-      const firstAttendeeName = document.querySelector('.attendee-name[data-index="0"]');
+      const firstAttendeeFirst = document.querySelector('.attendee-first[data-index="0"]');
+      const firstAttendeeLast = document.querySelector('.attendee-last[data-index="0"]');
       const firstAttendeeEmail = document.querySelector('.attendee-email[data-index="0"]');
 
-      if (firstAttendeeName && currentProfile?.full_name) {
-        firstAttendeeName.value = currentProfile.full_name;
+      if (currentProfile?.full_name) {
+        const parts = currentProfile.full_name.trim().split(/\s+/);
+        if (firstAttendeeFirst) firstAttendeeFirst.value = parts[0] || '';
+        if (firstAttendeeLast) firstAttendeeLast.value = parts.slice(1).join(' ') || '';
       }
       if (firstAttendeeEmail && currentSession?.user?.email) {
         firstAttendeeEmail.value = currentSession.user.email;
@@ -580,18 +587,25 @@
       // Validate attendee names
       const attendees = [];
       for (let i = 0; i < quantity; i++) {
-        const nameInput = document.querySelector(`.attendee-name[data-index="${i}"]`);
+        const firstInput = document.querySelector(`.attendee-first[data-index="${i}"]`);
+        const lastInput = document.querySelector(`.attendee-last[data-index="${i}"]`);
         const emailInput = document.querySelector(`.attendee-email[data-index="${i}"]`);
-        const name = nameInput?.value?.trim();
+        const first = firstInput?.value?.trim();
+        const last = lastInput?.value?.trim();
         const email = emailInput?.value?.trim();
 
-        if (!name) {
-          showToast(`Please enter a name for Attendee ${i + 1}.`, 'error');
-          nameInput?.focus();
+        if (!first) {
+          showToast(`Please enter a first name for Attendee ${i + 1}.`, 'error');
+          firstInput?.focus();
+          return;
+        }
+        if (!last) {
+          showToast(`Please enter a last name for Attendee ${i + 1}.`, 'error');
+          lastInput?.focus();
           return;
         }
 
-        attendees.push({ full_name: name, email: email || null });
+        attendees.push({ full_name: (first + ' ' + last).trim(), email: email || null });
       }
 
       btn.disabled = true;

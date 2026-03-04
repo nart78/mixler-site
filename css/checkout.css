@@ -73,6 +73,10 @@ h1, h2, h3, h4 {
   gap: 16px;
 }
 
+.attendee-card .form-row {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .form-group {
   margin-bottom: 12px;
 }
@@ -654,7 +658,8 @@ h1, h2, h3, h4 {
     font-size: 1.75rem;
   }
 
-  .form-row {
+  .form-row,
+  .attendee-card .form-row {
     grid-template-columns: 1fr;
   }
 
