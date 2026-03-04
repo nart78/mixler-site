@@ -47,9 +47,15 @@
 
         <!-- Signup Form -->
         <form id="signup-form" class="auth-form" style="display:none;">
-          <div class="form-group">
-            <label for="signup-name">Full Name</label>
-            <input type="text" id="signup-name" required placeholder="Jane Smith">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div class="form-group">
+              <label for="signup-first">First Name</label>
+              <input type="text" id="signup-first" required placeholder="Jane">
+            </div>
+            <div class="form-group">
+              <label for="signup-last">Last Name</label>
+              <input type="text" id="signup-last" required placeholder="Smith">
+            </div>
           </div>
           <div class="form-group">
             <label for="signup-email">Email</label>
@@ -136,7 +142,7 @@
     // Signup handler
     signupForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const name = document.getElementById('signup-name').value.trim();
+      const name = (document.getElementById('signup-first').value.trim() + ' ' + document.getElementById('signup-last').value.trim()).trim();
       const email = document.getElementById('signup-email').value;
       const password = document.getElementById('signup-password').value;
       const errorEl = document.getElementById('signup-error');
