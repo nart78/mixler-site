@@ -92,6 +92,7 @@ h1, h2, h3, h4 {
   border: 1.5px solid #d1d5db;
   border-radius: 8px;
   font-size: 0.95rem;
+  font-weight: 400;
   font-family: 'Inter', sans-serif;
   transition: border-color 0.2s;
 }
