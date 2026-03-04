@@ -257,9 +257,9 @@
     if (nlForm) {
       nlForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const name = nlForm.name.value.trim();
-        const last_name = nlForm.last_name.value.trim();
-        const email = nlForm.email.value.trim();
+        const name = nlForm.elements['name'].value.trim();
+        const last_name = nlForm.elements['last_name'].value.trim();
+        const email = nlForm.elements['email'].value.trim();
         if (!email) return;
         nlMsg.textContent = 'Subscribing...';
         nlMsg.className = 'newsletter-msg';
