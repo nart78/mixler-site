@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Deletion | Mixler</title>
+  <meta name="description" content="How to request deletion of your personal data from Mixler.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    .legal-section {
+      padding: 140px 0 80px;
+      min-height: 80vh;
+    }
+    .legal-content {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .legal-content h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 2.4rem;
+      color: #153db6;
+      margin-bottom: 8px;
+    }
+    .legal-updated {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-bottom: 40px;
+    }
+    .legal-content h2 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 1.2rem;
+      color: #1f2937;
+      margin-top: 32px;
+      margin-bottom: 10px;
+    }
+    .legal-content p,
+    .legal-content ol {
+      font-size: 0.95rem;
+      color: #374151;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .legal-content ol {
+      padding-left: 20px;
+    }
+    .legal-content ol li {
+      margin-bottom: 6px;
+    }
+    .legal-contact {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.95rem;
+      color: #374151;
+      line-height: 1.7;
+    }
+    .legal-contact a {
+      color: #153db6;
+    }
+    @media (max-width: 640px) {
+      .legal-section { padding-top: 100px; }
+      .legal-content h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="site-nav"></div>
+
+  <section class="legal-section">
+    <div class="container">
+      <div class="legal-content">
+        <h1>Data Deletion Request</h1>
+        <p class="legal-updated">Last updated: January 15, 2026</p>
+
+        <h2>How to Delete Your Data</h2>
+        <p>If you signed up for Mixler using Facebook Login or any other method, you can request deletion of your personal data at any time. We will delete your account and all associated personal information from our systems.</p>
+
+        <h2>To Request Data Deletion</h2>
+        <ol>
+          <li>Send an email to <a href="mailto:hello@mixler.ca">hello@mixler.ca</a> with the subject line "Data Deletion Request".</li>
+          <li>Include the email address associated with your Mixler account.</li>
+          <li>We will process your request and delete your data within 30 days.</li>
+          <li>You will receive a confirmation email once your data has been deleted.</li>
+        </ol>
+
+        <h2>What Data Is Deleted</h2>
+        <p>Upon receiving your request, we will delete the following personal data associated with your account:</p>
+        <ol>
+          <li>Your name, email address, and phone number</li>
+          <li>Your account profile and login credentials</li>
+          <li>Age range, gender, and other optional information you provided</li>
+          <li>Event registration history</li>
+        </ol>
+
+        <h2>What We May Retain</h2>
+        <p>We may retain certain information where required by law or for legitimate business purposes, such as transaction records needed for tax or accounting compliance. Any retained data will be limited to what is legally required and will not be used for marketing.</p>
+
+        <div class="legal-contact">
+          <p>If you have questions about data deletion, contact us at <a href="mailto:hello@mixler.ca">hello@mixler.ca</a>.</p>
+          <p>For our full privacy practices, see our <a href="/privacy.html">Privacy Policy</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script type="module">
+    import { renderNav, renderFooter } from './js/components.js';
+    renderNav();
+    renderFooter();
+  </script>
+</body>
+</html>
