@@ -547,6 +547,84 @@ h1, h2, h3, h4 {
   justify-content: center;
 }
 
+/* --- Checkout Auth Section --- */
+.checkout-auth-confirmed {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 10px;
+}
+
+.auth-confirmed-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.auth-confirmed-info strong {
+  font-size: 0.95rem;
+  color: #065f46;
+}
+
+.auth-confirmed-info span {
+  font-size: 0.82rem;
+  color: #047857;
+}
+
+.auth-logout-link {
+  font-size: 0.82rem;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.auth-logout-link:hover {
+  color: #153db6;
+  text-decoration: underline;
+}
+
+.checkout-auth-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 20px;
+}
+
+.checkout-auth-tab {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #9ca3af;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.checkout-auth-tab.active {
+  color: #153db6;
+  border-bottom-color: #153db6;
+}
+
+.checkout-auth-form .form-group {
+  margin-bottom: 14px;
+}
+
+.checkout-auth-form .form-error {
+  margin-bottom: 12px;
+}
+
+/* --- Gated Sections (hidden until auth) --- */
+.checkout-gated.gated {
+  display: none;
+}
+
 /* ========================================
    Responsive
    ======================================== */
@@ -601,5 +679,13 @@ h1, h2, h3, h4 {
 
   .coupon-row {
     flex-direction: column;
+  }
+
+  .checkout-auth-confirmed {
+    flex-wrap: wrap;
+  }
+
+  .auth-logout-link {
+    width: 100%;
   }
 }

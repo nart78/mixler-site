@@ -1,5 +1,5 @@
 // Auth Module - Mixler Event Platform
-import { db } from './supabase-client.js';
+import { db, SUPABASE_URL, SUPABASE_ANON_KEY } from './supabase-client.js';
 
 // Get current session
 async function getSession() {
@@ -48,13 +48,31 @@ async function signIn(email, password) {
   return data;
 }
 
+// Sign up with auto-confirm (for checkout flow, no email verification)
+async function signUpAutoConfirm(email, password, fullName) {
+  const res = await fetch(`${SUPABASE_URL}/functions/v1/checkout-signup`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, password, full_name: fullName }),
+  });
+
+  const result = await res.json();
+  if (!res.ok) throw new Error(result.error || 'Signup failed');
+
+  // Sign in immediately to get a session
+  return await signIn(email, password);
+}
+
 // Sign in with OAuth provider (google, facebook)
-async function signInWithProvider(provider) {
-  const returnUrl = new URLSearchParams(window.location.search).get('return') || '/account.html';
+async function signInWithProvider(provider, redirectTo) {
+  const defaultReturn = new URLSearchParams(window.location.search).get('return') || '/account.html';
   const { data, error } = await db.auth.signInWithOAuth({
     provider,
     options: {
-      redirectTo: window.location.origin + returnUrl,
+      redirectTo: redirectTo || (window.location.origin + defaultReturn),
     }
   });
   if (error) throw error;
@@ -105,4 +123,4 @@ function onAuthChange(callback) {
   });
 }
 
-export { getSession, getCurrentUser, signUp, signIn, signInWithProvider, signOut, isAdmin, requireAuth, requireAdmin, onAuthChange };
+export { getSession, getCurrentUser, signUp, signUpAutoConfirm, signIn, signInWithProvider, signOut, isAdmin, requireAuth, requireAdmin, onAuthChange };
