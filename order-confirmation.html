@@ -32,7 +32,8 @@
     import { renderNav, renderFooter } from './js/components.js';
     import { db } from './js/supabase-client.js';
     import { formatDate, formatTime, formatPrice, googleCalendarUrl, downloadICS, outlookCalendarUrl, getParam } from './js/utils.js';
-    import { generateTicketPDF } from './js/ticket-pdf.js';
+    import { generateTicketPDF, generateSingleTicketBase64 } from './js/ticket-pdf.js';
+    import { SUPABASE_URL, SUPABASE_ANON_KEY } from './js/supabase-client.js';
 
     renderNav();
     renderFooter();
@@ -151,25 +152,25 @@
                 <h3>Attendees</h3>
                 <div class="attendee-list">
                   ${attendees.map((a, i) => `
-                    <div class="attendee-row">
+                    <div class="attendee-row" data-attendee-index="${i}">
                       <div class="attendee-info">
                         <strong>${a.full_name}</strong>
                         ${a.email ? `<span>${a.email}</span>` : ''}
                       </div>
-                      ${a.qr_code ? `
-                        <div class="qr-badge" title="QR Code: ${a.qr_code}">
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="7" height="7"/>
-                            <rect x="14" y="3" width="7" height="7"/>
-                            <rect x="3" y="14" width="7" height="7"/>
-                            <rect x="14" y="14" width="3" height="3"/>
-                            <rect x="18" y="14" width="3" height="3"/>
-                            <rect x="14" y="18" width="3" height="3"/>
-                            <rect x="18" y="18" width="3" height="3"/>
+                      <div class="attendee-actions">
+                        <button class="btn-email-ticket" data-index="${i}" data-has-email="${a.email ? 'true' : 'false'}">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"/>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                           </svg>
-                          Ticket ${i + 1}
+                          Email Ticket
+                        </button>
+                        <div class="email-input-row" id="email-input-${i}" style="display:none;">
+                          <input type="email" class="email-ticket-input" id="email-field-${i}" placeholder="Email address">
+                          <button class="btn-send-ticket" id="send-btn-${i}" disabled>Send Ticket</button>
                         </div>
-                      ` : ''}
+                        <div class="email-ticket-status" id="email-status-${i}"></div>
+                      </div>
                     </div>
                   `).join('')}
                 </div>
@@ -239,6 +240,91 @@
             Download PDF Tickets`;
         });
       }
+
+      // Email Ticket button handlers
+      async function sendTicketEmail(index, email) {
+        const statusEl = document.getElementById(`email-status-${index}`);
+        const a = attendees[index];
+
+        statusEl.textContent = 'Generating ticket...';
+        statusEl.className = 'email-ticket-status sending';
+
+        try {
+          const pdfBase64 = generateSingleTicketBase64(event, order, a, index, attendees.length);
+
+          statusEl.textContent = 'Sending email...';
+
+          const res = await fetch(`${SUPABASE_URL}/functions/v1/send-attendee-ticket`, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              pdf_base64: pdfBase64,
+              recipient_email: email,
+              attendee_name: a.full_name,
+              event_title: event.title,
+              order_number: order.order_number,
+            }),
+          });
+
+          const result = await res.json();
+
+          if (!res.ok) throw new Error(result.error || 'Failed to send');
+
+          statusEl.textContent = `Sent to ${email}`;
+          statusEl.className = 'email-ticket-status success';
+
+          // Hide the email input row if it was shown
+          const inputRow = document.getElementById(`email-input-${index}`);
+          if (inputRow) inputRow.style.display = 'none';
+        } catch (err) {
+          statusEl.textContent = err.message || 'Failed to send. Try again.';
+          statusEl.className = 'email-ticket-status error';
+        }
+      }
+
+      document.querySelectorAll('.btn-email-ticket').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const index = parseInt(btn.dataset.index);
+          const hasEmail = btn.dataset.hasEmail === 'true';
+          const a = attendees[index];
+
+          if (hasEmail && a.email) {
+            // Has email - send directly
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+            await sendTicketEmail(index, a.email);
+            btn.textContent = 'Email Ticket';
+            btn.disabled = false;
+          } else {
+            // No email - show input field
+            const inputRow = document.getElementById(`email-input-${index}`);
+            inputRow.style.display = inputRow.style.display === 'none' ? 'flex' : 'none';
+          }
+        });
+      });
+
+      // Email input validation + send handlers
+      document.querySelectorAll('.email-ticket-input').forEach(input => {
+        const index = input.id.replace('email-field-', '');
+        const sendBtn = document.getElementById(`send-btn-${index}`);
+
+        input.addEventListener('input', () => {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          sendBtn.disabled = !emailRegex.test(input.value.trim());
+        });
+
+        sendBtn.addEventListener('click', async () => {
+          const email = input.value.trim();
+          sendBtn.disabled = true;
+          sendBtn.textContent = 'Sending...';
+          await sendTicketEmail(parseInt(index), email);
+          sendBtn.textContent = 'Send Ticket';
+          sendBtn.disabled = false;
+        });
+      });
     }
 
     loadConfirmation();

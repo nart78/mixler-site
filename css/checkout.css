@@ -522,6 +522,110 @@ h1, h2, h3, h4 {
   border-radius: 6px;
 }
 
+/* --- Attendee Email Ticket --- */
+.attendee-row {
+  flex-wrap: wrap;
+}
+
+.attendee-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.btn-email-ticket {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  background: #ff3465;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.btn-email-ticket:hover {
+  background: #e62d5a;
+}
+
+.btn-email-ticket:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.email-input-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+}
+
+.email-ticket-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  min-width: 0;
+}
+
+.email-ticket-input:focus {
+  outline: none;
+  border-color: #ff3465;
+  box-shadow: 0 0 0 3px rgba(255, 52, 101, 0.1);
+}
+
+.btn-send-ticket {
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  background: #ff3465;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.btn-send-ticket:hover {
+  background: #e62d5a;
+}
+
+.btn-send-ticket:disabled {
+  background: #d1d5db;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.email-ticket-status {
+  font-size: 0.78rem;
+  min-height: 1em;
+}
+
+.email-ticket-status.sending {
+  color: #6b7280;
+}
+
+.email-ticket-status.success {
+  color: #22c55e;
+  font-weight: 500;
+}
+
+.email-ticket-status.error {
+  color: #ef4444;
+}
+
 /* --- Calendar Buttons --- */
 .calendar-buttons {
   display: flex;
