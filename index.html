@@ -228,7 +228,7 @@
 
   <script type="module">
     import { renderNav, renderEventCard } from './js/components.js';
-    import { db } from './js/supabase-client.js';
+    import { db, SUPABASE_URL, SUPABASE_ANON_KEY } from './js/supabase-client.js';
 
     renderNav(null, { headerClass: 'dark-header' });
 
@@ -264,17 +264,19 @@
         nlMsg.textContent = 'Subscribing...';
         nlMsg.className = 'newsletter-msg';
         try {
-          const { error } = await db.from('newsletter_subscribers').insert({ name, last_name, email });
-          if (error && error.code === '23505') {
-            nlMsg.textContent = "You're already subscribed!";
-            nlMsg.className = 'newsletter-msg msg-info';
-          } else if (error) {
-            throw error;
-          } else {
-            nlMsg.textContent = "You're in! Watch your inbox for the good stuff.";
-            nlMsg.className = 'newsletter-msg msg-success';
-            nlForm.reset();
-          }
+          const res = await fetch(`${SUPABASE_URL}/functions/v1/newsletter-subscribe`, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, last_name, email }),
+          });
+          const data = await res.json();
+          if (!res.ok) throw new Error(data.error || 'Request failed');
+          nlMsg.textContent = "You're in! Watch your inbox for the good stuff.";
+          nlMsg.className = 'newsletter-msg msg-success';
+          nlForm.reset();
         } catch (err) {
           nlMsg.textContent = 'Something went wrong. Please try again.';
           nlMsg.className = 'newsletter-msg msg-error';

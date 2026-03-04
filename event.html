@@ -27,7 +27,7 @@
 
   <script type="module">
     import { renderNav, renderFooter, showToast } from './js/components.js';
-    import { db } from './js/supabase-client.js';
+    import { db, SUPABASE_URL, SUPABASE_ANON_KEY } from './js/supabase-client.js';
     import { getSession } from './js/auth.js';
     import { formatDate, formatTime, formatPrice, googleCalendarUrl, downloadICS, outlookCalendarUrl, getParam } from './js/utils.js';
 
@@ -233,20 +233,22 @@
           msgEl.className = 'notify-msg';
 
           try {
-            const { error } = await db.from('newsletter_subscribers').insert({ name, last_name, email });
-            if (error && error.code === '23505') {
-              msgEl.textContent = "You're already subscribed!";
-              msgEl.className = 'notify-msg msg-info';
-            } else if (error) {
-              throw error;
-            } else {
-              notifyForm.innerHTML = `
-                <div class="notify-success">
-                  <strong>You're on the list!</strong>
-                  <p>We'll let you know when this event is ready.</p>
-                </div>
-              `;
-            }
+            const res = await fetch(`${SUPABASE_URL}/functions/v1/newsletter-subscribe`, {
+              method: 'POST',
+              headers: {
+                'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ name, last_name, email }),
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error || 'Request failed');
+            notifyForm.innerHTML = `
+              <div class="notify-success">
+                <strong>You're on the list!</strong>
+                <p>We'll let you know when this event is ready.</p>
+              </div>
+            `;
           } catch (err) {
             msgEl.textContent = 'Something went wrong. Please try again.';
             msgEl.className = 'notify-msg msg-error';
