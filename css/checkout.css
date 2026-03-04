@@ -620,6 +620,10 @@ h1, h2, h3, h4 {
   margin-bottom: 12px;
 }
 
+#auth-forms .auth-divider {
+  margin-top: 20px;
+}
+
 /* --- Gated Sections (hidden until auth) --- */
 .checkout-gated.gated {
   display: none;
