@@ -553,8 +553,8 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: 12px;
   padding: 16px 20px;
-  background: #ecfdf5;
-  border: 1px solid #a7f3d0;
+  background: rgba(255, 52, 101, 0.08);
+  border: 1px solid rgba(255, 52, 101, 0.25);
   border-radius: 10px;
 }
 
@@ -567,12 +567,12 @@ h1, h2, h3, h4 {
 
 .auth-confirmed-info strong {
   font-size: 0.95rem;
-  color: #065f46;
+  color: #1f2937;
 }
 
 .auth-confirmed-info span {
   font-size: 0.82rem;
-  color: #047857;
+  color: rgba(255, 52, 101, 0.7);
 }
 
 .auth-logout-link {
