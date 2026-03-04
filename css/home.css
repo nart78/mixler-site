@@ -639,6 +639,15 @@
   background: rgba(255, 255, 255, 0.3);
 }
 
+.newsletter-input:-webkit-autofill,
+.newsletter-input:-webkit-autofill:hover,
+.newsletter-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.2) inset;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 .newsletter-btn {
   white-space: nowrap;
   flex-shrink: 0;
