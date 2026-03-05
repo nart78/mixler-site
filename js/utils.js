@@ -28,12 +28,21 @@ function formatTime(timeStr) {
 function googleCalendarUrl(event) {
   const startDate = event.event_date.replace(/-/g, '');
   const startTime = event.start_time.replace(/:/g, '') + '00';
-  const endTime = event.end_time ? event.end_time.replace(/:/g, '') + '00' : '';
+
+  let endTime;
+  if (event.end_time) {
+    endTime = event.end_time.replace(/:/g, '') + '00';
+  } else {
+    // Default to 2 hours after start
+    const [h, m] = event.start_time.split(':');
+    const endH = String(Math.min(+h + 2, 23)).padStart(2, '0');
+    endTime = endH + m + '00';
+  }
 
   const params = new URLSearchParams({
     action: 'TEMPLATE',
     text: event.title,
-    dates: `${startDate}T${startTime}/${endTime ? startDate + 'T' + endTime : ''}`,
+    dates: `${startDate}T${startTime}/${startDate}T${endTime}`,
     location: event.location_address || event.location_name || '',
     details: event.short_description || event.description || '',
     ctz: 'America/Edmonton'
