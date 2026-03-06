@@ -614,42 +614,83 @@
     padding-top: 72px;
   }
 
+  /* Stats cards: force 1fr 1fr on all grids, override inline styles */
   .admin-stats {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr !important;
     gap: 12px;
   }
 
   .stat-card {
-    padding: 16px;
+    padding: 14px;
+  }
+
+  .stat-card-label {
+    font-size: 0.7rem;
   }
 
   .stat-card-value {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
   }
 
+  /* Cards */
   .admin-card {
-    padding: 16px;
-    margin-bottom: 16px;
+    padding: 14px;
+    margin-bottom: 14px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
+  /* Two-column grids */
   .admin-two-col {
     grid-template-columns: 1fr !important;
   }
 
+  /* Tables: shrink text and padding */
   .admin-table {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    font-size: 0.78rem;
+  }
+
+  .admin-table th {
+    padding: 8px 6px;
+    font-size: 0.68rem;
+  }
+
+  .admin-table td {
+    padding: 10px 6px;
+  }
+
+  /* Admin header */
+  .admin-header {
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .admin-header h1 {
     font-size: 1.35rem;
   }
 
-  .admin-header {
-    margin-bottom: 20px;
+  .admin-header .btn {
+    font-size: 0.8rem;
+    padding: 8px 14px;
   }
 
+  /* Filter forms */
+  .admin-card .admin-form {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .admin-card .admin-form > div {
+    width: 100%;
+  }
+
+  .admin-card .admin-form input,
+  .admin-card .admin-form select {
+    width: 100%;
+  }
+
+  /* Activity feed */
   .activity-item {
     gap: 8px;
   }
@@ -660,5 +701,19 @@
 
   .activity-time {
     font-size: 0.72rem;
+  }
+
+  /* Detail grid in modals */
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Admin modal */
+  .admin-modal {
+    padding: 8px;
+  }
+
+  .admin-modal-content {
+    max-height: 85vh;
   }
 }
