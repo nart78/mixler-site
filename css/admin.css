@@ -677,19 +677,36 @@
     padding: 8px 14px;
   }
 
-  /* Filter forms */
-  .admin-card .admin-form {
+  /* Filter forms - target both .admin-form and inline flex containers */
+  .admin-card .admin-form,
+  .admin-card > div[style*="display:flex"],
+  .admin-card > div[style*="display: flex"] {
     flex-direction: column !important;
     gap: 12px !important;
+    align-items: stretch !important;
   }
 
-  .admin-card .admin-form > div {
-    width: 100%;
+  .admin-card .admin-form > div,
+  .admin-card > div[style*="flex"] > .form-group {
+    width: 100% !important;
+    min-width: 0 !important;
+    flex: unset !important;
   }
 
   .admin-card .admin-form input,
-  .admin-card .admin-form select {
-    width: 100%;
+  .admin-card .admin-form select,
+  .admin-card input,
+  .admin-card select {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Header: ensure button doesn't overflow */
+  .admin-header .btn-outline,
+  .admin-header .btn {
+    white-space: nowrap;
+    font-size: 0.78rem;
+    padding: 6px 12px;
   }
 
   /* Activity feed */
