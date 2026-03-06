@@ -38,7 +38,7 @@
     <main class="admin-main">
       <div class="admin-header">
         <h1>Orders</h1>
-        <button id="export-csv" class="btn btn-outline">Export CSV</button>
+        <button id="export-csv" class="btn btn-pink">Export CSV</button>
       </div>
 
       <!-- Filters -->
@@ -64,7 +64,7 @@
             <label for="filter-search">Search</label>
             <input type="text" id="filter-search" placeholder="Name, email, or order #">
           </div>
-          <button type="button" id="filter-btn" class="btn btn-primary" style="height:40px;">Filter</button>
+          <button type="button" id="filter-btn" class="btn btn-primary" style="height:40px;width:100%;">Filter</button>
         </div>
       </div>
 
@@ -183,7 +183,6 @@
         <table class="admin-table">
           <thead>
             <tr>
-              <th>Order</th>
               <th>Customer</th>
               <th>Event</th>
               <th>Qty</th>
@@ -196,10 +195,9 @@
           <tbody>
             ${allOrders.map(o => `
               <tr>
-                <td><a href="#" class="view-order" data-id="${o.id}">${o.order_number}</a></td>
                 <td>${o.buyer_name}<br><small>${o.buyer_email}</small></td>
                 <td>${o.events?.title || ''}</td>
-                <td>${o.quantity}</td>
+                <td><a href="#" class="view-order" data-id="${o.id}">${o.quantity}</a></td>
                 <td>${formatPrice(o.total_cents)}</td>
                 <td><span class="status-badge status-${o.payment_status}">${o.payment_status}</span></td>
                 <td><small>${new Date(o.created_at).toLocaleDateString()}</small></td>
