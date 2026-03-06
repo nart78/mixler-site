@@ -78,6 +78,19 @@
   color: #374151;
 }
 
+/* --- Admin header buttons: pink with white font --- */
+.admin-header .btn {
+  background: #ff3465;
+  color: #ffffff;
+  border: 1px solid #ff3465;
+}
+
+.admin-header .btn:hover {
+  background: #e6295a;
+  border-color: #e6295a;
+  color: #ffffff;
+}
+
 /* --- Stats Grid --- */
 .admin-stats {
   display: grid;
