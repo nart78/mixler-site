@@ -2,10 +2,11 @@
 
 ## Deployment
 - Repo: `nart78/mixler-site`
-- GitHub Pages, domain: staging.mixler.ca (CNAME)
-- Deploys from `main` branch
+- IONOS VPS (198.71.51.250), domain: mixler.ca
+- Nginx serving from `/var/www/mixler.ca/`
 - Static HTML/CSS/JS + Supabase backend
-- **Always push after making changes.** Don't ask, just push.
+- Deploy: `rsync -avz --delete ~/mixler-site/ root@198.71.51.250:/var/www/mixler.ca/ --exclude='.git' --exclude='supabase' --exclude='scripts' --exclude='CLAUDE.md' --exclude='.github'`
+- **Always push to git and deploy to VPS after making changes.**
 
 ## Brand Rules
 - **NO purple anywhere.** All headings/accents use blue (#153db6).

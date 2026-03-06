@@ -168,7 +168,7 @@ export function generateTicketPDF(event, order, attendees) {
     y += 6;
     doc.setFontSize(8);
     doc.setTextColor(...lightGray);
-    doc.text('staging.mixler.ca', pageW / 2, y, { align: 'center' });
+    doc.text('mixler.ca', pageW / 2, y, { align: 'center' });
   });
 
   const filename = `mixler-tickets-${order.order_number}.pdf`;
@@ -326,7 +326,7 @@ export function generateSingleTicketBase64(event, order, attendee, index, total)
   y += 6;
   doc.setFontSize(8);
   doc.setTextColor(...lightGray);
-  doc.text('staging.mixler.ca', pageW / 2, y, { align: 'center' });
+  doc.text('mixler.ca', pageW / 2, y, { align: 'center' });
 
   // Return as base64 (strip the data URI prefix)
   const dataUri = doc.output('datauristring');

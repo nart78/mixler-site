@@ -68,7 +68,7 @@ function generateICS(event) {
     `SUMMARY:${escapeICS(event.title)}`,
     `DESCRIPTION:${escapeICS(event.short_description || event.description || '')}`,
     `LOCATION:${escapeICS(event.location_address || event.location_name || '')}`,
-    `URL:https://staging.mixler.ca/event.html?slug=${event.slug}`,
+    `URL:https://mixler.ca/event.html?slug=${event.slug}`,
     `UID:${event.id}@mixler.ca`,
     'END:VEVENT',
     'END:VCALENDAR'
