@@ -42,15 +42,15 @@
       </div>
 
       <!-- Filters -->
-      <div class="admin-card" style="padding:16px 24px;">
-        <div class="admin-form" style="display:flex;gap:16px;flex-wrap:wrap;align-items:end;">
-          <div class="form-group" style="margin-bottom:0;flex:1;min-width:180px;">
+      <div class="admin-card admin-filters-card">
+        <div class="admin-form admin-filters-form">
+          <div class="form-group">
             <label for="filter-event">Event</label>
             <select id="filter-event">
               <option value="">All Events</option>
             </select>
           </div>
-          <div class="form-group" style="margin-bottom:0;flex:1;min-width:140px;">
+          <div class="form-group">
             <label for="filter-status">Status</label>
             <select id="filter-status">
               <option value="">All</option>
@@ -60,11 +60,11 @@
               <option value="refunded">Refunded</option>
             </select>
           </div>
-          <div class="form-group" style="margin-bottom:0;flex:1;min-width:180px;">
+          <div class="form-group">
             <label for="filter-search">Search</label>
             <input type="text" id="filter-search" placeholder="Name, email, or order #">
           </div>
-          <button type="button" id="filter-btn" class="btn btn-primary" style="height:40px;width:100%;">Filter</button>
+          <button type="button" id="filter-btn" class="btn btn-primary">Filter</button>
         </div>
       </div>
 
@@ -188,7 +188,7 @@
               <th>Qty</th>
               <th>Total</th>
               <th>Status</th>
-              <th>Date</th>
+              <th class="hide-mobile">Date</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -200,7 +200,7 @@
                 <td><a href="#" class="view-order" data-id="${o.id}">${o.quantity}</a></td>
                 <td>${formatPrice(o.total_cents)}</td>
                 <td><span class="status-badge status-${o.payment_status}">${o.payment_status}</span></td>
-                <td><small>${new Date(o.created_at).toLocaleDateString()}</small></td>
+                <td class="hide-mobile"><small>${new Date(o.created_at).toLocaleDateString()}</small></td>
                 <td>
                   <a href="#" class="btn-sm view-order" data-id="${o.id}">View</a>
                   ${o.payment_status === 'completed' ? `<a href="#" class="btn-sm btn-danger-sm refund-order" data-id="${o.id}" data-number="${o.order_number}">Refund</a>` : ''}

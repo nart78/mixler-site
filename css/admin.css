@@ -572,6 +572,25 @@
   color: #ff3465;
 }
 
+/* --- Filters Form --- */
+.admin-filters-form {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: end;
+}
+
+.admin-filters-form .form-group {
+  flex: 1;
+  min-width: 140px;
+  margin-bottom: 0;
+}
+
+.admin-filters-form .btn {
+  height: 40px;
+  flex-shrink: 0;
+}
+
 /* --- Mobile Admin Toggle --- */
 .admin-mobile-header {
   display: none;
@@ -708,30 +727,25 @@
   }
 
   /* Filter forms - force stacking on mobile */
-  .admin-card .admin-form {
-    flex-direction: column !important;
-    gap: 12px !important;
-    align-items: stretch !important;
-    flex-wrap: nowrap !important;
+  .admin-filters-form {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
   }
 
-  .admin-card .admin-form > * {
-    width: 100% !important;
-    min-width: 0 !important;
-    flex: none !important;
-    max-width: 100% !important;
+  .admin-filters-form .form-group {
+    min-width: 0;
+    flex: none;
+    width: 100%;
   }
 
-  .admin-card .admin-form .btn {
-    width: 100% !important;
-    box-sizing: border-box !important;
+  .admin-filters-form .btn {
+    width: 100%;
   }
 
-  .admin-card input,
-  .admin-card select {
-    width: 100% !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
+  /* Hide columns on mobile */
+  .hide-mobile {
+    display: none;
   }
 
   /* Constrain card contents */
