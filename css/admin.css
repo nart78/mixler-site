@@ -707,28 +707,37 @@
     padding: 8px 14px;
   }
 
-  /* Filter forms - target both .admin-form and inline flex containers */
-  .admin-card .admin-form,
-  .admin-card > div[style*="display:flex"],
-  .admin-card > div[style*="display: flex"] {
+  /* Filter forms - force stacking on mobile */
+  .admin-card .admin-form {
     flex-direction: column !important;
     gap: 12px !important;
     align-items: stretch !important;
+    flex-wrap: nowrap !important;
   }
 
-  .admin-card .admin-form > div,
-  .admin-card > div[style*="flex"] > .form-group {
+  .admin-card .admin-form > * {
     width: 100% !important;
     min-width: 0 !important;
-    flex: unset !important;
+    flex: none !important;
+    max-width: 100% !important;
   }
 
-  .admin-card .admin-form input,
-  .admin-card .admin-form select,
+  .admin-card .admin-form .btn {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
   .admin-card input,
   .admin-card select {
     width: 100% !important;
     min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Constrain card contents */
+  .admin-card {
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   /* Header: ensure button doesn't overflow */
