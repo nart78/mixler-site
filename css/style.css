@@ -1977,6 +1977,11 @@ section {
   .event-detail-grid { grid-template-columns: 1fr; }
   .event-detail-meta { flex-direction: column; gap: 16px; }
   .account-grid { grid-template-columns: 1fr; }
+  .account-section { padding: 80px 0 60px; }
+  .account-card { padding: 20px 16px; }
+  .orders-table { font-size: 0.78rem; }
+  .orders-table th, .orders-table td { padding: 10px 6px; }
+  .account-card.full-width { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .form-row { flex-direction: column; gap: 0; }
 
   /* V2 responsive */
