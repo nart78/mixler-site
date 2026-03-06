@@ -156,14 +156,14 @@
 
       container.innerHTML = `
         <table class="admin-table">
-          <thead><tr><th>Event</th><th>Type</th><th>Message</th><th>Send At</th><th>Status</th></tr></thead>
+          <thead><tr><th>Event</th><th>Type</th><th class="hide-mobile">Message</th><th class="hide-mobile">Send At</th><th>Status</th></tr></thead>
           <tbody>
             ${messages.map(m => `
               <tr>
                 <td>${m.events?.title || ''}</td>
                 <td>${m.type.toUpperCase()}</td>
-                <td>${m.message_body.substring(0, 80)}${m.message_body.length > 80 ? '...' : ''}</td>
-                <td>${new Date(m.send_at).toLocaleString()}</td>
+                <td class="hide-mobile">${m.message_body.substring(0, 80)}${m.message_body.length > 80 ? '...' : ''}</td>
+                <td class="hide-mobile">${new Date(m.send_at).toLocaleString()}</td>
                 <td><span class="status-badge status-${m.status}">${m.status}</span></td>
               </tr>
             `).join('')}

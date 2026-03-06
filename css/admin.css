@@ -679,8 +679,6 @@
   .admin-card {
     padding: 14px;
     margin-bottom: 14px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
   }
 
   /* Two-column grids */
@@ -752,6 +750,42 @@
   .admin-card {
     max-width: 100%;
     box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  /* Force inline filter styles to stack on mobile */
+  .admin-card > div[style*="flex"],
+  .admin-card > div[style*="display"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: stretch !important;
+  }
+
+  .admin-card > div[style*="flex"] > .form-group,
+  .admin-card > div[style*="display"] > .form-group {
+    min-width: 0 !important;
+    flex: none !important;
+    width: 100% !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Remove overflow wrapper on tables */
+  .admin-card > div[style*="overflow"] {
+    overflow: visible !important;
+  }
+
+  /* Admin table: force no-wrap off and allow wrapping */
+  .admin-table {
+    table-layout: fixed;
+    width: 100%;
+    word-wrap: break-word;
+  }
+
+  .admin-table td,
+  .admin-table th {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   /* Header: ensure button doesn't overflow */

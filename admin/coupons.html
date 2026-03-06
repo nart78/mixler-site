@@ -227,9 +227,9 @@
             <tr>
               <th>Code</th>
               <th>Discount</th>
-              <th>Event</th>
+              <th class="hide-mobile">Event</th>
               <th>Uses</th>
-              <th>Valid Until</th>
+              <th class="hide-mobile">Valid Until</th>
               <th>Status</th>
               <th>Actions</th>
             </tr>
@@ -248,9 +248,9 @@
                   <td><strong style="font-family:monospace;letter-spacing:1px;">${c.code}</strong>
                     ${c.description ? `<br><small>${c.description}</small>` : ''}</td>
                   <td>${discountStr}${c.min_order_cents ? `<br><small>Min: ${formatPrice(c.min_order_cents)}</small>` : ''}</td>
-                  <td>${c.events?.title || 'All Events'}</td>
+                  <td class="hide-mobile">${c.events?.title || 'All Events'}</td>
                   <td>${usesStr}</td>
-                  <td>${validUntil}</td>
+                  <td class="hide-mobile">${validUntil}</td>
                   <td>
                     <span class="status-badge ${c.is_active && !isExpired ? 'status-completed' : 'status-failed'}">
                       ${isExpired ? 'Expired' : c.is_active ? 'Active' : 'Inactive'}

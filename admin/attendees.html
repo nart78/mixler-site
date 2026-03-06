@@ -159,14 +159,14 @@
       } else {
         attendeeList.innerHTML = `
           <table class="admin-table">
-            <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Order</th><th>Checked In</th></tr></thead>
+            <thead><tr><th>Name</th><th>Email</th><th class="hide-mobile">Phone</th><th class="hide-mobile">Order</th><th>Checked In</th></tr></thead>
             <tbody>
               ${attendees.map(a => `
                 <tr>
                   <td>${a.full_name}</td>
                   <td>${a.email || ''}</td>
-                  <td>${a.phone || ''}</td>
-                  <td>${a.orders.order_number}<br><small>by ${a.orders.buyer_name}</small></td>
+                  <td class="hide-mobile">${a.phone || ''}</td>
+                  <td class="hide-mobile">${a.orders.order_number}<br><small>by ${a.orders.buyer_name}</small></td>
                   <td>
                     <label class="checkin-toggle">
                       <input type="checkbox" ${a.checked_in ? 'checked' : ''} data-id="${a.id}">
@@ -201,14 +201,14 @@
         waitlistCard.style.display = '';
         waitlistList.innerHTML = `
           <table class="admin-table">
-            <thead><tr><th>#</th><th>Name</th><th>Email</th><th>Phone</th><th>Notified</th></tr></thead>
+            <thead><tr><th>#</th><th>Name</th><th>Email</th><th class="hide-mobile">Phone</th><th>Notified</th></tr></thead>
             <tbody>
               ${waitlist.map(w => `
                 <tr>
                   <td>${w.position}</td>
                   <td>${w.full_name}</td>
                   <td>${w.email}</td>
-                  <td>${w.phone || ''}</td>
+                  <td class="hide-mobile">${w.phone || ''}</td>
                   <td>${w.notified ? 'Yes' : 'No'}</td>
                 </tr>
               `).join('')}

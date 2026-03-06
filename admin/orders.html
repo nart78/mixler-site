@@ -184,7 +184,7 @@
           <thead>
             <tr>
               <th>Customer</th>
-              <th>Event</th>
+              <th class="hide-mobile">Event</th>
               <th>Qty</th>
               <th>Total</th>
               <th>Status</th>
@@ -196,7 +196,7 @@
             ${allOrders.map(o => `
               <tr>
                 <td>${o.buyer_name}<br><small>${o.buyer_email}</small></td>
-                <td>${o.events?.title || ''}</td>
+                <td class="hide-mobile">${o.events?.title || ''}</td>
                 <td><a href="#" class="view-order" data-id="${o.id}">${o.quantity}</a></td>
                 <td>${formatPrice(o.total_cents)}</td>
                 <td><span class="status-badge status-${o.payment_status}">${o.payment_status}</span></td>

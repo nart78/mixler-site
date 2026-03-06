@@ -77,15 +77,15 @@
       container.innerHTML = `
         <table class="admin-table">
           <thead>
-            <tr><th>Event</th><th>Date</th><th>Sold / Cap</th><th>Price</th><th>Status</th><th>Actions</th></tr>
+            <tr><th>Event</th><th class="hide-mobile">Date</th><th>Sold / Cap</th><th class="hide-mobile">Price</th><th>Status</th><th>Actions</th></tr>
           </thead>
           <tbody>
             ${events.map(e => `
               <tr>
                 <td><a href="/admin/event-edit.html?id=${e.id}">${e.title}</a></td>
-                <td>${formatDate(e.event_date)}</td>
+                <td class="hide-mobile">${formatDate(e.event_date)}</td>
                 <td>${e.tickets_sold} / ${e.capacity}</td>
-                <td>${formatPrice(e.price_cents)}</td>
+                <td class="hide-mobile">${formatPrice(e.price_cents)}</td>
                 <td><span class="status-badge status-${e.status}">${e.status}</span></td>
                 <td>
                   <a href="/admin/event-edit.html?id=${e.id}" class="btn-sm">Edit</a>
