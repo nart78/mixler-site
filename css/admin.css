@@ -159,13 +159,22 @@
   vertical-align: top;
 }
 
-.admin-table td a {
+.admin-table td a:not(.btn-sm) {
   color: var(--color-primary);
   font-weight: 500;
 }
 
-.admin-table td a:hover {
+.admin-table td a:not(.btn-sm):hover {
   text-decoration: underline;
+}
+
+.admin-table td a.btn-sm {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.admin-table td a.btn-sm:hover {
+  text-decoration: none;
 }
 
 .admin-table td small {
