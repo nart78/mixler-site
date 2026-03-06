@@ -661,6 +661,14 @@
     padding: 10px 6px;
   }
 
+  .admin-table td .btn-sm {
+    display: block;
+    text-align: center;
+    margin-right: 0;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
   /* Admin header */
   .admin-header {
     margin-bottom: 16px;
