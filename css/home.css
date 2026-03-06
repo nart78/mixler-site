@@ -823,10 +823,23 @@
 
   .newsletter-form-grid {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .newsletter-fields {
+    width: 100%;
   }
 
   .newsletter-name-row {
     flex-direction: column;
+  }
+
+  .newsletter-btn {
+    width: 100%;
+  }
+
+  .newsletter-note {
+    text-align: center;
   }
 
   .social-links-row {
