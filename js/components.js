@@ -21,8 +21,8 @@ async function renderNav(activeLink, options = {}) {
           <li><a href="/#how-it-works">How It Works</a></li>
           <li><a href="/#about">About</a></li>
           ${isLoggedIn ? `
-            <li><a href="/account.html" class="${activeLink === 'account' ? 'active' : ''}">My Account</a></li>
-            <li><a href="#" id="nav-logout" class="btn btn-blue btn-nav">Log Out</a></li>
+            <li><a href="/account.html" class="btn btn-pink btn-nav">My Account</a></li>
+            <li><a href="#" id="nav-logout">Log Out</a></li>
           ` : `
             <li><a href="/login.html" class="${activeLink === 'login' ? 'active' : ''}">Log In</a></li>
             <li><a href="/login.html?tab=signup" class="btn btn-pink btn-nav">Sign Up</a></li>
