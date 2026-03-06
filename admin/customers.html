@@ -258,10 +258,10 @@
         return `
           <tr class="customer-row" data-email="${c.email}">
             <td>
-              <div style="display:flex;flex-direction:column;gap:2px;">
-                <span style="font-weight:600;">${c.name}</span>
+              <a href="#" class="toggle-detail" data-email="${c.email}" style="display:flex;flex-direction:column;gap:2px;text-decoration:none;">
+                <span style="font-weight:600;color:var(--color-primary);">${c.name}</span>
                 <small>${c.email}</small>
-              </div>
+              </a>
             </td>
             <td class="hide-mobile">${c.phone || '<span style="color:#9ca3af;">-</span>'}</td>
             <td><span class="status-badge status-published">${eventCount} event${eventCount !== 1 ? 's' : ''}</span></td>
@@ -298,26 +298,25 @@
 
       // Bind toggle buttons
       tbody.querySelectorAll('.toggle-detail').forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
           const email = btn.dataset.email;
           const detailRow = tbody.querySelector(`tr[data-detail="${email}"]`);
+          const viewBtn = tbody.querySelector(`button.toggle-detail[data-email="${email}"]`);
           if (expandedEmail === email) {
-            // Collapse
             expandedEmail = null;
             detailRow.style.display = 'none';
-            btn.textContent = 'View';
+            if (viewBtn) viewBtn.textContent = 'View';
           } else {
-            // Collapse any previously open row
             if (expandedEmail) {
               const prevRow = tbody.querySelector(`tr[data-detail="${expandedEmail}"]`);
-              const prevBtn = tbody.querySelector(`.toggle-detail[data-email="${expandedEmail}"]`);
+              const prevBtn = tbody.querySelector(`button.toggle-detail[data-email="${expandedEmail}"]`);
               if (prevRow) prevRow.style.display = 'none';
               if (prevBtn) prevBtn.textContent = 'View';
             }
-            // Expand this row
             expandedEmail = email;
             detailRow.style.display = 'table-row';
-            btn.textContent = 'Hide';
+            if (viewBtn) viewBtn.textContent = 'Hide';
             const customer = filteredCustomers.find(c => c.email === email) || allCustomers.find(c => c.email === email);
             if (customer) loadCustomerDetail(customer);
           }
@@ -372,6 +371,12 @@
 
       container.innerHTML = `
         <div style="padding:16px 24px 20px;background:#f9fafb;border-top:1px solid #e5e7eb;">
+          <div style="display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:14px;font-size:0.85rem;">
+            <div><strong>Email:</strong> <a href="mailto:${customer.email}">${customer.email}</a></div>
+            <div><strong>Phone:</strong> ${customer.phone || 'N/A'}</div>
+            <div><strong>Orders:</strong> ${customer.orderCount}</div>
+            <div><strong>Total Spent:</strong> ${formatPrice(customer.totalSpent)}</div>
+          </div>
           <table class="admin-table" style="font-size:0.85rem;margin:0;">
             <thead>
               <tr>
