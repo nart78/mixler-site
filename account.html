@@ -98,8 +98,8 @@
             <div>
               <strong>${o.events.title}</strong>
               <span>${formatDate(o.events.event_date)} at ${formatTime(o.events.start_time)}</span>
+              <span class="ticket-qty">${o.quantity} ticket${o.quantity > 1 ? 's' : ''}</span>
             </div>
-            <span class="ticket-qty">${o.quantity} ticket${o.quantity > 1 ? 's' : ''}</span>
           </a>
           <div class="ticket-actions">
             <button class="btn btn-outline btn-sm download-tickets-btn" data-order-id="${o.id}" data-order-number="${o.order_number}">
