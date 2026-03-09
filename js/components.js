@@ -87,7 +87,7 @@ async function renderFooter() {
       .eq('status', 'published')
       .gte('event_date', new Date().toISOString().split('T')[0])
       .order('event_date', { ascending: true })
-      .limit(4);
+      .limit(3);
 
     if (events && events.length > 0) {
       eventLinks = events.map(e =>
