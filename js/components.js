@@ -1,5 +1,6 @@
 // Shared UI Components - Mixler Event Platform
 import { getSession, signOut } from './auth.js';
+import { db } from './supabase-client.js';
 
 // Render the site header/nav on every page
 // activeLink: 'events' | 'account' | 'login' | etc.
@@ -72,9 +73,30 @@ async function renderNav(activeLink, options = {}) {
 }
 
 // Render the site footer (global standard)
-function renderFooter() {
+// Events column is populated dynamically from upcoming published events
+async function renderFooter() {
   const footer = document.getElementById('site-footer');
   if (!footer) return;
+
+  // Fetch upcoming published events for the Events column
+  let eventLinks = '<a href="/events.html">All Events</a>';
+  try {
+    const { data: events } = await db
+      .from('events')
+      .select('title, slug')
+      .eq('status', 'published')
+      .gte('event_date', new Date().toISOString().split('T')[0])
+      .order('event_date', { ascending: true })
+      .limit(4);
+
+    if (events && events.length > 0) {
+      eventLinks = events.map(e =>
+        `<a href="/event.html?slug=${e.slug}">${e.title}</a>`
+      ).join('');
+    }
+  } catch (e) {
+    // Fallback: just show "All Events" link
+  }
 
   footer.innerHTML = `
     <footer class="footer-dark">
@@ -91,10 +113,8 @@ function renderFooter() {
             <a href="/#about">About</a>
           </div>
           <div class="footer-col-dark">
-            <h4>Events</h4>
-            <a href="/events.html">Social Mixers</a>
-            <a href="/events.html">Trivia Nights</a>
-            <a href="/events.html">Speed Friending</a>
+            <h4>Upcoming Events</h4>
+            ${eventLinks}
           </div>
           <div class="footer-col-dark">
             <h4>Contact</h4>
