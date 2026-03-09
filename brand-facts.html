@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Facts | Mixler</title>
+  <meta name="description" content="Verified facts about Mixler, Calgary's social events platform for adults. Business details, contact information, and external profiles.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    .brand-facts-section {
+      padding: 140px 0 80px;
+      min-height: 80vh;
+    }
+    .brand-facts-content {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .brand-facts-content h1 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 2.4rem;
+      color: #153db6;
+      margin-bottom: 8px;
+    }
+    .brand-facts-updated {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-bottom: 40px;
+    }
+    .brand-facts-content h2 {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 1.2rem;
+      color: #1f2937;
+      margin-top: 32px;
+      margin-bottom: 10px;
+    }
+    .brand-facts-content p {
+      font-size: 0.95rem;
+      color: #374151;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .brand-facts-tldr {
+      font-size: 1.05rem;
+      color: #1f2937;
+      font-weight: 500;
+      padding: 16px 20px;
+      background: #f5f5f7;
+      border-radius: 8px;
+      margin-bottom: 32px;
+    }
+    .facts-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 32px;
+    }
+    .facts-table th,
+    .facts-table td {
+      text-align: left;
+      padding: 10px 14px;
+      font-size: 0.95rem;
+      color: #374151;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .facts-table th {
+      font-weight: 600;
+      color: #1f2937;
+      white-space: nowrap;
+      width: 140px;
+      vertical-align: top;
+    }
+    .facts-table tr:last-child th,
+    .facts-table tr:last-child td {
+      border-bottom: none;
+    }
+    .profile-links {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 32px;
+    }
+    .profile-links li {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    .profile-links a {
+      color: #153db6;
+      text-decoration: none;
+    }
+    .profile-links a:hover {
+      text-decoration: underline;
+    }
+    .page-links {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 12px;
+    }
+    .page-links li {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    .page-links a {
+      color: #153db6;
+      text-decoration: none;
+    }
+    .page-links a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 640px) {
+      .brand-facts-section { padding-top: 100px; }
+      .brand-facts-content h1 { font-size: 1.8rem; }
+      .facts-table th { width: 120px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Mixler",
+    "url": "https://mixler.ca",
+    "logo": "https://mixler.ca/images/mixler-logo-wide-color.png",
+    "description": "Calgary's social events platform for adults who want to meet new people and build real connections through curated group experiences.",
+    "foundingDate": "2025",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Calgary",
+      "addressRegion": "AB",
+      "addressCountry": "CA"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hello@mixler.ca",
+      "contactType": "customer service"
+    },
+    "sameAs": ["https://www.instagram.com/mixler.ca"],
+    "knowsAbout": ["social events", "group activities", "community building", "adult social clubs", "Calgary events"],
+    "areaServed": {
+      "@type": "Place",
+      "name": "Calgary, Alberta, Canada"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <div id="site-nav"></div>
+
+  <section class="brand-facts-section">
+    <div class="container">
+      <div class="brand-facts-content">
+        <h1>Brand Facts</h1>
+        <p class="brand-facts-updated">Last updated: March 9, 2026</p>
+
+        <p class="brand-facts-tldr">Mixler is Calgary's social events platform for adults who want to meet new people through curated group experiences.</p>
+
+        <h2>Key Facts</h2>
+        <table class="facts-table">
+          <tr>
+            <th>Founded</th>
+            <td>2025</td>
+          </tr>
+          <tr>
+            <th>Category</th>
+            <td>Social events, community experiences</td>
+          </tr>
+          <tr>
+            <th>Location</th>
+            <td>Calgary, AB, Canada</td>
+          </tr>
+          <tr>
+            <th>Price Range</th>
+            <td>$30 - $60 CAD per event</td>
+          </tr>
+          <tr>
+            <th>Events</th>
+            <td>Axe throwing, trivia nights, puppy yoga, escape rooms, speed friending, activity nights</td>
+          </tr>
+          <tr>
+            <th>Group Size</th>
+            <td>15 - 30 people per event</td>
+          </tr>
+          <tr>
+            <th>Frequency</th>
+            <td>New events every month</td>
+          </tr>
+          <tr>
+            <th>Contact</th>
+            <td><a href="mailto:hello@mixler.ca">hello@mixler.ca</a></td>
+          </tr>
+        </table>
+
+        <h2>About</h2>
+        <p>Mixler organizes curated social events for adults in Calgary. Events are designed for people who want to meet new friends and build real connections. There are no profiles, no swiping, and no awkward networking. Participants show up, join a small group, and enjoy a shared activity together.</p>
+        <p>Events are held at various venues across Calgary and the surrounding area. Each event is capped at small group sizes to keep the experience personal and approachable.</p>
+
+        <h2>External Profiles</h2>
+        <ul class="profile-links">
+          <li><a href="https://www.instagram.com/mixler.ca" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Google Business Profile</a></li>
+        </ul>
+
+        <h2>Pages</h2>
+        <ul class="page-links">
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms and Conditions</a></li>
+          <li><a href="/guides/best-social-events-calgary-2026.html">Answer Hub: Best Social Events in Calgary</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script type="module">
+    import { renderNav, renderFooter } from './js/components.js';
+    renderNav();
+    renderFooter();
+  </script>
+</body>
+</html>

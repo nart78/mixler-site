@@ -1,0 +1,52 @@
+{
+  "name": "Mixler",
+  "legalName": "Mixler",
+  "description": "Calgary's social events platform for adults who want to meet new people and build real connections through curated group experiences.",
+  "url": "https://mixler.ca",
+  "category": "Social Events & Community Experiences",
+  "subcategories": ["Adult Social Events", "Group Activities", "Community Building"],
+  "founded": "2025",
+  "location": {
+    "city": "Calgary",
+    "region": "Alberta",
+    "country": "CA"
+  },
+  "serviceArea": ["Calgary", "Calgary Metropolitan Area"],
+  "priceRange": "$30-$60 CAD per event",
+  "topOfferings": [
+    {
+      "name": "Social Mixler Events",
+      "type": "service",
+      "description": "Curated group social events for adults including axe throwing, trivia nights, puppy yoga, escape rooms, and speed friending.",
+      "price": "$30-$60 CAD",
+      "highlights": ["Small groups of 15-30 people", "New events every month", "No profiles or swiping required"]
+    }
+  ],
+  "certifications": [],
+  "guarantees": [],
+  "team": {
+    "size": "1-5",
+    "credentials": []
+  },
+  "reviews": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "platforms": {}
+  },
+  "contact": {
+    "email": "hello@mixler.ca",
+    "phone": "",
+    "responseTime": "Within 24 hours"
+  },
+  "social": {
+    "instagram": "https://www.instagram.com/mixler.ca"
+  },
+  "externalProfiles": {},
+  "policies": {
+    "privacy": "https://mixler.ca/privacy.html",
+    "terms": "https://mixler.ca/terms.html"
+  },
+  "answerHub": "https://mixler.ca/guides/best-social-events-calgary-2026.html",
+  "brandFacts": "https://mixler.ca/brand-facts.html",
+  "lastUpdated": "2026-03-09"
+}
