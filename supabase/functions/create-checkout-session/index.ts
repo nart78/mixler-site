@@ -270,7 +270,7 @@ serve(async (req) => {
     }
 
     // Create Stripe Checkout Session
-    const lineItems = [{
+    const lineItems: any[] = [{
       price_data: {
         currency: 'cad',
         product_data: {
@@ -281,6 +281,20 @@ serve(async (req) => {
       },
       quantity,
     }];
+
+    // Add CC processing fee as a line item
+    if (ccFeeCents > 0) {
+      lineItems.push({
+        price_data: {
+          currency: 'cad',
+          product_data: {
+            name: 'Card processing fee (3%)',
+          },
+          unit_amount: ccFeeCents,
+        },
+        quantity: 1,
+      });
+    }
 
     // Add tax as a separate line item
     if (taxCents > 0) {

@@ -355,16 +355,16 @@
             <span>-${formatPrice(discount)}</span>
           </div>
         ` : ''}
-        <div class="summary-line">
-          <span>GST (${taxPct}%)</span>
-          <span>${formatPrice(tax)}</span>
-        </div>
         ${ccFee > 0 ? `
           <div class="summary-line">
             <span>Card processing fee (3%)</span>
             <span>${formatPrice(ccFee)}</span>
           </div>
         ` : ''}
+        <div class="summary-line">
+          <span>GST (${taxPct}%)</span>
+          <span>${formatPrice(tax)}</span>
+        </div>
         <div class="summary-line total">
           <span>Total</span>
           <span>${formatPrice(total)}</span>
@@ -662,7 +662,8 @@
             volume_discount_applied: (() => {
               const vd = currentEvent.custom_fields?.volume_discount;
               if (vd && quantity >= vd.min_qty) {
-                const volCents = Math.round(pricePerTicket * quantity * vd.discount_pct / 100);
+                const ppt = selectedTicketType?.price_cents || currentEvent.price_cents;
+                const volCents = Math.round(ppt * quantity * vd.discount_pct / 100);
                 const coupCents = couponResult?.discount_cents || 0;
                 return volCents >= coupCents;
               }
@@ -704,6 +705,17 @@
       }
       await loadCheckout();
     }
+
+    // Reset button when user navigates back via browser history
+    window.addEventListener('pageshow', (e) => {
+      if (e.persisted) {
+        const btn = document.getElementById('checkout-btn');
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = 'Proceed to Payment';
+        }
+      }
+    });
 
     init();
   </script>

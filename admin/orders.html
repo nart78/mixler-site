@@ -203,7 +203,7 @@
                 <td class="hide-mobile"><small>${new Date(o.created_at).toLocaleDateString()}</small></td>
                 <td>
                   <a href="#" class="btn-sm view-order" data-id="${o.id}">View</a>
-                  ${o.payment_status === 'completed' ? `<a href="#" class="btn-sm btn-danger-sm refund-order" data-id="${o.id}" data-number="${o.order_number}">Refund</a>` : ''}
+                  <a href="#" class="btn-sm btn-delete delete-order" data-id="${o.id}" data-number="${o.order_number}">Delete</a>
                 </td>
               </tr>
             `).join('')}
@@ -219,30 +219,45 @@
         });
       });
 
-      // Bind refund
-      container.querySelectorAll('.refund-order').forEach(link => {
+      // Bind delete
+      container.querySelectorAll('.delete-order').forEach(link => {
         link.addEventListener('click', async (e) => {
           e.preventDefault();
-          if (!confirm(`Refund order ${link.dataset.number}? This will process the refund through Stripe.`)) return;
-          link.textContent = 'Processing...';
+          if (!confirm(`Delete order ${link.dataset.number}? This cannot be undone.`)) return;
+          link.textContent = 'Deleting...';
           link.style.pointerEvents = 'none';
 
-          // Call the cancel-order Edge Function (when built) or update directly for now
-          const { error } = await db
-            .from('orders')
-            .update({
-              payment_status: 'refunded',
-              refund_amount_cents: allOrders.find(o => o.id === link.dataset.id)?.total_cents || 0,
-              refunded_at: new Date().toISOString(),
-            })
-            .eq('id', link.dataset.id);
+          const order = allOrders.find(o => o.id === link.dataset.id);
+
+          // Decrement tickets_sold on event and ticket_type
+          if (order) {
+            const { data: evt } = await db.from('events').select('tickets_sold').eq('id', order.event_id).single();
+            if (evt) {
+              await db.from('events').update({
+                tickets_sold: Math.max(evt.tickets_sold - order.quantity, 0)
+              }).eq('id', order.event_id);
+            }
+
+            if (order.ticket_type_id) {
+              const { data: tt } = await db.from('ticket_types').select('tickets_sold').eq('id', order.ticket_type_id).single();
+              if (tt) {
+                await db.from('ticket_types').update({
+                  tickets_sold: Math.max(tt.tickets_sold - order.quantity, 0)
+                }).eq('id', order.ticket_type_id);
+              }
+            }
+          }
+
+          // Delete attendees first (FK constraint), then the order
+          await db.from('attendees').delete().eq('order_id', link.dataset.id);
+          const { error } = await db.from('orders').delete().eq('id', link.dataset.id);
 
           if (error) {
-            showToast('Refund failed: ' + error.message, 'error');
-            link.textContent = 'Refund';
+            showToast('Delete failed: ' + error.message, 'error');
+            link.textContent = 'Delete';
             link.style.pointerEvents = '';
           } else {
-            showToast('Order refunded (manual). Process Stripe refund separately.', 'success');
+            showToast('Order deleted.', 'success');
             loadOrders();
           }
         });

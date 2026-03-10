@@ -146,6 +146,57 @@ serve(async (req) => {
           if (!subscriberRes.ok) emailStatus = 'failed';
           console.log('No MAILERLITE_ORDER_CONFIRM_GROUP_ID set. Subscriber upserted, automation trigger skipped.');
         }
+
+        // Upsert additional attendees (friends) who provided an email
+        const attendeeEmails = (attendees || [])
+          .filter((a: any) => a.email && a.email.toLowerCase() !== recipientEmail.toLowerCase())
+          .map((a: any) => ({ email: a.email, name: a.full_name }));
+
+        for (const attendee of attendeeEmails) {
+          try {
+            const nameParts = attendee.name.trim().split(/\s+/);
+            const attRes = await fetch('https://connect.mailerlite.com/api/subscribers', {
+              method: 'POST',
+              headers: {
+                'Authorization': `Bearer ${mailerliteToken}`,
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                email: attendee.email,
+                fields: {
+                  name: nameParts[0] || '',
+                  last_name: nameParts.slice(1).join(' ') || '',
+                  event_name: event.title,
+                  event_date: formatDate(event.event_date),
+                },
+                status: 'active',
+              }),
+            });
+
+            if (attRes.ok && orderGroupId) {
+              const attData = await attRes.json();
+              const attSubId = attData?.data?.id;
+              if (attSubId) {
+                await fetch(
+                  `https://connect.mailerlite.com/api/subscribers/${attSubId}/groups/${orderGroupId}`,
+                  {
+                    method: 'POST',
+                    headers: {
+                      'Authorization': `Bearer ${mailerliteToken}`,
+                      'Content-Type': 'application/json',
+                    },
+                  }
+                );
+              }
+              console.log(`Added attendee ${attendee.email} to Mailerlite`);
+            } else if (!attRes.ok) {
+              const errBody = await attRes.text();
+              console.error(`Mailerlite attendee upsert failed for ${attendee.email}:`, errBody);
+            }
+          } catch (attErr: any) {
+            console.error(`Mailerlite attendee error for ${attendee.email}:`, attErr.message);
+          }
+        }
       } catch (mailErr: any) {
         console.error('Mailerlite API error:', mailErr);
         errorMessage = mailErr.message;

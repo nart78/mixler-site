@@ -188,6 +188,20 @@
                 <span>Pass credit card fee (3%) to buyer</span>
               </label>
             </div>
+
+            <div class="form-row" style="margin-top:16px;">
+              <h4 style="width:100%;margin:0 0 8px;">Group Discount</h4>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="vol-min-qty">Minimum Tickets</label>
+                <input type="number" id="vol-min-qty" min="2" max="50" placeholder="e.g. 4">
+              </div>
+              <div class="form-group">
+                <label for="vol-discount-pct">Discount %</label>
+                <input type="number" id="vol-discount-pct" min="1" max="99" placeholder="e.g. 15">
+              </div>
+            </div>
           </div>
         </div>
 
@@ -530,7 +544,33 @@
         document.getElementById('cancellation_cutoff_hours').value = event.cancellation_cutoff_hours ?? 48;
         document.getElementById('cancellation_policy').value = event.cancellation_policy || '';
 
-        customFields = event.custom_fields || [];
+        // custom_fields may be an object (with keys like puppies, volume_discount)
+        // or an array of {label, value} for the generic custom fields UI
+        const rawCf = event.custom_fields || [];
+        if (Array.isArray(rawCf)) {
+          customFields = rawCf;
+        } else {
+          // Extract generic fields array if it exists, otherwise empty
+          customFields = rawCf._fields || [];
+        }
+
+        // Load volume discount fields
+        const volDiscount = rawCf?.volume_discount;
+        if (volDiscount) {
+          document.getElementById('vol-min-qty').value = volDiscount.min_qty || '';
+          document.getElementById('vol-discount-pct').value = volDiscount.discount_pct || '';
+        }
+
+        // Store structured keys to preserve on save
+        window._structuredCustomFields = {};
+        if (!Array.isArray(rawCf)) {
+          for (const [k, v] of Object.entries(rawCf)) {
+            if (k !== '_fields' && k !== 'volume_discount') {
+              window._structuredCustomFields[k] = v;
+            }
+          }
+        }
+
         updateImagePreview();
 
         // Load ticket types
@@ -578,7 +618,17 @@
         is_cancellable: document.getElementById('is_cancellable').value === 'true',
         cancellation_cutoff_hours: parseInt(document.getElementById('cancellation_cutoff_hours').value) || 48,
         cancellation_policy: document.getElementById('cancellation_policy').value.trim() || null,
-        custom_fields: customFields.filter(cf => cf.label && cf.value),
+        custom_fields: (() => {
+          const cf = { ...(window._structuredCustomFields || {}) };
+          const genericFields = customFields.filter(f => f.label && f.value);
+          if (genericFields.length > 0) cf._fields = genericFields;
+          const minQty = parseInt(document.getElementById('vol-min-qty').value);
+          const discPct = parseInt(document.getElementById('vol-discount-pct').value);
+          if (minQty >= 2 && discPct >= 1 && discPct <= 99) {
+            cf.volume_discount = { min_qty: minQty, discount_pct: discPct };
+          }
+          return Object.keys(cf).length > 0 ? cf : {};
+        })(),
       };
 
       let savedEventId = eventId;

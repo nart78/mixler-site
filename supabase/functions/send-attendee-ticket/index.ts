@@ -41,28 +41,73 @@ serve(async (req) => {
 
     const firstName = (attendee_name || 'Guest').split(' ')[0];
 
+    const siteUrl = Deno.env.get('SITE_URL') || 'https://mixler.ca';
+
     const htmlBody = `
-      <div style="font-family: 'Inter', Arial, sans-serif; max-width: 560px; margin: 0 auto; color: #1f2937;">
-        <div style="background: #153db6; padding: 32px; text-align: center;">
-          <h1 style="color: #ffffff; font-size: 28px; margin: 0; font-family: 'League Spartan', Arial, sans-serif;">MIXLER</h1>
-        </div>
-        <div style="padding: 32px 24px;">
-          <h2 style="color: #153db6; font-size: 22px; margin: 0 0 12px;">Your Ticket is Here!</h2>
-          <p style="font-size: 15px; line-height: 1.6; color: #374151;">
-            Hey ${firstName}, your ticket for <strong>${event_title || 'the event'}</strong> is attached as a PDF.
-          </p>
-          <p style="font-size: 15px; line-height: 1.6; color: #374151;">
-            Show the QR code on the attached ticket at the door for entry.
-          </p>
-          ${order_number ? `<p style="font-size: 13px; color: #9ca3af; margin-top: 24px;">Order #${order_number}</p>` : ''}
-        </div>
-        <div style="background: #f9fafb; padding: 16px 24px; text-align: center; font-size: 12px; color: #9ca3af;">
-          <a href="https://staging.mixler.ca" style="color: #153db6; text-decoration: none;">staging.mixler.ca</a>
-        </div>
-      </div>
+      <!DOCTYPE html>
+      <html>
+      <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+      <body style="margin: 0; padding: 0; background-color: #f5f5f7; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #f5f5f7; padding: 32px 0;">
+          <tr><td align="center">
+            <table role="presentation" width="520" cellpadding="0" cellspacing="0" style="max-width: 520px; width: 100%; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+
+              <!-- Logo header -->
+              <tr>
+                <td style="background-color: #153db6; padding: 28px 32px; text-align: center;">
+                  <img src="${siteUrl}/images/mixler-white-wide.png" alt="Mixler" width="140" style="display: block; margin: 0 auto; max-width: 140px; height: auto;" />
+                </td>
+              </tr>
+
+              <!-- Body -->
+              <tr>
+                <td style="padding: 36px 32px 32px;">
+                  <h1 style="color: #ff3465; font-size: 24px; font-weight: 700; margin: 0 0 16px; line-height: 1.2;">Your Ticket is Here!</h1>
+                  <p style="font-size: 15px; line-height: 1.7; color: #374151; margin: 0 0 8px;">
+                    Hey ${firstName}, your ticket for <strong>${event_title || 'the event'}</strong> is attached as a PDF.
+                  </p>
+                  <p style="font-size: 15px; line-height: 1.7; color: #374151; margin: 0 0 24px;">
+                    Show the QR code on the attached ticket at the door for entry.
+                  </p>
+
+                  <!-- Ticket info card -->
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #f5f5f7; border-radius: 8px; border-left: 4px solid #ff3465;">
+                    <tr>
+                      <td style="padding: 20px 24px;">
+                        <p style="font-size: 11px; font-weight: 600; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 4px;">Event</p>
+                        <p style="font-size: 16px; font-weight: 700; color: #153db6; margin: 0 0 12px;">${event_title || 'Mixler Event'}</p>
+                        ${order_number ? `<p style="font-size: 12px; color: #6b7280; margin: 0;">Order #${order_number}</p>` : ''}
+                      </td>
+                    </tr>
+                  </table>
+
+                  <p style="font-size: 13px; color: #9ca3af; margin: 24px 0 0; line-height: 1.5;">
+                    Open the attached PDF and present the QR code at check-in. You can also save it to your phone for quick access.
+                  </p>
+                </td>
+              </tr>
+
+              <!-- Footer -->
+              <tr>
+                <td style="padding: 0 32px 28px; text-align: center;">
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                    <tr><td style="border-top: 1px solid #e5e7eb; padding-top: 20px;">
+                      <p style="font-size: 12px; color: #9ca3af; margin: 0;">
+                        <a href="${siteUrl}" style="color: #153db6; text-decoration: none; font-weight: 600;">mixler.ca</a>
+                      </p>
+                    </td></tr>
+                  </table>
+                </td>
+              </tr>
+
+            </table>
+          </td></tr>
+        </table>
+      </body>
+      </html>
     `;
 
-    const fromAddress = Deno.env.get('RESEND_FROM_ADDRESS') || 'Mixler <tickets@staging.mixler.ca>';
+    const fromAddress = Deno.env.get('RESEND_FROM_ADDRESS') || 'Mixler <tickets@mixler.ca>';
 
     const resendRes = await fetch('https://api.resend.com/emails', {
       method: 'POST',
