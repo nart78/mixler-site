@@ -29,7 +29,7 @@ serve(async (req) => {
     // Fetch order with event and attendees
     const { data: order, error: orderError } = await supabase
       .from('orders')
-      .select('*, events(title, event_date, start_time, end_time, location_name, location_address)')
+      .select('*, events(title, event_date, start_time, end_time, location_name, location_address, mailerlite_group_id)')
       .eq('id', order_id)
       .single();
 
@@ -82,6 +82,32 @@ serve(async (req) => {
 
     if (mailerliteToken) {
       try {
+        // Helper: add subscriber to event-specific MailerLite group
+        const eventGroupId = event.mailerlite_group_id;
+        const addToEventGroup = async (subId: string) => {
+          if (!eventGroupId || !subId) return;
+          try {
+            const res = await fetch(
+              `https://connect.mailerlite.com/api/subscribers/${subId}/groups/${eventGroupId}`,
+              {
+                method: 'POST',
+                headers: {
+                  'Authorization': `Bearer ${mailerliteToken}`,
+                  'Content-Type': 'application/json',
+                },
+              }
+            );
+            if (res.ok) {
+              console.log(`Added subscriber ${subId} to event group ${eventGroupId}`);
+            } else {
+              const errBody = await res.text();
+              console.error(`Event group add failed for ${subId}:`, errBody);
+            }
+          } catch (err: any) {
+            console.error(`Event group add error for ${subId}:`, err.message);
+          }
+        };
+
         // Upsert subscriber with custom fields
         const subscriberRes = await fetch('https://connect.mailerlite.com/api/subscribers', {
           method: 'POST',
@@ -134,6 +160,8 @@ serve(async (req) => {
             if (groupRes.ok) {
               emailStatus = 'sent';
               console.log(`Added ${recipientEmail} to order confirmation group`);
+              // Add buyer to event-specific group
+              await addToEventGroup(subscriberId);
             } else {
               const errBody = await groupRes.text();
               console.error('Mailerlite group add failed:', errBody);
@@ -173,23 +201,28 @@ serve(async (req) => {
               }),
             });
 
-            if (attRes.ok && orderGroupId) {
+            if (attRes.ok) {
               const attData = await attRes.json();
               const attSubId = attData?.data?.id;
               if (attSubId) {
-                await fetch(
-                  `https://connect.mailerlite.com/api/subscribers/${attSubId}/groups/${orderGroupId}`,
-                  {
-                    method: 'POST',
-                    headers: {
-                      'Authorization': `Bearer ${mailerliteToken}`,
-                      'Content-Type': 'application/json',
-                    },
-                  }
-                );
+                // Add to generic order group if configured
+                if (orderGroupId) {
+                  await fetch(
+                    `https://connect.mailerlite.com/api/subscribers/${attSubId}/groups/${orderGroupId}`,
+                    {
+                      method: 'POST',
+                      headers: {
+                        'Authorization': `Bearer ${mailerliteToken}`,
+                        'Content-Type': 'application/json',
+                      },
+                    }
+                  );
+                }
+                // Add friend to event-specific group
+                await addToEventGroup(attSubId);
               }
               console.log(`Added attendee ${attendee.email} to Mailerlite`);
-            } else if (!attRes.ok) {
+            } else {
               const errBody = await attRes.text();
               console.error(`Mailerlite attendee upsert failed for ${attendee.email}:`, errBody);
             }
