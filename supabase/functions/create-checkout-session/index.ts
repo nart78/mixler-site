@@ -183,6 +183,21 @@ serve(async (req) => {
       }
     }
 
+    // Volume discount calculation
+    let volumeDiscountCents = 0;
+    const volDiscount = event.custom_fields?.volume_discount;
+    let isVolumeDiscount = false;
+    if (volDiscount && quantity >= volDiscount.min_qty && volDiscount.discount_pct > 0) {
+      volumeDiscountCents = Math.round(subtotalCents * volDiscount.discount_pct / 100);
+    }
+
+    // Use whichever discount is larger (volume vs coupon)
+    if (volumeDiscountCents > 0 && volumeDiscountCents >= discountCents) {
+      discountCents = volumeDiscountCents;
+      couponId = null; // Don't attribute to coupon
+      isVolumeDiscount = true;
+    }
+
     const afterDiscount = subtotalCents - discountCents;
     const taxRateBps = event.tax_rate_bps || 500; // 500 = 5% GST
     const taxCents = Math.round(afterDiscount * taxRateBps / 10000);
@@ -289,7 +304,9 @@ serve(async (req) => {
         amount_off: discountCents,
         currency: 'cad',
         duration: 'once',
-        name: coupon_code ? `Coupon: ${coupon_code}` : 'Discount',
+        name: isVolumeDiscount
+          ? `Group discount (${volDiscount!.discount_pct}% off)`
+          : coupon_code ? `Coupon: ${coupon_code}` : 'Discount',
       });
       stripeCouponId = stripeCoupon.id;
     }
