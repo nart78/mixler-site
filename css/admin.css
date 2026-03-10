@@ -206,10 +206,15 @@
   border-color: #1145cc;
 }
 
+button.btn-sm {
+  font-family: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
 .btn-sm.btn-delete {
   background: #ff3465;
   border-color: #ff3465;
-  cursor: pointer;
 }
 
 .btn-sm.btn-delete:hover {
