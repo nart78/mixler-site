@@ -5,8 +5,9 @@
 - IONOS VPS (198.71.51.250), domain: mixler.ca
 - Nginx serving from `/var/www/mixler.ca/`
 - Static HTML/CSS/JS + Supabase backend
-- Deploy: `rsync -avz --delete ~/mixler-site/ root@198.71.51.250:/var/www/mixler.ca/ --exclude='.git' --exclude='supabase' --exclude='scripts' --exclude='CLAUDE.md' --exclude='.github'`
+- Deploy: `rsync -avz --delete ~/mixler-site/ root@198.71.51.250:/var/www/mixler.ca/ --exclude='.git' --exclude='supabase' --exclude='scripts' --exclude='CLAUDE.md' --exclude='.github' --exclude='og'`
 - **Always push to git and deploy to VPS after making changes.**
+- After deploy, regenerate OG link previews: `ssh root@198.71.51.250 "bash /var/www/mixler.ca/scripts/generate-og.sh"`
 
 ## Brand Rules
 - **NO purple anywhere.** All headings/accents use blue (#153db6).
