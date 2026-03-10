@@ -206,6 +206,17 @@
   border-color: #1145cc;
 }
 
+.btn-sm.btn-delete {
+  background: #ff3465;
+  border-color: #ff3465;
+  cursor: pointer;
+}
+
+.btn-sm.btn-delete:hover {
+  background: #e02555;
+  border-color: #e02555;
+}
+
 /* --- Admin Form --- */
 .admin-form .form-group {
   margin-bottom: 20px;

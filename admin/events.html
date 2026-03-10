@@ -90,6 +90,7 @@
                 <td>
                   <a href="/admin/event-edit.html?id=${e.id}" class="btn-sm">Edit</a>
                   <a href="/admin/attendees.html?event=${e.id}" class="btn-sm">Attendees</a>
+                  <button class="btn-sm btn-delete" data-id="${e.id}" data-title="${e.title}">Delete</button>
                 </td>
               </tr>
             `).join('')}
@@ -99,6 +100,25 @@
     }
 
     loadEvents();
+
+    // Delete event handler
+    document.getElementById('events-list').addEventListener('click', async (e) => {
+      const btn = e.target.closest('.btn-delete');
+      if (!btn) return;
+      const id = btn.dataset.id;
+      const title = btn.dataset.title;
+      if (!confirm(`Delete "${title}"? This cannot be undone.`)) return;
+      btn.disabled = true;
+      btn.textContent = '...';
+      const { error } = await db.from('events').delete().eq('id', id);
+      if (error) {
+        alert('Failed to delete: ' + error.message);
+        btn.disabled = false;
+        btn.textContent = 'Delete';
+        return;
+      }
+      btn.closest('tr').remove();
+    });
 
     // Mobile sidebar toggle
     const menuBtn = document.getElementById('admin-menu-toggle');
