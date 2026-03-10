@@ -198,6 +198,23 @@
             <div class="event-description">
               ${event.description ? event.description.split('\n').map(p => `<p>${p}</p>`).join('') : ''}
             </div>
+            ${event.custom_fields?.puppies ? `
+              <div class="meet-the-puppies">
+                <h2>Meet the Puppies</h2>
+                <p class="puppies-intro">These adorable friends from <a href="https://lovedoodles.ca" target="_blank" rel="noopener">Love Doodles</a> will be joining us for the session.</p>
+                <div class="puppies-grid">
+                  ${event.custom_fields.puppies.map(p => `
+                    <div class="puppy-card">
+                      <div class="puppy-photo" style="background-image:url('${p.image}')"></div>
+                      <div class="puppy-info">
+                        <h3>${p.name}</h3>
+                        <span>${p.breed}</span>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
           </div>
           <div class="event-detail-sidebar">
             ${sidebarContent}

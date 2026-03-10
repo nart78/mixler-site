@@ -277,3 +277,88 @@ h1, h2, h3, h4 {
   color: #6b7280;
   margin: 0;
 }
+
+/* --- Meet the Puppies section --- */
+.meet-the-puppies {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.meet-the-puppies h2 {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin: 0 0 8px;
+}
+
+.puppies-intro {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0 0 28px;
+  line-height: 1.6;
+}
+
+.puppies-intro a {
+  color: #153db6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.puppies-intro a:hover {
+  text-decoration: underline;
+}
+
+.puppies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.puppy-card {
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.puppy-card:hover {
+  transform: translateY(-4px);
+}
+
+.puppy-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.puppy-info {
+  padding: 10px 0 0;
+}
+
+.puppy-info h3 {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1f2937 !important;
+  margin: 0;
+}
+
+.puppy-info span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+@media (max-width: 600px) {
+  .puppies-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .meet-the-puppies h2 {
+    font-size: 1.6rem;
+  }
+}
