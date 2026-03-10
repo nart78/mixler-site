@@ -278,6 +278,18 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
+/* --- Volume discount note --- */
+.volume-discount-note {
+  text-align: center;
+  padding: 8px 12px;
+  margin: -4px 0 12px;
+  background: #eef2ff;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #153db6;
+}
+
 /* --- Meet the Puppies section --- */
 .meet-the-puppies {
   margin-top: 48px;

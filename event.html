@@ -157,6 +157,11 @@
               ${earlyBirdActive && !hasMultipleTypes ? `<span class="original-price">${price}</span>` : ''}
               <span class="per-ticket">per ticket</span>
             </div>
+            ${event.custom_fields?.volume_discount ? `
+              <div class="volume-discount-note">
+                <span>${event.custom_fields.volume_discount.discount_pct}% off when you buy ${event.custom_fields.volume_discount.min_qty}+ tickets</span>
+              </div>
+            ` : ''}
             ${ticketTypesHtml}
             <div class="ticket-availability">
               ${soldOut
