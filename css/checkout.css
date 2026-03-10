@@ -11,6 +11,18 @@ h1, h2, h3, h4 {
   font-family: 'League Spartan', sans-serif;
 }
 
+/* --- Volume discount nudge banner --- */
+.volume-discount-nudge {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: #eef2ff;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #153db6;
+  text-align: center;
+}
+
 /* --- Checkout Section --- */
 .checkout-section {
   padding: 120px 0 80px;
