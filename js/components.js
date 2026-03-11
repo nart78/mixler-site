@@ -139,7 +139,7 @@ async function renderFooter() {
 function renderEventCard(event) {
   const isComingSoon = event.event_date >= '2099-01-01';
   const date = new Date(event.event_date + 'T' + event.start_time);
-  const dateStr = isComingSoon ? 'Date TBD' : date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  const dateStr = isComingSoon ? 'Date TBD' : date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
   const spotsLeft = event.capacity - event.tickets_sold;
   const soldOut = spotsLeft <= 0;
   const priceStr = (event.price_cents / 100).toFixed(2);
