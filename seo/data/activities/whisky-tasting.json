@@ -1,0 +1,68 @@
+{
+  "slug": "whisky-tasting-calgary",
+  "name": "Whisky Tasting",
+  "category": "food-drink",
+  "category_slug": "whisky-tasting",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Great for Solo", "Groups Welcome"],
+  "meta": {
+    "title": "Whisky Tasting in Calgary | Mixler",
+    "description": "Explore whisky at a guided tasting in Calgary. Sample Scotch, bourbon, Canadian, and more. Learn what to look for and how to talk about what you're drinking.",
+    "keywords": ["whisky tasting Calgary", "whiskey tasting Calgary", "whisky event Calgary"]
+  },
+  "content": {
+    "subtitle": "Nose, taste, and understand whisky with a guide who actually knows it.",
+    "intro": "Whisky tasting events in Calgary bring together curious drinkers who want to understand what's actually in their glass. A knowledgeable host walks you through a selection of whiskies from different regions and styles, explaining the production process and flavour profiles in plain language. You'll leave with a real vocabulary for whisky that makes every future pour more enjoyable.",
+    "breadcrumb_label": "Whisky Tasting Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🥃",
+        "heading": "A flight of curated whiskies",
+        "body": "You'll typically taste 4 to 6 expressions chosen to show range across styles, regions, or age statements."
+      },
+      {
+        "icon": "👃",
+        "heading": "Nosing before tasting",
+        "body": "The host will teach you how to nose whisky properly before drinking. You'll be surprised how much you pick up before taking a sip."
+      },
+      {
+        "icon": "📚",
+        "heading": "Context and storytelling",
+        "body": "Production methods, distillery history, and regional character all come into the conversation. It's genuinely interesting."
+      },
+      {
+        "icon": "💧",
+        "heading": "Water and palate cleansers",
+        "body": "You'll have water on hand for cleansing your palate and for adding a few drops to the whisky if needed."
+      }
+    ],
+    "tips": [
+      "Add just a few drops of water to cask strength whisky. It opens up the nose and softens the heat significantly.",
+      "Don't inhale too deeply right from the glass. Nose from a slight distance first, then move closer.",
+      "Canadian whisky is often underrated at tastings. Calgary is a great place to explore homegrown expressions alongside imported bottles.",
+      "Eat something before a whisky tasting. The flavours come through more clearly on a settled stomach.",
+      "Mixler lists whisky tasting events in Calgary when they're added. Join the waitlist and we'll let you know when one is coming up."
+    ],
+    "waitlist_heading": "Want to know when we run whisky tasting events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["wine-tasting-calgary", "cocktail-making-calgary", "beer-brewing-calgary", "olive-oil-tasting-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need to be a whisky drinker to enjoy this?",
+      "a": "You don't need prior experience. If you're curious about whisky, a tasting is one of the best ways to start exploring it."
+    },
+    {
+      "q": "What styles of whisky will I taste?",
+      "a": "It depends on the event theme. Some focus on Scotch, others on bourbon, or a mix. Check the event listing for specifics."
+    },
+    {
+      "q": "Is food included?",
+      "a": "Many events include small bites or palate cleansers. Check the event listing for what's provided."
+    },
+    {
+      "q": "How much whisky will I actually drink?",
+      "a": "Tasting portions are small, typically 15 to 20ml per pour. You're tasting and learning, not drinking full measures."
+    }
+  ]
+}

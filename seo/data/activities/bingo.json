@@ -1,0 +1,68 @@
+{
+  "slug": "bingo-calgary",
+  "name": "Bingo Nights",
+  "category": "games-social",
+  "category_slug": "bingo",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Great for Solo", "Groups Welcome"],
+  "meta": {
+    "title": "Bingo Nights in Calgary | Mixler",
+    "description": "Join a bingo night in Calgary for a fun, social evening with great prizes. Modern bingo events are lively, entertaining, and welcoming to everyone.",
+    "keywords": ["bingo night Calgary", "bingo Calgary", "bingo events Calgary"]
+  },
+  "content": {
+    "subtitle": "Modern bingo nights are loud, fun, and nothing like what you remember.",
+    "intro": "Bingo nights in Calgary have had a serious makeover. Forget the quiet halls of decades past. Modern bingo events are social, loud, and hosted by people who know how to entertain a room. You still mark your card and yell bingo, but the atmosphere is closer to a pub night than anything else. It's one of the easiest social events to drop into solo or with a group.",
+    "breadcrumb_label": "Bingo Nights Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🎱",
+        "heading": "Multiple rounds with prizes",
+        "body": "Most bingo nights run several rounds, each with its own prize. Prizes range from gift cards to novelty items to bar credit."
+      },
+      {
+        "icon": "🎤",
+        "heading": "An entertaining host",
+        "body": "The caller sets the tone. Good bingo hosts are funny, fast, and good at keeping the room energized between games."
+      },
+      {
+        "icon": "🍻",
+        "heading": "Drinks and a social scene",
+        "body": "Bingo nights typically happen at bars or venues where drinks are flowing. It adds to the social atmosphere."
+      },
+      {
+        "icon": "🃏",
+        "heading": "Easy to pick up instantly",
+        "body": "If you know what bingo is, you're ready to play. There's no learning curve, which makes it very accessible."
+      }
+    ],
+    "tips": [
+      "Grab your card early if the venue allows. Some seats have better sightlines for seeing the board.",
+      "You can play multiple cards at once if you want to increase your chances. Start with one or two until you know the pace.",
+      "Calgary's modern bingo events often have themes (drag bingo, music bingo, pop culture bingo). Themed ones are especially fun.",
+      "Don't be shy about yelling bingo. Waiting politely to confirm costs you the win sometimes.",
+      "Mixler lists bingo nights in Calgary when we run them. Join the waitlist and we'll let you know when one is on."
+    ],
+    "waitlist_heading": "Want to know when we run bingo nights?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["trivia-night-calgary", "pub-quiz-calgary", "board-games-calgary", "casino-night-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Is bingo suitable for all ages?",
+      "a": "Modern bingo nights are usually 18+ because they're held in licensed venues. Check the event listing for age restrictions."
+    },
+    {
+      "q": "Can I come solo?",
+      "a": "Yes. Bingo is one of the most solo-friendly social events. You play individually and meet people between rounds."
+    },
+    {
+      "q": "What kind of prizes are there?",
+      "a": "It varies by event. Common prizes include gift cards, bar credit, merchandise, and novelty items."
+    },
+    {
+      "q": "How long does a bingo night last?",
+      "a": "Most events run 2 to 3 hours, covering several rounds with breaks between games."
+    }
+  ]
+}

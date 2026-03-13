@@ -1,0 +1,68 @@
+{
+  "slug": "cocktail-making-calgary",
+  "name": "Cocktail Making",
+  "category": "food-drink",
+  "category_slug": "cocktail-making",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Groups Welcome", "No Experience Needed"],
+  "meta": {
+    "title": "Cocktail Making in Calgary | Mixler",
+    "description": "Learn to make cocktails in Calgary at a fun, hands-on class. Shake, stir, and taste your way through the session. All skill levels welcome, no experience needed.",
+    "keywords": ["cocktail making Calgary", "cocktail class Calgary", "mixology class Calgary"]
+  },
+  "content": {
+    "subtitle": "Learn the techniques behind great cocktails and mix your own.",
+    "intro": "Cocktail making classes in Calgary are a seriously fun evening. A bartender or mixologist walks you through the fundamentals of balance, technique, and flavour, then lets you practice making the drinks yourself. You taste as you go, and by the end of the session you'll actually know how to recreate what you made at home.",
+    "breadcrumb_label": "Cocktail Making Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🍹",
+        "heading": "Hands-on time at the bar",
+        "body": "You're not just watching. You shake, stir, strain, and garnish your own cocktails throughout the class."
+      },
+      {
+        "icon": "🔬",
+        "heading": "Understanding flavour and balance",
+        "body": "The instructor explains how sweetness, acidity, and spirits interact. It changes how you think about drinks."
+      },
+      {
+        "icon": "🧊",
+        "heading": "Tools and technique",
+        "body": "You'll learn proper use of a shaker, jigger, muddler, and bar spoon. Small techniques that make a big difference."
+      },
+      {
+        "icon": "📋",
+        "heading": "Recipes to take home",
+        "body": "Most classes send you home with the recipes you made. You'll be able to remake them the same week."
+      }
+    ],
+    "tips": [
+      "Measure your pours. Even experienced bartenders use a jigger. Eyeballing spirits throws off the whole balance.",
+      "Shake vigorously for 10 to 15 seconds. Most people under-shake, which leaves the drink too warm and under-diluted.",
+      "Calgary's bar scene is strong. A cocktail class is a great way to appreciate what goes into the drinks you order.",
+      "Classic cocktails are the best place to start. Once you understand a Negroni or a Daiquiri, you understand the logic behind most drinks.",
+      "Mixler lists cocktail making events in Calgary when they're added. Join the waitlist and we'll let you know first."
+    ],
+    "waitlist_heading": "Want to know when we run cocktail making events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["wine-tasting-calgary", "whisky-tasting-calgary", "beer-brewing-calgary", "cheese-charcuterie-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need bartending experience?",
+      "a": "No. Classes start from the basics. You'll learn technique as you go, and the instructor is there to guide you through each step."
+    },
+    {
+      "q": "What cocktails will I make?",
+      "a": "It depends on the class theme. Check the event listing for the specific cocktails covered."
+    },
+    {
+      "q": "Is this good for a group?",
+      "a": "It's one of the best group activities out there. Friendly competition over who made the better drink is very real."
+    },
+    {
+      "q": "Will I drink alcohol at the class?",
+      "a": "Yes, you'll taste the cocktails you make. If you don't drink alcohol, check with the organizer about mocktail options."
+    }
+  ]
+}

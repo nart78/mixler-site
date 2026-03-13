@@ -1,0 +1,68 @@
+{
+  "slug": "terrarium-building-calgary",
+  "name": "Terrarium Building",
+  "category": "creative",
+  "category_slug": "terrarium-building",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Great for Solo", "No Experience Needed"],
+  "meta": {
+    "title": "Terrarium Building in Calgary | Mixler",
+    "description": "Build your own terrarium in Calgary at a fun, hands-on workshop. Choose your plants, layer your soil, and take home a living piece of greenery. All supplies included.",
+    "keywords": ["terrarium building Calgary", "terrarium workshop Calgary", "make a terrarium Calgary"]
+  },
+  "content": {
+    "subtitle": "Build a little living world in a glass container and take it home.",
+    "intro": "Terrarium building workshops in Calgary are a wonderfully satisfying way to spend an evening. You pick your plants, layer the soil and rocks, arrange moss and decorative elements, and end up with a self-contained miniature garden. It's creative, tactile, and the result actually lives on your desk or windowsill for months.",
+    "breadcrumb_label": "Terrarium Building Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🌿",
+        "heading": "Choose your plants",
+        "body": "Workshops offer a selection of small plants, succulents, or tropicals. You pick what goes into your container."
+      },
+      {
+        "icon": "🪨",
+        "heading": "Layer by layer assembly",
+        "body": "You'll learn the proper layering of gravel, activated charcoal, and soil so your terrarium drains and breathes properly."
+      },
+      {
+        "icon": "🔮",
+        "heading": "Glass containers provided",
+        "body": "The vessel is included. Most workshops offer a range of shapes and sizes for you to choose from."
+      },
+      {
+        "icon": "🌱",
+        "heading": "Care instructions included",
+        "body": "You'll leave knowing exactly how to water and light your terrarium so it stays healthy at home."
+      }
+    ],
+    "tips": [
+      "Don't overwater. Terrariums need far less water than you think, especially closed ones.",
+      "Use long tweezers or a chopstick to position small plants in narrow containers. Your fingers often can't reach.",
+      "Calgary's dry indoor air in winter makes closed terrariums a great option. They self-regulate humidity.",
+      "A terrarium makes a great long-lasting gift. Many people make extras at workshops for friends.",
+      "Mixler lists terrarium building events in Calgary when they're added. Join the waitlist and we'll send you a heads up."
+    ],
+    "waitlist_heading": "Want to know when we run terrarium building events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["flower-arranging-calgary", "pottery-calgary", "candle-making-calgary", "resin-art-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need to know anything about plants?",
+      "a": "No plant knowledge required. The instructor covers everything, including care instructions for after you take it home."
+    },
+    {
+      "q": "What type of terrarium will I make?",
+      "a": "It depends on the workshop. Some focus on succulents, others on tropical plants. The listing will tell you which type."
+    },
+    {
+      "q": "How do I keep it alive after the workshop?",
+      "a": "You'll get care instructions at the end of the session covering light, water, and maintenance. Most terrariums are low-maintenance."
+    },
+    {
+      "q": "Is the container included?",
+      "a": "Yes. The glass container is included in the workshop cost, along with all soil, plants, and decorative materials."
+    }
+  ]
+}

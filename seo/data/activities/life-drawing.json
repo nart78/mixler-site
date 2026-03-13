@@ -1,0 +1,68 @@
+{
+  "slug": "life-drawing-calgary",
+  "name": "Life Drawing",
+  "category": "creative",
+  "category_slug": "life-drawing",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Great for Solo", "Active"],
+  "meta": {
+    "title": "Life Drawing in Calgary | Mixler",
+    "description": "Join a life drawing session in Calgary. Draw from a live model in a relaxed, supportive setting. All skill levels welcome, supplies included or bring your own.",
+    "keywords": ["life drawing Calgary", "figure drawing Calgary", "life drawing class Calgary"]
+  },
+  "content": {
+    "subtitle": "Draw from a live model in a focused, creatively charged session.",
+    "intro": "Life drawing sessions in Calgary offer something that most creative classes don't: a real challenge. Drawing from a live human model forces you to observe closely and work quickly, and that combination accelerates your skills faster than almost anything else. Sessions are welcoming to all skill levels, from complete beginners to experienced artists looking to sharpen their eye.",
+    "breadcrumb_label": "Life Drawing Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🖊️",
+        "heading": "Timed poses with a live model",
+        "body": "Sessions typically run through short poses of 1 to 5 minutes, then longer poses of 10 to 20 minutes. The variety keeps it engaging."
+      },
+      {
+        "icon": "🎨",
+        "heading": "Draw in your preferred medium",
+        "body": "Most sessions allow pencil, charcoal, or pen. Charcoal is common for beginners because it's forgiving and fast."
+      },
+      {
+        "icon": "🧑‍🎨",
+        "heading": "Supportive, non-judgmental space",
+        "body": "Life drawing attracts people who take the craft seriously. It's focused but friendly, and no one is critiquing your work."
+      },
+      {
+        "icon": "📐",
+        "heading": "Focus on observation, not perfection",
+        "body": "The goal is to train your eye and capture gesture and proportion. The quick poses especially push you to simplify."
+      }
+    ],
+    "tips": [
+      "Start with gesture, not detail. Short poses are for capturing movement and proportion, not rendering.",
+      "Charcoal is a great first medium for life drawing. It smudges, blends, and erases quickly.",
+      "Look at your model more than your paper. Most beginners draw what they think they see, not what's actually there.",
+      "Calgary has a solid arts community, and life drawing is one of the more socially interesting ways to tap into it.",
+      "Mixler lists life drawing sessions in Calgary when they're added. Join the waitlist and we'll let you know when one is scheduled."
+    ],
+    "waitlist_heading": "Want to know when we run life drawing events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["painting-calgary", "calligraphy-calgary", "stained-glass-calgary", "leather-craft-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need drawing experience for life drawing?",
+      "a": "No. Beginners are welcome. The timed format actually helps beginners loosen up and not overthink each mark."
+    },
+    {
+      "q": "What do I need to bring?",
+      "a": "Check the event listing. Some sessions provide supplies, others ask you to bring your own paper and charcoal or pencils."
+    },
+    {
+      "q": "Is the model clothed?",
+      "a": "Traditional life drawing involves a nude model. The listing will always specify. Some events use costumed or clothed models."
+    },
+    {
+      "q": "How long does a life drawing session run?",
+      "a": "Sessions typically run 2 to 3 hours with a mix of short and long poses and a short break in the middle."
+    }
+  ]
+}

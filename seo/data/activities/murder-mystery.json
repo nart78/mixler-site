@@ -1,0 +1,68 @@
+{
+  "slug": "murder-mystery-calgary",
+  "name": "Murder Mystery",
+  "category": "games-social",
+  "category_slug": "murder-mystery",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Groups Welcome", "Active"],
+  "meta": {
+    "title": "Murder Mystery in Calgary | Mixler",
+    "description": "Join a murder mystery night in Calgary. Roleplay a character, gather clues, and solve the crime in a fun, theatrical group event. No experience needed.",
+    "keywords": ["murder mystery Calgary", "murder mystery dinner Calgary", "mystery night Calgary"]
+  },
+  "content": {
+    "subtitle": "Step into a character, investigate the suspects, and solve the murder.",
+    "intro": "Murder mystery events in Calgary are theatrical, social, and genuinely entertaining. You receive a character, get a backstory, and spend the evening gathering information, accusing suspects, and trying to figure out who did it before the big reveal. The best events blend improv with structure and give everyone enough to do that no one feels like a bystander.",
+    "breadcrumb_label": "Murder Mystery Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🎭",
+        "heading": "You play a character",
+        "body": "You receive a character packet with your backstory, motivations, and secrets before the event begins."
+      },
+      {
+        "icon": "🔍",
+        "heading": "Investigating and gathering clues",
+        "body": "You talk to other characters, ask questions, and share information strategically. Who you trust matters."
+      },
+      {
+        "icon": "🗣️",
+        "heading": "Accusations and discussion",
+        "body": "At various points the group compares notes and makes accusations. The debate is often the most entertaining part."
+      },
+      {
+        "icon": "🎉",
+        "heading": "The big reveal",
+        "body": "At the end of the evening, the murderer is revealed. There's usually a prize for whoever solved it correctly."
+      }
+    ],
+    "tips": [
+      "Read your character sheet carefully before the event starts. Your secrets and goals shape how you play.",
+      "Stay in character as much as you can. Breaking it too often pulls everyone out of the experience.",
+      "Take notes. There's more information flying around than you can hold in your head, and the details matter.",
+      "Calgary murder mystery events range from casual dinner formats to more immersive theatrical productions. Pick the format that suits your group.",
+      "Mixler lists murder mystery nights in Calgary when we run them. Join the waitlist and we'll email you when one is added."
+    ],
+    "waitlist_heading": "Want to know when we run murder mystery events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["escape-rooms-calgary", "trivia-night-calgary", "game-show-night-calgary", "board-games-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need acting experience?",
+      "a": "Not at all. You're given a character with a backstory, but how you play it is entirely up to you. Low-key is completely fine."
+    },
+    {
+      "q": "Can I come solo?",
+      "a": "Yes. Solo attendees are assigned characters and integrated into the group. You'll be involved from the start."
+    },
+    {
+      "q": "How long does a murder mystery event last?",
+      "a": "Most events run 2 to 4 hours depending on the format. Dinner formats tend to run longer."
+    },
+    {
+      "q": "Is there a meal included?",
+      "a": "Some murder mystery events include a dinner, others are standalone. Check the event listing for what's included."
+    }
+  ]
+}

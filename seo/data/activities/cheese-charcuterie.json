@@ -1,0 +1,68 @@
+{
+  "slug": "cheese-charcuterie-calgary",
+  "name": "Cheese and Charcuterie",
+  "category": "food-drink",
+  "category_slug": "cheese-charcuterie",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Great for Solo", "Groups Welcome"],
+  "meta": {
+    "title": "Cheese and Charcuterie in Calgary | Mixler",
+    "description": "Learn to build a beautiful cheese and charcuterie board in Calgary. Taste great cheese, learn pairing basics, and take the skills home. All experience levels welcome.",
+    "keywords": ["cheese and charcuterie Calgary", "charcuterie board class Calgary", "cheese tasting Calgary"]
+  },
+  "content": {
+    "subtitle": "Taste great cheese, learn the pairings, and build a board worth showing off.",
+    "intro": "Cheese and charcuterie events in Calgary are the kind of evening where you show up thinking it's going to be casual and end up leaving with actual knowledge. A cheesemonger or host walks you through a selection of cheeses, explains what makes each one different, and shows you how to build a board that balances flavours and textures. It's delicious and genuinely educational.",
+    "breadcrumb_label": "Cheese and Charcuterie Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🧀",
+        "heading": "Guided cheese tasting",
+        "body": "You'll taste a curated selection of cheeses from different milk types and regions. The host explains what you're tasting and why."
+      },
+      {
+        "icon": "🥩",
+        "heading": "Charcuterie and accompaniments",
+        "body": "Cured meats, pickles, honey, jams, and crackers are all part of the spread. You learn how to balance flavours across the board."
+      },
+      {
+        "icon": "🍷",
+        "heading": "Pairing principles",
+        "body": "You'll learn basic pairing logic for wine, beer, or other drinks that complement different cheese styles."
+      },
+      {
+        "icon": "🎨",
+        "heading": "Board building technique",
+        "body": "The host shows you how to arrange a board for visual appeal and flow. It's a skill that transfers directly to hosting at home."
+      }
+    ],
+    "tips": [
+      "Let cheese come to room temperature before serving. Cold cheese mutes the flavour significantly.",
+      "Use at least three different cheese styles: a soft, a semi-firm, and an aged. It gives your board real range.",
+      "Calgary has specialty food shops with excellent imported and local cheese selections worth exploring after your class.",
+      "Label your cheeses when you host at home. Guests always want to know what they're eating.",
+      "Mixler lists cheese and charcuterie events in Calgary when they're scheduled. Join the waitlist and we'll let you know first."
+    ],
+    "waitlist_heading": "Want to know when we run cheese and charcuterie events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["wine-tasting-calgary", "charcuterie-board-calgary", "olive-oil-tasting-calgary", "cocktail-making-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need to know anything about cheese?",
+      "a": "No cheese knowledge required. The host covers everything, including how to taste and describe what you're eating."
+    },
+    {
+      "q": "Is this just about cheese?",
+      "a": "No. Charcuterie, condiments, crackers, and pairings are all part of it. You build and taste a full board."
+    },
+    {
+      "q": "Can I eat as much as I want?",
+      "a": "You're there to taste and enjoy, not just sample. Most events provide generous portions."
+    },
+    {
+      "q": "Is this suitable for groups?",
+      "a": "Very much so. Cheese and charcuterie is a naturally social format. People share, compare opinions, and eat well together."
+    }
+  ]
+}

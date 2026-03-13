@@ -1,0 +1,68 @@
+{
+  "slug": "knife-skills-calgary",
+  "name": "Knife Skills Class",
+  "category": "food-drink",
+  "category_slug": "knife-skills",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Great for Solo", "No Experience Needed"],
+  "meta": {
+    "title": "Knife Skills Class in Calgary | Mixler",
+    "description": "Learn proper knife skills in Calgary with a professional chef. Cut faster, safer, and more confidently in your own kitchen. Hands-on, practical, and genuinely useful.",
+    "keywords": ["knife skills Calgary", "knife skills class Calgary", "cooking knife techniques Calgary"]
+  },
+  "content": {
+    "subtitle": "Learn to use a chef's knife properly and speed up everything you do in the kitchen.",
+    "intro": "A knife skills class in Calgary is one of the most practical cooking investments you can make. A professional chef teaches you proper grip, stance, and cutting technique, then walks you through the most common cuts used in everyday cooking. The difference in speed and confidence after even one session is immediate and noticeable.",
+    "breadcrumb_label": "Knife Skills Class Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🔪",
+        "heading": "Grip and stance basics",
+        "body": "You'll learn the correct way to hold a knife and position your body. Most people are holding their knife wrong and don't know it."
+      },
+      {
+        "icon": "🥕",
+        "heading": "The core cuts",
+        "body": "Julienne, dice, chiffonade, brunoise. A chef walks you through each cut on real vegetables so you build real muscle memory."
+      },
+      {
+        "icon": "🧹",
+        "heading": "Knife maintenance basics",
+        "body": "You'll learn how to hone your knife before each use and when it needs sharpening. A sharp knife is actually safer."
+      },
+      {
+        "icon": "⚡",
+        "heading": "Speed through consistency",
+        "body": "The instructor shows how consistent knife technique naturally leads to speed. You don't have to rush to cut fast."
+      }
+    ],
+    "tips": [
+      "Use the claw grip for your guiding hand. Curling your fingertips keeps them safe from the blade.",
+      "Let the knife do the work. Pushing down hard means your knife isn't sharp enough, not that you need more force.",
+      "A good knife doesn't need to be expensive. A well-maintained mid-range chef's knife beats a dull expensive one every time.",
+      "Calgary chefs rate knife skills as the single highest-leverage cooking skill for home cooks. It affects every meal you make.",
+      "Mixler lists knife skills classes in Calgary when they come up. Join the waitlist and we'll send you a heads up when one is added."
+    ],
+    "waitlist_heading": "Want to know when we run knife skills events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["cooking-classes-calgary", "pasta-making-calgary", "sushi-making-calgary", "dumpling-making-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need to bring my own knife?",
+      "a": "Most classes provide knives, but check the event listing. If you have a knife you use regularly, bringing it can be helpful."
+    },
+    {
+      "q": "Is this safe for beginners?",
+      "a": "Yes. The instructor covers safety from the very first minute. You'll learn techniques that make cutting safer, not just faster."
+    },
+    {
+      "q": "What will I cut at the class?",
+      "a": "Common vegetables like onions, carrots, celery, and herbs. The focus is on technique, not the specific ingredient."
+    },
+    {
+      "q": "How long is a knife skills class?",
+      "a": "Most sessions run 1.5 to 2 hours. That's enough time to cover the core cuts and practice each one properly."
+    }
+  ]
+}

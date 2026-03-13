@@ -1,0 +1,68 @@
+{
+  "slug": "board-games-calgary",
+  "name": "Board Game Nights",
+  "category": "games-social",
+  "category_slug": "board-games",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Great for Solo", "Groups Welcome"],
+  "meta": {
+    "title": "Board Game Nights in Calgary | Mixler",
+    "description": "Join a board game night in Calgary. Play modern tabletop games in a social, relaxed setting. Solo players welcome. All experience levels, all game types.",
+    "keywords": ["board game night Calgary", "board games Calgary", "tabletop games Calgary"]
+  },
+  "content": {
+    "subtitle": "Play great modern board games with people who are just as into them as you are.",
+    "intro": "Board game nights in Calgary have found a serious audience, and the game library has evolved well beyond Monopoly and Scrabble. Modern tabletop games cover every taste, from quick social party games to deep strategy titles that take an evening to play through. These events attract a genuinely welcoming crowd, and you don't need to be an experienced gamer to jump in.",
+    "breadcrumb_label": "Board Game Nights Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🎲",
+        "heading": "A range of game types",
+        "body": "Events usually offer party games, cooperative games, strategy games, and everything in between. There's always something that fits your mood."
+      },
+      {
+        "icon": "📖",
+        "heading": "Rules taught at the table",
+        "body": "Someone explains the rules before each game. You don't need to know any games in advance."
+      },
+      {
+        "icon": "😄",
+        "heading": "Casual, social atmosphere",
+        "body": "Board game nights are naturally social. You're playing together, not staring at screens."
+      },
+      {
+        "icon": "🔄",
+        "heading": "Play multiple games in a session",
+        "body": "Shorter games let you play several rounds and try different titles. Longer games have their own satisfying arc."
+      }
+    ],
+    "tips": [
+      "Ask the host or facilitator what games they recommend for your group size and experience level. The right game makes the whole evening.",
+      "Don't be intimidated by complex-looking rule books. Most games are much more intuitive once you start playing.",
+      "Calgary's board game cafes are a great place to practice between events. Find a spot that lets you try before you buy.",
+      "Come with an open mind. The games you end up loving are rarely the ones you expected to enjoy.",
+      "Mixler lists board game nights in Calgary when they're added. Join the waitlist and we'll email you when one is on."
+    ],
+    "waitlist_heading": "Want to know when we run board game nights?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["trivia-night-calgary", "card-games-calgary", "escape-rooms-calgary", "pub-quiz-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need to know how to play any games?",
+      "a": "No. Rules are explained at the table before each game. You just need to show up ready to try."
+    },
+    {
+      "q": "Can I come solo?",
+      "a": "Absolutely. Solo players are very welcome at board game nights. You'll be placed with a group and introduced."
+    },
+    {
+      "q": "What kind of games will be available?",
+      "a": "It depends on the event, but most cover a mix of party games, strategy games, and cooperative titles."
+    },
+    {
+      "q": "How long does a board game night run?",
+      "a": "Most events run 2 to 4 hours. You can usually arrive and leave at your own pace depending on the format."
+    }
+  ]
+}

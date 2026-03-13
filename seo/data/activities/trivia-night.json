@@ -1,0 +1,68 @@
+{
+  "slug": "trivia-night-calgary",
+  "name": "Trivia Nights",
+  "category": "games-social",
+  "category_slug": "trivia-night",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Groups Welcome", "Great for Solo"],
+  "meta": {
+    "title": "Trivia Nights in Calgary | Mixler",
+    "description": "Join a trivia night in Calgary and test your knowledge across fun, varied categories. Great for groups, date nights, and solo attendees. All skill levels welcome.",
+    "keywords": ["trivia night Calgary", "trivia Calgary", "quiz night Calgary"]
+  },
+  "content": {
+    "subtitle": "Show up, join a team, and find out how much you actually know.",
+    "intro": "Trivia nights in Calgary are one of the best low-pressure social events you can find. Teams of 4 to 6 compete across rounds of general knowledge, pop culture, history, and sometimes specialty categories that catch everyone off guard. The atmosphere is competitive enough to be exciting and relaxed enough that you can have a great time even if your team finishes last.",
+    "breadcrumb_label": "Trivia Nights Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🧠",
+        "heading": "Multiple rounds across categories",
+        "body": "Most trivia nights run 5 to 7 rounds covering general knowledge, movies, music, history, and a wildcard or specialty category."
+      },
+      {
+        "icon": "👥",
+        "heading": "Team format",
+        "body": "You play as a team. Groups of 4 to 6 work best, but solo attendees can usually join a team at the door."
+      },
+      {
+        "icon": "🎤",
+        "heading": "A host who keeps it moving",
+        "body": "A good trivia host makes the whole night more entertaining. Expect commentary, music, and a bit of friendly provocation."
+      },
+      {
+        "icon": "🏆",
+        "heading": "Prizes for the top teams",
+        "body": "Most events offer prizes for first and sometimes second place. Gift cards, bar tabs, and novelty prizes are common."
+      }
+    ],
+    "tips": [
+      "Bring a mix of people. Specialists in one area don't win trivia. Generalists who cover more categories do.",
+      "Don't second-guess your team's first answer. The initial instinct is right more often than the deliberated one.",
+      "Calgary trivia nights fill up fast, especially at popular venues. Show up early or book a table in advance.",
+      "Specialty theme nights (80s, sports, movies) are especially fun if they match your team's strengths.",
+      "Mixler lists trivia nights in Calgary when we run them. Join the waitlist and we'll reach out when one is scheduled."
+    ],
+    "waitlist_heading": "Want to know when we run trivia nights?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["pub-quiz-calgary", "board-games-calgary", "escape-rooms-calgary", "murder-mystery-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Can I come solo to a trivia night?",
+      "a": "Yes. Solo attendees are often placed with other individuals to form a team. It's one of the easier ways to meet people at an event."
+    },
+    {
+      "q": "How many people per team?",
+      "a": "Most events cap teams at 6. Groups of 4 to 6 tend to be the sweet spot for covering enough categories."
+    },
+    {
+      "q": "What categories are usually covered?",
+      "a": "General knowledge, pop culture, history, geography, music, and movies are common. Specialty rounds vary by event."
+    },
+    {
+      "q": "Are there prizes?",
+      "a": "Usually yes. First and second place typically get prizes. Check the event listing for specifics."
+    }
+  ]
+}

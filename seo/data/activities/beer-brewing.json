@@ -1,0 +1,68 @@
+{
+  "slug": "beer-brewing-calgary",
+  "name": "Beer Brewing",
+  "category": "food-drink",
+  "category_slug": "beer-brewing",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "No Experience Needed", "Groups Welcome"],
+  "meta": {
+    "title": "Beer Brewing in Calgary | Mixler",
+    "description": "Learn to brew beer in Calgary at a hands-on class. Understand the process, taste the ingredients, and make something you'll actually drink. All skill levels welcome.",
+    "keywords": ["beer brewing Calgary", "home brewing class Calgary", "beer making Calgary"]
+  },
+  "content": {
+    "subtitle": "Get into the process of brewing and actually understand how beer is made.",
+    "intro": "Beer brewing classes in Calgary pull back the curtain on one of the most satisfying DIY food skills there is. You work through the brewing process from grain to fermenter with a brewer who explains every decision along the way. Calgary's craft beer scene is strong, and a brewing class gives you a new lens for everything you drink from that point forward.",
+    "breadcrumb_label": "Beer Brewing Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🌾",
+        "heading": "Mashing and extracting sugars",
+        "body": "You'll learn how grain is mashed in hot water to extract fermentable sugars. This is the foundation of every beer."
+      },
+      {
+        "icon": "🌿",
+        "heading": "Hops and bitterness",
+        "body": "You'll smell and handle hops and learn how timing and variety affect the bitterness and aroma of the finished beer."
+      },
+      {
+        "icon": "🧫",
+        "heading": "Yeast and fermentation",
+        "body": "The instructor explains how yeast converts sugars into alcohol and how different strains create wildly different flavours."
+      },
+      {
+        "icon": "🍺",
+        "heading": "Taste finished examples",
+        "body": "You'll taste examples of the style you're brewing alongside the class. It gives context for the decisions you're making."
+      }
+    ],
+    "tips": [
+      "Clean everything obsessively. Off-flavours in beer almost always come from contamination at some point in the process.",
+      "Keep temperature steady during fermentation. Wild temperature swings stress the yeast and affect flavour.",
+      "Calgary has an excellent craft beer scene. Visiting local breweries after a brewing class makes for a genuinely richer experience.",
+      "Start with an extract kit if you want to practice at home before moving to all-grain. It's much more forgiving.",
+      "Mixler lists beer brewing events in Calgary when they come up. Join the waitlist and we'll email you when one is on."
+    ],
+    "waitlist_heading": "Want to know when we run beer brewing events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["cocktail-making-calgary", "whisky-tasting-calgary", "wine-tasting-calgary", "cooking-classes-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need any brewing experience?",
+      "a": "No. Beginner classes start from scratch and explain every step of the process."
+    },
+    {
+      "q": "Do I get to take beer home?",
+      "a": "Brewing takes weeks to ferment, so you won't take home finished beer the same day. Many classes provide a tasting of finished examples alongside the brewing session."
+    },
+    {
+      "q": "What style of beer will we make?",
+      "a": "It depends on the class. Common choices include pale ales, IPAs, stouts, and lagers. The event listing will specify."
+    },
+    {
+      "q": "Is brewing hard to learn?",
+      "a": "The basic process is surprisingly approachable. The instructor handles the more technical aspects and explains the science as you go."
+    }
+  ]
+}

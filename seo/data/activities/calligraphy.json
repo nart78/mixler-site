@@ -1,0 +1,68 @@
+{
+  "slug": "calligraphy-calgary",
+  "name": "Calligraphy Classes",
+  "category": "creative",
+  "category_slug": "calligraphy",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Great for Solo", "No Experience Needed"],
+  "meta": {
+    "title": "Calligraphy Classes in Calgary | Mixler",
+    "description": "Learn calligraphy in Calgary in a beginner-friendly class. Master basic strokes and letterforms and leave with real skill. All supplies included.",
+    "keywords": ["calligraphy classes Calgary", "learn calligraphy Calgary", "calligraphy workshop Calgary"]
+  },
+  "content": {
+    "subtitle": "Learn the strokes, build the letterforms, and write something worth keeping.",
+    "intro": "Calligraphy classes in Calgary attract people who want to slow down and learn a skill that actually transfers. Once you understand pressure, angle, and stroke direction, the letters start to take shape in a way that feels almost meditative. Beginners are completely welcome, and most people are genuinely surprised how much they improve in just one session.",
+    "breadcrumb_label": "Calligraphy Classes Calgary",
+    "what_to_expect": [
+      {
+        "icon": "✍️",
+        "heading": "Grip and posture first",
+        "body": "The instructor starts with how to hold the pen and position your paper. Getting this right from the start makes everything else easier."
+      },
+      {
+        "icon": "📐",
+        "heading": "Basic strokes before letters",
+        "body": "You'll practice upstrokes, downstrokes, and ovals before forming full letters. It's the foundation of everything."
+      },
+      {
+        "icon": "🖊️",
+        "heading": "Your choice of style",
+        "body": "Most beginner classes cover modern calligraphy or brush lettering. The instructor will guide you based on the class focus."
+      },
+      {
+        "icon": "📄",
+        "heading": "Practice sheets and paper included",
+        "body": "All materials are provided. You take your practice sheets home so you can keep working on it."
+      }
+    ],
+    "tips": [
+      "Relax your grip. Holding the pen too tightly is the single biggest thing that slows beginners down.",
+      "Use smooth paper. Textured paper catches the nib and makes clean strokes harder to pull off.",
+      "Go slow on the downstrokes. Speed is the enemy of even pressure and good lettering.",
+      "Calligraphy is a genuinely useful skill in Calgary's wedding and events market. Once you have it, people ask for it.",
+      "Mixler lists calligraphy classes in Calgary when they're available. Join the waitlist and we'll email you when one is added."
+    ],
+    "waitlist_heading": "Want to know when we run calligraphy events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["painting-calgary", "leather-craft-calgary", "life-drawing-calgary", "stained-glass-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need artistic ability to learn calligraphy?",
+      "a": "No. Calligraphy is a technical skill. If you can follow instruction and practice the strokes, you can learn it."
+    },
+    {
+      "q": "What style of calligraphy will I learn?",
+      "a": "Most beginner classes focus on modern calligraphy or brush lettering. Check the event listing for specifics."
+    },
+    {
+      "q": "What supplies are provided?",
+      "a": "Nibs, holders, ink, and practice paper are all provided. You take your sheets home to keep practicing."
+    },
+    {
+      "q": "How long does a calligraphy class take?",
+      "a": "Most sessions run 2 to 3 hours. That's enough time to learn the basics and leave with real muscle memory."
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "resin-art-calgary",
+  "name": "Resin Art",
+  "category": "creative",
+  "category_slug": "resin-art",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "No Experience Needed", "Groups Welcome"],
+  "meta": {
+    "title": "Resin Art in Calgary | Mixler",
+    "description": "Try resin art in Calgary and pour a one-of-a-kind piece to take home. Beginner-friendly sessions with all materials included. No experience needed.",
+    "keywords": ["resin art Calgary", "resin pouring Calgary", "resin workshop Calgary"]
+  },
+  "content": {
+    "subtitle": "Pour, swirl, and watch something beautiful take shape right in front of you.",
+    "intro": "Resin art workshops in Calgary are equal parts satisfying and surprising. You mix pigments into resin, pour it onto a surface, and use heat or motion to create patterns that look different every single time. No two pieces ever come out the same, which makes it genuinely exciting. It's also very accessible for beginners.",
+    "breadcrumb_label": "Resin Art Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🎨",
+        "heading": "Colour mixing and pigments",
+        "body": "You'll choose your colour palette and mix pigments into the resin before pouring. This is where your creative choices happen."
+      },
+      {
+        "icon": "🌊",
+        "heading": "The pour technique",
+        "body": "The instructor shows you how to pour and tilt your surface to create swirls and patterns. It takes a steady hand and a bit of patience."
+      },
+      {
+        "icon": "🔥",
+        "heading": "Heat tools for effect",
+        "body": "A torch or heat gun is used to pop bubbles and bring out cells in the resin. It's one of the most visually satisfying parts."
+      },
+      {
+        "icon": "📦",
+        "heading": "Curing and pickup",
+        "body": "Resin needs time to cure. Most workshops send you home with your piece and you come back or arrange pickup a day or two later."
+      }
+    ],
+    "tips": [
+      "Wear gloves. Uncured resin is sticky and can irritate skin if it gets on you.",
+      "Work in a well-ventilated area during the session. Resin fumes are mild but real.",
+      "Fewer colours often produce cleaner results. Three or four that complement each other tend to work better than six competing ones.",
+      "Calgary's dry climate can actually be good for resin work. Less humidity means fewer surface issues as it cures.",
+      "Mixler lists resin art events in Calgary when they're added. Sign up for the waitlist and we'll email you when one is coming up."
+    ],
+    "waitlist_heading": "Want to know when we run resin art events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["painting-calgary", "candle-making-calgary", "stained-glass-calgary", "pottery-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Is resin art safe for beginners?",
+      "a": "Yes. Workshops provide gloves and ensure proper ventilation. The instructor covers all safety steps before you start."
+    },
+    {
+      "q": "Can I take my piece home the same day?",
+      "a": "Resin takes time to cure, so most workshops have you arrange pickup the next day or two. The wait is worth it."
+    },
+    {
+      "q": "Do I get to choose my colours?",
+      "a": "Yes. Choosing and mixing your colours is one of the best parts of the process."
+    },
+    {
+      "q": "How long does a resin art workshop take?",
+      "a": "Sessions usually run 2 to 3 hours. The hands-on pouring portion is faster than you'd expect."
+    }
+  ]
+}

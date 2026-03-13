@@ -1,0 +1,68 @@
+{
+  "slug": "charcuterie-board-calgary",
+  "name": "Charcuterie Board Class",
+  "category": "food-drink",
+  "category_slug": "charcuterie-board",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Groups Welcome", "No Experience Needed"],
+  "meta": {
+    "title": "Charcuterie Board Class in Calgary | Mixler",
+    "description": "Learn to build a stunning charcuterie board in Calgary. Master layout, flow, and ingredient selection at a fun hands-on class. You eat what you build.",
+    "keywords": ["charcuterie board Calgary", "charcuterie board class Calgary", "how to make a charcuterie board Calgary"]
+  },
+  "content": {
+    "subtitle": "Build a board that looks beautiful and tastes even better.",
+    "intro": "Charcuterie board classes in Calgary teach you the art of building a spread that's as visually impressive as it is delicious. An instructor walks you through ingredient selection, layout principles, and the small details that make a board look intentional rather than random. You build your own and eat everything on it, which is a very good deal.",
+    "breadcrumb_label": "Charcuterie Board Class Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🥩",
+        "heading": "Ingredient selection",
+        "body": "You'll learn how to choose meats, cheeses, and accompaniments that work together in flavour and texture."
+      },
+      {
+        "icon": "🎨",
+        "heading": "Layout and flow",
+        "body": "The instructor shows you how to anchor, fill, and finish a board so it looks abundant without feeling chaotic."
+      },
+      {
+        "icon": "🧀",
+        "heading": "Folding and presentation techniques",
+        "body": "Salami roses, folded prosciutto, and cheese placement all come into it. Small techniques that make a big visual difference."
+      },
+      {
+        "icon": "🫒",
+        "heading": "Colour and contrast",
+        "body": "You'll think about colour balance and how to use olives, fruits, and pickles to add contrast throughout the board."
+      }
+    ],
+    "tips": [
+      "Start with your large anchor items (cheeses, bowls) first, then fill in around them. It's much easier than starting with meats.",
+      "Odd numbers of each item look more natural than even numbers. Three cheese cubes looks intentional; four looks like a grid.",
+      "Calgary's specialty grocery stores stock excellent imported cured meats. Knowing what to look for makes a real difference.",
+      "Charcuterie board skills transfer to every dinner party you ever host. It's the kind of class that keeps paying off.",
+      "Mixler lists charcuterie board classes in Calgary when they're scheduled. Join the waitlist and we'll email you when one is coming up."
+    ],
+    "waitlist_heading": "Want to know when we run charcuterie board events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["cheese-charcuterie-calgary", "wine-tasting-calgary", "olive-oil-tasting-calgary", "cocktail-making-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need any food styling or cooking experience?",
+      "a": "No. The class starts from the very beginning. You'll learn the rules and principles as you build your board."
+    },
+    {
+      "q": "Do I eat the board I build?",
+      "a": "Yes. That's the best part. You eat your own creation at the end of the session."
+    },
+    {
+      "q": "Is this different from a cheese and charcuterie tasting?",
+      "a": "Yes. A tasting focuses on flavour education. This class focuses on assembly, presentation, and technique."
+    },
+    {
+      "q": "Can I take leftovers home?",
+      "a": "Usually yes. If you can't eat everything during the session, most classes let you box up the rest."
+    }
+  ]
+}

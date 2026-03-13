@@ -1,0 +1,68 @@
+{
+  "slug": "olive-oil-tasting-calgary",
+  "name": "Olive Oil Tasting",
+  "category": "food-drink",
+  "category_slug": "olive-oil-tasting",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Great for Solo", "No Experience Needed"],
+  "meta": {
+    "title": "Olive Oil Tasting in Calgary | Mixler",
+    "description": "Discover the world of extra virgin olive oil at a tasting event in Calgary. Learn to taste, evaluate, and choose great olive oil. No experience needed.",
+    "keywords": ["olive oil tasting Calgary", "olive oil event Calgary", "extra virgin olive oil Calgary"]
+  },
+  "content": {
+    "subtitle": "Taste the difference between great olive oil and everything else.",
+    "intro": "Olive oil tasting events in Calgary are a genuinely eye-opening experience for anyone who cooks. Most people have never tasted truly fresh, high-quality extra virgin olive oil, and the difference from what you buy at a grocery store is remarkable. A guide walks you through the tasting method, helps you identify flavour profiles, and explains what to look for when buying.",
+    "breadcrumb_label": "Olive Oil Tasting Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🫒",
+        "heading": "A curated selection of oils",
+        "body": "You'll taste 4 to 6 extra virgin olive oils from different regions and harvest times. The range in flavour is genuinely surprising."
+      },
+      {
+        "icon": "👃",
+        "heading": "Proper tasting technique",
+        "body": "The guide teaches you how to warm the oil in your hands, nose it, and taste it correctly to assess quality."
+      },
+      {
+        "icon": "📚",
+        "heading": "Understanding quality markers",
+        "body": "You'll learn what pungency, bitterness, and fruitiness mean in the context of olive oil and why they signal freshness."
+      },
+      {
+        "icon": "🍞",
+        "heading": "Bread and palate cleansers",
+        "body": "Neutral bread and water keep your palate fresh between tastings so each oil gets a fair assessment."
+      }
+    ],
+    "tips": [
+      "Good olive oil should have a peppery finish in the throat. That sensation means the polyphenols are still active.",
+      "Check the harvest date, not just the best-before date. Fresher oil has more flavour and health benefits.",
+      "Calgary's specialty food shops increasingly stock high-quality imported olive oils. Knowing what you're tasting helps you choose better.",
+      "Olive oil tasting pairs beautifully with a cheese board session. The two experiences complement each other well.",
+      "Mixler lists olive oil tasting events in Calgary when they come up. Join the waitlist and we'll email you when one is added."
+    ],
+    "waitlist_heading": "Want to know when we run olive oil tasting events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["wine-tasting-calgary", "cheese-charcuterie-calgary", "charcuterie-board-calgary", "whisky-tasting-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need food knowledge to enjoy this?",
+      "a": "Not at all. The guide explains everything as you go. You just need to be curious and willing to taste."
+    },
+    {
+      "q": "How is olive oil tasting different from wine tasting?",
+      "a": "The evaluation process is similar but olive oil is assessed for fruitiness, bitterness, and pungency. You drink from small cups, not glasses."
+    },
+    {
+      "q": "How many oils will I taste?",
+      "a": "Most events feature 4 to 6 oils, enough to show meaningful differences without overwhelming your palate."
+    },
+    {
+      "q": "Can I buy the oils after the tasting?",
+      "a": "Many events offer the featured oils for purchase. Check with the organizer for specifics."
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "cooking-classes-calgary",
+  "name": "Cooking Classes",
+  "category": "food-drink",
+  "category_slug": "cooking-classes",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Groups Welcome", "No Experience Needed"],
+  "meta": {
+    "title": "Cooking Classes in Calgary | Mixler",
+    "description": "Join a cooking class in Calgary and learn real techniques from professional chefs. Hands-on, fun, and delicious. All skill levels welcome.",
+    "keywords": ["cooking classes Calgary", "cooking class Calgary", "learn to cook Calgary"]
+  },
+  "content": {
+    "subtitle": "Cook alongside a chef and actually understand what you're doing.",
+    "intro": "Cooking classes in Calgary give you more than a recipe. A professional chef walks you through techniques, explains the why behind each step, and lets you do the actual cooking yourself. You eat what you make, and you leave with the confidence to recreate it at home. It's one of the most practical and satisfying evenings you can have.",
+    "breadcrumb_label": "Cooking Classes Calgary",
+    "what_to_expect": [
+      {
+        "icon": "👨‍🍳",
+        "heading": "Chef-led instruction",
+        "body": "A professional chef leads the class, explaining techniques and the reasoning behind them as you cook."
+      },
+      {
+        "icon": "🔪",
+        "heading": "Hands-on cooking time",
+        "body": "You're at the stove, not watching from a distance. Cooking classes are designed for participation."
+      },
+      {
+        "icon": "🍽️",
+        "heading": "Eat what you make",
+        "body": "The meal you prepare is what you eat. It's a genuinely good dinner that you can claim full credit for."
+      },
+      {
+        "icon": "📖",
+        "heading": "Recipes and techniques to keep",
+        "body": "You leave with the recipes and an understanding of the techniques. You're not just memorizing steps."
+      }
+    ],
+    "tips": [
+      "Read the recipe once fully before you start. Understanding the arc of the dish before cooking it makes every step clearer.",
+      "Mise en place matters. Prepping all your ingredients before you start cooking keeps you from scrambling mid-recipe.",
+      "Calgary has a growing restaurant and food culture. Taking a cooking class is a great way to connect with that community.",
+      "Themed classes (Italian night, dim sum, Thai street food) are often more fun than general skills sessions. Pick a cuisine you love.",
+      "Mixler lists cooking classes in Calgary when they come up. Join the waitlist and we'll let you know what's scheduled."
+    ],
+    "waitlist_heading": "Want to know when we run cooking events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["knife-skills-calgary", "pasta-making-calgary", "sushi-making-calgary", "dumpling-making-calgary"]
+  },
+  "faq": [
+    {
+      "q": "What skill level do I need?",
+      "a": "Most cooking classes welcome all skill levels. Some are designed for beginners, others for more experienced cooks. Check the event listing."
+    },
+    {
+      "q": "Do I eat the food I make?",
+      "a": "Yes. What you cook is what you eat at the end of the session. It's a real meal, not just a demo."
+    },
+    {
+      "q": "What should I wear?",
+      "a": "Comfortable clothes you don't mind getting a little food on. Aprons are usually provided."
+    },
+    {
+      "q": "Are dietary restrictions accommodated?",
+      "a": "Many classes can accommodate dietary needs if you let the organizer know in advance. Check the event listing for specifics."
+    }
+  ]
+}

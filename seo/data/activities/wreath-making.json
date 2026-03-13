@@ -1,0 +1,68 @@
+{
+  "slug": "wreath-making-calgary",
+  "name": "Wreath Making",
+  "category": "creative",
+  "category_slug": "wreath-making",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Groups Welcome", "No Experience Needed"],
+  "meta": {
+    "title": "Wreath Making in Calgary | Mixler",
+    "description": "Make your own wreath at a Calgary workshop. Choose your greens, blooms, and accents, then build something beautiful for your front door. All materials included.",
+    "keywords": ["wreath making Calgary", "wreath making workshop Calgary", "DIY wreath Calgary"]
+  },
+  "content": {
+    "subtitle": "Make a seasonal wreath that you'll actually want to hang on your door.",
+    "intro": "Wreath making workshops in Calgary bring people together around one of the most satisfying creative projects you can finish in a single evening. You work with real greenery, dried flowers, ribbon, and seasonal accents. The process is part floral design, part craft, and the result is something that looks store-bought but is completely your own.",
+    "breadcrumb_label": "Wreath Making Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🌿",
+        "heading": "Fresh and dried materials",
+        "body": "Workshops use a mix of fresh greenery, dried florals, and seasonal accents depending on the time of year."
+      },
+      {
+        "icon": "🔧",
+        "heading": "Wire frame and technique",
+        "body": "You'll learn how to secure materials to a wire frame using floral wire and picks. It's easier than it looks."
+      },
+      {
+        "icon": "🎀",
+        "heading": "Finishing touches",
+        "body": "Ribbon, picks, and decorative elements are added last. This is where your wreath really takes on its personality."
+      },
+      {
+        "icon": "🏠",
+        "heading": "Ready to hang",
+        "body": "Your wreath goes straight on your door. Most last weeks to months depending on the materials used."
+      }
+    ],
+    "tips": [
+      "Secure each bundle of greenery firmly before adding the next. Loose materials shift over time.",
+      "Work in one direction around the frame for a consistent, full look.",
+      "Calgary's seasons make wreath making especially popular in fall and winter. Seasonal workshops sell out fast.",
+      "This is a great group activity. A table of friends making wreaths together is a genuinely good evening.",
+      "Mixler tracks wreath making events in Calgary. Join the waitlist and we'll let you know as soon as one is added."
+    ],
+    "waitlist_heading": "Want to know when we run wreath making events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["flower-arranging-calgary", "macrame-calgary", "candle-making-calgary", "terrarium-building-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need any crafting experience?",
+      "a": "No experience needed. The instructor guides you through every step, from attaching greenery to adding the final ribbon."
+    },
+    {
+      "q": "What season is wreath making most popular?",
+      "a": "Fall and winter are the most popular times, but workshops happen year-round with seasonal materials."
+    },
+    {
+      "q": "How long does a wreath making workshop take?",
+      "a": "Most sessions are 2 to 3 hours. You'll have a completed wreath ready to hang by the end."
+    },
+    {
+      "q": "Can I customize my wreath?",
+      "a": "Yes. You choose your colour palette, ribbon, and accents. No two wreaths from the same workshop ever look alike."
+    }
+  ]
+}

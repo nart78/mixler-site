@@ -1,0 +1,68 @@
+{
+  "slug": "pasta-making-calgary",
+  "name": "Pasta Making",
+  "category": "food-drink",
+  "category_slug": "pasta-making",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Groups Welcome", "No Experience Needed"],
+  "meta": {
+    "title": "Pasta Making in Calgary | Mixler",
+    "description": "Make fresh pasta from scratch in Calgary. Learn to mix, knead, roll, and shape your own pasta in a fun hands-on class. Eat what you make. All skill levels welcome.",
+    "keywords": ["pasta making Calgary", "pasta making class Calgary", "fresh pasta Calgary"]
+  },
+  "content": {
+    "subtitle": "Mix, knead, and roll fresh pasta from scratch, then sit down and eat it.",
+    "intro": "Pasta making classes in Calgary are one of the most satisfying food experiences you can have as a group. There's something primal about turning flour and eggs into a smooth, silky dough with your hands, then cutting and shaping it into something that actually tastes better than anything from a box. A chef guides you through every step, and the meal at the end is genuinely excellent.",
+    "breadcrumb_label": "Pasta Making Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🥚",
+        "heading": "The dough from scratch",
+        "body": "You'll mix and knead your own pasta dough by hand. The instructor teaches you what the texture should feel like at each stage."
+      },
+      {
+        "icon": "🍝",
+        "heading": "Rolling and shaping",
+        "body": "Learn to roll the dough thin and shape it into fettuccine, tagliatelle, or another style depending on the class."
+      },
+      {
+        "icon": "🍳",
+        "heading": "Sauce and finishing",
+        "body": "Many classes pair the pasta with a sauce you also make from scratch. It rounds out the whole meal."
+      },
+      {
+        "icon": "🍽️",
+        "heading": "Sit down and eat together",
+        "body": "You cook, then you eat. The meal at the end of a pasta class is always a highlight of the whole experience."
+      }
+    ],
+    "tips": [
+      "Let your dough rest properly after kneading. Skipping the rest makes it tear and snap when you roll it.",
+      "Flour your surface generously. Pasta dough sticks quickly, especially when it's thin.",
+      "Fresh pasta cooks in 2 to 3 minutes. That's much faster than dried pasta, so watch it closely.",
+      "Pasta making is one of Calgary's most popular date night activities. It's hands-on, a little messy, and you share a real meal.",
+      "Mixler lists pasta making classes in Calgary when they come up. Join the waitlist and we'll send you a heads up."
+    ],
+    "waitlist_heading": "Want to know when we run pasta making events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["cooking-classes-calgary", "sushi-making-calgary", "dumpling-making-calgary", "bread-baking-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need to know how to cook?",
+      "a": "No. Pasta making classes are designed for complete beginners. The instructor walks you through everything."
+    },
+    {
+      "q": "What type of pasta will I make?",
+      "a": "Most beginner classes focus on a long pasta like fettuccine or tagliatelle. Check the event listing for specifics."
+    },
+    {
+      "q": "Do I eat the pasta I make?",
+      "a": "Yes. You cook and plate your pasta at the end of the class. It's a real meal."
+    },
+    {
+      "q": "Can I take leftovers home?",
+      "a": "Fresh pasta can be taken home and cooked within a day or two. Ask the instructor how to store it properly."
+    }
+  ]
+}

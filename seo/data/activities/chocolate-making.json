@@ -1,0 +1,68 @@
+{
+  "slug": "chocolate-making-calgary",
+  "name": "Chocolate Making",
+  "category": "food-drink",
+  "category_slug": "chocolate-making",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Groups Welcome", "No Experience Needed"],
+  "meta": {
+    "title": "Chocolate Making in Calgary | Mixler",
+    "description": "Make your own chocolate in Calgary at a hands-on workshop. Temper, fill, and mould real chocolates to take home. Beginner-friendly and genuinely delicious.",
+    "keywords": ["chocolate making Calgary", "chocolate workshop Calgary", "make chocolate Calgary"]
+  },
+  "content": {
+    "subtitle": "Temper real chocolate and make truffles or bonbons to take home.",
+    "intro": "Chocolate making workshops in Calgary are one of the more indulgent creative experiences available, and they're more technical than you'd expect. A chocolatier walks you through tempering, flavouring, and moulding real couverture chocolate into finished pieces you can actually be proud of. You taste a lot along the way, which is part of the deal.",
+    "breadcrumb_label": "Chocolate Making Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🍫",
+        "heading": "Tempering chocolate",
+        "body": "Tempering is what gives chocolate its glossy finish and satisfying snap. The instructor teaches you the method, which is part science and part feel."
+      },
+      {
+        "icon": "🎨",
+        "heading": "Flavouring and fillings",
+        "body": "You'll choose or prepare fillings like ganache, caramel, or flavoured creams to pipe into your chocolates."
+      },
+      {
+        "icon": "🍬",
+        "heading": "Moulding and finishing",
+        "body": "You'll pour and tap moulds, wait for them to set, and demould your finished pieces. It's deeply satisfying."
+      },
+      {
+        "icon": "📦",
+        "heading": "Take them home packaged",
+        "body": "Your chocolates are boxed up to take home. They make a great gift or a very enjoyable commute snack."
+      }
+    ],
+    "tips": [
+      "Temperature control is everything in chocolate work. Even a few degrees off can affect the final texture.",
+      "Work quickly when the chocolate is fluid. It sets faster than you'd expect once you start pouring.",
+      "Calgary's dry climate is actually good for chocolate work. Humidity is the enemy of a clean temper.",
+      "Dark chocolate is the easiest to temper for beginners. Milk and white chocolate are more sensitive to heat.",
+      "Mixler lists chocolate making workshops in Calgary when they're added. Join the waitlist and we'll let you know first."
+    ],
+    "waitlist_heading": "Want to know when we run chocolate making events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["bread-baking-calgary", "candle-making-calgary", "cooking-classes-calgary", "cheese-charcuterie-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need any baking or cooking experience?",
+      "a": "No. The instructor covers all the techniques from scratch. Following direction carefully matters more than prior experience."
+    },
+    {
+      "q": "What will I make?",
+      "a": "Most beginner sessions focus on truffles, bonbons, or moulded chocolates. The event listing will tell you the specific project."
+    },
+    {
+      "q": "Do I take my chocolates home?",
+      "a": "Yes. Your finished chocolates are packaged for you to take home at the end of the session."
+    },
+    {
+      "q": "How long does the workshop take?",
+      "a": "Most chocolate making sessions run 2 to 3 hours. There's waiting involved as pieces set, but you stay busy throughout."
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "card-games-calgary",
+  "name": "Card Game Nights",
+  "category": "games-social",
+  "category_slug": "card-games",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Great for Solo", "Groups Welcome"],
+  "meta": {
+    "title": "Card Game Nights in Calgary | Mixler",
+    "description": "Join a card game night in Calgary. Play modern card games in a fun, social setting. Solo players welcome. No experience needed for most games.",
+    "keywords": ["card game night Calgary", "card games Calgary", "card game events Calgary"]
+  },
+  "content": {
+    "subtitle": "Pull up a chair and play great card games with people who love them.",
+    "intro": "Card game nights in Calgary have grown well beyond a deck of playing cards. Modern card games cover everything from fast, funny party games to deep strategic titles that reward careful thinking. These events attract a welcoming, social crowd, and there's almost always something being played at the beginner-friendly end of the spectrum.",
+    "breadcrumb_label": "Card Game Nights Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🃏",
+        "heading": "A mix of game styles",
+        "body": "From party card games to trick-taking classics to modern deck builders. There's range to suit different preferences."
+      },
+      {
+        "icon": "📖",
+        "heading": "Rules explained at the table",
+        "body": "Someone will walk you through any game before it starts. You don't need to know any games in advance."
+      },
+      {
+        "icon": "😄",
+        "heading": "Light, social atmosphere",
+        "body": "Card game nights are fun and conversational. You're competing, but the main point is to enjoy the company."
+      },
+      {
+        "icon": "🔄",
+        "heading": "Play multiple games",
+        "body": "Short games mean you can try several in an evening. Longer titles have their own satisfying arc if the group is into it."
+      }
+    ],
+    "tips": [
+      "Games like Skull, The Mind, or Wavelength are great entry points. They're simple, fast, and very social.",
+      "Don't sit out because a game looks complex. Most rule complexity collapses once you play two rounds.",
+      "Calgary has a strong tabletop gaming community. Card game nights are a natural gateway into that world.",
+      "Bring a snack to share if the format allows. Food around a card game table makes everything more comfortable.",
+      "Mixler lists card game nights in Calgary when we schedule them. Join the waitlist and we'll let you know when one is added."
+    ],
+    "waitlist_heading": "Want to know when we run card game nights?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["board-games-calgary", "trivia-night-calgary", "pub-quiz-calgary", "casino-night-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need to know how to play card games?",
+      "a": "No. Rules are explained before each game. Many of the most popular modern card games are designed to be learned in minutes."
+    },
+    {
+      "q": "Can I come solo?",
+      "a": "Yes. Solo players are very welcome. You'll join a table and be part of a game from the start."
+    },
+    {
+      "q": "What types of card games will be available?",
+      "a": "It depends on the event. Most nights include a mix of party games, strategy games, and cooperative titles."
+    },
+    {
+      "q": "How long does a card game night run?",
+      "a": "Most events run 2 to 3 hours. The length depends on which games are played and how fast the groups move."
+    }
+  ]
+}

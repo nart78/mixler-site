@@ -1,0 +1,68 @@
+{
+  "slug": "painting-calgary",
+  "name": "Painting Events",
+  "category": "creative",
+  "category_slug": "painting",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Groups Welcome", "No Experience Needed"],
+  "meta": {
+    "title": "Painting Events in Calgary | Mixler",
+    "description": "Join a painting event in Calgary and unleash your creativity. Fun, guided sessions for all skill levels. No experience needed, just show up and paint.",
+    "keywords": ["painting events Calgary", "paint night Calgary", "painting classes Calgary"]
+  },
+  "content": {
+    "subtitle": "Pick up a brush and paint something you're actually proud of.",
+    "intro": "Painting events in Calgary have exploded in popularity, and for good reason. Whether you're a total beginner or someone who dabbles on weekends, a guided painting session is one of the most satisfying ways to spend an evening. You follow along, chat with people around you, and walk away with something you made yourself.",
+    "breadcrumb_label": "Painting Events Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🎨",
+        "heading": "All supplies included",
+        "body": "Canvas, brushes, and paint are provided. Just show up ready to have fun."
+      },
+      {
+        "icon": "👩‍🎨",
+        "heading": "Guided instruction",
+        "body": "A host walks you through the painting step by step, so no one gets left behind."
+      },
+      {
+        "icon": "🍷",
+        "heading": "Social and relaxed vibe",
+        "body": "Most painting events have drinks flowing and music on. It's more of a hangout than an art class."
+      },
+      {
+        "icon": "🖼️",
+        "heading": "You take your art home",
+        "body": "Every attendee leaves with their own finished piece. It makes a surprisingly great gift too."
+      }
+    ],
+    "tips": [
+      "Wear something you don't mind getting paint on, even if aprons are provided.",
+      "Don't stress about making it perfect. The fun is in the process, not the result.",
+      "Calgary winters are long, so a cozy paint night is a great way to get out of the house mid-week.",
+      "Going with a group? Painting side by side makes for a great photo at the end of the night.",
+      "Keep an eye on Mixler for upcoming painting events in Calgary. We list them as they're added and you can join the waitlist to hear first."
+    ],
+    "waitlist_heading": "Want to know when we run painting events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["pottery-calgary", "resin-art-calgary", "calligraphy-calgary", "life-drawing-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need any experience to join a painting event?",
+      "a": "Not at all. Painting events are designed for beginners. The host guides you through every step of the painting."
+    },
+    {
+      "q": "What should I wear?",
+      "a": "Wear clothes you're okay getting a little paint on. Aprons are usually provided, but accidents happen."
+    },
+    {
+      "q": "Can I come solo?",
+      "a": "Absolutely. Solo attendees are completely welcome. You'll be seated with other guests and it's easy to chat while you paint."
+    },
+    {
+      "q": "How long does a painting event usually last?",
+      "a": "Most sessions run 2 to 3 hours, which is enough time to finish a painting without feeling rushed."
+    }
+  ]
+}

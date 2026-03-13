@@ -1,0 +1,68 @@
+{
+  "slug": "pub-quiz-calgary",
+  "name": "Pub Quiz",
+  "category": "games-social",
+  "category_slug": "pub-quiz",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Groups Welcome", "Great for Solo"],
+  "meta": {
+    "title": "Pub Quiz in Calgary | Mixler",
+    "description": "Join a pub quiz night in Calgary. Team up, answer questions across fun categories, and compete for prizes. Great for groups, date nights, and solo players.",
+    "keywords": ["pub quiz Calgary", "pub trivia Calgary", "quiz night Calgary"]
+  },
+  "content": {
+    "subtitle": "Grab a drink, form a team, and put your knowledge to work.",
+    "intro": "Pub quiz nights in Calgary are a staple of the city's social scene for good reason. The combination of competitive trivia, a relaxed pub environment, and a good host adds up to one of the most consistently enjoyable evenings out. Whether you come with a group or fly solo, it's easy to get into it and even easier to want to come back.",
+    "breadcrumb_label": "Pub Quiz Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🍺",
+        "heading": "Pub setting with drinks",
+        "body": "Pub quiz happens in a bar. Drinks are part of the experience, and the atmosphere is exactly what you'd hope for."
+      },
+      {
+        "icon": "📝",
+        "heading": "Written answer rounds",
+        "body": "Teams write their answers on paper or a submission sheet. No shouting out, which keeps the energy focused."
+      },
+      {
+        "icon": "🧠",
+        "heading": "Varied categories every round",
+        "body": "General knowledge, sports, music, film, and current events all feature. Different rounds let different people shine."
+      },
+      {
+        "icon": "🏅",
+        "heading": "Leaderboard and prizes",
+        "body": "Scores are tallied and announced between rounds, keeping tension high until the final reveal."
+      }
+    ],
+    "tips": [
+      "Pub quiz rewards range over depth. A team of six generalists usually beats a team of two experts.",
+      "Don't discuss your answers too loudly. Other teams are listening.",
+      "Calgary pub quiz nights often have a loyal regular crowd. Show up a few weeks running and you'll quickly feel like a regular too.",
+      "Team names matter. Hosts read them out loud, and a good one gets the room laughing before you've answered a single question.",
+      "Mixler lists pub quiz events in Calgary when we schedule them. Join the waitlist and we'll reach out when one is added."
+    ],
+    "waitlist_heading": "Want to know when we run pub quiz events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["trivia-night-calgary", "board-games-calgary", "bingo-calgary", "card-games-calgary"]
+  },
+  "faq": [
+    {
+      "q": "How is pub quiz different from trivia night?",
+      "a": "Pub quiz always happens in a bar and uses written answers. Trivia nights can happen in various venues and sometimes use other formats."
+    },
+    {
+      "q": "Can I join without a full team?",
+      "a": "Yes. Solo and small group players are usually welcome to fill open spots on other teams."
+    },
+    {
+      "q": "How many people per team?",
+      "a": "Most events cap teams at 6. The sweet spot is 4 to 6 people covering different knowledge areas."
+    },
+    {
+      "q": "Is there a cost to enter?",
+      "a": "Some events are free, others charge a small entry fee. Check the event listing for details."
+    }
+  ]
+}

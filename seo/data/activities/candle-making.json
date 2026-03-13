@@ -1,0 +1,68 @@
+{
+  "slug": "candle-making-calgary",
+  "name": "Candle Making",
+  "category": "creative",
+  "category_slug": "candle-making",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Great for Solo", "Groups Welcome"],
+  "meta": {
+    "title": "Candle Making in Calgary | Mixler",
+    "description": "Make your own candles at a Calgary workshop. Choose your scents, pour your wax, and walk away with a custom candle you actually made. Fun for all skill levels.",
+    "keywords": ["candle making Calgary", "candle making workshop Calgary", "DIY candles Calgary"]
+  },
+  "content": {
+    "subtitle": "Blend your own scents and pour a candle you'll actually burn at home.",
+    "intro": "Candle making workshops in Calgary are the kind of thing that sounds niche but ends up being one of the most enjoyable evenings you've had in a while. You pick your fragrance combinations, pour the wax, set the wick, and watch it come together. It's creative without being intimidating, and you leave with something that genuinely smells great.",
+    "breadcrumb_label": "Candle Making Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🕯️",
+        "heading": "Scent blending is the fun part",
+        "body": "You'll test and combine fragrance oils to create your own unique scent. It's harder than it sounds and more satisfying when you get it right."
+      },
+      {
+        "icon": "🌡️",
+        "heading": "Pouring and setting",
+        "body": "The host walks you through wax temperature, pour technique, and how to set the wick so it burns evenly."
+      },
+      {
+        "icon": "🏷️",
+        "heading": "Custom labels and packaging",
+        "body": "Most workshops let you name your candle and add a label. Makes it great for gifting."
+      },
+      {
+        "icon": "🧘",
+        "heading": "Relaxed, low-pressure session",
+        "body": "There's no wrong way to make a candle. The whole session has a chill, creative energy to it."
+      }
+    ],
+    "tips": [
+      "Let the wax cool fully before moving your candle. Rushing it can cause sinkholes in the surface.",
+      "Stick to two or three fragrance notes when blending. More than that and the scents start competing.",
+      "Calgary's dry winters mean candles are popular gifts here. Making a batch to give as presents is a great use of the workshop.",
+      "Bring a friend if you can. Comparing scent combinations you've blended is genuinely entertaining.",
+      "Mixler lists candle making events in Calgary when they're scheduled. Join the waitlist so you hear about it first."
+    ],
+    "waitlist_heading": "Want to know when we run candle making events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["macrame-calgary", "resin-art-calgary", "wreath-making-calgary", "flower-arranging-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need any experience to make candles?",
+      "a": "No experience needed. The host walks you through every step from scent blending to the final pour."
+    },
+    {
+      "q": "Do I get to take my candle home the same day?",
+      "a": "Yes. Your candle sets during the session and you take it home at the end of the night."
+    },
+    {
+      "q": "Can I pick my own scent?",
+      "a": "That's the best part. You'll test and blend fragrance oils to create something that's uniquely yours."
+    },
+    {
+      "q": "Is this a good activity for a group?",
+      "a": "Very. Comparing your scent choices and watching everyone's candles turn out differently makes for a great group experience."
+    }
+  ]
+}

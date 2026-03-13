@@ -1,0 +1,68 @@
+{
+  "slug": "bread-baking-calgary",
+  "name": "Bread Baking",
+  "category": "food-drink",
+  "category_slug": "bread-baking",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Great for Solo", "No Experience Needed"],
+  "meta": {
+    "title": "Bread Baking in Calgary | Mixler",
+    "description": "Learn to bake real bread in Calgary. Mix, knead, shape, and bake a loaf from scratch at a hands-on class. Take your fresh-baked bread home the same day.",
+    "keywords": ["bread baking Calgary", "bread baking class Calgary", "learn to bake bread Calgary"]
+  },
+  "content": {
+    "subtitle": "Make a real loaf of bread by hand and take it home warm from the oven.",
+    "intro": "Bread baking classes in Calgary are one of the most grounding creative food experiences you can have. There's something deeply satisfying about working dough with your hands and pulling a finished loaf out of the oven. A baker guides you through every step, from mixing and kneading to shaping and scoring, and you leave with bread you actually baked.",
+    "breadcrumb_label": "Bread Baking Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🌾",
+        "heading": "Understanding flour and hydration",
+        "body": "You'll learn how different flours behave and why the water-to-flour ratio changes the texture of your loaf."
+      },
+      {
+        "icon": "💪",
+        "heading": "Kneading and gluten development",
+        "body": "The instructor shows you what properly developed dough feels like. You knead until you get there."
+      },
+      {
+        "icon": "🔪",
+        "heading": "Shaping and scoring",
+        "body": "Shaping gives the loaf structure. Scoring controls where it opens in the oven. Both are techniques with real technique behind them."
+      },
+      {
+        "icon": "🍞",
+        "heading": "Take your bread home",
+        "body": "Your loaf goes in the oven and comes out before the session ends. You take it home warm."
+      }
+    ],
+    "tips": [
+      "Don't rush the fermentation. Longer, cooler rises develop more flavour. An overnight fridge rise is worth the wait.",
+      "A Dutch oven produces the best home oven crust. The steam from the covered pot mimics a professional bread oven.",
+      "Calgary's altitude (just over 1000m) can affect rise times slightly. Your instructor will account for this.",
+      "Baking bread at home is genuinely addictive once you start. The class will likely be the beginning of a habit.",
+      "Mixler lists bread baking events in Calgary when they're on. Join the waitlist and we'll email you when one is added."
+    ],
+    "waitlist_heading": "Want to know when we run bread baking events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["cooking-classes-calgary", "pasta-making-calgary", "chocolate-making-calgary", "knife-skills-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need baking experience?",
+      "a": "No. Classes are designed for beginners. You'll learn everything from scratch, including how to tell when your dough is ready."
+    },
+    {
+      "q": "What type of bread will I make?",
+      "a": "It depends on the class. Common options include sourdough, focaccia, or a simple white loaf. The listing will specify."
+    },
+    {
+      "q": "Do I take my bread home?",
+      "a": "Yes. Your loaf comes out of the oven during the session. You go home with fresh-baked bread."
+    },
+    {
+      "q": "How long does a bread baking class take?",
+      "a": "Most sessions run 3 hours or more because bread takes time. The waiting is a natural part of the experience."
+    }
+  ]
+}

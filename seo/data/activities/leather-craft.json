@@ -1,0 +1,68 @@
+{
+  "slug": "leather-craft-calgary",
+  "name": "Leather Craft",
+  "category": "creative",
+  "category_slug": "leather-craft",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "No Experience Needed", "Great for Solo"],
+  "meta": {
+    "title": "Leather Craft in Calgary | Mixler",
+    "description": "Try leather crafting in Calgary and make a wallet, keychain, or cuff you'll actually use. Beginner-friendly workshops with all tools and materials included.",
+    "keywords": ["leather craft Calgary", "leather workshop Calgary", "leatherworking class Calgary"]
+  },
+  "content": {
+    "subtitle": "Make something from leather that you'll carry or use every day.",
+    "intro": "Leather craft workshops in Calgary are one of those experiences where the end result genuinely surprises you. You start with a flat piece of leather and end up with a wallet, keychain, or bracelet you made yourself. The process involves cutting, stamping, stitching, and finishing, and a good instructor makes all of it accessible to total beginners.",
+    "breadcrumb_label": "Leather Craft Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🔨",
+        "heading": "Tools and leather provided",
+        "body": "Cutting tools, stamps, needles, thread, and leather are all included. You just show up and learn."
+      },
+      {
+        "icon": "✂️",
+        "heading": "Cut and shape your piece",
+        "body": "You'll learn to cut leather accurately and shape it into the project of the session, usually a wallet or small accessory."
+      },
+      {
+        "icon": "🪡",
+        "heading": "Hand-stitching technique",
+        "body": "The saddle stitch is the standard for leather and you'll get good at it by the end of the session."
+      },
+      {
+        "icon": "✨",
+        "heading": "Finishing and burnishing",
+        "body": "You'll finish the edges so they're smooth and polished. That detail is what makes a piece look professional."
+      }
+    ],
+    "tips": [
+      "Cut slow and deliberate. Leather doesn't forgive rushed cuts the way fabric sometimes does.",
+      "Keep your saddle stitch tension even throughout. Uneven stitches are visible from both sides.",
+      "Calgary's western heritage makes leatherwork a natural fit. There's a real appreciation for handmade goods here.",
+      "A leather wallet you made yourself is the kind of thing people ask about when they see it. Be ready to explain how you did it.",
+      "Mixler lists leather craft workshops in Calgary when they come up. Join the waitlist and we'll reach out when one is scheduled."
+    ],
+    "waitlist_heading": "Want to know when we run leather craft events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["macrame-calgary", "calligraphy-calgary", "painting-calgary", "stained-glass-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need leatherworking experience?",
+      "a": "No. Workshops are designed for beginners. The instructor teaches every technique from scratch."
+    },
+    {
+      "q": "What will I make?",
+      "a": "Most beginner sessions focus on a small project like a card wallet, keychain, or bracelet that you finish and take home."
+    },
+    {
+      "q": "Are tools provided?",
+      "a": "Yes. All cutting, stamping, and stitching tools are provided, along with the leather itself."
+    },
+    {
+      "q": "How long does a leather craft workshop take?",
+      "a": "Most sessions run 2 to 3 hours. You'll have a finished, usable piece by the end."
+    }
+  ]
+}

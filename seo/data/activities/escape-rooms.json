@@ -1,0 +1,68 @@
+{
+  "slug": "escape-rooms-calgary",
+  "name": "Escape Rooms",
+  "category": "games-social",
+  "category_slug": "escape-rooms",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Groups Welcome", "Active"],
+  "meta": {
+    "title": "Escape Rooms in Calgary | Mixler",
+    "description": "Try an escape room in Calgary with friends, family, or coworkers. Solve puzzles, crack codes, and get out before the clock runs out. All skill levels welcome.",
+    "keywords": ["escape rooms Calgary", "escape room Calgary", "best escape rooms Calgary"]
+  },
+  "content": {
+    "subtitle": "Lock yourself in, solve the puzzles, and get out before the hour is up.",
+    "intro": "Escape rooms in Calgary are one of the most popular group activities in the city, and they've only gotten better as venues have raised the bar on production quality and puzzle design. You're given a scenario, a locked room, and 60 minutes to find your way out using clues and logic. It sounds simple and it's genuinely challenging in the best way.",
+    "breadcrumb_label": "Escape Rooms Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🔐",
+        "heading": "A themed scenario and room",
+        "body": "Most escape rooms have a narrative, from mystery to horror to adventure. The best ones in Calgary have real set design and atmosphere."
+      },
+      {
+        "icon": "🧩",
+        "heading": "Layered puzzles to solve",
+        "body": "Puzzles involve logic, observation, pattern recognition, and sometimes physical tasks. Every room is different."
+      },
+      {
+        "icon": "📟",
+        "heading": "A game master watching",
+        "body": "Someone monitors your progress via camera and can send hints if you get stuck. You're never completely on your own."
+      },
+      {
+        "icon": "⏱️",
+        "heading": "60 minutes on the clock",
+        "body": "Most rooms run 60 minutes. The countdown creates real pressure that makes every breakthrough more satisfying."
+      }
+    ],
+    "tips": [
+      "Search everything. People miss clues in obvious places because they assume something has already been checked.",
+      "Communicate constantly. Calling out what you find and where means the group doesn't duplicate effort.",
+      "Calgary has escape rooms ranging from beginner-friendly to genuinely difficult. Pick a difficulty level that matches your group.",
+      "Don't be too proud to ask for a hint. Using a hint to keep the energy high is smarter than grinding to a halt.",
+      "Mixler lists escape room events in Calgary when we run group bookings. Join the waitlist and we'll let you know when spots open up."
+    ],
+    "waitlist_heading": "Want to know when we run escape room events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["murder-mystery-calgary", "trivia-night-calgary", "board-games-calgary", "game-show-night-calgary"]
+  },
+  "faq": [
+    {
+      "q": "How many people can play?",
+      "a": "Most rooms accommodate 2 to 8 people. Check the venue's specific room for capacity."
+    },
+    {
+      "q": "Are escape rooms scary?",
+      "a": "It depends on the theme. Horror rooms are intentionally frightening. Adventure and mystery rooms are not. Read the description before booking."
+    },
+    {
+      "q": "What happens if we don't escape in time?",
+      "a": "The game master reveals how to solve the final steps. You still get a debrief and see the solution."
+    },
+    {
+      "q": "Is it suitable for beginners?",
+      "a": "Yes. Many rooms are rated by difficulty. Start with a beginner or intermediate room if it's your first time."
+    }
+  ]
+}

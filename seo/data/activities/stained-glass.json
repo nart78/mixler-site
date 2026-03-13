@@ -1,0 +1,68 @@
+{
+  "slug": "stained-glass-calgary",
+  "name": "Stained Glass",
+  "category": "creative",
+  "category_slug": "stained-glass",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "No Experience Needed", "Great for Solo"],
+  "meta": {
+    "title": "Stained Glass in Calgary | Mixler",
+    "description": "Try stained glass in Calgary at a beginner workshop. Cut, wrap, and solder your own glass piece to take home. All tools and materials included.",
+    "keywords": ["stained glass Calgary", "stained glass workshop Calgary", "stained glass class Calgary"]
+  },
+  "content": {
+    "subtitle": "Cut, wrap, and solder your own stained glass piece in one session.",
+    "intro": "Stained glass workshops in Calgary are one of those experiences that feels more advanced than it actually is. You cut glass, wrap the edges with copper foil, and solder the pieces together into a finished panel or suncatcher. The instructor makes each step approachable, and the result is something that genuinely glows when you hold it up to the light.",
+    "breadcrumb_label": "Stained Glass Calgary",
+    "what_to_expect": [
+      {
+        "icon": "✂️",
+        "heading": "Glass cutting basics",
+        "body": "You'll learn how to score and break glass cleanly. It feels nerve-wracking at first but becomes satisfying quickly."
+      },
+      {
+        "icon": "🔧",
+        "heading": "Copper foiling technique",
+        "body": "Each piece of glass is wrapped in copper foil tape before assembly. Precision here makes the soldering much cleaner."
+      },
+      {
+        "icon": "🔥",
+        "heading": "Soldering it together",
+        "body": "The instructor guides you through soldering all the pieces together. This is the most technically exciting part of the process."
+      },
+      {
+        "icon": "🌈",
+        "heading": "You choose your colours",
+        "body": "Glass comes in a range of colours and textures. Your colour choices shape the whole look of your finished piece."
+      }
+    ],
+    "tips": [
+      "Score in one smooth motion without stopping partway. Retracing a score line causes rough breaks.",
+      "Keep your copper foil wrapping tight and even. Gaps make soldering harder and the joints look messy.",
+      "Safety glasses are non-negotiable. Glass fragments are small and fast.",
+      "Calgary has some talented stained glass artists. A workshop is a great way to appreciate the craft before buying pieces from local makers.",
+      "Mixler lists stained glass events in Calgary when they come up. Join the waitlist and we'll let you know when one is scheduled."
+    ],
+    "waitlist_heading": "Want to know when we run stained glass events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["resin-art-calgary", "painting-calgary", "calligraphy-calgary", "life-drawing-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Is stained glass safe for beginners?",
+      "a": "Yes, with proper instruction. Safety glasses are required and the instructor covers every safety step before you handle any tools."
+    },
+    {
+      "q": "What will I make?",
+      "a": "Most beginner workshops have you make a small panel or suncatcher that you can hang in a window at home."
+    },
+    {
+      "q": "Do I take my piece home the same day?",
+      "a": "Yes. Stained glass pieces are complete by the end of the session. You take it home that night."
+    },
+    {
+      "q": "How long does a stained glass workshop take?",
+      "a": "Most beginner sessions run 3 hours or so. There are a lot of steps, and the instructor takes time with each one."
+    }
+  ]
+}

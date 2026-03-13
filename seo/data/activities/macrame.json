@@ -1,0 +1,68 @@
+{
+  "slug": "macrame-calgary",
+  "name": "Macrame Workshops",
+  "category": "creative",
+  "category_slug": "macrame",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "No Experience Needed", "Great for Solo"],
+  "meta": {
+    "title": "Macrame Workshops in Calgary | Mixler",
+    "description": "Learn macrame in Calgary at a beginner-friendly workshop. Make a wall hanging or plant hanger with your own hands. All materials included, no experience needed.",
+    "keywords": ["macrame workshop Calgary", "macrame classes Calgary", "learn macrame Calgary"]
+  },
+  "content": {
+    "subtitle": "Learn the knots and make a wall hanging you'll actually want to put up.",
+    "intro": "Macrame workshops in Calgary draw people in because the end result looks way more impressive than the effort it takes to get there. You're learning a handful of knots, then repeating them in patterns that add up to something genuinely beautiful. It's meditative, it's satisfying, and you don't need a creative background to get it right on the first try.",
+    "breadcrumb_label": "Macrame Workshops Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🪢",
+        "heading": "Learn the core knots",
+        "body": "Most sessions teach square knots and half hitches. Once you have those, the rest builds naturally."
+      },
+      {
+        "icon": "🧶",
+        "heading": "All materials provided",
+        "body": "Cotton rope, dowels, and scissors are included. You don't need to bring anything."
+      },
+      {
+        "icon": "🖼️",
+        "heading": "Finish a piece in one session",
+        "body": "Most beginner workshops are designed so you complete a wall hanging or plant hanger by the end of the night."
+      },
+      {
+        "icon": "🧘",
+        "heading": "Repetitive, calming work",
+        "body": "Tying knots is surprisingly meditative. A lot of people leave macrame sessions feeling genuinely relaxed."
+      }
+    ],
+    "tips": [
+      "Keep your tension consistent from the start. Uneven tension is the most common beginner issue.",
+      "Natural cotton rope is easiest to work with. Avoid synthetic cords until you know the knots well.",
+      "Calgary has a growing craft scene, and macrame fits right into it. Look for workshops hosted in creative studio spaces.",
+      "Take photos as you go so you can reference your knot pattern later if you want to recreate it at home.",
+      "Mixler lists macrame workshops in Calgary when they come up. Join the waitlist and we'll email you when one is added."
+    ],
+    "waitlist_heading": "Want to know when we run macrame events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["candle-making-calgary", "wreath-making-calgary", "flower-arranging-calgary", "leather-craft-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need to know anything about macrame to join?",
+      "a": "Not at all. Workshops start with the basics and guide you through every knot from the beginning."
+    },
+    {
+      "q": "What will I make at the workshop?",
+      "a": "Most beginner sessions have you making a wall hanging or plant hanger that you take home at the end."
+    },
+    {
+      "q": "Is macrame hard to learn?",
+      "a": "The core knots are simple and repetitive. Most people get the hang of it within the first 20 minutes."
+    },
+    {
+      "q": "Can I do this solo?",
+      "a": "Yes. Macrame is a great solo activity. The work is focused enough that you don't need a partner, but it's still social."
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "casino-night-calgary",
+  "name": "Casino Nights",
+  "category": "games-social",
+  "category_slug": "casino-night",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Groups Welcome", "Active"],
+  "meta": {
+    "title": "Casino Nights in Calgary | Mixler",
+    "description": "Experience a casino night in Calgary. Play blackjack, poker, and roulette with fun money in a social, high-energy event. No gambling experience needed.",
+    "keywords": ["casino night Calgary", "casino event Calgary", "casino night event Calgary"]
+  },
+  "content": {
+    "subtitle": "All the energy of a casino night with fun money and no financial risk.",
+    "intro": "Casino nights in Calgary are a high-energy social event that brings the atmosphere of a real casino into a fun, accessible format. You play blackjack, roulette, poker, and other games using fun money chips, with dealers running the tables and prizes going to whoever finishes with the most at the end. No gambling experience needed to have a genuinely exciting evening.",
+    "breadcrumb_label": "Casino Nights Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🎰",
+        "heading": "Real casino games with dealers",
+        "body": "Blackjack, roulette, and poker tables are run by actual dealers who keep the games moving and teach as they go."
+      },
+      {
+        "icon": "💰",
+        "heading": "Fun money chips",
+        "body": "Everyone gets a starting stack of chips. The goal is to build your stack through the night and finish on top."
+      },
+      {
+        "icon": "🏆",
+        "heading": "Prizes for top chip holders",
+        "body": "At the end of the night, the players with the most chips win real prizes. Gift cards and experiences are common."
+      },
+      {
+        "icon": "🎩",
+        "heading": "Dress-up optional but encouraged",
+        "body": "Casino nights often have a smart-casual or formal dress code that adds to the atmosphere. Check the event listing."
+      }
+    ],
+    "tips": [
+      "Basic blackjack strategy is easy to learn in 10 minutes. Knowing it gives you a real edge over random play.",
+      "Roulette is the easiest game to understand quickly. Start there if you're new to casino games.",
+      "Calgary casino nights work well as corporate events, birthday parties, or just a fun night out. The format scales nicely.",
+      "Manage your chips strategically in the early rounds. Blowing your stack fast means a long evening watching from the sidelines.",
+      "Mixler lists casino night events in Calgary when we run them. Join the waitlist and we'll email you when one is on."
+    ],
+    "waitlist_heading": "Want to know when we run casino nights?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["card-games-calgary", "board-games-calgary", "bingo-calgary", "game-show-night-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Is real money involved?",
+      "a": "No. Casino nights use fun money chips. The prizes are real, but no actual gambling takes place."
+    },
+    {
+      "q": "Do I need to know casino games?",
+      "a": "No experience needed. Dealers explain each game before play starts and can walk you through basic strategy."
+    },
+    {
+      "q": "What should I wear?",
+      "a": "Casino nights are often smart casual or themed formal. Check the event listing for the dress code."
+    },
+    {
+      "q": "What are the prizes?",
+      "a": "It varies by event. Common prizes include gift cards, experiences, or merchandise. Check the listing for specifics."
+    }
+  ]
+}

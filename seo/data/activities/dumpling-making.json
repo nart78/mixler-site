@@ -1,0 +1,68 @@
+{
+  "slug": "dumpling-making-calgary",
+  "name": "Dumpling Making",
+  "category": "food-drink",
+  "category_slug": "dumpling-making",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Groups Welcome", "No Experience Needed"],
+  "meta": {
+    "title": "Dumpling Making in Calgary | Mixler",
+    "description": "Make dumplings from scratch in Calgary. Fold, fill, and cook your own batch at a fun hands-on class. No experience needed. Great for groups and date nights.",
+    "keywords": ["dumpling making Calgary", "dumpling class Calgary", "make dumplings Calgary"]
+  },
+  "content": {
+    "subtitle": "Make a batch of dumplings from scratch and eat every single one.",
+    "intro": "Dumpling making classes in Calgary are joyful, hands-on, and very delicious. You mix and roll the dough, prepare the filling, and practice the folding technique that makes each dumpling look like it was made with care. It's a skill rooted in tradition, and learning it from someone who knows it well makes the whole experience feel meaningful.",
+    "breadcrumb_label": "Dumpling Making Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🥟",
+        "heading": "Dough from scratch",
+        "body": "You'll mix and knead your own dumpling dough. It's simple but the texture matters, and the instructor shows you what to look for."
+      },
+      {
+        "icon": "🧅",
+        "heading": "Filling preparation",
+        "body": "Most classes use a pork and cabbage or vegetarian filling. You'll prep it, season it, and taste for balance."
+      },
+      {
+        "icon": "👐",
+        "heading": "Folding technique",
+        "body": "The folding is the tricky part and also the most satisfying. The instructor teaches you a classic pleat fold step by step."
+      },
+      {
+        "icon": "🍳",
+        "heading": "Cooking methods",
+        "body": "You'll pan-fry, steam, or boil your dumplings (sometimes all three) and taste the differences between each method."
+      }
+    ],
+    "tips": [
+      "Don't overfill your wrappers. A small amount of filling is much easier to seal than a generous one.",
+      "Keep your finished dumplings on a floured surface so they don't stick before cooking.",
+      "Calgary has a great Chinese and East Asian food scene. Taking a dumpling class gives you a real appreciation for what you're eating when you go out.",
+      "Make a big batch. Dumplings freeze beautifully and cook from frozen in minutes.",
+      "Mixler lists dumpling making events in Calgary when they're added. Join the waitlist and we'll email you when one is scheduled."
+    ],
+    "waitlist_heading": "Want to know when we run dumpling making events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["sushi-making-calgary", "cooking-classes-calgary", "pasta-making-calgary", "knife-skills-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need cooking experience?",
+      "a": "No. Dumpling making classes are designed for all skill levels. The instructor guides you through every step."
+    },
+    {
+      "q": "What type of dumplings will I make?",
+      "a": "Most classes focus on Chinese-style dumplings like jiaozi. The event listing will specify the style and filling."
+    },
+    {
+      "q": "Can I take extras home?",
+      "a": "Yes. Most classes produce more than you can eat. Extras are yours to take home and freeze."
+    },
+    {
+      "q": "Is there a vegetarian option?",
+      "a": "Many classes offer vegetarian filling options. Check with the organizer when booking if this is important to you."
+    }
+  ]
+}

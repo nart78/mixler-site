@@ -1,0 +1,68 @@
+{
+  "slug": "pottery-calgary",
+  "name": "Pottery Classes",
+  "category": "creative",
+  "category_slug": "pottery",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "No Experience Needed", "Groups Welcome"],
+  "meta": {
+    "title": "Pottery Classes in Calgary | Mixler",
+    "description": "Try pottery in Calgary at a beginner-friendly class. Get your hands in the clay, learn the wheel, and make something real. All supplies included.",
+    "keywords": ["pottery classes Calgary", "pottery wheel Calgary", "beginner pottery Calgary"]
+  },
+  "content": {
+    "subtitle": "Get your hands in the clay and make something that lasts.",
+    "intro": "Pottery classes in Calgary are one of the most hands-on creative experiences you can find. There's something genuinely satisfying about shaping clay on a wheel or building something by hand from scratch. It takes focus, so you end up completely in the moment, which makes it a great break from the usual routine. These classes welcome all skill levels, no experience needed.",
+    "breadcrumb_label": "Pottery Classes Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🏺",
+        "heading": "Hands-on wheel time",
+        "body": "You'll spend real time on the pottery wheel, not just watching. Expect wobbly first attempts and a lot of laughs."
+      },
+      {
+        "icon": "🧑‍🏫",
+        "heading": "Instructor guidance throughout",
+        "body": "An experienced instructor walks around and helps you troubleshoot. No one gets stuck."
+      },
+      {
+        "icon": "🧤",
+        "heading": "Get ready to get messy",
+        "body": "Clay goes everywhere. Aprons are provided, but plan for your forearms to be caked by the end."
+      },
+      {
+        "icon": "📦",
+        "heading": "Pieces are fired and kept",
+        "body": "Many studios fire and glaze your pieces after the class. You'll pick them up a week or two later."
+      }
+    ],
+    "tips": [
+      "Roll up your sleeves well past the elbow before you start. Clay travels further than you'd expect.",
+      "Don't fight the clay. Letting it center itself takes patience, but forcing it usually makes it worse.",
+      "Calgary has some great local pottery studios. Look for ones that include a beginner orientation in the session.",
+      "Pottery is a great date night option because it's physical, funny, and gives you something to talk about.",
+      "Mixler lists pottery events in Calgary when they come up. Join the waitlist and we'll let you know when one's scheduled."
+    ],
+    "waitlist_heading": "Want to know when we run pottery events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["painting-calgary", "terrarium-building-calgary", "candle-making-calgary", "resin-art-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need experience with pottery to join?",
+      "a": "No experience required. Beginner classes are designed for people who have never touched clay before."
+    },
+    {
+      "q": "Can I keep what I make?",
+      "a": "Yes. Most classes include firing and glazing. You pick up your finished piece a week or two after the session."
+    },
+    {
+      "q": "What should I wear?",
+      "a": "Wear clothes you're okay getting dirty. Aprons are provided but clay gets on everything."
+    },
+    {
+      "q": "Is pottery good for groups?",
+      "a": "It's fantastic for groups. The shared struggle of centering clay for the first time is genuinely funny and breaks the ice fast."
+    }
+  ]
+}

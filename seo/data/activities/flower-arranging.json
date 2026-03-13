@@ -1,0 +1,68 @@
+{
+  "slug": "flower-arranging-calgary",
+  "name": "Flower Arranging",
+  "category": "creative",
+  "category_slug": "flower-arranging",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Great for Solo", "Groups Welcome"],
+  "meta": {
+    "title": "Flower Arranging in Calgary | Mixler",
+    "description": "Join a flower arranging workshop in Calgary and make a beautiful arrangement to take home. Relaxed, creative, and beginner-friendly. No experience needed.",
+    "keywords": ["flower arranging Calgary", "floral workshop Calgary", "flower arranging class Calgary"]
+  },
+  "content": {
+    "subtitle": "Build a fresh floral arrangement you'll be excited to bring home.",
+    "intro": "Flower arranging workshops in Calgary are a lovely way to slow down and do something with your hands. You work with fresh blooms, choose your own colour palette, and build an arrangement guided by a florist who makes it look effortless. It's creative without any pressure, and the result is something genuinely beautiful that you take home.",
+    "breadcrumb_label": "Flower Arranging Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🌸",
+        "heading": "Fresh flowers to work with",
+        "body": "Workshops provide seasonal fresh flowers and greenery. You pick the colours and textures you're drawn to."
+      },
+      {
+        "icon": "✂️",
+        "heading": "Learn the basics of design",
+        "body": "A florist guides you through proportion, focal flowers, filler, and how to cut stems properly."
+      },
+      {
+        "icon": "🏡",
+        "heading": "Take your arrangement home",
+        "body": "You leave with a finished arrangement in a vase or vessel. It's one of the better workshop takeaways out there."
+      },
+      {
+        "icon": "😌",
+        "heading": "Calm and social atmosphere",
+        "body": "Flower arranging draws a relaxed crowd. It's easy to chat with the people around you while you work."
+      }
+    ],
+    "tips": [
+      "Start with your focal flowers first, then build around them with filler and greenery.",
+      "Don't overcrowd your arrangement. Negative space actually makes it look more intentional.",
+      "Calgary's short growing season makes seasonal flower events especially fun in spring and summer.",
+      "These workshops make a great bridal shower or birthday activity. Groups tend to love seeing how differently everyone's arrangements turn out.",
+      "Mixler lists flower arranging events in Calgary when they're added. Sign up for the waitlist and we'll let you know."
+    ],
+    "waitlist_heading": "Want to know when we run flower arranging events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["wreath-making-calgary", "candle-making-calgary", "macrame-calgary", "terrarium-building-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need floral experience to join?",
+      "a": "No experience needed. The florist guides you through the whole process from selecting stems to placing them."
+    },
+    {
+      "q": "What do I take home?",
+      "a": "A finished fresh flower arrangement in a vase or wrap. Most people are genuinely surprised by how good theirs turns out."
+    },
+    {
+      "q": "How long does a workshop usually last?",
+      "a": "Most flower arranging workshops run about 2 hours. Long enough to really get into it without dragging."
+    },
+    {
+      "q": "Is this good for a group event?",
+      "a": "Yes. It works beautifully for birthdays, bridal showers, or team events. Seeing everyone's different arrangements at the end is a great moment."
+    }
+  ]
+}

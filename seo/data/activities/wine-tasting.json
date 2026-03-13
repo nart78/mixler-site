@@ -1,0 +1,68 @@
+{
+  "slug": "wine-tasting-calgary",
+  "name": "Wine Tasting",
+  "category": "food-drink",
+  "category_slug": "wine-tasting",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Groups Welcome", "Great for Solo"],
+  "meta": {
+    "title": "Wine Tasting in Calgary | Mixler",
+    "description": "Discover great wine at a tasting event in Calgary. Learn to taste, identify, and talk about wine in a relaxed, social setting. All experience levels welcome.",
+    "keywords": ["wine tasting Calgary", "wine tasting events Calgary", "wine classes Calgary"]
+  },
+  "content": {
+    "subtitle": "Taste your way through a curated pour with people who love good wine.",
+    "intro": "Wine tasting events in Calgary bring together curious palates in the most enjoyable way possible. A knowledgeable host guides you through a selection of wines, sharing context about regions, grapes, and production while you taste alongside a room full of people who are just as interested as you are. No snobbery, just good wine and good conversation.",
+    "breadcrumb_label": "Wine Tasting Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🍷",
+        "heading": "A guided pour through several wines",
+        "body": "You'll typically taste 4 to 6 wines chosen around a theme, region, or varietal. The host connects the dots between them."
+      },
+      {
+        "icon": "🧀",
+        "heading": "Food pairings often included",
+        "body": "Many wine events include cheese, charcuterie, or small bites that pair with the wines. It makes a real difference in how the wine tastes."
+      },
+      {
+        "icon": "📝",
+        "heading": "Tasting notes and vocabulary",
+        "body": "The host helps you put words to what you're tasting. By the end you'll feel a lot more confident talking about wine."
+      },
+      {
+        "icon": "🤝",
+        "heading": "Social and conversational",
+        "body": "Wine tasting is a naturally social format. The pacing gives everyone time to talk between pours."
+      }
+    ],
+    "tips": [
+      "Eat something before you arrive. Tasting on an empty stomach makes it harder to actually appreciate the wine.",
+      "Don't be intimidated by tasting notes. Describing what you smell and taste in plain language is completely valid.",
+      "Calgary's wine scene has grown significantly. Local wine shops and venues host regular tasting events worth checking out.",
+      "Vertical tastings (same wine, different vintages) are especially interesting if you want to understand how wine evolves.",
+      "Mixler lists wine tasting events in Calgary when they're added. Join the waitlist and we'll email you when one is coming up."
+    ],
+    "waitlist_heading": "Want to know when we run wine tasting events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["cocktail-making-calgary", "whisky-tasting-calgary", "cheese-charcuterie-calgary", "olive-oil-tasting-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need to know about wine to enjoy a tasting?",
+      "a": "Not at all. Wine tastings are designed to teach as you go. The host explains everything without assuming prior knowledge."
+    },
+    {
+      "q": "How many wines will I taste?",
+      "a": "Most events feature 4 to 6 wines, enough to explore a theme without overdoing it."
+    },
+    {
+      "q": "Is food included?",
+      "a": "Often yes, but check the event listing. Many tastings include cheese or charcuterie pairings."
+    },
+    {
+      "q": "Can I come alone?",
+      "a": "Absolutely. Wine tastings are one of the better solo social events. The format naturally gets people talking."
+    }
+  ]
+}

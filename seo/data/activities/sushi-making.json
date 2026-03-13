@@ -1,0 +1,68 @@
+{
+  "slug": "sushi-making-calgary",
+  "name": "Sushi Making",
+  "category": "food-drink",
+  "category_slug": "sushi-making",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Groups Welcome", "No Experience Needed"],
+  "meta": {
+    "title": "Sushi Making in Calgary | Mixler",
+    "description": "Learn to make sushi in Calgary at a fun, hands-on class. Roll, slice, and eat your own creations. No experience needed. Great for groups and date nights.",
+    "keywords": ["sushi making Calgary", "sushi class Calgary", "learn to make sushi Calgary"]
+  },
+  "content": {
+    "subtitle": "Roll, slice, and eat the sushi you make yourself.",
+    "intro": "Sushi making classes in Calgary are a crowd favourite for good reason. Learning to prepare and roll sushi is a skill that takes an hour to pick up and a lifetime to perfect, and a guided class gives you a genuine head start. You work with fresh ingredients, learn the proper technique from an experienced instructor, and eat very well at the end.",
+    "breadcrumb_label": "Sushi Making Calgary",
+    "what_to_expect": [
+      {
+        "icon": "🍣",
+        "heading": "Sushi rice preparation",
+        "body": "You'll learn the ratio and seasoning for proper sushi rice. It's the foundation everything else is built on."
+      },
+      {
+        "icon": "🌿",
+        "heading": "Rolling technique",
+        "body": "The instructor shows you how to build and roll maki rolls using a bamboo mat. Tight rolling takes practice but you'll get it."
+      },
+      {
+        "icon": "🔪",
+        "heading": "Slicing and plating",
+        "body": "Clean cuts matter. You'll learn how to slice rolls properly and plate them so they look as good as they taste."
+      },
+      {
+        "icon": "🥢",
+        "heading": "Eat your creations",
+        "body": "Everything you make is for eating. Expect a full spread by the time you're done, plus plenty of leftovers."
+      }
+    ],
+    "tips": [
+      "Don't overfill your roll. The most common mistake is packing too much filling, which makes rolling and cutting much harder.",
+      "Wet your knife blade between cuts. A clean blade makes the difference between a neat slice and a crushed roll.",
+      "Calgary has excellent Japanese grocery stores where you can pick up sushi-grade fish to practice at home after the class.",
+      "A sushi class is a fantastic date activity. Working together on something hands-on and a little tricky makes for great conversation.",
+      "Mixler lists sushi making events in Calgary when they're scheduled. Join the waitlist and we'll email you when one is added."
+    ],
+    "waitlist_heading": "Want to know when we run sushi making events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["dumpling-making-calgary", "cooking-classes-calgary", "pasta-making-calgary", "knife-skills-calgary"]
+  },
+  "faq": [
+    {
+      "q": "Do I need any cooking experience?",
+      "a": "No experience needed. The class starts from the very beginning, including how to prepare the rice."
+    },
+    {
+      "q": "Is the fish safe to eat?",
+      "a": "Yes. Classes use sushi-grade fish that is safe for raw consumption. The instructor covers food safety at the start."
+    },
+    {
+      "q": "What types of sushi will I make?",
+      "a": "Most beginner classes focus on maki rolls and simple nigiri. Check the event listing for specifics."
+    },
+    {
+      "q": "Can I take leftover sushi home?",
+      "a": "Most classes let you take home what you made. Sushi is best eaten fresh, but it keeps for a few hours."
+    }
+  ]
+}
