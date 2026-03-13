@@ -1,0 +1,108 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div class="pseo-breadcrumb">
+  <div class="container">
+    <div class="pseo-breadcrumb-inner">
+      <a href="/">Home</a>
+      <span>›</span>
+      <a href="/activities/">Activities</a>
+      <span>›</span>
+      <span>{{ page.content.breadcrumb_label }}</span>
+    </div>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="pseo-hero pseo-hero--activity">
+  <div class="container">
+    <div class="pseo-hero-eyebrow"><span class="pseo-eyebrow-dot"></span> Calgary Activity Guide</div>
+    <h1>{{ page.name }} in Calgary</h1>
+    <p class="pseo-hero-subtitle">{{ page.content.subtitle }}</p>
+    <div class="pseo-hero-tags">
+      {% for tag in page.tags %}
+      <span class="pseo-hero-tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- Body -->
+<div class="pseo-body">
+  <div class="container">
+    <div class="pseo-grid">
+
+      <!-- Main column -->
+      <div class="pseo-main">
+
+        <p class="pseo-intro">{{ page.content.intro }}</p>
+
+        <!-- Events slot: injected by pseo-activity.js -->
+        <div id="events-slot" data-category-slug="{{ page.category_slug }}" data-activity-name="{{ page.name }}"></div>
+
+        <!-- What to Expect -->
+        <div class="pseo-section-label">What It's Like</div>
+        <h2 class="pseo-section-title">What to Expect</h2>
+        <div class="pseo-expect-grid">
+          {% for item in page.content.what_to_expect %}
+          <div class="pseo-expect-card">
+            <div class="pseo-expect-icon">{{ item.icon }}</div>
+            <h4>{{ item.heading }}</h4>
+            <p>{{ item.body }}</p>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- Tips -->
+        <div class="pseo-section-label">Insider Advice</div>
+        <h2 class="pseo-section-title">Tips for Your First {{ page.name }} Event</h2>
+        <ul class="pseo-tips-list">
+          {% for tip in page.content.tips %}
+          <li>
+            <span class="pseo-tip-num">{{ loop.index }}</span>
+            {{ tip }}
+          </li>
+          {% endfor %}
+        </ul>
+
+        <!-- FAQ -->
+        <div class="pseo-section-label">Common Questions</div>
+        <h2 class="pseo-section-title">FAQ</h2>
+        {% for item in page.faq %}
+        <div class="pseo-faq-item">
+          <div class="pseo-faq-q">{{ item.q }} <span>+</span></div>
+          <div class="pseo-faq-a">{{ item.a }}</div>
+        </div>
+        {% endfor %}
+
+      </div>
+
+      <!-- Sidebar -->
+      <div class="pseo-sidebar">
+        <div class="pseo-sidebar-card">
+          <h3>{{ page.content.waitlist_heading }}</h3>
+          <p>{{ page.content.waitlist_body }}</p>
+          <a href="/events.html" class="pseo-btn-white">Browse All Events</a>
+        </div>
+
+        <div class="pseo-related-card">
+          <h4>Similar Activities</h4>
+          {% for slug in page.content.related_activities %}
+          <a href="/activities/{{ slug }}/" class="pseo-related-link">
+            {{ related_names[slug] if related_names and slug in related_names else slug | replace('-calgary', '') | replace('-', ' ') | title }}
+            <span class="pseo-related-arrow">›</span>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block page_scripts %}
+<script>window.__MIXLER_ANON_KEY__ = 'REPLACED_BY_GENERATE_PY';</script>
+<script type="module" src="/js/pseo-activity.js"></script>
+{% endblock %}

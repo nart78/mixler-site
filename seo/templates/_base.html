@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.meta.title }}</title>
+  <meta name="description" content="{{ page.meta.description }}">
+  <link rel="canonical" href="https://mixler.ca/{{ page.canonical_path }}/">
+
+  <!-- OG Tags -->
+  <meta property="og:title" content="{{ page.meta.title }}">
+  <meta property="og:description" content="{{ page.meta.description }}">
+  <meta property="og:image" content="https://mixler.ca/{{ page.og_image }}">
+  <meta property="og:url" content="https://mixler.ca/{{ page.canonical_path }}/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mixler">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.meta.title }}">
+  <meta name="twitter:description" content="{{ page.meta.description }}">
+  <meta name="twitter:image" content="https://mixler.ca/{{ page.og_image }}">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/pseo.css">
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- BreadcrumbList Schema -->
+  {% autoescape false %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mixler.ca/" },
+      { "@type": "ListItem", "position": 2, "name": {{ page.breadcrumb_section | tojson }}, "item": "https://mixler.ca/{{ page.breadcrumb_section_path }}/" },
+      { "@type": "ListItem", "position": 3, "name": {{ page.breadcrumb_label | tojson }}, "item": "https://mixler.ca/{{ page.canonical_path }}/" }
+    ]
+  }
+  </script>
+  {% endautoescape %}
+
+  <!-- FAQ Schema -->
+  {% if page.faq %}
+  {% autoescape false %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {% for item in page.faq %}
+      {
+        "@type": "Question",
+        "name": {{ item.q | tojson }},
+        "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | tojson }} }
+      }{% if not loop.last %},{% endif %}
+      {% endfor %}
+    ]
+  }
+  </script>
+  {% endautoescape %}
+  {% endif %}
+</head>
+<body class="dark-body">
+
+  <div id="site-nav"></div>
+
+  {% block content %}{% endblock %}
+
+  <div id="site-footer"></div>
+
+  <script type="module">
+    import { renderNav, renderFooter } from '/js/components.js';
+    renderNav('events', { headerClass: 'dark-header' });
+    renderFooter();
+  </script>
+
+  {% block page_scripts %}{% endblock %}
+
+</body>
+</html>

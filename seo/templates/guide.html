@@ -1,0 +1,119 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div class="pseo-breadcrumb">
+  <div class="container">
+    <div class="pseo-breadcrumb-inner">
+      <a href="/">Home</a>
+      <span>›</span>
+      <a href="/guides/">Guides</a>
+      <span>›</span>
+      <span>{{ page.content.title }}</span>
+    </div>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="pseo-hero pseo-hero--guide">
+  <div class="container">
+    <div class="pseo-hero-eyebrow"><span class="pseo-eyebrow-dot"></span> Mixler Guide</div>
+    <h1>{{ page.content.title }}</h1>
+    <p class="pseo-hero-subtitle">{{ page.content.subtitle }}</p>
+    <div class="pseo-hero-meta">
+      <span>{{ page.content.read_time }}</span>
+      <span>·</span>
+      <span>By <strong>the Mixler Team</strong></span>
+      <span>·</span>
+      <span>Updated <strong>{{ page.content.updated_date }}</strong></span>
+    </div>
+  </div>
+</div>
+
+<!-- Body -->
+<div class="pseo-body">
+  <div class="container">
+    <div class="pseo-grid">
+
+      <!-- Main column -->
+      <div class="pseo-main">
+
+        <p class="pseo-guide-intro">{{ page.content.intro }}</p>
+
+        {% for section in page.content.sections %}
+        <div class="pseo-guide-section" id="section-{{ loop.index }}">
+          <div class="pseo-section-label">{{ section.label }}</div>
+          <h2>{{ section.heading }}</h2>
+          {% for para in section.paragraphs %}
+          <p>{{ para }}</p>
+          {% endfor %}
+          {% if section.tip_box %}
+          <div class="pseo-tip-box">
+            <div class="pseo-tip-box-label">{{ section.tip_box.label }}</div>
+            <p>{{ section.tip_box.body }}</p>
+          </div>
+          {% endif %}
+        </div>
+
+        {% if loop.index == 2 %}
+        <!-- Inline Mixler CTA (after second section) -->
+        <div class="pseo-mixler-cta">
+          <div class="pseo-mixler-cta-text">
+            <h3>{{ page.content.mixler_cta.heading }}</h3>
+            <p>{{ page.content.mixler_cta.body }}</p>
+          </div>
+          <a href="/events.html" class="pseo-btn-pink">{{ page.content.mixler_cta.button_text }}</a>
+        </div>
+        {% endif %}
+
+        {% endfor %}
+
+        <!-- Related Activities -->
+        <h3 class="pseo-related-heading">Calgary Activities Worth Trying</h3>
+        <div class="pseo-related-grid">
+          {% for slug in page.content.related_activities %}
+          <a href="/activities/{{ slug }}/" class="pseo-related-activity">
+            {{ related_names[slug] if related_names and slug in related_names else slug | replace('-calgary', '') | replace('-', ' ') | title }}
+            <span>›</span>
+          </a>
+          {% endfor %}
+        </div>
+
+        <!-- FAQ -->
+        <div class="pseo-section-label">Common Questions</div>
+        <h2 class="pseo-section-title" style="margin-bottom:8px">FAQ</h2>
+        {% for item in page.faq %}
+        <div class="pseo-faq-item">
+          <div class="pseo-faq-q">{{ item.q }} <em>+</em></div>
+          <div class="pseo-faq-a">{{ item.a }}</div>
+        </div>
+        {% endfor %}
+
+      </div>
+
+      <!-- Sidebar -->
+      <div class="pseo-sidebar">
+
+        <!-- Table of Contents -->
+        <div class="pseo-toc-card">
+          <h4>In This Guide</h4>
+          {% for section in page.content.sections %}
+          <a href="#section-{{ loop.index }}" class="pseo-toc-link">
+            <span class="pseo-toc-num">0{{ loop.index }}</span>
+            {{ section.heading }}
+          </a>
+          {% endfor %}
+        </div>
+
+        <div class="pseo-sidebar-card">
+          <h3>{{ page.content.sidebar_cta.heading }}</h3>
+          <p>{{ page.content.sidebar_cta.body }}</p>
+          <a href="/events.html" class="pseo-btn-white">{{ page.content.sidebar_cta.button_text }}</a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

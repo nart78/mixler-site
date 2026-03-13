@@ -1,0 +1,144 @@
+/* =============================================
+   Mixler pSEO Pages
+   Activity pages + Guide pages
+   ============================================= */
+
+/* Breadcrumb */
+.pseo-breadcrumb { background: #f5f5f7; padding: 12px 0; border-bottom: 1px solid #e5e7eb; }
+.pseo-breadcrumb-inner { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #6b7280; }
+.pseo-breadcrumb-inner a { color: #153db6; font-weight: 500; }
+.pseo-breadcrumb-inner span { color: #9ca3af; }
+
+/* Hero shared */
+.pseo-hero { padding: 56px 0 60px; position: relative; overflow: hidden; }
+.pseo-hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; color: #ff3465; font-size: 0.85rem; font-weight: 600; font-style: italic; margin-bottom: 16px; }
+.pseo-eyebrow-dot { width: 8px; height: 8px; background: #ff3465; border-radius: 50%; display: inline-block; }
+.pseo-hero h1 { font-family: 'League Spartan', sans-serif; font-size: 3rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; }
+.pseo-hero-subtitle { font-size: 1.05rem; max-width: 560px; line-height: 1.7; }
+
+/* Activity hero */
+.pseo-hero--activity { background: #153db6; }
+.pseo-hero--activity::before { content: ''; position: absolute; top: -80px; right: -80px; width: 320px; height: 320px; background: rgba(255,52,101,0.08); border-radius: 50%; }
+.pseo-hero--activity h1 { color: #fff; }
+.pseo-hero--activity .pseo-hero-subtitle { color: rgba(255,255,255,0.7); }
+.pseo-hero-tags { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; }
+.pseo-hero-tag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85); padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
+
+/* Guide hero */
+.pseo-hero--guide { background: #0f1a3d; }
+.pseo-hero--guide::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: #ff3465; }
+.pseo-hero--guide::after { content: ''; position: absolute; top: -100px; right: -80px; width: 360px; height: 360px; background: rgba(21,61,182,0.25); border-radius: 50%; }
+.pseo-hero--guide h1 { color: #fff; font-size: 2.8rem; max-width: 600px; }
+.pseo-hero--guide .pseo-hero-subtitle { color: rgba(255,255,255,0.65); font-size: 1rem; }
+.pseo-hero-meta { display: flex; align-items: center; gap: 20px; margin-top: 24px; color: rgba(255,255,255,0.55); font-size: 0.8rem; }
+.pseo-hero-meta strong { color: rgba(255,255,255,0.85); }
+
+/* Body layout */
+.pseo-body { padding: 56px 0 80px; }
+.pseo-grid { display: grid; grid-template-columns: 1fr 320px; gap: 48px; }
+
+/* Main column */
+.pseo-intro { font-size: 1.05rem; color: #4b5563; line-height: 1.8; margin-bottom: 48px; }
+.pseo-guide-intro { font-size: 1.05rem; color: #4b5563; line-height: 1.85; margin-bottom: 48px; border-left: 3px solid #ff3465; padding-left: 20px; }
+.pseo-section-label { font-family: 'League Spartan', sans-serif; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #ff3465; margin-bottom: 8px; }
+.pseo-section-title { font-size: 1.8rem; font-weight: 800; color: #153db6; margin-bottom: 24px; }
+
+/* What to Expect */
+.pseo-expect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 48px; }
+.pseo-expect-card { background: #f9fafb; border-radius: 12px; padding: 20px; border: 1px solid #e5e7eb; }
+.pseo-expect-icon { font-size: 1.5rem; margin-bottom: 10px; }
+.pseo-expect-card h4 { font-family: 'League Spartan', sans-serif; font-size: 1rem; font-weight: 700; color: #153db6; margin-bottom: 6px; }
+.pseo-expect-card p { font-size: 0.85rem; color: #6b7280; line-height: 1.6; }
+
+/* Tips */
+.pseo-tips-list { list-style: none; margin-bottom: 48px; }
+.pseo-tips-list li { display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid #f3f4f6; font-size: 0.92rem; color: #4b5563; align-items: flex-start; }
+.pseo-tips-list li:last-child { border-bottom: none; }
+.pseo-tip-num { background: #153db6; color: #fff; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; font-family: 'League Spartan', sans-serif; }
+
+/* FAQ */
+.pseo-faq-item { border-bottom: 1px solid #e5e7eb; padding: 18px 0; }
+.pseo-faq-q { font-family: 'League Spartan', sans-serif; font-size: 1rem; font-weight: 700; color: #1f2937; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+.pseo-faq-q span, .pseo-faq-q em { color: #153db6; font-size: 1.2rem; font-style: normal; }
+.pseo-faq-a { font-size: 0.88rem; color: #6b7280; margin-top: 10px; line-height: 1.7; }
+
+/* Guide sections */
+.pseo-guide-section { margin-bottom: 48px; }
+.pseo-guide-section h2 { font-size: 1.7rem; font-weight: 800; color: #153db6; margin-bottom: 16px; }
+.pseo-guide-section p { font-size: 0.95rem; color: #4b5563; line-height: 1.8; margin-bottom: 14px; }
+.pseo-tip-box { background: #f0f4ff; border: 1px solid #c7d4ff; border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+.pseo-tip-box-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #153db6; margin-bottom: 8px; }
+.pseo-tip-box p { font-size: 0.88rem; color: #374151; margin: 0; line-height: 1.7; }
+
+/* Guide inline Mixler CTA */
+.pseo-mixler-cta { background: linear-gradient(135deg, #153db6, #1a4fd6); border-radius: 16px; padding: 28px 32px; margin: 32px 0; display: flex; align-items: center; gap: 24px; }
+.pseo-mixler-cta-text h3 { font-family: 'League Spartan', sans-serif; font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+.pseo-mixler-cta-text p { font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 0; }
+.pseo-btn-pink { background: #ff3465; color: #fff; padding: 10px 22px; border-radius: 24px; font-weight: 700; font-size: 0.85rem; font-family: 'League Spartan', sans-serif; white-space: nowrap; flex-shrink: 0; display: inline-block; }
+
+/* Related activities (guide) */
+.pseo-related-heading { font-size: 1.3rem; font-weight: 800; color: #153db6; margin-bottom: 20px; }
+.pseo-related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 48px; }
+.pseo-related-activity { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; display: flex; align-items: center; justify-content: space-between; font-size: 0.88rem; font-weight: 600; color: #153db6; }
+.pseo-related-activity:hover { background: #f0f4ff; border-color: #c7d4ff; }
+
+/* Sidebar */
+.pseo-sidebar-card { background: #ff3465; border-radius: 16px; padding: 28px; color: #fff; margin-bottom: 24px; }
+.pseo-sidebar-card h3 { font-family: 'League Spartan', sans-serif; font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
+.pseo-sidebar-card p { font-size: 0.85rem; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 20px; }
+.pseo-btn-white { display: block; background: #fff; color: #ff3465; text-align: center; padding: 12px; border-radius: 24px; font-weight: 700; font-size: 0.88rem; font-family: 'League Spartan', sans-serif; }
+
+/* Related activities sidebar (activity pages) */
+.pseo-related-card { background: #f9fafb; border-radius: 12px; padding: 16px; border: 1px solid #e5e7eb; }
+.pseo-related-card h4 { font-family: 'League Spartan', sans-serif; font-size: 0.9rem; font-weight: 700; color: #153db6; margin-bottom: 12px; }
+.pseo-related-link { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f3f4f6; font-size: 0.85rem; color: #4b5563; font-weight: 500; }
+.pseo-related-link:last-child { border-bottom: none; }
+.pseo-related-link:hover { color: #153db6; }
+.pseo-related-arrow { color: #153db6; }
+
+/* TOC card (guide sidebar) */
+.pseo-toc-card { background: #f9fafb; border-radius: 12px; padding: 20px; border: 1px solid #e5e7eb; margin-bottom: 24px; }
+.pseo-toc-card h4 { font-family: 'League Spartan', sans-serif; font-size: 0.88rem; font-weight: 700; color: #153db6; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 1px; }
+.pseo-toc-link { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid #f3f4f6; font-size: 0.83rem; color: #4b5563; align-items: flex-start; }
+.pseo-toc-link:last-child { border-bottom: none; }
+.pseo-toc-link:hover { color: #153db6; }
+.pseo-toc-num { color: #153db6; font-weight: 700; font-family: 'League Spartan', sans-serif; font-size: 0.8rem; flex-shrink: 0; }
+
+/* Events slot: states */
+.pseo-events-loading { padding: 24px; text-align: center; color: #9ca3af; font-size: 0.9rem; }
+.pseo-events-live { background: #f0f4ff; border: 1px solid #c7d4ff; border-radius: 16px; padding: 28px; margin-bottom: 48px; }
+.pseo-events-live-label { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 600; color: #153db6; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+.pseo-live-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: pseo-pulse 2s infinite; }
+@keyframes pseo-pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.pseo-event-card { background: #fff; border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 16px; margin-bottom: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border: 1px solid #e5e7eb; }
+.pseo-event-date { background: #153db6; color: #fff; border-radius: 8px; padding: 8px 12px; text-align: center; min-width: 52px; }
+.pseo-event-date .day { font-family: 'League Spartan', sans-serif; font-size: 1.4rem; font-weight: 800; line-height: 1; }
+.pseo-event-date .month { font-size: 0.7rem; font-weight: 600; opacity: 0.85; text-transform: uppercase; margin-top: 2px; }
+.pseo-event-info h4 { font-size: 0.95rem; font-weight: 600; color: #1f2937; font-family: 'Inter', sans-serif; margin-bottom: 4px; }
+.pseo-event-info p { font-size: 0.8rem; color: #6b7280; }
+.pseo-event-price { margin-left: auto; font-family: 'League Spartan', sans-serif; font-size: 1.1rem; font-weight: 700; color: #153db6; }
+.pseo-events-cta { margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Waitlist form */
+.pseo-waitlist { background: #f0f4ff; border: 1px solid #c7d4ff; border-radius: 16px; padding: 28px; margin-bottom: 48px; }
+.pseo-waitlist h3 { font-family: 'League Spartan', sans-serif; font-size: 1.3rem; color: #153db6; margin-bottom: 8px; }
+.pseo-waitlist p { font-size: 0.9rem; color: #4b5563; margin-bottom: 20px; }
+.pseo-waitlist-form { display: flex; gap: 10px; }
+.pseo-waitlist-input { flex: 1; padding: 12px 16px; border: 1px solid #c7d4ff; border-radius: 8px; font-size: 0.9rem; font-family: 'Inter', sans-serif; outline: none; }
+.pseo-waitlist-input:focus { border-color: #153db6; }
+.pseo-waitlist-btn { background: #153db6; color: #fff; padding: 12px 20px; border-radius: 8px; font-weight: 600; font-size: 0.88rem; font-family: 'League Spartan', sans-serif; border: none; cursor: pointer; white-space: nowrap; }
+.pseo-waitlist-btn:hover { background: #1a4fd6; }
+.pseo-waitlist-success { color: #16a34a; font-size: 0.9rem; font-weight: 600; margin-top: 12px; }
+.pseo-waitlist-error { color: #dc2626; font-size: 0.85rem; margin-top: 8px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pseo-grid { grid-template-columns: 1fr; }
+  .pseo-sidebar { order: -1; }
+  .pseo-expect-grid { grid-template-columns: 1fr; }
+  .pseo-related-grid { grid-template-columns: 1fr; }
+  .pseo-hero h1 { font-size: 2.2rem; }
+  .pseo-hero--guide h1 { font-size: 2rem; }
+  .pseo-mixler-cta { flex-direction: column; }
+  .pseo-waitlist-form { flex-direction: column; }
+}
