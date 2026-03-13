@@ -10,6 +10,16 @@ const SUPABASE_ANON_KEY = window.__MIXLER_ANON_KEY__ || 'REPLACED_BY_GENERATE_PY
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+function escHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 async function initEventsSlot() {
   const slot = document.getElementById('events-slot');
   if (!slot) return;
@@ -79,8 +89,8 @@ function renderEvents(slot, events) {
           <div class="month">${month}</div>
         </div>
         <div class="pseo-event-info">
-          <h4>${ev.title}</h4>
-          <p>${ev.location_name || ''}${timeStr ? ' · ' + timeStr : ''}${spotsLeft > 0 && spotsLeft <= 20 ? ' · ' + spotsLeft + ' spots left' : ''}</p>
+          <h4>${escHtml(ev.title)}</h4>
+          <p>${escHtml(ev.location_name || '')}${timeStr ? ' · ' + timeStr : ''}${spotsLeft > 0 && spotsLeft <= 20 ? ' · ' + spotsLeft + ' spots left' : ''}</p>
         </div>
         <div class="pseo-event-price">${formatPrice(ev.price_cents)}</div>
       </div>
@@ -108,7 +118,7 @@ function renderWaitlist(slot, activityName, categorySlug) {
     <div class="pseo-section-label">Stay in the Loop</div>
     <h2 class="pseo-section-title">No Events Right Now</h2>
     <div class="pseo-waitlist">
-      <h3>Want to know when we run ${activityName} events?</h3>
+      <h3>Want to know when we run ${escHtml(activityName)} events?</h3>
       <p>Join the waitlist and we'll email you when we add one. We use this to plan what events to run next.</p>
       <form class="pseo-waitlist-form" id="waitlist-form">
         <input type="email" class="pseo-waitlist-input" placeholder="your@email.com" required>
@@ -144,7 +154,7 @@ function renderWaitlist(slot, activityName, categorySlug) {
         msg.innerHTML = '<div class="pseo-waitlist-success">You\'re on the list! We\'ll email you when we add this event.</div>';
         e.target.style.display = 'none';
       } else {
-        msg.innerHTML = `<div class="pseo-waitlist-error">${data.error || 'Something went wrong. Try again.'}</div>`;
+        msg.innerHTML = `<div class="pseo-waitlist-error">${escHtml(data.error || 'Something went wrong. Try again.')}</div>`;
         btn.disabled = false;
         btn.textContent = 'Join Waitlist';
       }

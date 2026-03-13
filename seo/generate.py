@@ -58,6 +58,9 @@ def render_activity(env, page: dict, related_names: dict, output_root: Path, ano
     """Render one activity page and write to output_root/activities/{slug}/index.html."""
     template = env.get_template('activity.html')
 
+    page = {**page}  # shallow copy to avoid mutating caller's dict
+    page['content'] = {**page.get('content', {})}  # copy nested dict
+
     # Computed fields for the template
     page['canonical_path'] = f"activities/{page['slug']}"
     page['breadcrumb_section'] = 'Activities'
@@ -70,6 +73,8 @@ def render_activity(env, page: dict, related_names: dict, output_root: Path, ano
 
     html = template.render(page=page, related_names=related_names)
     # Inject actual anon key
+    if 'REPLACED_BY_GENERATE_PY' not in html:
+        print(f"  WARNING: anon key placeholder not found in {page['slug']} -- check activity.html template")
     html = html.replace('REPLACED_BY_GENERATE_PY', anon_key)
 
     out_dir = output_root / 'activities' / page['slug']
@@ -81,6 +86,9 @@ def render_activity(env, page: dict, related_names: dict, output_root: Path, ano
 def render_guide(env, page: dict, related_names: dict, output_root: Path):
     """Render one guide page and write to output_root/guides/{slug}/index.html."""
     template = env.get_template('guide.html')
+
+    page = {**page}
+    page['content'] = {**page.get('content', {})}
 
     page['canonical_path'] = f"guides/{page['slug']}"
     page['breadcrumb_section'] = 'Guides'
