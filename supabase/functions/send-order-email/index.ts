@@ -240,6 +240,36 @@ serve(async (req) => {
       errorMessage = 'Mailerlite not configured';
     }
 
+    // Internal order alert to sales@mixler.ca
+    const resendApiKey = Deno.env.get('RESEND_API_KEY');
+    if (resendApiKey) {
+      const attendeeNames = (attendees || []).map((a: any) => a.full_name).join(', ');
+      await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${resendApiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: 'Mixler <hello@mixler.ca>',
+          to: ['sales@mixler.ca'],
+          subject: `New order: ${event.title} — ${order.order_number}`,
+          html: `
+            <p><strong>New ticket order on Mixler</strong></p>
+            <table style="border-collapse:collapse;font-size:14px;">
+              <tr><td style="padding:4px 12px 4px 0;color:#6b7280;">Order</td><td><strong>${order.order_number}</strong></td></tr>
+              <tr><td style="padding:4px 12px 4px 0;color:#6b7280;">Buyer</td><td>${recipientName} (${recipientEmail})</td></tr>
+              <tr><td style="padding:4px 12px 4px 0;color:#6b7280;">Event</td><td>${event.title}</td></tr>
+              <tr><td style="padding:4px 12px 4px 0;color:#6b7280;">Date</td><td>${formatDate(event.event_date)} at ${timeStr}</td></tr>
+              <tr><td style="padding:4px 12px 4px 0;color:#6b7280;">Tickets</td><td>${order.quantity}</td></tr>
+              <tr><td style="padding:4px 12px 4px 0;color:#6b7280;">Attendees</td><td>${attendeeNames}</td></tr>
+              <tr><td style="padding:4px 12px 4px 0;color:#6b7280;">Total</td><td><strong>${formatPrice(order.total_cents)}</strong></td></tr>
+            </table>
+          `,
+        }),
+      }).catch(err => console.error('Internal alert email failed:', err));
+    }
+
     // Log to email_log
     await supabase.from('email_log').insert({
       id: crypto.randomUUID(),
