@@ -1,0 +1,40 @@
+{
+  "slug": "bath-bomb-making-calgary",
+  "name": "Bath Bomb Making",
+  "category": "wellness",
+  "category_slug": "bath-bomb-making",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["No Experience Needed", "Groups Welcome", "All Skill Levels"],
+  "meta": {
+    "title": "Bath Bomb Making in Calgary | Mixler",
+    "description": "Bath bomb making workshops in Calgary are a hands-on, fragrant, and genuinely fun way to spend an evening. You go home with custom bath bombs you actually made.",
+    "keywords": ["bath bomb making Calgary", "bath bomb workshop Calgary", "DIY bath bombs Calgary"]
+  },
+  "content": {
+    "subtitle": "Mix, mold, and take home bath bombs you actually made yourself.",
+    "intro": "Bath bomb making workshops are one of those activities that sounds like a nice idea and turns out to be genuinely great. You get to choose your scents, colours, and add-ins, then mix and mold them into bath bombs you take home. In Calgary, these workshops have become popular for groups, bachelorettes, and solo attendees who just want a creative, sensory, and social evening without anything too intense.",
+    "breadcrumb_label": "Bath Bomb Making Calgary",
+    "what_to_expect": [
+      {"icon": "🛁", "heading": "All materials provided", "body": "The instructor supplies baking soda, citric acid, oils, fragrances, colours, and molds. You don't need to bring anything except your scent preferences."},
+      {"icon": "🌸", "heading": "Choose your own scents and colours", "body": "Most workshops offer a selection of essential oils, fragrance blends, and colorants so you can customize your bath bombs entirely to your taste."},
+      {"icon": "🧪", "heading": "Learn the chemistry", "body": "A good instructor explains why bath bombs fizz, what makes them skin-safe, and how to adjust recipes for different effects. The science makes it more interesting."},
+      {"icon": "🎁", "heading": "Take home what you make", "body": "You leave with a batch of bath bombs packaged to take home or give as gifts. Most workshops yield between four and eight bombs per person."}
+    ],
+    "tips": [
+      "Work quickly when mixing. Once liquid touches the dry ingredients, the fizzing reaction starts and you need to get into the mold before it activates too far.",
+      "Less liquid colourant is more. Too much can stain your bathtub. Stick to the amounts the instructor recommends.",
+      "Choose complementary scents if you're mixing essential oils. Citrus and mint work well together. Lavender and eucalyptus are a classic combination.",
+      "Let your bombs harden completely before removing them from the mold. Impatience leads to crumbling, not from baking experience, just physics.",
+      "Mixler runs bath bomb making workshops in Calgary as part of our creative wellness events. Join the waitlist and we'll let you know when the next one is scheduled."
+    ],
+    "waitlist_heading": "Want to know when we run bath bomb making events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["candle-making-calgary", "crystals-workshop-calgary", "vision-board-calgary", "yoga-socials-calgary"]
+  },
+  "faq": [
+    {"q": "Do I need any experience to make bath bombs?", "a": "None at all. The instructor walks you through every step and the process is straightforward enough for complete beginners to get great results."},
+    {"q": "Are the bath bombs safe for sensitive skin?", "a": "Most workshops use skin-safe, cosmetic-grade ingredients. Let your instructor know about any sensitivities so they can recommend appropriate fragrance and colour options."},
+    {"q": "How many bath bombs will I make?", "a": "Most Calgary bath bomb workshops yield four to eight bombs per person, depending on the mold sizes used. Enough to use some and gift some."},
+    {"q": "How long does a bath bomb workshop take?", "a": "Typically 90 minutes to two hours, including mixing, molding, and waiting for the bombs to set enough to package safely."}
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "crystals-workshop-calgary",
+  "name": "Crystals Workshop",
+  "category": "wellness",
+  "category_slug": "crystals-workshop",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["No Experience Needed", "Great for Solo", "All Skill Levels"],
+  "meta": {
+    "title": "Crystals Workshop in Calgary | Mixler",
+    "description": "Crystals workshops in Calgary explore the history, symbolism, and uses of crystals in a hands-on, welcoming setting. Great for the curious and the skeptical alike.",
+    "keywords": ["crystals workshop Calgary", "crystal healing Calgary", "crystals event Calgary"]
+  },
+  "content": {
+    "subtitle": "Explore the world of crystals with curious people in a welcoming Calgary setting.",
+    "intro": "Crystals workshops in Calgary attract a wide range of people, from devoted collectors to total skeptics who came with a friend and ended up staying the whole time. The format typically covers the history and lore of different crystals, how they're used in wellness and intention-setting, and hands-on time to handle and identify stones. Whether you believe in the metaphysical properties or just find rocks genuinely beautiful, there's something here for you.",
+    "breadcrumb_label": "Crystals Workshop Calgary",
+    "what_to_expect": [
+      {"icon": "💎", "heading": "Hands-on exploration of stones", "body": "You'll handle a variety of crystals and learn to identify them by appearance, texture, and energetic quality. The tactile element makes the experience memorable."},
+      {"icon": "📖", "heading": "History, lore, and uses", "body": "Facilitators share the background of key crystals, including their historical uses across cultures and how people work with them in modern wellness practices."},
+      {"icon": "🎯", "heading": "Intention-setting with crystals", "body": "Most workshops include a practical component where you choose a crystal for a specific intention and learn how to work with it going forward."},
+      {"icon": "🛍️", "heading": "Crystals available to take home", "body": "Many Calgary crystal workshops have stones available for purchase. You'll leave knowing what you're looking at rather than buying blindly."}
+    ],
+    "tips": [
+      "Come with an open mind, whatever your starting point. Crystals workshops are low-pressure and no one will quiz you on your beliefs.",
+      "Handle stones slowly and pay attention to your sensory response. Even skeptics often find certain textures or weights more appealing than others.",
+      "Ask about where crystals are sourced if that matters to you. Ethically sourced stones are increasingly available and worth asking about.",
+      "Trust your instincts when choosing a crystal to purchase. Whatever you're drawn to first is usually the right one, regardless of the official properties.",
+      "Mixler includes crystals workshops in our wellness event calendar in Calgary. Join the waitlist and we'll let you know when the next one is on."
+    ],
+    "waitlist_heading": "Want to know when we run crystals workshop events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["sound-bath-calgary", "vision-board-calgary", "journaling-night-calgary", "mindfulness-calgary"]
+  },
+  "faq": [
+    {"q": "Do I need to believe in crystal healing to enjoy a workshop?", "a": "Not at all. Many attendees are curious skeptics and workshops are designed to be welcoming to all levels of belief and scepticism."},
+    {"q": "What crystals are typically covered?", "a": "Common workshop crystals include amethyst, rose quartz, obsidian, citrine, and clear quartz. The selection varies by facilitator and theme."},
+    {"q": "Can I buy crystals at the workshop?", "a": "Many Calgary crystal workshops include a curated selection for purchase. It's a good opportunity to buy from someone who can tell you exactly what you're getting."},
+    {"q": "How long is a crystals workshop?", "a": "Most run 90 minutes to two hours. The pace is relaxed and there's usually time for questions throughout."}
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "aerial-yoga-calgary",
+  "name": "Aerial Yoga",
+  "category": "active-outdoors",
+  "category_slug": "aerial-yoga",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Active", "No Experience Needed"],
+  "meta": {
+    "title": "Aerial Yoga in Calgary | Mixler",
+    "description": "Aerial yoga in Calgary uses silk hammocks to support inversions and stretches. No experience needed and the classes are beginner-friendly and genuinely fun.",
+    "keywords": ["aerial yoga Calgary", "aerial silk yoga Calgary", "anti-gravity yoga Calgary"]
+  },
+  "content": {
+    "subtitle": "Stretch, invert, and float in a silk hammock above the studio floor.",
+    "intro": "Aerial yoga uses a fabric hammock suspended from the ceiling to support your body through poses you couldn't hold on the ground. It's part yoga, part circus, and entirely its own thing. Calgary has a handful of studios offering aerial classes, and the beginner sessions are genuinely welcoming. If you've ever wanted to try something that feels a bit magical, this is it.",
+    "breadcrumb_label": "Aerial Yoga Calgary",
+    "what_to_expect": [
+      {"icon": "🪢", "heading": "Hammock setup and intro", "body": "Your instructor will show you how to sit, stand, and hang in the hammock before any actual yoga begins. Getting comfortable with the fabric is part of the practice."},
+      {"icon": "🙃", "heading": "Inversions without strain", "body": "The hammock supports your weight during inversions, which means you can experience being upside down without the neck or wrist strain of floor-based inversions."},
+      {"icon": "🧘", "heading": "Strength and flexibility together", "body": "Aerial yoga builds real strength in your core, shoulders, and arms while also improving flexibility. It's more of a workout than it looks."},
+      {"icon": "😌", "heading": "Savasana in the hammock", "body": "You end the class cocooned in the hammock for final relaxation. It's one of the most calming five minutes in any fitness class, anywhere."}
+    ],
+    "tips": [
+      "Avoid eating a heavy meal in the two hours before class. Inversions with a full stomach are uncomfortable.",
+      "Wear fitted clothing. Loose tops ride up during inversions and become annoying fast. Leggings and a fitted top are ideal.",
+      "Don't grip the hammock out of fear. Trusting the fabric to hold you is part of learning, and instructors are very experienced at helping nervous first-timers.",
+      "Communicate with your instructor if something feels wrong. Adjustments are easy and they'd rather know than have you push through discomfort.",
+      "Mixler has explored aerial yoga socials in Calgary for people who want to try it in a group setting. Join the waitlist and let us know you're interested."
+    ],
+    "waitlist_heading": "Want to know when we run aerial yoga events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["yoga-socials-calgary", "sound-bath-calgary", "rock-climbing-calgary", "salsa-dancing-calgary"]
+  },
+  "faq": [
+    {"q": "Do I need yoga experience for aerial yoga?", "a": "No prior yoga experience is required. Beginner classes assume you're starting from scratch and move at an accessible pace."},
+    {"q": "Is there a weight limit for aerial yoga?", "a": "Hammocks are rigged to hold several hundred pounds. Most studios have a limit around 250 to 300 lbs. Check with your specific studio before booking."},
+    {"q": "Is aerial yoga scary if you're afraid of heights?", "a": "The hammock stays fairly close to the ground in beginner classes. Most people find the support of the hammock actually makes heights feel less intimidating."},
+    {"q": "How is aerial yoga different from regular yoga?", "a": "The hammock allows deeper stretches, supported inversions, and a different kind of core engagement. It also adds an element of play that regular yoga doesn't always have."}
+  ]
+}

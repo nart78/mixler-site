@@ -1,0 +1,40 @@
+{
+  "slug": "roller-skating-calgary",
+  "name": "Roller Skating",
+  "category": "active-outdoors",
+  "category_slug": "roller-skating",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["Groups Welcome", "All Skill Levels", "Active"],
+  "meta": {
+    "title": "Roller Skating in Calgary | Mixler",
+    "description": "Roller skating in Calgary is a retro, feel-good way to spend an evening. Great for groups, dates, and anyone who wants to move to music and have fun.",
+    "keywords": ["roller skating Calgary", "roller rink Calgary", "skating social events Calgary"]
+  },
+  "content": {
+    "subtitle": "Lace up and glide. Calgary's roller skating scene is pure good vibes.",
+    "intro": "Roller skating has made a serious comeback, and Calgary's scene brings the retro energy hard. Whether it's a themed skate night or a casual session with friends, the combination of music, movement, and wheels just works. It's one of those activities where everyone looks a little ridiculous at first, which makes it immediately bonding and fun.",
+    "breadcrumb_label": "Roller Skating Calgary",
+    "what_to_expect": [
+      {"icon": "🛼", "heading": "Skate rental included", "body": "Rinks provide rental skates in all sizes. If you own your own skates, bring them along for a better fit and feel."},
+      {"icon": "🎵", "heading": "Music-driven sessions", "body": "Themed skate nights often feature era-specific playlists, from 80s disco to current hits. The music sets the whole mood."},
+      {"icon": "🤸", "heading": "Skill range accepted", "body": "From first-timers gripping the wall to confident skaters doing backwards laps, everyone shares the floor. Skating rinks are genuinely welcoming spaces."},
+      {"icon": "💡", "heading": "Light shows and atmosphere", "body": "Many roller skating sessions feature disco lighting, mirror balls, and a full rink atmosphere that makes the whole thing feel like a proper event."}
+    ],
+    "tips": [
+      "Bend your knees. It's the single most important thing for balance and it's also what lets you absorb bumps without falling.",
+      "Take small strides at first rather than trying to glide fast. Control comes before speed.",
+      "Look ahead, not down at your feet. Where your eyes go, your body tends to follow.",
+      "Fall forward or sideways if you feel yourself going down. It's safer than trying to stay up at all costs.",
+      "Mixler loves organizing themed skate nights in Calgary. Join the waitlist and we'll let you know when one's in the works."
+    ],
+    "waitlist_heading": "Want to know when we run roller skating events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["ice-skating-calgary", "salsa-dancing-calgary", "swing-dancing-calgary", "bowling-calgary"]
+  },
+  "faq": [
+    {"q": "Is roller skating beginner-friendly?", "a": "Yes. Everyone starts somewhere and rinks are used to first-timers. Holding the wall is perfectly normal and nothing to be embarrassed about."},
+    {"q": "Can I rent skates at the rink?", "a": "Yes. All roller rinks provide rentals. If you want a better fit or performance, your own skates are always welcome."},
+    {"q": "What themed skate nights happen in Calgary?", "a": "80s nights, disco nights, and holiday-themed sessions are common. Check with local venues or Mixler's event listings for upcoming themes."},
+    {"q": "Is roller skating good exercise?", "a": "It's a surprisingly solid cardio workout. An hour of skating works your legs, core, and cardio in a way that feels more like fun than exercise."}
+  ]
+}

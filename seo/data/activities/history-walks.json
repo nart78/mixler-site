@@ -1,0 +1,40 @@
+{
+  "slug": "history-walks-calgary",
+  "name": "History Walks",
+  "category": "learning-culture",
+  "category_slug": "history-walks",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["Great for Solo", "All Skill Levels", "Outdoors"],
+  "meta": {
+    "title": "History Walks in Calgary | Mixler",
+    "description": "History walks in Calgary bring the city's past to life on foot. Learn about Inglewood, Fort Calgary, the flood, and stories behind buildings you walk past every day.",
+    "keywords": ["history walks Calgary", "Calgary historical tour", "walking tour Calgary"]
+  },
+  "content": {
+    "subtitle": "Walk Calgary's streets and discover the stories hiding in plain sight.",
+    "intro": "Calgary has more history than its relatively young age suggests, from Indigenous land use and the arrival of the North-West Mounted Police to the oil boom, the 1988 Olympics, and the devastating 2013 flood. History walks bring all of that to life through the actual streets and buildings where it happened. Local guides who genuinely love the city make these walks feel more like a good conversation than a lecture.",
+    "breadcrumb_label": "History Walks Calgary",
+    "what_to_expect": [
+      {"icon": "🏛️", "heading": "Guided storytelling on location", "body": "A knowledgeable guide leads the walk and tells stories tied to the specific spots you're standing in. The location makes the history feel real in a way a museum doesn't always achieve."},
+      {"icon": "🗺️", "heading": "Neighbourhood-specific routes", "body": "Different walks cover different areas. Inglewood, Chinatown, downtown, and the riverfront all have distinct histories and dedicated walking routes."},
+      {"icon": "📸", "heading": "Photo opportunities built in", "body": "Historical buildings, murals, and city views make history walks naturally photogenic. Guides often pause at the best visual spots."},
+      {"icon": "🕰️", "heading": "Two to three hours on foot", "body": "Most guided history walks run between 90 minutes and three hours, covering a few kilometres at a leisurely pace with plenty of stops."}
+    ],
+    "tips": [
+      "Wear comfortable walking shoes. The pace is slow but the distances add up, especially on longer routes.",
+      "Come with questions. Guides love curious participants and the best history walk conversations go off-script in the most interesting directions.",
+      "Look up. A lot of Calgary's architectural and historical detail is above eye level and most people never see it.",
+      "Check the weather and dress for it. History walks happen rain or shine, and a cold or wet day doesn't make the stories less interesting.",
+      "Mixler organizes history walk socials in Calgary, pairing local guide expertise with a friendly group format. Join the waitlist to hear about the next one."
+    ],
+    "waitlist_heading": "Want to know when we run history walk events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["photography-walks-calgary", "language-exchange-calgary", "book-club-calgary", "mountain-hikes-calgary"]
+  },
+  "faq": [
+    {"q": "Do I need to know Calgary history before joining a walk?", "a": "Not at all. History walks are designed to introduce you to stories you didn't know. Coming in curious rather than informed is completely fine."},
+    {"q": "What neighbourhoods do Calgary history walks cover?", "a": "Inglewood and the East Village are the most historically rich. Fort Calgary, Chinatown, Beltline, and downtown all have dedicated routes too."},
+    {"q": "Are history walks family-friendly?", "a": "Most are, though the pace and duration suit older children and adults best. Check with the organizer for walks that specifically cater to families."},
+    {"q": "Are Calgary history walks accessible?", "a": "Some routes stick to flat, paved paths. Others include uneven terrain or stairs. Most organizers publish accessibility info with their booking details."}
+  ]
+}

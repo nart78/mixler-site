@@ -1,0 +1,40 @@
+{
+  "slug": "book-club-calgary",
+  "name": "Book Club",
+  "category": "learning-culture",
+  "category_slug": "book-club",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["Great for Solo", "All Skill Levels", "Groups Welcome"],
+  "meta": {
+    "title": "Book Club in Calgary | Mixler",
+    "description": "Book clubs in Calgary are a warm, social way to read more and meet interesting people. From genre fiction to contemporary lit, there's a club for every reader.",
+    "keywords": ["book club Calgary", "reading group Calgary", "book club social Calgary"]
+  },
+  "content": {
+    "subtitle": "Read something good, then talk about it with people who actually get it.",
+    "intro": "A good book club turns reading from a solitary habit into a genuinely social one. Calgary has an active book club scene, from casual genre fiction groups to more literary circles that dig into contemporary and classic works. The conversation that happens around a shared book is often the most interesting part, because people bring different interpretations and life experiences that completely change how you see what you've read.",
+    "breadcrumb_label": "Book Club Calgary",
+    "what_to_expect": [
+      {"icon": "📚", "heading": "One book, many perspectives", "body": "The format is simple: everyone reads the same book and then meets to discuss it. The conversation that follows is almost never what you expect, which is what makes it good."},
+      {"icon": "☕", "heading": "Comfortable, informal setting", "body": "Most Calgary book clubs meet at cafes, libraries, or members' homes. The vibe is relaxed and the conversation tends to wander productively."},
+      {"icon": "🗓️", "heading": "Monthly rhythm", "body": "Most clubs meet monthly, giving members enough time to read without pressure. Some run themed months or genre rotations that keep the selection interesting."},
+      {"icon": "🤝", "heading": "A ready-made community", "body": "Book clubs attract thoughtful, curious people and the shared reading experience creates real connection faster than most social formats."}
+    ],
+    "tips": [
+      "Finish the book before the meeting if at all possible. Even getting through most of it puts you in a much better position to contribute.",
+      "Bring one specific passage or moment you want to discuss. Having something concrete to offer takes the pressure off general conversation.",
+      "Listen as much as you talk. The most interesting book club moments come from someone else's interpretation shifting your own.",
+      "Don't be afraid to say you didn't like the book. Disagreement within a group creates the best conversations, not universal praise.",
+      "Mixler runs social book club nights in Calgary where you can try the format without committing to a long-running group. Join the waitlist to hear about the next one."
+    ],
+    "waitlist_heading": "Want to know when we run book club events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["language-exchange-calgary", "mindfulness-calgary", "history-walks-calgary", "improv-classes-calgary"]
+  },
+  "faq": [
+    {"q": "Do I need to have read a lot of books to join a book club?", "a": "No. Book clubs don't test your literary credentials. They just need someone willing to read one book and show up ready to talk about it."},
+    {"q": "How are books typically chosen?", "a": "Most clubs rotate the selection responsibility among members. Some vote on a shortlist. Social book club events often pick the book in advance and post it ahead of time."},
+    {"q": "How long are book club meetings?", "a": "Usually one and a half to two hours. The conversation can run long when the book lands particularly well or sparks strong disagreement."},
+    {"q": "What genres work best for book clubs?", "a": "Books with strong characters, moral complexity, or cultural stakes tend to generate the best discussion. Literary fiction and contemporary nonfiction are popular choices."}
+  ]
+}

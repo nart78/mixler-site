@@ -1,0 +1,40 @@
+{
+  "slug": "language-exchange-calgary",
+  "name": "Language Exchange",
+  "category": "learning-culture",
+  "category_slug": "language-exchange",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["Great for Solo", "No Experience Needed", "All Skill Levels"],
+  "meta": {
+    "title": "Language Exchange in Calgary | Mixler",
+    "description": "Language exchange events in Calgary connect you with native speakers who want to learn your language. Practice conversational skills in a casual, social setting.",
+    "keywords": ["language exchange Calgary", "language meetup Calgary", "practice Spanish French Calgary"]
+  },
+  "content": {
+    "subtitle": "Trade languages with real people in Calgary. No textbooks required.",
+    "intro": "Language exchange events connect people who speak different languages and want to practice each other's. You spend half the time speaking your partner's target language and half the time helping them with yours. Calgary is one of the most multicultural cities in Canada, which means the language mix at exchange events is genuinely impressive. Spanish, French, Mandarin, Portuguese, and Arabic are common, and the conversation often takes on a life of its own.",
+    "breadcrumb_label": "Language Exchange Calgary",
+    "what_to_expect": [
+      {"icon": "🗣️", "heading": "Structured partner conversations", "body": "Events typically pair you with one or more partners and use a timer to divide speaking time between languages. The structure keeps it fair and moving."},
+      {"icon": "🌍", "heading": "A genuinely global crowd", "body": "Calgary's diversity makes language exchanges vibrant. You're likely to find native speakers of the language you want to practice in any given room."},
+      {"icon": "😄", "heading": "Mistakes are celebrated", "body": "Language exchange culture is completely supportive of errors. Saying the wrong word or stumbling over grammar is expected and met with patience."},
+      {"icon": "☕", "heading": "Casual, cafe-style atmosphere", "body": "Many exchanges happen at cafes or communal spaces. The informal setting makes it feel more like meeting friends than attending a language class."}
+    ],
+    "tips": [
+      "Bring a notebook. You'll hear vocabulary you want to remember and having a place to write it keeps you from losing it by morning.",
+      "Don't switch to English the moment things get difficult. The struggle is where the learning actually happens.",
+      "Ask about culture, not just grammar. The best language exchange conversations go beyond translation and into real life stories.",
+      "Come regularly. Language exchange benefits compound over time and the community you build makes each session richer.",
+      "Mixler has run language exchange socials in Calgary. Join the waitlist and let us know which language you're learning."
+    ],
+    "waitlist_heading": "Want to know when we run language exchange events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["improv-classes-calgary", "book-club-calgary", "speed-friending-calgary", "history-walks-calgary"]
+  },
+  "faq": [
+    {"q": "Do I need to be fluent to join a language exchange?", "a": "No. Language exchanges welcome all levels. Even beginners have something to offer: you're a native speaker of your own language, which is exactly what your partner needs."},
+    {"q": "What languages are most common at Calgary exchanges?", "a": "Spanish, French, and Mandarin are the most frequently represented. Portuguese, Arabic, and Japanese also show up regularly given Calgary's diverse population."},
+    {"q": "How long is a typical language exchange event?", "a": "Most run two to three hours with a mix of structured pair time and casual open mingling. You can leave when you've had enough."},
+    {"q": "Is language exchange better than a class?", "a": "It's different. Classes teach structure and grammar. Exchange events build fluency and confidence through actual conversation. Both together work best."}
+  ]
+}

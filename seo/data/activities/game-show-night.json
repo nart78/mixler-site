@@ -1,0 +1,40 @@
+{
+  "slug": "game-show-night-calgary",
+  "name": "Game Show Nights",
+  "category": "games-social",
+  "category_slug": "game-show-night",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["Groups Welcome", "All Skill Levels", "Great for Solo"],
+  "meta": {
+    "title": "Game Show Nights in Calgary | Mixler",
+    "description": "Live game show nights in Calgary where you compete in real rounds of your favourite TV-style games. Fun for groups, dates, and solo players.",
+    "keywords": ["game show night Calgary", "live game show Calgary", "interactive game night Calgary"]
+  },
+  "content": {
+    "subtitle": "Channel your inner contestant at a live game show in Calgary.",
+    "intro": "Game show nights bring the energy of your favourite TV formats right into the room, with a live host, buzzer rounds, and real prizes up for grabs. Calgary has a solid scene for this kind of event, and they fill up fast because people genuinely love competing. Whether you're playing solo or rallying a crew, it's one of those nights where the energy just takes over.",
+    "breadcrumb_label": "Game Show Nights Calgary",
+    "what_to_expect": [
+      {"icon": "🎙️", "heading": "A live host running the show", "body": "Every good game show night has a host who keeps things moving, funny, and a little chaotic. Expect someone with energy who knows how to work a crowd."},
+      {"icon": "🏆", "heading": "Rounds inspired by real formats", "body": "Think Jeopardy-style trivia, Price is Right games, or Deal or No Deal. Formats vary by event but the competitive spirit stays consistent."},
+      {"icon": "🔔", "heading": "Buzzer-in moments", "body": "Speed matters. You'll race to answer, race to guess, or race to spin. That urgency is what makes game show nights so electric compared to regular trivia."},
+      {"icon": "🎉", "heading": "Crowd participation", "body": "Even when you're not on stage, you're in it. The audience cheers, votes, or plays along. No one's just watching from the sidelines."}
+    ],
+    "tips": [
+      "Arrive a few minutes early so you can register as a contestant before spots fill up.",
+      "Bring a loud, enthusiastic group. The crowd energy you bring back is the energy you get back.",
+      "Brush up on pop culture and general knowledge if you want an edge on the trivia rounds.",
+      "Don't overthink it. Quick confident answers often beat careful slow ones in buzzer formats.",
+      "Mixler posts game show nights when they're coming to Calgary so you can grab a spot before they sell out."
+    ],
+    "waitlist_heading": "Want to know when we run game show night events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["trivia-night-calgary", "murder-mystery-calgary", "bingo-calgary", "escape-rooms-calgary"]
+  },
+  "faq": [
+    {"q": "Do I need a team for a game show night?", "a": "No. Many events let you sign up solo and get placed on a team, or you can compete individually depending on the format."},
+    {"q": "Are there actual prizes?", "a": "Usually yes. Prizes range from bar tabs and gift cards to event merchandise. It depends on the host and venue."},
+    {"q": "What formats are most common?", "a": "Jeopardy-style trivia and Price is Right games are the most popular in Calgary. Some events mix multiple formats in one night."},
+    {"q": "Is it beginner-friendly?", "a": "Absolutely. You don't need to be a trivia expert. The fun comes from the energy and competition, not just knowing the right answers."}
+  ]
+}

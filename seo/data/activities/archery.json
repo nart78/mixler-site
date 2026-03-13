@@ -1,0 +1,40 @@
+{
+  "slug": "archery-calgary",
+  "name": "Archery",
+  "category": "active-outdoors",
+  "category_slug": "archery",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "No Experience Needed", "Active"],
+  "meta": {
+    "title": "Archery in Calgary | Mixler",
+    "description": "Try archery in Calgary at a local range or social event. No experience needed, and instructors help you nail your form from the very first arrow.",
+    "keywords": ["archery Calgary", "archery classes Calgary", "beginner archery Calgary"]
+  },
+  "content": {
+    "subtitle": "Pull back, focus, and find out if you have what it takes.",
+    "intro": "Archery is one of those activities that looks intimidating but becomes weirdly meditative once you get the hang of it. Calgary has a handful of ranges and social events that welcome total beginners, and the focus required to land a good shot makes it a surprisingly effective way to unwind. Whether you're going solo or with friends, it's a satisfying skill to pick up.",
+    "breadcrumb_label": "Archery Calgary",
+    "what_to_expect": [
+      {"icon": "🏹", "heading": "Equipment provided", "body": "You won't need to bring your own bow or gear. Venues supply everything you need, sized appropriately for beginners and experienced shooters alike."},
+      {"icon": "🎯", "heading": "Instructor-led technique", "body": "An instructor covers stance, draw, aim, and release before you take your first shot. Good form from the start makes a huge difference."},
+      {"icon": "🧘", "heading": "Focus and calm", "body": "Archery demands concentration. Between shots, you'll notice everything else fades out. It's unexpectedly good for clearing your head."},
+      {"icon": "📈", "heading": "Fast visible progress", "body": "Within an hour you'll see your groupings tighten noticeably. That measurable improvement keeps people coming back for more sessions."}
+    ],
+    "tips": [
+      "Don't pull the string with your back muscles, not just your arm. Instructors will show you the difference.",
+      "Stand perpendicular to the target, not facing it straight on. Your stance is half the shot.",
+      "Focus on a specific spot on the target, not just the general ring. Specificity improves accuracy significantly.",
+      "Let the bow arm stay up after the release. Dropping it early pulls your shots low.",
+      "Mixler keeps an eye on archery social events in Calgary. Join the waitlist and we'll let you know when one's scheduled."
+    ],
+    "waitlist_heading": "Want to know when we run archery events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["axe-throwing-calgary", "rock-climbing-calgary", "pickleball-calgary", "ping-pong-calgary"]
+  },
+  "faq": [
+    {"q": "Can I try archery if I've never done it before?", "a": "Yes. Most venues and social events are designed for beginners, and an instructor walks you through everything before your first shot."},
+    {"q": "What age is archery suitable for?", "a": "Archery social events in Calgary typically cater to adults 19 and up, though family-oriented ranges exist for all ages."},
+    {"q": "How long is a typical archery session?", "a": "Expect one to two hours, depending on the format. That's enough time to get comfortable and see real improvement."},
+    {"q": "Is archery physical?", "a": "It uses muscles you don't often train, particularly in the back and shoulders. You'll feel it the next day, but it's not intense cardio."}
+  ]
+}

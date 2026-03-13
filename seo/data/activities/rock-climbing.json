@@ -1,0 +1,40 @@
+{
+  "slug": "rock-climbing-calgary",
+  "name": "Rock Climbing",
+  "category": "active-outdoors",
+  "category_slug": "rock-climbing",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["Active", "All Skill Levels", "Groups Welcome"],
+  "meta": {
+    "title": "Rock Climbing in Calgary | Mixler",
+    "description": "Rock climbing in Calgary is more accessible than ever. Indoor gyms welcome total beginners, and the social climbing scene is friendly and welcoming.",
+    "keywords": ["rock climbing Calgary", "indoor rock climbing Calgary", "bouldering Calgary"]
+  },
+  "content": {
+    "subtitle": "Scale the wall, beat your fear, impress yourself.",
+    "intro": "Calgary has a strong rock climbing community, and indoor gyms have made the sport more accessible than ever. Whether you're trying bouldering for the first time or working on your top-rope technique, the climbing gym culture here is welcoming and surprisingly social. It's one of those activities where you'll get a serious workout and barely notice because you're too focused on the next hold.",
+    "breadcrumb_label": "Rock Climbing Calgary",
+    "what_to_expect": [
+      {"icon": "🧗", "heading": "Bouldering or top-rope options", "body": "Most Calgary gyms offer both. Bouldering is lower to the ground with no harness, while top-rope uses a harness and lets you climb higher walls."},
+      {"icon": "👟", "heading": "Rental gear available", "body": "Shoes, harnesses, and chalk bags are all rentable at the gym. You don't need to buy anything before your first visit."},
+      {"icon": "💪", "heading": "Full-body workout", "body": "Climbing uses your arms, core, legs, and grip strength all at once. You'll feel muscles you forgot you had, in the best possible way."},
+      {"icon": "🤝", "heading": "Supportive community", "body": "Climbers are known for helping each other out. Don't be surprised if a stranger offers tips or cheers you through a tough section."}
+    ],
+    "tips": [
+      "Start on the easier grades and build up. It's more fun to succeed often than to struggle and get frustrated.",
+      "Use your legs, not just your arms. Pushing up through your feet is more efficient and saves your upper body for harder sections.",
+      "Chalk your hands between attempts but don't overdo it. Too much chalk can actually reduce grip.",
+      "Rest between climbs. Shaking out your arms and breathing helps more than most people expect.",
+      "Mixler organizes group climbing outings in Calgary for people who want to go with a crew. Join the waitlist to get notified."
+    ],
+    "waitlist_heading": "Want to know when we run rock climbing events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["axe-throwing-calgary", "archery-calgary", "aerial-yoga-calgary", "mountain-hikes-calgary"]
+  },
+  "faq": [
+    {"q": "Is rock climbing beginner-friendly?", "a": "Yes. Most Calgary climbing gyms offer intro sessions and the bouldering section is perfect for people just starting out with no gear needed."},
+    {"q": "What should I wear?", "a": "Comfortable athletic wear that doesn't restrict your legs. Gym shoes work until you rent climbing shoes, which make a noticeable difference."},
+    {"q": "Is it scary if I'm afraid of heights?", "a": "Bouldering stays low enough that height isn't a big factor. Top-rope does get you off the ground, but many people find the focus on the route overrides the fear."},
+    {"q": "Can I go alone?", "a": "Absolutely. Climbing gyms are very solo-friendly, and bouldering especially requires no partner. Many people make friends at the gym naturally."}
+  ]
+}

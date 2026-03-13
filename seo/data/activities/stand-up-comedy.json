@@ -1,0 +1,40 @@
+{
+  "slug": "stand-up-comedy-calgary",
+  "name": "Stand-Up Comedy",
+  "category": "learning-culture",
+  "category_slug": "stand-up-comedy",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Great for Solo", "No Experience Needed"],
+  "meta": {
+    "title": "Stand-Up Comedy in Calgary | Mixler",
+    "description": "Stand-up comedy in Calgary ranges from big touring shows to intimate open mics where you can try your own set. A thriving scene and welcoming crowd.",
+    "keywords": ["stand-up comedy Calgary", "comedy nights Calgary", "open mic comedy Calgary"]
+  },
+  "content": {
+    "subtitle": "Calgary's comedy scene runs from intimate open mics to touring headliners.",
+    "intro": "Calgary has a legitimate comedy scene, with open mics running several nights a week and touring headliners coming through regularly. Whether you want to sit in the audience and laugh hard, or you're curious about actually getting up and trying a set, there are options across the city at every level. The community of local comedians in Calgary is collaborative and tends to be surprisingly supportive of first-timers on the mic.",
+    "breadcrumb_label": "Stand-Up Comedy Calgary",
+    "what_to_expect": [
+      {"icon": "🎤", "heading": "Open mic and showcase formats", "body": "Open mics give anyone five minutes at the mic. Showcases feature curated lineups of stronger acts. Both are valid and often happen at the same venue on different nights."},
+      {"icon": "😂", "heading": "A wide range of styles", "body": "Calgary's comedy scene has storytelling, observational, dark, and absurdist acts. Different nights have different flavours, so explore before picking a favourite spot."},
+      {"icon": "🍻", "heading": "Bar and venue atmosphere", "body": "Most comedy nights are held at bars or dedicated comedy clubs. The casual setting keeps the energy relaxed and makes the show feel intimate rather than formal."},
+      {"icon": "👀", "heading": "Interactive and unpredictable", "body": "Live comedy is different every time. The crowd, the energy, the occasional bomb that somehow becomes funny. It's an experience you can't replicate on a streaming service."}
+    ],
+    "tips": [
+      "Sit close to the front if you want the full experience. The comedian can see the front rows, which makes the interaction more real.",
+      "Don't heckle. It derails the show for everyone and rarely goes the way the heckler hopes.",
+      "If you're trying your first open mic set, write more material than you think you need and time yourself at home first.",
+      "Record your set if the venue allows it. Watching it back is uncomfortable but incredibly useful for improvement.",
+      "Mixler keeps track of comedy nights and events in Calgary. Join the waitlist and we'll let you know when we're organizing a group comedy night out."
+    ],
+    "waitlist_heading": "Want to know when we run comedy night events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["improv-classes-calgary", "trivia-night-calgary", "pub-quiz-calgary", "murder-mystery-calgary"]
+  },
+  "faq": [
+    {"q": "Where are the best comedy nights in Calgary?", "a": "Several bars and clubs host regular comedy nights. Yuk Yuk's is a well-known dedicated comedy club, and various bars run open mics throughout the week."},
+    {"q": "Can anyone do an open mic?", "a": "Yes. Open mics are open to all. You typically sign up at the venue on the night. Most spots give you five minutes."},
+    {"q": "Is the crowd at Calgary comedy nights friendly?", "a": "Generally very much so. Calgary audiences are warm and want performers to do well. The open mic crowd in particular tends to be encouraging."},
+    {"q": "What should I expect at my first comedy show?", "a": "Arrive a bit early to get a good seat, grab a drink, and relax. The vibe is casual and the shows are usually 60 to 90 minutes."}
+  ]
+}

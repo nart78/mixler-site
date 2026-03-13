@@ -1,0 +1,40 @@
+{
+  "slug": "pickleball-calgary",
+  "name": "Pickleball",
+  "category": "active-outdoors",
+  "category_slug": "pickleball",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Groups Welcome", "Active"],
+  "meta": {
+    "title": "Pickleball in Calgary | Mixler",
+    "description": "Pickleball in Calgary is one of the fastest-growing social sports around. Easy to learn, genuinely competitive, and a great way to meet people on the court.",
+    "keywords": ["pickleball Calgary", "pickleball courts Calgary", "social pickleball Calgary"]
+  },
+  "content": {
+    "subtitle": "The fastest-growing sport in Canada is a whole lot of fun in Calgary.",
+    "intro": "Pickleball has exploded in Calgary over the last few years, and the reason is simple: it's extremely easy to pick up and almost immediately enjoyable. The smaller court, slower ball, and simple rules mean you're having real rallies within your first session. The social scene around pickleball is also fantastic, with drop-in nights and mixed-level events happening across the city regularly.",
+    "breadcrumb_label": "Pickleball Calgary",
+    "what_to_expect": [
+      {"icon": "🏸", "heading": "Equipment provided at most venues", "body": "Paddles and balls are usually available to borrow at drop-in events. Dedicated courts have equipment on site, and many parks have outdoor courts too."},
+      {"icon": "⚡", "heading": "Fast learning curve", "body": "Most people are playing real points within 15 minutes of their first explanation. The compact court and slower pace give beginners a genuine shot at competitive play."},
+      {"icon": "🔄", "heading": "Rotation-based drop-in format", "body": "Drop-in pickleball typically uses a paddle queue system where you rotate onto the court, play a game, and rotate off. You'll play several games per session."},
+      {"icon": "😄", "heading": "Very social atmosphere", "body": "The pickleball community in Calgary is known for being welcoming and energetic. Trash talk is friendly and conversations flow easily between games."}
+    ],
+    "tips": [
+      "Stay out of the kitchen zone near the net unless you're hitting a ball that bounced there. Volleying from the kitchen is a fault.",
+      "The dink shot is your friend. A soft, controlled shot into the opponent's kitchen forces them to lift the ball and gives you control of the point.",
+      "Move to the kitchen line after your third shot whenever possible. Court position wins more points than power.",
+      "Communicate constantly with your doubles partner. Calling mine or yours early prevents collisions and missed balls.",
+      "Mixler runs pickleball social nights in Calgary. Join the waitlist and we'll let you know when the next event is on."
+    ],
+    "waitlist_heading": "Want to know when we run pickleball events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["ping-pong-calgary", "bowling-calgary", "archery-calgary", "axe-throwing-calgary"]
+  },
+  "faq": [
+    {"q": "Is pickleball suitable for beginners?", "a": "It's one of the best sports for beginners. The rules are simple, the court is small, and the slower ball gives you more time to react than tennis."},
+    {"q": "Where can I play pickleball in Calgary?", "a": "Calgary has both indoor and outdoor courts. Recreation centres and community centres often have drop-in sessions, and outdoor courts are found in several parks."},
+    {"q": "Do I need my own equipment?", "a": "Not to start. Drop-in events usually have loaner paddles. Once you're hooked, investing in your own paddle makes a noticeable difference."},
+    {"q": "Can I play pickleball alone?", "a": "Drop-in formats pair you with other players, so showing up solo is totally normal. Most sessions are quick to get you matched up and on the court."}
+  ]
+}

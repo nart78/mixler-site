@@ -1,0 +1,40 @@
+{
+  "slug": "improv-classes-calgary",
+  "name": "Improv Classes",
+  "category": "learning-culture",
+  "category_slug": "improv-classes",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["No Experience Needed", "Great for Solo", "All Skill Levels"],
+  "meta": {
+    "title": "Improv Classes in Calgary | Mixler",
+    "description": "Improv classes in Calgary build confidence, quick thinking, and social skills through play. No experience needed and the beginner community is genuinely supportive.",
+    "keywords": ["improv classes Calgary", "improv comedy Calgary", "beginner improv Calgary"]
+  },
+  "content": {
+    "subtitle": "Yes, and your way to better confidence, sharper thinking, and real laughs.",
+    "intro": "Improv classes in Calgary are one of the best-kept secrets for people who want to feel more comfortable in social situations, sharpen their quick thinking, or just try something wildly different on a weeknight. The core rule of improv, yes-and, teaches you to accept what's given and build on it, and that skill transfers to real life in ways that surprise most people. Calgary's improv community is warm, funny, and genuinely welcoming to nervous first-timers.",
+    "breadcrumb_label": "Improv Classes Calgary",
+    "what_to_expect": [
+      {"icon": "🎭", "heading": "Warm-up games and exercises", "body": "Classes start with group games that get your brain and body loose before any actual scene work. These are fun on their own and ease the nerves fast."},
+      {"icon": "🤝", "heading": "Partner and group scenes", "body": "You'll work with partners and small groups to build scenes from nothing. The instructor guides the action and helps you understand what's working."},
+      {"icon": "😂", "heading": "Laughing is mandatory", "body": "You will laugh. At yourself, with others, at the absurdity of what just happened. That's the whole point and it makes the experience immediately joyful."},
+      {"icon": "🧠", "heading": "Real skills, real fast", "body": "Listening, adaptability, quick thinking, and comfort with uncertainty. These show up in improv immediately and start shaping how you operate day to day."}
+    ],
+    "tips": [
+      "Say yes before you figure out how. The instinct to block or question a premise kills scenes. Trust first, figure it out second.",
+      "Make your scene partner look good. When everyone is focused on making the other person shine, the whole scene elevates automatically.",
+      "Don't try to be funny. Focus on being real and honest in the scene. Funny emerges naturally from genuine reactions.",
+      "Show up consistently. Improv builds on itself and you'll improve dramatically from your first class to your fourth.",
+      "Mixler has partnered with Calgary improv spaces to run social improv events. Join the waitlist and we'll let you know when something's coming up."
+    ],
+    "waitlist_heading": "Want to know when we run improv events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["stand-up-comedy-calgary", "language-exchange-calgary", "speed-friending-calgary", "board-games-calgary"]
+  },
+  "faq": [
+    {"q": "Do I need acting experience for improv?", "a": "None at all. Improv isn't about performing. It's about reacting honestly and playing with your scene partners. Beginners are always welcome."},
+    {"q": "Is improv just for extroverts?", "a": "No. Many introverts find improv extremely valuable because the structure and rules give you a clear framework to operate in, which reduces social anxiety significantly."},
+    {"q": "Will I have to perform in front of people?", "a": "Beginner classes work mostly in pairs or small groups within the class. Public performance is optional and usually only part of more advanced levels."},
+    {"q": "How many classes until I feel comfortable?", "a": "Most people feel comfortable by their third or fourth class. The first one is nerve-wracking for almost everyone, and that's completely normal."}
+  ]
+}

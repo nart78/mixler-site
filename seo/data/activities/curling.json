@@ -1,0 +1,40 @@
+{
+  "slug": "curling-calgary",
+  "name": "Curling",
+  "category": "active-outdoors",
+  "category_slug": "curling",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["Groups Welcome", "No Experience Needed", "All Skill Levels"],
+  "meta": {
+    "title": "Curling in Calgary | Mixler",
+    "description": "Try curling in Calgary at a local club or social event. It's one of Canada's most social sports and perfect for groups who've never held a broom before.",
+    "keywords": ["curling Calgary", "learn to curl Calgary", "curling social events Calgary"]
+  },
+  "content": {
+    "subtitle": "Canada's most social sport is waiting for you at the rink.",
+    "intro": "Curling is basically the most Canadian thing you can do on a weeknight, and Calgary has some great clubs that love bringing in newcomers. The sport is a perfect mix of strategy, light athleticism, and genuine team bonding, and the culture at most rinks is incredibly welcoming. If you've never thrown a stone before, a learn-to-curl session will have you hooked within an hour.",
+    "breadcrumb_label": "Curling Calgary",
+    "what_to_expect": [
+      {"icon": "🥌", "heading": "Equipment and ice provided", "body": "Clubs supply stones, brooms, and sliders. You just need to show up in comfortable layers and clean, flat-soled shoes."},
+      {"icon": "👨‍🏫", "heading": "Instruction from the start", "body": "A club member or coach will walk you through delivery, sweeping, and basic strategy. You'll be playing a real end within the first 20 minutes."},
+      {"icon": "🎯", "heading": "Strategy and teamwork", "body": "Every shot involves a call from the skip and a sweeping decision from the team. It's more tactical than it looks and way more fun because of it."},
+      {"icon": "🍺", "heading": "The social ritual after", "body": "Post-game drinks at the club lounge are basically part of the sport. Curling clubs in Calgary take their social scene seriously."}
+    ],
+    "tips": [
+      "Layer up. Rinks are cold on the ice and warmer off it, so something you can remove easily works best.",
+      "Don't grip the handle too tight. A relaxed delivery lets the stone rotate naturally and curl properly.",
+      "Watch where the skip is pointing and trust the call. Strategy comes from experience, so lean on your team early on.",
+      "Sweep hard when they call for it. It actually makes a real difference to the stone's speed and direction.",
+      "Mixler has run group curling nights in Calgary before. Join the waitlist and let us know you're interested so we can plan the next one."
+    ],
+    "waitlist_heading": "Want to know when we run curling events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["bowling-calgary", "ping-pong-calgary", "pickleball-calgary", "ice-skating-calgary"]
+  },
+  "faq": [
+    {"q": "Do I need curling experience?", "a": "None needed. Learn-to-curl sessions are designed specifically for people who have never been on the ice before."},
+    {"q": "What should I wear?", "a": "Comfortable athletic clothes in layers. Flat-soled shoes or runners work fine. Avoid anything with a heel that could damage the ice."},
+    {"q": "Can I go without a full team?", "a": "Many social curling events pair you with a team if you show up solo or in smaller groups. Just check with the organizer beforehand."},
+    {"q": "Is curling physically demanding?", "a": "It's light to moderate activity. The delivery requires some flexibility, and sweeping gets your heart rate up. It's accessible to most fitness levels."}
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "journaling-night-calgary",
+  "name": "Journaling Night",
+  "category": "wellness",
+  "category_slug": "journaling-night",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["Great for Solo", "No Experience Needed", "All Skill Levels"],
+  "meta": {
+    "title": "Journaling Night in Calgary | Mixler",
+    "description": "Journaling nights in Calgary combine guided prompts, quiet writing time, and optional sharing in a warm, low-pressure setting. A surprisingly powerful evening out.",
+    "keywords": ["journaling night Calgary", "guided journaling Calgary", "writing workshop Calgary"]
+  },
+  "content": {
+    "subtitle": "Put pen to paper, get out of your head, and actually process something.",
+    "intro": "Journaling night events in Calgary bring people together to write in a facilitated setting, using prompts that help you explore things you wouldn't usually sit still long enough to think about. The group energy makes it easier to actually settle in and write, and the optional sharing that follows often creates genuinely meaningful moments. You don't need to be a writer. You just need a pen and the willingness to show up.",
+    "breadcrumb_label": "Journaling Night Calgary",
+    "what_to_expect": [
+      {"icon": "✍️", "heading": "Facilitated prompts throughout the evening", "body": "A facilitator introduces writing prompts at intervals and gives you quiet time to write. Some prompts are reflective, some are imaginative, and some catch you off guard in the best way."},
+      {"icon": "🕯️", "heading": "A genuinely calm atmosphere", "body": "Journaling events are designed to feel like a warm, protected space. Music, ambient lighting, and the focused energy of the group create something that's hard to replicate alone."},
+      {"icon": "🗣️", "heading": "Optional sharing circles", "body": "After certain prompts, you can share what you wrote if you'd like. There's never pressure, and listening to others often deepens your own reflections."},
+      {"icon": "📓", "heading": "Bring your own journal", "body": "Most events encourage you to bring a journal you'll keep using. Some provide paper. Either way, what you write is entirely yours and never required to be shared."}
+    ],
+    "tips": [
+      "Don't edit while you write. The inner critic kills the honesty that makes journaling valuable. Write fast and messy.",
+      "If you get stuck on a prompt, write that you're stuck and keep going from there. The block is usually where the most interesting material lives.",
+      "Try arriving with no agenda other than to see what comes up. Journaling night is not a productivity exercise. It's a presence exercise.",
+      "Date every entry. The future version of you who finds the journal will thank you.",
+      "Mixler hosts journaling night events in Calgary as part of our wellness series. Join the waitlist and we'll let you know when the next one is on."
+    ],
+    "waitlist_heading": "Want to know when we run journaling night events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["mindfulness-calgary", "book-club-calgary", "meditation-calgary", "vision-board-calgary"]
+  },
+  "faq": [
+    {"q": "Do I need to be a good writer for journaling night?", "a": "No. Journaling is a personal practice, not a performance. No one grades your grammar, and no one reads what you write unless you choose to share it."},
+    {"q": "What kind of prompts are used?", "a": "Prompts vary by event and facilitator. Common themes include relationships, values, goals, gratitude, fears, and identity. Some events focus on a specific theme for the whole night."},
+    {"q": "What should I bring?", "a": "A journal and a pen are the main things. Some people bring a cozy blanket or tea. Check the event details to see if materials are provided."},
+    {"q": "Is journaling night right for introverts?", "a": "Yes. It's one of the most introvert-friendly social wellness events because the activity itself is solitary, and sharing is always optional."}
+  ]
+}

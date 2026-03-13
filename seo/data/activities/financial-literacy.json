@@ -1,0 +1,40 @@
+{
+  "slug": "financial-literacy-calgary",
+  "name": "Financial Literacy Nights",
+  "category": "learning-culture",
+  "category_slug": "financial-literacy",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["Great for Solo", "No Experience Needed", "All Skill Levels"],
+  "meta": {
+    "title": "Financial Literacy Nights in Calgary | Mixler",
+    "description": "Financial literacy nights in Calgary break down investing, budgeting, and money management in plain language. No jargon, no sales pitch, just real education.",
+    "keywords": ["financial literacy Calgary", "money management events Calgary", "personal finance workshop Calgary"]
+  },
+  "content": {
+    "subtitle": "Learn how money actually works, without the jargon or the sales pitch.",
+    "intro": "Financial literacy events in Calgary fill a real gap: most people want to understand budgeting, investing, and financial planning better, but don't know where to start or who to trust. These events bring in educators, planners, and community members to share practical knowledge in a casual setting. No products to sell, no pressure, just honest conversation about money in a city where real estate and energy sector volatility make financial literacy genuinely useful.",
+    "breadcrumb_label": "Financial Literacy Nights Calgary",
+    "what_to_expect": [
+      {"icon": "💰", "heading": "Practical, applicable topics", "body": "Sessions typically cover things like registered accounts (TFSA, RRSP), budgeting methods, paying down debt, or understanding your credit. Practical over theoretical."},
+      {"icon": "🎤", "heading": "Guest speakers and facilitators", "body": "Many financial literacy events feature certified financial planners or experienced community members. Look for events that disclose their speakers' credentials upfront."},
+      {"icon": "🙋", "heading": "Q and A format", "body": "The best sessions make room for questions. The questions other people ask often address exactly what you were wondering but didn't want to ask first."},
+      {"icon": "📝", "heading": "Worksheets and take-homes", "body": "Good events leave you with something actionable: a budget template, a list of resources, or a framework you can apply immediately. Not just information but direction."}
+    ],
+    "tips": [
+      "Write down your most pressing money question before you arrive. Having a specific thing you want answered keeps you focused and helps you get real value.",
+      "Don't be embarrassed about where you're starting from. Every person in the room is at a different place and everyone benefits from different parts of the session.",
+      "Ask about conflicts of interest if someone is recommending specific products or companies. Good financial educators are transparent about their incentives.",
+      "Follow up on concepts you don't fully understand. One session plants seeds. Your own research afterward is where the real learning happens.",
+      "Mixler hosts financial literacy nights in Calgary to help people get started with their money in a no-pressure, community setting. Join the waitlist to get notified."
+    ],
+    "waitlist_heading": "Want to know when we run financial literacy events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["book-club-calgary", "language-exchange-calgary", "mindfulness-calgary", "improv-classes-calgary"]
+  },
+  "faq": [
+    {"q": "Are financial literacy nights free?", "a": "Many are free or low-cost community events. Some may charge a small fee for materials or a guest speaker. Check the event listing for pricing."},
+    {"q": "Will someone try to sell me something?", "a": "Community-focused financial literacy events are non-commercial. Be cautious of any event that feels like a lead generation tool for financial products."},
+    {"q": "What level of knowledge do I need?", "a": "None. These events are designed specifically for people who feel lost when it comes to money. Bring your beginner questions."},
+    {"q": "Are these events relevant if I already invest?", "a": "Often yes. Even experienced investors find value in tax strategy, registered account optimization, or simply hearing how other people approach their finances."}
+  ]
+}

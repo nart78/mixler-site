@@ -1,0 +1,40 @@
+{
+  "slug": "axe-throwing-calgary",
+  "name": "Axe Throwing",
+  "category": "active-outdoors",
+  "category_slug": "axe-throwing",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["Groups Welcome", "No Experience Needed", "Active"],
+  "meta": {
+    "title": "Axe Throwing in Calgary | Mixler",
+    "description": "Axe throwing in Calgary is one of the most satisfying group activities you can book. No experience needed and coaches walk you through it all.",
+    "keywords": ["axe throwing Calgary", "axe throwing events Calgary", "group axe throwing Calgary"]
+  },
+  "content": {
+    "subtitle": "Throw sharp things at targets and feel immediately powerful.",
+    "intro": "Axe throwing has become one of Calgary's favourite group outings, and it's not hard to see why. There's something deeply satisfying about landing a solid throw, and you don't need any experience to have a blast. Most venues have coaches on hand to get you throwing confidently within the first few minutes, and the competitive format keeps things fun all night.",
+    "breadcrumb_label": "Axe Throwing Calgary",
+    "what_to_expect": [
+      {"icon": "🪓", "heading": "Coaching from the start", "body": "A trained coach walks you through grip, stance, and release before you ever throw. Most people land their first bullseye within 15 minutes."},
+      {"icon": "🎯", "heading": "Lane-style setup", "body": "You'll throw at a wooden target from a set distance. Groups share lanes so there's plenty of cheering between throws."},
+      {"icon": "🏆", "heading": "Built-in tournaments", "body": "Many venues run mini-tournaments during your session so there's always something on the line. Winner gets serious bragging rights."},
+      {"icon": "🍺", "heading": "Food and drinks available", "body": "Most Calgary axe throwing spots have a bar or snack options nearby. Throwing axes and having a cold drink after? Yes."}
+    ],
+    "tips": [
+      "Wear closed-toe shoes. It's a safety requirement at every venue.",
+      "Don't overthink your release. A relaxed, smooth throw beats a tense, forced one every time.",
+      "Listen to your coach even if you've thrown before. Each venue has slightly different targets and distances.",
+      "Make it a competition. Setting stakes (even just bragging rights) makes every throw more exciting.",
+      "Mixler sometimes organizes group axe throwing outings in Calgary. Join the waitlist to be first to know."
+    ],
+    "waitlist_heading": "Want to know when we run axe throwing events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["archery-calgary", "bowling-calgary", "ping-pong-calgary", "rock-climbing-calgary"]
+  },
+  "faq": [
+    {"q": "Do I need experience to try axe throwing?", "a": "None at all. Coaches teach you everything from scratch, and most people are throwing confidently within their first few turns."},
+    {"q": "Is axe throwing safe?", "a": "Yes, when done in a supervised venue. All sessions include safety briefings, coaches on the floor, and proper lane barriers."},
+    {"q": "What should I wear?", "a": "Closed-toe shoes are mandatory. Comfortable, casual clothes work best. Avoid anything too loose around the arms."},
+    {"q": "How long is a typical session?", "a": "Most sessions run 60 to 90 minutes, which is plenty of time to get coached, practice, and run a tournament with your group."}
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "ping-pong-calgary",
+  "name": "Ping Pong",
+  "category": "active-outdoors",
+  "category_slug": "ping-pong",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["All Skill Levels", "Groups Welcome", "Active"],
+  "meta": {
+    "title": "Ping Pong in Calgary | Mixler",
+    "description": "Ping pong nights in Calgary are fast, fun, and wildly social. Play singles or doubles, compete in a round-robin, and actually break a sweat doing it.",
+    "keywords": ["ping pong Calgary", "table tennis Calgary", "ping pong social events Calgary"]
+  },
+  "content": {
+    "subtitle": "Fast rallies, trash talk, and a surprisingly good workout.",
+    "intro": "Ping pong is deceptively athletic and completely addictive once you get going. Calgary has a growing social ping pong scene, from casual drop-in nights to organized round-robins that mix players of all levels. It's one of the few sports where a beginner can have genuinely competitive rallies with someone much more experienced, which keeps it fun for everyone in the room.",
+    "breadcrumb_label": "Ping Pong Calgary",
+    "what_to_expect": [
+      {"icon": "🏓", "heading": "Multiple tables in play", "body": "Social ping pong events typically run several tables at once so wait times stay short and games keep moving throughout the night."},
+      {"icon": "🔄", "heading": "Round-robin format", "body": "Most organized nights rotate players through matches so you end up playing against a variety of opponents. Great for meeting people too."},
+      {"icon": "💨", "heading": "Fast-paced and active", "body": "You'll be moving more than you expect. Lateral footwork and quick reflexes mean you actually work up a sweat in the best way."},
+      {"icon": "🤝", "heading": "All levels welcome", "body": "Social ping pong nights aren't about elite technique. They're about fun, and the atmosphere stays friendly whether you're a first-timer or a regular."}
+    ],
+    "tips": [
+      "Hold the paddle relaxed, not in a death grip. Tension in your hand slows your reaction time.",
+      "Watch the ball off your opponent's paddle, not just at their end of the table. Reading spin early is everything.",
+      "Position yourself a step back from the table for most rallies. Smashing from close range often goes into the net.",
+      "Serve short and low. A short serve bounces twice on the opponent's side quickly, making it hard to attack.",
+      "Mixler runs social ping pong nights in Calgary when the demand is there. Join the waitlist and help make it happen."
+    ],
+    "waitlist_heading": "Want to know when we run ping pong events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["bowling-calgary", "pickleball-calgary", "axe-throwing-calgary", "curling-calgary"]
+  },
+  "faq": [
+    {"q": "Do I need to bring my own paddle?", "a": "No. Social ping pong events provide paddles and balls. If you have your own paddle and prefer it, bring it along."},
+    {"q": "Is ping pong good for beginners?", "a": "Very much so. The rallies are short, the rules are simple, and improvement happens fast. You'll be competitive within a session or two."},
+    {"q": "How is a social ping pong night structured?", "a": "Typically a mix of casual play and organized round-robin matches. The exact format depends on the event, but it's always social and low-pressure."},
+    {"q": "Can I come solo?", "a": "Yes. Solo players get matched up with other players throughout the night. It's a very easy activity to show up to alone."}
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "breathwork-calgary",
+  "name": "Breathwork",
+  "category": "wellness",
+  "category_slug": "breathwork",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["No Experience Needed", "Great for Solo", "All Skill Levels"],
+  "meta": {
+    "title": "Breathwork in Calgary | Mixler",
+    "description": "Breathwork events in Calgary use guided breathing techniques to reduce stress, increase energy, and create emotional release. Beginner-friendly and genuinely powerful.",
+    "keywords": ["breathwork Calgary", "breathwork events Calgary", "guided breathwork Calgary"]
+  },
+  "content": {
+    "subtitle": "Change how you feel in under an hour using nothing but your breath.",
+    "intro": "Breathwork sounds deceptively simple, but the right breathing techniques can shift your nervous system, clear mental fog, and create emotional releases that other wellness practices can't reach. Calgary's breathwork community has grown significantly, with events ranging from gentle Coherent Breathing sessions to more intense holotropic formats. It's one of those practices that people often dismiss until they actually try it.",
+    "breadcrumb_label": "Breathwork Calgary",
+    "what_to_expect": [
+      {"icon": "💨", "heading": "Guided breathing patterns", "body": "A facilitator walks you through specific breathing rhythms: rate, depth, and patterns. You follow the cues while lying down comfortably on a mat."},
+      {"icon": "⚡", "heading": "Physical and emotional effects", "body": "Depending on the technique, you may feel tingling, warmth, waves of emotion, or a floating sensation. These are normal and part of the process."},
+      {"icon": "🎵", "heading": "Music woven into the session", "body": "Most breathwork events use carefully curated music that builds through the session and supports the emotional arc of the practice. It makes a significant difference."},
+      {"icon": "🌬️", "heading": "Integration time after", "body": "Facilitators build in quiet time at the end for the nervous system to settle. This isn't optional. It's where much of the benefit is processed."}
+    ],
+    "tips": [
+      "Don't eat for at least two hours before a breathwork session. Deep breathing with a full stomach is deeply uncomfortable.",
+      "Surrender to the process rather than analyzing it mid-session. The analytical mind is not your friend during breathwork.",
+      "Have water nearby for after the session. Breathwork can be surprisingly dehydrating.",
+      "Tell the facilitator about any heart conditions, epilepsy, or pregnancy before attending. Some techniques are contraindicated for certain conditions.",
+      "Mixler has hosted breathwork events in Calgary as part of our wellness programming. Join the waitlist to be notified when the next one is scheduled."
+    ],
+    "waitlist_heading": "Want to know when we run breathwork events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["meditation-calgary", "sound-bath-calgary", "mindfulness-calgary", "yoga-socials-calgary"]
+  },
+  "faq": [
+    {"q": "Is breathwork safe?", "a": "Facilitator-guided breathwork in a group setting is safe for most healthy adults. Those with cardiovascular conditions, epilepsy, or who are pregnant should consult a doctor first."},
+    {"q": "What does breathwork feel like?", "a": "It varies by technique. Gentle sessions feel like deep relaxation. More intense methods can produce tingling, warmth, light-headedness, and sometimes emotional release."},
+    {"q": "How long is a breathwork session?", "a": "Most group breathwork sessions run 60 to 90 minutes, including the breathing practice and integration time. Shorter intro sessions of 30 minutes also exist."},
+    {"q": "Can breathwork help with anxiety?", "a": "Many people find it very effective for stress and anxiety. Slow, rhythmic breathing patterns activate the parasympathetic nervous system, which is your body's rest state."}
+  ]
+}

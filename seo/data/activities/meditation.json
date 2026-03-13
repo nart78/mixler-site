@@ -1,0 +1,40 @@
+{
+  "slug": "meditation-calgary",
+  "name": "Meditation Events",
+  "category": "wellness",
+  "category_slug": "meditation",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["No Experience Needed", "Great for Solo", "All Skill Levels"],
+  "meta": {
+    "title": "Meditation Events in Calgary | Mixler",
+    "description": "Meditation events in Calgary offer guided group practice for beginners and experienced meditators alike. Build a real practice with the support of a community around you.",
+    "keywords": ["meditation Calgary", "guided meditation Calgary", "meditation events Calgary"]
+  },
+  "content": {
+    "subtitle": "Start or deepen your practice with a group of people doing the same thing.",
+    "intro": "Meditating alone is hard. The mind wanders, you're not sure if you're doing it right, and it's easy to quietly skip the day. Group meditation events in Calgary solve all of that. With a guide, a room of people, and a dedicated time block, the practice becomes much easier to actually do. Calgary's meditation community includes everything from secular mindfulness events to tradition-based practices, so there's a format for everyone.",
+    "breadcrumb_label": "Meditation Events Calgary",
+    "what_to_expect": [
+      {"icon": "🧘", "heading": "Guided by an experienced teacher", "body": "A facilitator leads the session, providing instruction, cues, and anchor points for attention. You follow along, and when your mind wanders you simply return."},
+      {"icon": "🕯️", "heading": "Calm, intentional environment", "body": "Most Calgary meditation events create a deliberately quiet atmosphere. Dim lighting, cushions or chairs, and minimal distractions help your nervous system settle."},
+      {"icon": "🔁", "heading": "Various techniques", "body": "Different events use different methods: breath awareness, body scan, loving-kindness, or visualization. Trying a few helps you discover which approach resonates most."},
+      {"icon": "🤝", "heading": "Community support makes it stick", "body": "People who meditate with others consistently tend to build more durable practices. Knowing others are showing up creates a gentle accountability that solo apps can't replicate."}
+    ],
+    "tips": [
+      "Expect your mind to wander. It's not a sign you're failing. Noticing the wander and returning is the actual practice.",
+      "Sit in a position you can hold for 20 to 30 minutes without pain. Comfort supports focus. Suffering through discomfort doesn't make the meditation more valuable.",
+      "Try several types of sessions before deciding meditation isn't for you. Body scan and loving-kindness practices feel very different from basic breath awareness.",
+      "Arrive a few minutes early so you can settle before the session starts rather than still feeling rushed when the guide begins.",
+      "Mixler runs group meditation events in Calgary as part of our wellness calendar. Join the waitlist and we'll let you know when the next session opens up."
+    ],
+    "waitlist_heading": "Want to know when we run meditation events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["mindfulness-calgary", "breathwork-calgary", "sound-bath-calgary", "journaling-night-calgary"]
+  },
+  "faq": [
+    {"q": "Do I need meditation experience?", "a": "No. Group meditation events in Calgary regularly welcome complete beginners and the guided format means you don't need to know what you're doing to benefit."},
+    {"q": "Should I sit cross-legged?", "a": "Only if it's comfortable. Many meditators sit in chairs or use cushions and props. The position matters less than staying still and alert."},
+    {"q": "How long are meditation sessions?", "a": "Most events run 45 to 90 minutes including a brief intro, the guided practice itself, and optional discussion or sharing time after."},
+    {"q": "Is meditation associated with a religion?", "a": "Many traditions practice meditation, but secular mindfulness events draw on the technique without any religious context. Check the event description for the facilitator's approach."}
+  ]
+}

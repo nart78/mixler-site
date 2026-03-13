@@ -1,0 +1,40 @@
+{
+  "slug": "photography-walks-calgary",
+  "name": "Photography Walks",
+  "category": "learning-culture",
+  "category_slug": "photography-walks",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["Great for Solo", "All Skill Levels", "Outdoors"],
+  "meta": {
+    "title": "Photography Walks in Calgary | Mixler",
+    "description": "Photography walks in Calgary explore the city and surrounding scenery with camera in hand. Beginner-friendly and a great way to see Calgary with fresh eyes.",
+    "keywords": ["photography walks Calgary", "photo walk Calgary", "beginner photography Calgary"]
+  },
+  "content": {
+    "subtitle": "See Calgary through a lens and come home with photos you're actually proud of.",
+    "intro": "A photography walk is exactly what it sounds like: a guided or group stroll through Calgary with a camera in hand, learning to notice light, composition, and detail you'd normally walk past. The city has incredible material, from the brutalist architecture downtown to the river valley at golden hour and the murals in Inglewood. It's one of those activities that slows you down in the best possible way and works for any camera, including your phone.",
+    "breadcrumb_label": "Photography Walks Calgary",
+    "what_to_expect": [
+      {"icon": "📷", "heading": "Guided shooting and tips", "body": "Photography walks often include a guide or workshop leader who shares shooting techniques as you go. You don't need technical knowledge to benefit from these tips."},
+      {"icon": "🌆", "heading": "Calgary's best visual spots", "body": "Routes typically hit spots with strong visual interest: the Peace Bridge, Inglewood murals, Eau Claire, Chinatown, or the river valley depending on the walk."},
+      {"icon": "🌅", "heading": "Golden hour timing", "body": "Many walks schedule around sunrise or sunset for the best natural light. That soft, warm light transforms ordinary scenes into compelling images."},
+      {"icon": "🤝", "heading": "Community of shooters", "body": "Photography walks attract a mix of serious hobbyists and total beginners. Sharing what you noticed and comparing shots at the end is one of the highlights."}
+    ],
+    "tips": [
+      "Use your phone if that's what you have. The camera doesn't matter nearly as much as learning to see the shot before you take it.",
+      "Shoot in portrait and landscape orientation for every scene you love. You'll often be surprised which version works better.",
+      "Get low or high. Eye-level shots are the default. Crouching down or finding a higher vantage point immediately changes the interest level.",
+      "Slow down more than feels natural. Most missed shots happen because people move past an interesting scene too quickly.",
+      "Mixler has run photography walks through Calgary neighborhoods. Join the waitlist and we'll reach out when the next one is scheduled."
+    ],
+    "waitlist_heading": "Want to know when we run photography walk events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["history-walks-calgary", "mountain-hikes-calgary", "kayaking-calgary", "improv-classes-calgary"]
+  },
+  "faq": [
+    {"q": "Do I need an expensive camera?", "a": "No. Modern smartphones take excellent photos and are completely sufficient for a photography walk. The skills you learn apply to any device."},
+    {"q": "What neighbourhoods do Calgary photo walks typically cover?", "a": "Inglewood, Kensington, the East Village, downtown, and the Bow River pathway are all popular. Some walks focus on urban texture, others on nature."},
+    {"q": "Is photography experience required?", "a": "Not at all. Photography walks are designed to teach as you go. Beginners often find them more valuable than experienced photographers because everything is new."},
+    {"q": "What time of day is best for a photo walk in Calgary?", "a": "Golden hour, roughly 30 to 60 minutes after sunrise or before sunset, gives the most flattering light. Overcast days also produce surprisingly good results."}
+  ]
+}

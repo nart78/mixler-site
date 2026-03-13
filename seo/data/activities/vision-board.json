@@ -1,0 +1,40 @@
+{
+  "slug": "vision-board-calgary",
+  "name": "Vision Board Making",
+  "category": "wellness",
+  "category_slug": "vision-board",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["Great for Solo", "No Experience Needed", "Groups Welcome"],
+  "meta": {
+    "title": "Vision Board Making in Calgary | Mixler",
+    "description": "Vision board workshops in Calgary help you visualize your goals and intentions for the year ahead. Materials provided and the social setting makes it surprisingly fun.",
+    "keywords": ["vision board Calgary", "vision board workshop Calgary", "goal setting events Calgary"]
+  },
+  "content": {
+    "subtitle": "Cut, glue, and get clear on what you actually want this year.",
+    "intro": "Vision board workshops take the traditionally solo activity of goal visualization and make it a social event, which turns out to work really well. Calgary hosts these regularly at the start of the year and at various points throughout, bringing people together to cut magazines, print images, and assemble a visual representation of what they're working toward. The facilitated format and group energy help you get past the surface goals and into what actually matters.",
+    "breadcrumb_label": "Vision Board Making Calgary",
+    "what_to_expect": [
+      {"icon": "✂️", "heading": "Materials provided", "body": "Workshops supply magazines, scissors, glue, poster boards, stickers, and pens. You bring yourself and whatever clarity you already have about what you want."},
+      {"icon": "🎯", "heading": "Guided intention-setting", "body": "Facilitators walk you through reflection exercises before the crafting begins. This helps you move past generic goals and into more honest, specific intentions."},
+      {"icon": "🖼️", "heading": "A physical artifact to take home", "body": "You leave with a finished vision board you can hang somewhere visible. Having the goal in your environment genuinely influences behaviour over time."},
+      {"icon": "🤝", "heading": "A supportive, open social atmosphere", "body": "Vision board events attract people who are invested in their own growth, which makes the social dynamic noticeably positive. Sharing your board with the group is optional but often the highlight."}
+    ],
+    "tips": [
+      "Look through magazines for images and words that feel right before you know why. Your gut is doing useful work in the cutting phase.",
+      "Don't limit your board to career and money goals. Physical health, relationships, experiences, and how you want to feel are all fair game.",
+      "Hang your finished board somewhere you'll see it daily. On the inside of a wardrobe door or above a desk works well.",
+      "Revisit your board mid-year. Some intentions evolve, some land ahead of schedule, and noticing the shift is valuable in itself.",
+      "Mixler runs vision board workshops in Calgary as part of our wellness event series. Join the waitlist and we'll email you when the next one is coming up."
+    ],
+    "waitlist_heading": "Want to know when we run vision board events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["journaling-night-calgary", "mindfulness-calgary", "book-club-calgary", "meditation-calgary"]
+  },
+  "faq": [
+    {"q": "Do I need to know my goals before a vision board workshop?", "a": "No. Part of the process is helping you discover or clarify your intentions. Many people arrive unsure and leave with a surprisingly clear direction."},
+    {"q": "Are materials provided?", "a": "Yes. Most Calgary vision board workshops supply everything: magazines, scissors, glue sticks, poster boards, pens, and stickers. Bringing your own favourite magazine is a nice addition."},
+    {"q": "When is the best time of year to do a vision board?", "a": "January is popular, but transitions like birthdays, equinoxes, or any major life shift are equally valid timing. The best time is when you feel ready to be intentional."},
+    {"q": "How long do vision board workshops take?", "a": "Most run two to three hours, including the reflection exercises, crafting time, and optional sharing at the end."}
+  ]
+}

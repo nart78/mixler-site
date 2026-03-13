@@ -1,0 +1,40 @@
+{
+  "slug": "ice-skating-calgary",
+  "name": "Ice Skating",
+  "category": "active-outdoors",
+  "category_slug": "ice-skating",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["Groups Welcome", "All Skill Levels", "Active"],
+  "meta": {
+    "title": "Ice Skating in Calgary | Mixler",
+    "description": "Ice skating in Calgary is a winter staple and a year-round option at indoor rinks. Perfect for groups, dates, and solo skaters of every skill level.",
+    "keywords": ["ice skating Calgary", "skating rinks Calgary", "outdoor skating Calgary"]
+  },
+  "content": {
+    "subtitle": "Glide across the ice at one of Calgary's many rinks, indoors or out.",
+    "intro": "Ice skating is practically woven into Calgary's identity, and the city has more options than most people realize, from outdoor rinks in Olympic Plaza to indoor arenas open year-round. It's the kind of activity that works in every season and for every occasion. Whether you're a confident skater or someone who clings to the boards, there's a rink and a crowd that suits you.",
+    "breadcrumb_label": "Ice Skating Calgary",
+    "what_to_expect": [
+      {"icon": "⛸️", "heading": "Indoor and outdoor options", "body": "Calgary has year-round indoor arenas and seasonal outdoor rinks. Olympic Plaza and Bowness Park are beloved winter outdoor spots."},
+      {"icon": "🥶", "heading": "Skate rental available", "body": "Most rinks rent ice skates on site. Bring thick socks for comfort and check if the rink requires helmets, especially for younger skaters."},
+      {"icon": "🎶", "heading": "Skating sessions with music", "body": "Public skating sessions often play music over the rink sound system, which makes everything feel lighter and more like an event."},
+      {"icon": "☕", "heading": "Warm-up area nearby", "body": "Outdoor rinks in Calgary almost always have a warming hut or nearby cafe. Skating in the cold and then warming up with something hot is a Calgary winter ritual."}
+    ],
+    "tips": [
+      "Lace your skates snugly all the way up. Loose ankles lead to wobbling and soreness after just a few minutes.",
+      "Push out to the side when you skate, not backward. It's the most efficient and stable way to build forward momentum.",
+      "Keep your weight slightly forward. Leaning back is what causes most beginner falls.",
+      "Take breaks off the ice to rest your ankles, especially in your first session. It helps you skate longer overall.",
+      "Mixler has organized group skating outings in Calgary. Join the waitlist and we'll reach out when we're planning the next one."
+    ],
+    "waitlist_heading": "Want to know when we run ice skating events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["curling-calgary", "roller-skating-calgary", "mountain-hikes-calgary", "kayaking-calgary"]
+  },
+  "faq": [
+    {"q": "Where can I skate outdoors in Calgary?", "a": "Olympic Plaza, Bowness Park Lagoon, and Prince's Island Park are popular outdoor skating spots. They're typically open from late November through February."},
+    {"q": "Do I need to bring my own skates?", "a": "No. Most rinks offer skate rentals. Your own skates will always fit better, but rentals work fine for a casual session."},
+    {"q": "Is public skating in Calgary free?", "a": "Outdoor skating at city rinks is often free. Indoor public skating sessions at arenas have a small admission and rental fee."},
+    {"q": "What should I wear for ice skating?", "a": "Layers work best. You'll warm up once you start moving, but the ice-level air stays cold. Gloves are strongly recommended, especially for beginners who fall more often."}
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "mindfulness-calgary",
+  "name": "Mindfulness Events",
+  "category": "learning-culture",
+  "category_slug": "mindfulness",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["Great for Solo", "No Experience Needed", "All Skill Levels"],
+  "meta": {
+    "title": "Mindfulness Events in Calgary | Mixler",
+    "description": "Mindfulness events in Calgary offer guided practices for stress reduction, presence, and mental clarity. Beginner-friendly sessions in welcoming, calm spaces.",
+    "keywords": ["mindfulness Calgary", "mindfulness events Calgary", "guided mindfulness Calgary"]
+  },
+  "content": {
+    "subtitle": "Slow down, pay attention, and leave feeling noticeably different.",
+    "intro": "Mindfulness events in Calgary bring people together to practice being present, whether through guided meditation, body scan exercises, or mindful movement. The social format helps people who struggle to maintain a solo practice, because showing up with others creates a built-in accountability and shared energy. Calgary has a growing number of accessible mindfulness events that don't require any prior experience or spiritual framework.",
+    "breadcrumb_label": "Mindfulness Events Calgary",
+    "what_to_expect": [
+      {"icon": "🧘", "heading": "Guided practice from a facilitator", "body": "A facilitator leads the session, whether it's a breathing exercise, body scan, or visualization. You don't need to know what you're doing. Just follow along."},
+      {"icon": "🤫", "heading": "Quiet, intentional space", "body": "Mindfulness events create a deliberate contrast to the noise of everyday life. The space and the group energy are part of what makes the practice land."},
+      {"icon": "💬", "heading": "Optional sharing and discussion", "body": "Many sessions end with an optional circle for sharing reflections. It's never mandatory and listening to others process their experience is often as valuable as speaking."},
+      {"icon": "🌱", "heading": "Beginner-friendly by design", "body": "Mindfulness facilitators in Calgary are accustomed to working with people who have never tried any form of contemplative practice. No judgment, no jargon."}
+    ],
+    "tips": [
+      "Don't expect your mind to go blank. Mindfulness isn't about emptying your thoughts. It's about noticing them without being controlled by them.",
+      "Arrive a few minutes early. Rushing into a mindfulness session wires you in the wrong direction from the start.",
+      "Wear something comfortable. You may be sitting or lying down for extended periods and anything tight or restrictive will be a distraction.",
+      "Keep a journal nearby. Insights often surface after a session, not during, and writing them down before they fade is worth it.",
+      "Mixler hosts mindfulness events in Calgary as part of our wellness programming. Join the waitlist to get notified when the next one is scheduled."
+    ],
+    "waitlist_heading": "Want to know when we run mindfulness events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["meditation-calgary", "breathwork-calgary", "sound-bath-calgary", "journaling-night-calgary"]
+  },
+  "faq": [
+    {"q": "Do I need meditation experience for a mindfulness event?", "a": "No. Every event is designed to be accessible to beginners. The facilitator guides you through everything."},
+    {"q": "Is mindfulness religious?", "a": "Secular mindfulness events are completely non-religious. They draw on research-backed practices for attention and stress reduction, not any spiritual tradition."},
+    {"q": "How long are mindfulness events?", "a": "Most run between 60 and 90 minutes, including the guided practice and optional sharing time after."},
+    {"q": "Will I feel the benefit after just one session?", "a": "Many people notice a shift in how they feel even after a single session. Consistent practice deepens the effect, but a single event is genuinely worthwhile."}
+  ]
+}

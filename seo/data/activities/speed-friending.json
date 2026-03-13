@@ -1,0 +1,40 @@
+{
+  "slug": "speed-friending-calgary",
+  "name": "Speed Friending",
+  "category": "games-social",
+  "category_slug": "speed-friending",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["Great for Solo", "All Skill Levels", "No Experience Needed"],
+  "meta": {
+    "title": "Speed Friending in Calgary | Mixler",
+    "description": "Speed friending events in Calgary make it easy to meet new people without the awkwardness. Quick convos, good prompts, real connections.",
+    "keywords": ["speed friending Calgary", "meet new friends Calgary", "social events for adults Calgary"]
+  },
+  "content": {
+    "subtitle": "Meet new people in Calgary without the awkward cold-start.",
+    "intro": "Speed friending is basically speed dating, but the goal is just to make friends. You rotate through short conversations with strangers using fun prompts, and by the end of the night you've talked to more people than you would in a month of trying. It's become genuinely popular in Calgary because meeting people as an adult is harder than it should be, and this format skips all the weirdness.",
+    "breadcrumb_label": "Speed Friending Calgary",
+    "what_to_expect": [
+      {"icon": "🔄", "heading": "Rotating conversations", "body": "You'll sit across from someone new every few minutes. A timer or bell signals the switch, keeping things moving and low pressure."},
+      {"icon": "🗣️", "heading": "Conversation prompts", "body": "Hosts provide prompts or icebreaker questions so you're never just staring at each other. Some are fun and silly, some actually go deeper."},
+      {"icon": "📝", "heading": "Optional matchmaking cards", "body": "Many events give you a card to note who you'd like to connect with again. No awkward asking for numbers mid-conversation."},
+      {"icon": "🍹", "heading": "Casual mingling after", "body": "The structured rounds lead into open socializing so you can actually follow up with people you clicked with. That's where the real friendships start."}
+    ],
+    "tips": [
+      "Come alone or with one friend. Coming in a big pack makes it harder to actually meet people.",
+      "Read the prompts in advance if they're shared beforehand. It helps you relax and actually listen.",
+      "Ask follow-up questions. People remember who made them feel heard more than who said the cleverest thing.",
+      "Wear something that's easy to talk about. A fun shirt or interesting accessory is a natural conversation starter.",
+      "Mixler runs speed friending nights in Calgary when there's enough interest, so join the waitlist and help us make it happen."
+    ],
+    "waitlist_heading": "Want to know when we run speed friending events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["trivia-night-calgary", "board-games-calgary", "pub-quiz-calgary", "game-show-night-calgary"]
+  },
+  "faq": [
+    {"q": "Do I need to bring anyone?", "a": "Nope. Speed friending is designed to be done solo. Most people come alone, which is exactly the point."},
+    {"q": "Is it romantic at all?", "a": "No. Speed friending is purely platonic. It's structured to help people build friendships and expand their social circle."},
+    {"q": "What if I'm introverted?", "a": "This format actually works well for introverts because the structure removes the guesswork. You always know what to talk about and when to move on."},
+    {"q": "How long do events usually run?", "a": "Most speed friending nights run two to three hours, including the structured rounds and open social time after."}
+  ]
+}

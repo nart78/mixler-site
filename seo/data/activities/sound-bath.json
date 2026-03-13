@@ -1,0 +1,40 @@
+{
+  "slug": "sound-bath-calgary",
+  "name": "Sound Bath",
+  "category": "wellness",
+  "category_slug": "sound-bath",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["No Experience Needed", "Great for Solo", "All Skill Levels"],
+  "meta": {
+    "title": "Sound Bath in Calgary | Mixler",
+    "description": "Sound baths in Calgary use crystal bowls and gongs to create a deeply relaxing experience. No experience needed, just lie down and let the sound do the work.",
+    "keywords": ["sound bath Calgary", "sound healing Calgary", "crystal bowl meditation Calgary"]
+  },
+  "content": {
+    "subtitle": "Lie down, close your eyes, and let the sound wash over you.",
+    "intro": "A sound bath is an immersive experience where you lie on a mat while a practitioner plays crystal singing bowls, Tibetan bowls, gongs, or other resonant instruments. The sound washes over you in waves, and the effect on the nervous system is genuinely noticeable: most people reach a state of deep relaxation or even light sleep within minutes. Calgary's wellness community has embraced sound baths enthusiastically, and sessions sell out regularly.",
+    "breadcrumb_label": "Sound Bath Calgary",
+    "what_to_expect": [
+      {"icon": "🔔", "heading": "Crystal bowls and gong sounds", "body": "The practitioner plays a variety of instruments tuned to specific frequencies. The sounds layer and shift throughout the session, creating an immersive sonic environment."},
+      {"icon": "🛏️", "heading": "You lie down the whole time", "body": "A sound bath is entirely passive. You bring a mat, a blanket, and possibly a pillow, lie down comfortably, and don't move until it's over."},
+      {"icon": "😴", "heading": "Deep rest and possible sleep", "body": "Falling asleep during a sound bath is common and considered a sign the nervous system is receiving the session deeply. No one will judge you."},
+      {"icon": "🌀", "heading": "Different for everyone", "body": "Some people experience tingling, warmth, or vivid imagery. Some just relax. Some cry without knowing why. All of it is normal and nothing is required."}
+    ],
+    "tips": [
+      "Arrive a few minutes early to settle into your mat and get comfortable before the sound starts.",
+      "Bring warm layers. Lying still for 45 to 60 minutes in a cool room gets cold, and that discomfort distracts from the experience.",
+      "Leave your phone in a pocket on silent, not just vibrate. The physical vibration of a notification can pull you out of a deep state very abruptly.",
+      "Don't rush out immediately after. The transition out of a sound bath benefits from a few minutes of quiet before re-entering normal life.",
+      "Mixler has hosted sound bath events in Calgary as part of our wellness calendar. Join the waitlist to be notified when the next one is coming up."
+    ],
+    "waitlist_heading": "Want to know when we run sound bath events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["meditation-calgary", "breathwork-calgary", "mindfulness-calgary", "yoga-socials-calgary"]
+  },
+  "faq": [
+    {"q": "What is a sound bath exactly?", "a": "A sound bath is a group wellness experience where you lie down while a practitioner plays resonant instruments. The sound creates a deeply relaxing effect without any active participation needed."},
+    {"q": "Is a sound bath spiritual?", "a": "It can be framed spiritually, but many Calgary sound baths are secular wellness events. The practitioner's approach varies, so check their description if that matters to you."},
+    {"q": "How long is a sound bath session?", "a": "Most sessions run 45 to 75 minutes of active sound, often with a short guided breathing intro and time for quiet rest at the end."},
+    {"q": "Can sound baths help with anxiety or stress?", "a": "Many people find them deeply helpful for stress reduction. The research on sound therapy is still developing, but the subjective experience of relaxation is consistent and well-documented."}
+  ]
+}

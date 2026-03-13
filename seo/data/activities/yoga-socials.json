@@ -1,0 +1,40 @@
+{
+  "slug": "yoga-socials-calgary",
+  "name": "Yoga Socials",
+  "category": "wellness",
+  "category_slug": "yoga-socials",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "tags": ["Great for Solo", "All Skill Levels", "No Experience Needed"],
+  "meta": {
+    "title": "Yoga Socials in Calgary | Mixler",
+    "description": "Yoga socials in Calgary combine a group class with social time after. Meet people who share your interest in wellness without the gym intimidation factor.",
+    "keywords": ["yoga socials Calgary", "social yoga Calgary", "yoga meetup Calgary"]
+  },
+  "content": {
+    "subtitle": "Move, breathe, and then actually talk to the people you just practiced with.",
+    "intro": "Yoga socials combine a genuine yoga class with intentional social time afterward, making them one of the most natural ways to meet people who care about wellness and intentional living. Calgary has a strong yoga community and social yoga formats have been growing as people look for activities that are good for both their body and their social life. You don't need experience, and you don't need to be flexible.",
+    "breadcrumb_label": "Yoga Socials Calgary",
+    "what_to_expect": [
+      {"icon": "🧘", "heading": "A real yoga class first", "body": "The session starts with a proper class led by a certified instructor. Expect 45 to 60 minutes of movement, breathwork, and a proper savasana to close."},
+      {"icon": "☕", "heading": "Social time built into the event", "body": "After the class, the event organizer creates space for mingling. Tea, snacks, or a drink nearby keep the energy going and make conversations easy to start."},
+      {"icon": "🌿", "heading": "Wellness-minded community", "body": "The people at yoga socials tend to be thoughtful, open, and interested in more than just the workout. Conversations often go somewhere interesting."},
+      {"icon": "📍", "heading": "Various Calgary locations", "body": "Yoga socials happen at studios, parks, rooftops, and community centres depending on the organizer. Outdoor yoga socials in summer are especially popular."}
+    ],
+    "tips": [
+      "Arrive early to settle in and meet a few people before the class starts. Pre-class conversation is easier than breaking into a group after.",
+      "Avoid heavy meals for two hours before class. Yoga involves twisting and folding, and a full stomach makes that uncomfortable.",
+      "Bring your own mat if you have one. Rental mats are usually available but your own mat is more hygienic and more comfortable.",
+      "Stay for the social time even if you're tired. The post-yoga window is when the real connections happen, and you'll be too relaxed to feel awkward.",
+      "Mixler runs yoga socials in Calgary as part of our regular wellness event calendar. Join the waitlist and we'll let you know when the next one is scheduled."
+    ],
+    "waitlist_heading": "Want to know when we run yoga social events?",
+    "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "related_activities": ["puppy-yoga-calgary", "aerial-yoga-calgary", "sound-bath-calgary", "mindfulness-calgary"]
+  },
+  "faq": [
+    {"q": "Do I need yoga experience for a yoga social?", "a": "No. Social yoga events welcome all levels and instructors offer modifications for every pose. Being a beginner is completely fine."},
+    {"q": "Do I need to be flexible?", "a": "Absolutely not. Flexibility is something yoga builds over time, not something you need to start. Show up exactly as you are."},
+    {"q": "What should I bring?", "a": "A yoga mat, comfortable clothes, water, and a willingness to stay for the social part. Some events provide mats; check the event details."},
+    {"q": "Is yoga social good for people who don't know anyone?", "a": "That's exactly who it's designed for. The shared practice creates an easy starting point for conversation and the post-class format makes the social part feel natural."}
+  ]
+}
