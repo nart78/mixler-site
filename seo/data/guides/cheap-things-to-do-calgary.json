@@ -1,0 +1,80 @@
+{
+  "slug": "cheap-things-to-do-calgary",
+  "type": "roundup",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "meta": {
+    "title": "Cheap Things to Do in Calgary | Mixler",
+    "description": "Calgary doesn't have to be expensive. Here are the best cheap and free activities for adults in Calgary that are actually worth your time.",
+    "keywords": ["cheap things to do Calgary", "free activities Calgary adults", "affordable Calgary activities"]
+  },
+  "content": {
+    "title": "Cheap Things to Do in Calgary",
+    "subtitle": "Great evenings in Calgary don't require a lot of money. Just a little planning.",
+    "read_time": "5 min read",
+    "updated_date": "March 2026",
+    "intro": "Calgary has a well-earned reputation for being an expensive city to live in. But a lot of the best activities cost very little, and some of the most social and memorable evenings can be had for under $20. This guide covers the genuinely worthwhile cheap options.",
+    "sections": [
+      {
+        "label": "Free and Almost Free",
+        "heading": "Great Free Activities in Calgary",
+        "paragraphs": [
+          "Calgary's pathway network is one of the city's most underused assets. Over 1,000 kilometres of paths along rivers, through parks, and connecting neighbourhoods make cycling, walking, and running genuinely pleasant activities that don't cost a cent. Fish Creek Park and the Bow River pathway are highlights.",
+          "Language exchange meetups happen regularly in Calgary and are almost always free or donation-based. They're also genuinely good social events. The format means you're immediately useful to the person you're talking to (they want to practice your language, you want to practice theirs), which creates instant social ease. Check Meetup.com for current Calgary language exchange groups."
+        ],
+        "tip_box": {
+          "label": "Pathway tip",
+          "body": "The Bow River pathway loop through downtown and Inglewood is about 14km and takes 3-4 hours on foot. Free, beautiful, and makes the most of a good-weather evening."
+        }
+      },
+      {
+        "label": "Budget Social Events",
+        "heading": "Social Events in Calgary That Won't Break the Budget",
+        "paragraphs": [
+          "Pub trivia nights are the best value social event in Calgary. Most bar trivia nights are free or have a small cover charge, and you can nurse a $7 pint for two hours while having a genuinely good time with strangers. The Craft and various other bars run regular trivia nights that attract a fun crowd.",
+          "Board game cafes charge a small cover (typically $5-10 per person) for access to a library of hundreds of games. For a group that wants 3-4 hours of social entertainment, this is exceptional value. Look for board game events at cafes and community spaces around Calgary for even cheaper options."
+        ]
+      },
+      {
+        "label": "Affordable Experiences",
+        "heading": "Budget-Friendly Paid Experiences Worth the Money",
+        "paragraphs": [
+          "Some Mixler events are in the $30-40 price range, which is among the more affordable structured social event options in Calgary. The value-per-hour of a 2.5-hour social event at that price point is hard to beat compared to a bar tab for the same duration.",
+          "The Calgary Public Library has an events calendar that is seriously underrated. Programming includes author readings, workshops, cultural events, and social gatherings. Most are free. The Central Library building itself is stunning and worth a visit regardless of programming."
+        ],
+        "tip_box": {
+          "label": "Library tip",
+          "body": "The Calgary Central Library regularly runs free adult workshops and events. Check their calendar monthly."
+        }
+      }
+    ],
+    "mixler_cta": {
+      "heading": "Affordable evenings, genuine fun.",
+      "body": "Some Mixler events start at $30. Browse the calendar and find something within your budget.",
+      "button_text": "See Upcoming Events"
+    },
+    "related_activities": ["trivia-night-calgary", "board-games-calgary", "language-exchange-calgary", "pub-quiz-calgary"],
+    "faq": [
+      {
+        "q": "What are the best free things to do in Calgary?",
+        "a": "The pathway network for walking and cycling, language exchange meetups, the Calgary Public Library programming, Fish Creek Park, and bar trivia nights (often free) are the best free adult activities in Calgary."
+      },
+      {
+        "q": "What's cheap to do in Calgary on a Friday night?",
+        "a": "Bar trivia nights, board game cafe evenings, free live music at certain Inglewood venues, and language exchange meetups are all cheap or free Friday night options. Some Mixler events are in the $30-40 range."
+      },
+      {
+        "q": "Are there cheap date ideas in Calgary?",
+        "a": "A pathway walk followed by inexpensive dinner in Kensington, bar trivia at a local pub, a picnic in Prince's Island Park (summer), or a Calgary Public Library event are all affordable Calgary date ideas."
+      },
+      {
+        "q": "What affordable social events are there in Calgary?",
+        "a": "Pub trivia, language exchanges, board game cafe nights, and select Mixler events are all affordable social options. The Calgary Sport and Social Club also runs recreational sports leagues at reasonable seasonal rates."
+      }
+    ],
+    "sidebar_cta": {
+      "heading": "Find your budget event.",
+      "body": "Browse Mixler events across all price points.",
+      "button_text": "Browse Events"
+    }
+  }
+}

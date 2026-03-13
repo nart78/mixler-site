@@ -1,0 +1,88 @@
+{
+  "slug": "best-neighbourhoods-go-out-calgary",
+  "type": "authority",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "meta": {
+    "title": "Best Neighbourhoods to Go Out in Calgary | Mixler",
+    "description": "Calgary's nightlife and social scene is spread across several distinct neighbourhoods. Here's where to go and what to expect from each one.",
+    "keywords": ["best neighbourhoods Calgary nightlife", "where to go out Calgary", "Calgary entertainment districts"]
+  },
+  "content": {
+    "title": "Best Neighbourhoods to Go Out in Calgary",
+    "subtitle": "Calgary's social scene is geographic. Knowing the neighbourhoods makes all the difference.",
+    "read_time": "6 min read",
+    "updated_date": "March 2026",
+    "intro": "Unlike cities with one concentrated downtown nightlife district, Calgary's social scene is spread across several neighbourhoods, each with its own vibe, its own venue mix, and its own crowd. Knowing the lay of the land makes it much easier to find the right kind of night for what you're after.",
+    "sections": [
+      {
+        "label": "17th Ave",
+        "heading": "17th Avenue SW: Calgary's Most Consistent Social Strip",
+        "paragraphs": [
+          "Seventeenth Avenue is the closest thing Calgary has to a guaranteed-good-time destination. The stretch from around 4th Street to 10th Street SW has the highest concentration of bars, restaurants, patios, and live music venues in the city. It works for most ages and most moods, from a quiet wine bar evening to a loud Saturday night.",
+          "The vibe skews slightly older than the downtown core's bottle-service clubs, which makes it more appealing if you're looking for actual conversation. Patios on 17th in summer are some of the most social spaces in the city. We use venues in this area for Mixler events regularly."
+        ],
+        "tip_box": {
+          "label": "17th Ave tip",
+          "body": "The best stretch for a walkable evening is between 4th and 8th Street SW. You can bar-hop without ever needing a car."
+        }
+      },
+      {
+        "label": "Inglewood",
+        "heading": "Inglewood: Calgary's Creative Quarter",
+        "paragraphs": [
+          "Inglewood is where independent Calgary lives. The stretch along 9th Avenue SE is lined with independent restaurants, record stores, art galleries, vintage shops, and a handful of excellent bars. It attracts a more alternative, creative crowd and has a distinctly neighbourhood feel that most of Calgary lacks.",
+          "Venues like Annex Ale Project, Recordbar, and the various gallery spaces along 9th make Inglewood excellent for an evening that's social but not nightclub-loud. It's also one of the better spots for photography walks during the day before transitioning into an evening out. Mixler uses Inglewood venues for events that suit the creative crowd."
+        ]
+      },
+      {
+        "label": "Kensington",
+        "heading": "Kensington: Walkable and Charming",
+        "paragraphs": [
+          "Kensington has the feel of a European neighbourhood in a city that doesn't otherwise have many. It's compact and walkable, with independent cafes, restaurants, wine bars, and shops all within a few blocks. It's excellent for a slower evening, a long dinner, or a late-afternoon-into-evening that doesn't require any planning beyond 'let's go to Kensington.'",
+          "The crowd skews professional and slightly older than 17th Ave, and the vibe is more intimate. It's a good neighbourhood for a first date, a small group catch-up, or an evening that starts with dinner and finds its own direction."
+        ],
+        "tip_box": {
+          "label": "Kensington best use",
+          "body": "Kensington is ideal when you want a full evening in one place without needing to cab between venues."
+        }
+      },
+      {
+        "label": "East Village",
+        "heading": "East Village and Downtown: For Culture and Big Nights",
+        "paragraphs": [
+          "The East Village revitalization has added a lot to Calgary's cultural calendar. The area around the National Music Centre, Studio Bell, and the adjacent riverfront has become a genuine destination for concerts, gallery events, and larger-scale social programming.",
+          "Downtown's entertainment district around 8th Avenue and Centre Street caters more to the club and sports-bar crowd. It's not our scene at Mixler, but it's worth knowing about for when you want something high-energy and unpretentious. Game nights, sports bar trivia, and larger social events gravitate here."
+        ]
+      }
+    ],
+    "mixler_cta": {
+      "heading": "We know Calgary's neighbourhoods.",
+      "body": "Mixler events rotate across the city's best venues. Wherever you are, we're probably nearby.",
+      "button_text": "See Upcoming Events"
+    },
+    "related_activities": ["trivia-night-calgary", "wine-tasting-calgary", "photography-walks-calgary", "cocktail-making-calgary"],
+    "faq": [
+      {
+        "q": "What's the best neighbourhood to go out in Calgary?",
+        "a": "Depends on your vibe. 17th Ave SW for the most versatile night out. Inglewood for creative, independent, alternative. Kensington for walkable and intimate. East Village for culture and larger events."
+      },
+      {
+        "q": "Where do adults go out in Calgary?",
+        "a": "17th Ave, Inglewood, and Kensington are the top three for adult social outings. The downtown entertainment district is more club-focused. Mixler events rotate across all of these areas."
+      },
+      {
+        "q": "Is Inglewood or Kensington better for a night out in Calgary?",
+        "a": "Inglewood if you want more variety, alternative vibes, and a creative crowd. Kensington if you want a walkable, intimate evening in one neighbourhood without needing to move around."
+      },
+      {
+        "q": "Which Calgary neighbourhood is best for a first date?",
+        "a": "Kensington is excellent for first dates because it's walkable, has great dinner options, and feels relaxed without being loud. Inglewood is a close second for the same reasons with a slightly more creative edge."
+      }
+    ],
+    "sidebar_cta": {
+      "heading": "Events across the city.",
+      "body": "Mixler brings the best of Calgary's neighbourhoods to you. Browse what's on.",
+      "button_text": "Browse Events"
+    }
+  }
+}

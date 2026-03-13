@@ -1,0 +1,88 @@
+{
+  "slug": "calgary-winter-activities-adults",
+  "type": "authority",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "meta": {
+    "title": "Calgary Winter Activities for Adults Who Hate Staying In | Mixler",
+    "description": "Winter in Calgary is long. These adult activities will get you out of the house and into something worth talking about, chinook or no chinook.",
+    "keywords": ["Calgary winter activities adults", "indoor activities Calgary winter", "winter things to do Calgary"]
+  },
+  "content": {
+    "title": "Calgary Winter Activities for Adults Who Hate Staying In",
+    "subtitle": "Winter is eight months long here. You need a plan.",
+    "read_time": "6 min read",
+    "updated_date": "March 2026",
+    "intro": "Calgary winters are genuinely brutal if you let them be. The temperature swings, the dark evenings, the wind off the Rockies that makes your face hurt. But they can also be genuinely cozy and social if you build the right habits, and 'waiting for spring' is not a life strategy.",
+    "sections": [
+      {
+        "label": "The Winter Mindset",
+        "heading": "Why Winter Is Actually a Good Time to Build Your Social Life",
+        "paragraphs": [
+          "People are more available in winter. Summer in Calgary is chaotic, everyone's camping or hiking or on a patio somewhere and life feels full without any effort. Winter strips that back and reveals who actually has a plan versus who's just filling time. The people who show up to events in January are the ones who are serious about their social lives.",
+          "We run some of our best-attended events between November and March. The energy is different, more intentional, more appreciative. When someone shows up to a pottery class on a Tuesday night in February, they really wanted to be there. Those rooms have great energy."
+        ],
+        "tip_box": {
+          "label": "Silver lining",
+          "body": "Winter social events in Calgary attract the most intentional crowd. Everyone who shows up chose to."
+        }
+      },
+      {
+        "label": "Indoor Experiences",
+        "heading": "The Best Indoor Winter Activities in Calgary for Adults",
+        "paragraphs": [
+          "Creative workshops are winter gold. Pottery, painting, candle-making, macrame, resin art. They're warm, tactile, social, and you leave with something to show for the evening. Mixler runs these throughout winter with rotating formats so there's always something new to try.",
+          "Food and drink experiences are another strong winter category. Cocktail-making classes, wine tastings, sushi-making workshops, bread baking, and cheese boards are all particularly appealing when the weather outside is doing its worst. There's something satisfying about making something delicious and warm when it's -25 outside."
+        ]
+      },
+      {
+        "label": "Outdoor Options",
+        "heading": "For the Winter Enthusiasts: Outdoor Activities That Are Worth It",
+        "paragraphs": [
+          "Chinooks make outdoor activities much more viable in Calgary than in most Canadian cities. When the temperature swings from -20 to +10 in 24 hours, you have windows for outdoor activities that Toronto or Winnipeg don't get. Ice skating at Olympic Plaza or Bowness Park is genuinely nice on a mild winter afternoon.",
+          "Cross-country skiing in Fish Creek Park, snowshoeing in the Rockies on a weekend, and curling at one of Calgary's many curling clubs are all winter-specific experiences that are much better than they sound. Curling in particular has a strong social component and many clubs welcome beginners for Learn to Curl nights."
+        ],
+        "tip_box": {
+          "label": "Calgary advantage",
+          "body": "Chinooks give Calgary more outdoor-friendly days in winter than most Canadian cities. Check the forecast and act fast when one hits."
+        }
+      },
+      {
+        "label": "Making Winter Work",
+        "heading": "How to Actually Enjoy Winter in Calgary",
+        "paragraphs": [
+          "Build a winter social calendar in October. Seriously. Book two or three recurring things for the season. A pottery class series, a monthly trivia night, a weekly curling league. Having things to look forward to changes how winter feels. You stop counting days until spring and start looking forward to specific Thursdays.",
+          "Mixler's event calendar runs through winter without pause. We plan further ahead in winter specifically because we know people need more lead time to motivate themselves to leave the house. Check what's coming up in the next six weeks and put something on your calendar today."
+        ]
+      }
+    ],
+    "mixler_cta": {
+      "heading": "Winter is better when you have plans.",
+      "body": "Mixler runs indoor social events all winter long in Calgary. Come warm up.",
+      "button_text": "See Upcoming Events"
+    },
+    "related_activities": ["pottery-calgary", "candle-making-calgary", "cocktail-making-calgary", "curling-calgary"],
+    "faq": [
+      {
+        "q": "What are the best winter activities for adults in Calgary?",
+        "a": "Indoor: pottery, painting, cocktail-making, cooking classes, trivia nights, and creative workshops. Outdoor: ice skating, cross-country skiing, snowshoeing, and curling. Mixler runs a full winter calendar of indoor social events."
+      },
+      {
+        "q": "How do I stay social in Calgary during winter?",
+        "a": "Build a winter calendar in advance. Book a recurring activity or two for the season. Mixler events, recreational sports leagues, and creative classes all give you regular reasons to get out and see people."
+      },
+      {
+        "q": "Are there fun indoor things to do in Calgary in winter besides bars?",
+        "a": "Lots. Pottery studios, cooking schools, escape rooms, improv classes, trivia nights, wine tastings, and creative workshops all run year-round. Mixler specializes in this category."
+      },
+      {
+        "q": "What's there to do in Calgary in February or January?",
+        "a": "February is prime Mixler season. Creative workshops, food and drink experiences, trivia nights, and social events all run regularly. It's also a good time for indoor climbing gyms, escape rooms, and board game cafes."
+      }
+    ],
+    "sidebar_cta": {
+      "heading": "Don't hibernate. Explore.",
+      "body": "Browse winter events on Mixler and find something worth leaving the house for.",
+      "button_text": "Browse Events"
+    }
+  }
+}

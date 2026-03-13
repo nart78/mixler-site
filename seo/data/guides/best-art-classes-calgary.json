@@ -1,0 +1,88 @@
+{
+  "slug": "best-art-classes-calgary",
+  "type": "roundup",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "meta": {
+    "title": "The Best Art Classes in Calgary | Mixler",
+    "description": "A guide to the best art classes in Calgary for adults, from painting and pottery to life drawing, stained glass, and everything in between.",
+    "keywords": ["best art classes Calgary", "art classes Calgary adults", "Calgary painting classes pottery"]
+  },
+  "content": {
+    "title": "The Best Art Classes in Calgary",
+    "subtitle": "You don't have to be an artist to take an art class. You just have to be curious.",
+    "read_time": "6 min read",
+    "updated_date": "March 2026",
+    "intro": "Calgary has a surprisingly rich art class scene for adults. From beginner-friendly painting nights to technically demanding ceramics programs, there's a format and skill level for everyone. This guide covers the main options so you can find the one that fits what you're actually looking for.",
+    "sections": [
+      {
+        "label": "Painting and Drawing",
+        "heading": "Painting and Drawing Classes in Calgary",
+        "paragraphs": [
+          "Painting classes range from drop-in canvas nights (popular for dates and groups) to structured multi-week courses. Vino Van Gogh and similar paint-and-sip formats are the most casual entry point, great for people who want to try painting in a low-stakes, social environment. The result matters less than the experience.",
+          "For more serious painting instruction, the Glencoe Club and several independent art studios around Calgary offer multi-week watercolour, acrylic, and oil painting courses. Life drawing classes for adults run regularly at the Alberta College of Art and Design (ACAD) and through independent instructors."
+        ],
+        "tip_box": {
+          "label": "First timer tip",
+          "body": "A paint-and-sip night is the lowest-barrier entry to painting. No experience required and the social format removes all pressure."
+        }
+      },
+      {
+        "label": "Ceramics and Pottery",
+        "heading": "Pottery and Ceramics in Calgary",
+        "paragraphs": [
+          "Pottery is one of Calgary's strongest art class categories. Muddy Paws Pottery, Pottery on 8th, and Fire Works Pottery all offer beginner-friendly wheel-throwing and hand-building classes. Most studios run introductory workshops as well as multi-week courses for people who want to develop the skill seriously.",
+          "Pottery is particularly good as a recurring social activity because the community that develops in a pottery studio is genuinely warm. You see the same people week after week, you celebrate each other's progress, and the tactile nature of the work makes conversation easy and natural. Mixler runs pottery events as single-session social experiences."
+        ]
+      },
+      {
+        "label": "Specialty Art Classes",
+        "heading": "Unique Art Experiences in Calgary",
+        "paragraphs": [
+          "Stained glass workshops are available through a small number of Calgary studios and are consistently one of the most surprising discoveries for people who try them. The process is technical but accessible, and the finished piece is genuinely beautiful in a way that simple painting isn't always.",
+          "Macrame, resin art, leather craft, and calligraphy workshops all run periodically through various Calgary studios and through Mixler. These specialty workshops tend to attract people who are looking for something different and creative, and they produce the most distinctive take-home pieces."
+        ],
+        "tip_box": {
+          "label": "Best takeaway",
+          "body": "Stained glass and leather craft workshops produce the most impressive finished pieces relative to the skill required going in."
+        }
+      },
+      {
+        "label": "Social Art Events",
+        "heading": "Art Events That Are as Much About People as Art",
+        "paragraphs": [
+          "Mixler runs art-focused social events throughout the year, including painting nights, pottery sessions, candle-making, and various specialty workshops. The format is designed to be social first. You'll learn something and make something, but you'll also spend two to three hours with a group of curious adults who are all slightly out of their comfort zone together.",
+          "Calgary's Art Central and the various gallery spaces in the Beltline district occasionally run participatory art events that blur the line between gallery opening and workshop. These are worth watching for if you want a more cultural art experience."
+        ]
+      }
+    ],
+    "mixler_cta": {
+      "heading": "Creative evenings, good company.",
+      "body": "Mixler runs art and craft social events throughout the year for Calgary adults.",
+      "button_text": "See Upcoming Events"
+    },
+    "related_activities": ["painting-calgary", "pottery-calgary", "stained-glass-calgary", "macrame-calgary"],
+    "faq": [
+      {
+        "q": "What are the best art classes for beginners in Calgary?",
+        "a": "Paint-and-sip events and introductory pottery workshops are the most beginner-friendly options. Both require no prior experience and have social formats that make the learning curve feel comfortable."
+      },
+      {
+        "q": "Where can I take pottery classes in Calgary?",
+        "a": "Muddy Paws Pottery, Pottery on 8th, and Fire Works Pottery are among the most established Calgary options. Mixler also runs single-session pottery social events for people who want to try it without committing to a multi-week course."
+      },
+      {
+        "q": "Are there art classes in Calgary for adults who aren't artistic?",
+        "a": "Many art classes are specifically designed for non-artists. Pottery, candle-making, macrame, and casual painting nights require no prior skill. The goal is the experience, not the finished product."
+      },
+      {
+        "q": "How much do art classes cost in Calgary?",
+        "a": "Single-session workshops typically run $40-90 per person depending on materials. Multi-week courses at pottery studios or art schools run $150-350 for the series. Mixler art events are typically in the single-session price range."
+      }
+    ],
+    "sidebar_cta": {
+      "heading": "Get your hands dirty.",
+      "body": "Browse Mixler's upcoming art and craft social events in Calgary.",
+      "button_text": "Browse Events"
+    }
+  }
+}

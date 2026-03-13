@@ -1,0 +1,88 @@
+{
+  "slug": "fun-things-to-do-calgary-groups",
+  "type": "roundup",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "meta": {
+    "title": "Fun Things to Do in Calgary for Groups | Mixler",
+    "description": "Planning a group outing in Calgary? Here are the best group activities for adults, from escape rooms to cooking classes, trivia nights, and more.",
+    "keywords": ["things to do Calgary groups", "group activities Calgary adults", "group outings Calgary"]
+  },
+  "content": {
+    "title": "Fun Things to Do in Calgary for Groups",
+    "subtitle": "Groups are hard to please. These Calgary activities actually work.",
+    "read_time": "6 min read",
+    "updated_date": "March 2026",
+    "intro": "Planning something for a group is one of the more stressful social tasks an adult will face. Someone always has a dietary restriction, a budget constraint, or a deep aversion to escape rooms. This guide covers the most reliable Calgary options for groups of 4-20, sorted by what they're best for.",
+    "sections": [
+      {
+        "label": "Competitive Group Activities",
+        "heading": "Group Activities With a Competitive Edge",
+        "paragraphs": [
+          "Escape rooms work for groups of 4-8, especially groups who enjoy problem-solving. Axe throwing venues like Bad Axe Throwing and Forged Axe accommodate larger groups and have a natural scoring mechanic that keeps energy up. Bowling at places like Splitsville or Winsport is a classic for a reason: it's low-skill-required, naturally competitive, and easy to scale.",
+          "Trivia nights at bars work well for groups who enjoy wordplay and general knowledge. If you want something more structured, murder mystery dinners and game show nights are excellent for groups of 10-30. Mixler runs both formats and they're among our most popular group bookings."
+        ],
+        "tip_box": {
+          "label": "Group size sweet spot",
+          "body": "Groups of 6-12 get the most out of competitive group activities. Larger groups tend to fragment unless the venue is specifically designed for them."
+        }
+      },
+      {
+        "label": "Creative Group Activities",
+        "heading": "Creative Experiences That Work for Groups",
+        "paragraphs": [
+          "Hands-on workshops are excellent for mixed groups because the skill level is levelled to the activity. A pottery class, a painting night, or a cocktail-making session means everyone's on roughly equal footing, which creates a comfortable dynamic. Nobody is the obvious expert and nobody feels left behind.",
+          "Mixler group events cover painting, pottery, candle-making, cocktail nights, cooking workshops, and more. For private group bookings, we can arrange dedicated sessions for your group across most of these formats. This is popular for birthday celebrations, work socials, and reunion gatherings."
+        ]
+      },
+      {
+        "label": "Active Group Activities",
+        "heading": "Active Group Outings in Calgary",
+        "paragraphs": [
+          "Rock climbing gyms, roller skating rinks, pickleball courts, and curling clubs all work well for groups and require zero experience to enjoy. Axiom Climbing or Boulder Basin for climbing, Bowness Park for skating (winter), and curling at one of Calgary's many clubs for a uniquely Canadian group experience.",
+          "For summer groups, kayaking and paddleboarding on the Bow River are excellent. Multiple kayak rental operations make this easy to arrange for groups without requiring everyone to own equipment. Group hikes in Kananaskis are outstanding for groups who can coordinate a morning, with no booking required for most trails."
+        ],
+        "tip_box": {
+          "label": "Summer group tip",
+          "body": "A Kananaskis group hike followed by dinner back in Calgary is a perfect, low-cost summer group day that everyone will actually remember."
+        }
+      },
+      {
+        "label": "Food and Drink Groups",
+        "heading": "Food and Drink Group Experiences in Calgary",
+        "paragraphs": [
+          "Cooking classes for groups are increasingly popular, especially formats where each person (or pair) prepares a component of a shared meal. Pasta-making, sushi nights, and charcuterie building workshops all work on this principle and are available through multiple Calgary providers including Mixler.",
+          "Whisky tastings, craft beer experiences at local breweries, and cocktail-making classes are the easiest group food-and-drink events to find in Calgary. Most craft breweries offer group tour and tasting options, and Mixler runs cocktail-making socials that work well for groups of 8-20."
+        ]
+      }
+    ],
+    "mixler_cta": {
+      "heading": "Group bookings at Mixler.",
+      "body": "We can arrange private group sessions for birthdays, work events, and reunion gatherings across our event formats.",
+      "button_text": "See Upcoming Events"
+    },
+    "related_activities": ["escape-rooms-calgary", "axe-throwing-calgary", "cooking-classes-calgary", "murder-mystery-calgary"],
+    "faq": [
+      {
+        "q": "What are the best group activities in Calgary for adults?",
+        "a": "Escape rooms, axe throwing, trivia nights, cooking classes, pottery workshops, cocktail-making, and murder mystery dinners all work well for adult groups. The best choice depends on group size and energy level."
+      },
+      {
+        "q": "Can I book a private group event with Mixler?",
+        "a": "Yes. Mixler accommodates private group bookings for birthdays, corporate events, and reunion gatherings. Get in touch through our website to discuss format and availability."
+      },
+      {
+        "q": "What group activities in Calgary work for mixed ages?",
+        "a": "Cooking classes, painting nights, trivia events, and pottery workshops are all highly age-inclusive. Escape rooms and axe throwing also work well across age groups. These activities don't require physical fitness or prior experience."
+      },
+      {
+        "q": "How much do group activities in Calgary cost per person?",
+        "a": "Widely variable. Axe throwing and escape rooms run $25-40 per person. Cooking classes and workshops run $50-90 per person. Trivia nights at bars are often free or very cheap. Mixler group events are typically in the $40-70 range."
+      }
+    ],
+    "sidebar_cta": {
+      "heading": "Planning a group outing?",
+      "body": "Browse Mixler events or get in touch about a private group booking.",
+      "button_text": "Browse Events"
+    }
+  }
+}

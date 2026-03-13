@@ -1,0 +1,88 @@
+{
+  "slug": "going-out-solo-calgary",
+  "type": "authority",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "meta": {
+    "title": "Going Out Solo in Calgary: A No-Awkward Guide | Mixler",
+    "description": "Going out alone in Calgary doesn't have to be awkward. Here's how to actually enjoy it and meet people while you're at it.",
+    "keywords": ["going out solo Calgary", "solo activities Calgary adults", "things to do alone Calgary"]
+  },
+  "content": {
+    "title": "Going Out Solo in Calgary: A No-Awkward Guide",
+    "subtitle": "Solo doesn't mean lonely. Here's how to own it.",
+    "read_time": "6 min read",
+    "updated_date": "March 2026",
+    "intro": "There's a version of going out solo that's genuinely great. No waiting for people to commit, no compromising on what you want to do, no managing other people's energy. The challenge is that most social venues aren't designed with solo attendees in mind, so you need to know where to go.",
+    "sections": [
+      {
+        "label": "The Mindset Shift",
+        "heading": "Why Going Out Solo Is Actually an Advantage",
+        "paragraphs": [
+          "When you go out with a group, you largely talk to your group. When you go out alone, you're available. People can approach you, you can approach people, and the conversations that happen tend to be more genuine because there's no social performance happening for an existing audience.",
+          "The awkwardness of going out alone is almost entirely in your head during the first ten minutes. After that, if you've chosen the right kind of event, you'll be too busy doing the thing to feel self-conscious. The key is choosing events with enough structure that you're not just standing around."
+        ],
+        "tip_box": {
+          "label": "Reframe it",
+          "body": "You're not alone, you're available. That's a position of social strength, not weakness."
+        }
+      },
+      {
+        "label": "Best Solo Options",
+        "heading": "The Best Things to Do Solo in Calgary",
+        "paragraphs": [
+          "Structured social events are the gold standard for solo outings. Mixler events are built for this. When the event has an activity, a game, or a shared goal, you're immediately oriented toward the people around you. A pottery class, a trivia night, or a cocktail-making session gives you an instant in with whoever's sitting next to you.",
+          "Beyond Mixler, solo-friendly options include bar trivia nights (most welcome solo players who get folded into a team), improv classes (structured, physically active, inherently social), rock climbing gyms (the culture is very inclusive), and photography walks. Avoid passive activities like movies or concerts for a first solo outing. You want interaction, not just presence."
+        ]
+      },
+      {
+        "label": "Practical Tips",
+        "heading": "How to Actually Pull It Off",
+        "paragraphs": [
+          "Arrive slightly early. This sounds counterintuitive if you're nervous, but arriving before the main crowd means you're one of the first people there and the venue isn't full yet. It's much easier to start a conversation with someone when the room is half-empty than when everyone's already settled into groups.",
+          "Have a one-sentence answer ready for 'what brings you here.' Something honest and simple. 'I wanted to try pottery and didn't want to wait until I had someone to come with' is a perfect answer. It's relatable, slightly self-aware, and it opens a natural follow-up conversation. You don't need a script beyond that."
+        ],
+        "tip_box": {
+          "label": "Timing tip",
+          "body": "Arriving 5-10 minutes before an event officially starts is the sweet spot. Not awkwardly early, but before the room fills up."
+        }
+      },
+      {
+        "label": "Where We Come In",
+        "heading": "Why Mixler Events Are Perfect for Solo Outings",
+        "paragraphs": [
+          "We built Mixler knowing that a lot of our attendees would come alone. About half of every event is people showing up solo. The format is designed around that. Nobody's going to stare at you for arriving without a group, because there are a dozen other people in the same situation.",
+          "We also keep our events small enough that you're not invisible. In a group of 25-35 people doing the same activity, everyone ends up talking to everyone by the end of the night. You'll leave knowing more names than you expected."
+        ]
+      }
+    ],
+    "mixler_cta": {
+      "heading": "Go solo. We've got you.",
+      "body": "Mixler events are designed so solo attendees feel at home from minute one.",
+      "button_text": "See Upcoming Events"
+    },
+    "related_activities": ["pottery-calgary", "trivia-night-calgary", "improv-classes-calgary", "painting-calgary"],
+    "faq": [
+      {
+        "q": "Is it weird to go to events alone in Calgary?",
+        "a": "Not at all, especially at activity-based events. At Mixler, solo attendees make up roughly half the crowd at any given event. The format is designed so you're doing something alongside other people immediately, which removes the awkwardness quickly."
+      },
+      {
+        "q": "What are the best solo activities in Calgary for adults?",
+        "a": "Structured social events, improv classes, climbing gyms, bar trivia nights, and hands-on workshops like pottery or painting. The common thread is that all of these have a built-in activity that creates natural conversation."
+      },
+      {
+        "q": "How do I start conversations when I go out alone?",
+        "a": "Activity-based events do most of that work for you. When you're both doing the same thing, commenting on it is natural. 'Is yours turning out better than mine?' works for pottery. 'Did you get that last question?' works for trivia. You don't need clever openers."
+      },
+      {
+        "q": "Are there social events in Calgary specifically for people going solo?",
+        "a": "Mixler events are designed with solo attendees in mind, and many other structured social events in Calgary work well for solo visitors. Events like speed friending nights are specifically for people who want to meet new people."
+      }
+    ],
+    "sidebar_cta": {
+      "heading": "Your next solo adventure.",
+      "body": "Find an upcoming event and show up. We'll handle the rest.",
+      "button_text": "Browse Events"
+    }
+  }
+}

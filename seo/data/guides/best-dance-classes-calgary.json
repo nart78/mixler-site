@@ -1,0 +1,80 @@
+{
+  "slug": "best-dance-classes-calgary",
+  "type": "roundup",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "meta": {
+    "title": "The Best Dance Classes in Calgary | Mixler",
+    "description": "A roundup of the best dance classes in Calgary for adults, from salsa and swing to aerial, line dancing, and social dance nights.",
+    "keywords": ["best dance classes Calgary", "dance classes Calgary adults", "salsa swing dance Calgary"]
+  },
+  "content": {
+    "title": "The Best Dance Classes in Calgary",
+    "subtitle": "You don't need a partner or any experience to start dancing in Calgary.",
+    "read_time": "5 min read",
+    "updated_date": "March 2026",
+    "intro": "Dancing is one of the best social activities you can pick up as an adult in Calgary. It's physical, it's social, and it has a built-in community of people who genuinely want to welcome beginners. This guide covers the main dance styles and where to learn them in Calgary.",
+    "sections": [
+      {
+        "label": "Salsa and Latin Dance",
+        "heading": "Salsa and Latin Dance Classes in Calgary",
+        "paragraphs": [
+          "Calgary's salsa scene is active and welcoming to beginners. The Latin Dance Community of Calgary and studios like Bailalo Latin Dance run regular beginner salsa and bachata classes. Most beginner sessions don't require a partner, and rotating partners is built into the class structure, which makes these excellent for solo attendees.",
+          "Social salsa nights happen regularly at venues around the city, often after beginner lesson blocks. The format is: 30-45 minute lesson followed by 2-3 hours of social dancing with live or DJ music. This is the fastest way to go from zero to actually dancing, because you learn and immediately apply."
+        ],
+        "tip_box": {
+          "label": "Solo welcome",
+          "body": "You absolutely do not need a partner to take beginner salsa or swing classes in Calgary. Rotating partners is standard."
+        }
+      },
+      {
+        "label": "Swing and Ballroom",
+        "heading": "Swing, Ballroom, and Social Dance in Calgary",
+        "paragraphs": [
+          "The Calgary Swing Dance Society runs regular beginner swing (lindy hop and east coast swing) nights with lesson components. Their community is genuinely friendly and beginner-oriented, and the vintage music aesthetic appeals to a lot of people who might not think of themselves as dancers.",
+          "Ballroom dance studios like Arthur Murray and Fred Astaire have locations in Calgary and offer structured private and group lessons in a wide range of ballroom styles. These are more formal than social dance communities and better suited to people who want structured progression rather than a community social experience."
+        ]
+      },
+      {
+        "label": "Other Dance Styles",
+        "heading": "Beyond Salsa: Other Dance Classes Worth Trying in Calgary",
+        "paragraphs": [
+          "Aerial yoga and pole fitness studios have grown significantly in Calgary. These blend dance, acrobatics, and fitness and attract people who want something physically challenging with a strong community component. Base Aerial Arts and Atmosphere Pole Fitness are among the established options.",
+          "Mixler runs swing dancing and salsa social events as part of our broader events calendar. These are designed for the social experience rather than technical instruction, making them great entry points for people who want to try dancing in a low-pressure group setting before committing to a class series."
+        ],
+        "tip_box": {
+          "label": "First step",
+          "body": "A Mixler dance social night is a lower commitment first step than signing up for a 6-week class series."
+        }
+      }
+    ],
+    "mixler_cta": {
+      "heading": "Dance nights at Mixler.",
+      "body": "Mixler runs social dance events in Calgary that welcome absolute beginners.",
+      "button_text": "See Upcoming Events"
+    },
+    "related_activities": ["salsa-dancing-calgary", "swing-dancing-calgary", "aerial-yoga-calgary", "roller-skating-calgary"],
+    "faq": [
+      {
+        "q": "What are the best dance classes for beginners in Calgary?",
+        "a": "Salsa and swing beginner nights are the most accessible. The Latin Dance Community of Calgary and the Calgary Swing Dance Society both offer welcoming beginner programs that don't require a partner."
+      },
+      {
+        "q": "Do I need a partner to take dance classes in Calgary?",
+        "a": "No. Most social dance classes in Calgary, including salsa, bachata, and swing, use rotating partners as part of the class structure. Coming solo is completely normal and expected."
+      },
+      {
+        "q": "How much do dance classes cost in Calgary?",
+        "a": "Drop-in social dance nights typically run $10-20 per person including the lesson. Multi-week class series run $80-200 depending on the style and studio. Private lessons at studios like Arthur Murray are more expensive."
+      },
+      {
+        "q": "Are there dance social nights in Calgary?",
+        "a": "Yes. The Latin Dance Community and Calgary Swing Dance Society run regular social dance nights. Mixler also runs dance-focused social events that are particularly good for people who want the social experience without committing to a full class series."
+      }
+    ],
+    "sidebar_cta": {
+      "heading": "Move more. Meet people.",
+      "body": "Browse Mixler's dance and movement events in Calgary.",
+      "button_text": "Browse Events"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "best-adult-social-events-calgary",
+  "type": "authority",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "meta": {
+    "title": "The Best Adult Social Events in Calgary | Mixler",
+    "description": "Looking for the best social events in Calgary for adults? Here's what's actually worth your time, from trivia nights to hands-on workshops.",
+    "keywords": ["adult social events Calgary", "social events Calgary", "fun events Calgary adults"]
+  },
+  "content": {
+    "title": "The Best Adult Social Events in Calgary",
+    "subtitle": "We run social events for adults in Calgary. Here's what we've learned about what actually works.",
+    "read_time": "6 min read",
+    "updated_date": "March 2026",
+    "intro": "Calgary has more going on than most people realize. The challenge is finding events that are genuinely fun and not awkward, that attract interesting people, and that don't require you to already have a group to enjoy them. We've spent a lot of time thinking about this, because it's basically what Mixler does.",
+    "sections": [
+      {
+        "label": "What Makes a Good Social Event",
+        "heading": "The Difference Between a Good Night Out and an Awkward One",
+        "paragraphs": [
+          "The best social events have structure. That sounds boring, but it's actually the opposite. When there's an activity, a game, or a shared challenge, strangers have something to talk about immediately. The conversation starts itself. Events that are just \"come hang out\" put all the pressure on attendees to generate their own fun, and most people aren't great at that with strangers.",
+          "We design every Mixler event around this principle. Whether it's a pottery class, a trivia night, or a cocktail-making session, the activity does the social heavy lifting. You just show up."
+        ],
+        "tip_box": {
+          "label": "Key insight",
+          "body": "Activity-based events consistently produce better social outcomes than purely social ones. Give people something to do together."
+        }
+      },
+      {
+        "label": "Best Event Types",
+        "heading": "Event Formats That Work Best in Calgary",
+        "paragraphs": [
+          "Hands-on workshops are our top pick. Pottery, painting, candle-making, pasta-making. They run 2-3 hours, attract people who are actually curious and engaged, and the physical activity creates natural pauses for conversation. You also leave with something you made, which is weirdly satisfying.",
+          "Competitive social events come in a close second. Trivia nights, pub quizzes, escape rooms, and game show nights all have a built-in narrative arc. There are highs and lows, funny moments, and the shared experience of winning or losing together. These are especially good if you're coming with one or two people and want to meet others."
+        ]
+      },
+      {
+        "label": "What to Expect at Mixler Events",
+        "heading": "How We Run Social Events in Calgary",
+        "paragraphs": [
+          "We keep our events small, usually 20-40 people. That's big enough to meet a variety of people, small enough that nobody gets lost in the crowd. We've found that events over 60 people start to fragment into existing friend groups, which defeats the purpose for anyone coming solo.",
+          "Our events rotate across different Calgary neighbourhoods and venues. We deliberately mix up the formats so there's always something new. The regulars who come to multiple events tell us they appreciate not knowing exactly what to expect each time, and they keep running into the same people in different contexts, which is how real friendships form."
+        ],
+        "tip_box": {
+          "label": "Solo-friendly",
+          "body": "About half the people who come to Mixler events arrive alone. It's completely normal and the format is designed for it."
+        }
+      },
+      {
+        "label": "Finding Events",
+        "heading": "How to Stay Plugged In to Calgary's Social Scene",
+        "paragraphs": [
+          "The Calgary social calendar is scattered across Instagram, Eventbrite, venue websites, and Facebook groups. The most efficient approach is to find one or two sources you trust and check them regularly. Mixler puts everything on our events page, with enough lead time to actually plan your week.",
+          "Beyond Mixler, keep an eye on what's happening at local venues like Annex Ale Project, National on 8th, and various studio spaces around Inglewood and Kensington. These spots run their own programming that tends to attract curious, sociable people."
+        ]
+      }
+    ],
+    "mixler_cta": {
+      "heading": "We run Calgary's best adult social events.",
+      "body": "Small groups, hands-on activities, and an atmosphere designed for meeting people.",
+      "button_text": "See Upcoming Events"
+    },
+    "related_activities": ["trivia-night-calgary", "pottery-calgary", "cocktail-making-calgary", "escape-rooms-calgary"],
+    "faq": [
+      {
+        "q": "What are the best social events for adults in Calgary?",
+        "a": "Activity-based events work best. Hands-on workshops like pottery or cooking classes, competitive events like trivia nights, and structured social events from organizers like Mixler consistently produce better experiences than generic \"networking\" events."
+      },
+      {
+        "q": "Are there solo-friendly social events in Calgary?",
+        "a": "Yes. Mixler events are specifically designed for people attending alone. About half our attendees come solo, and the activity format means conversation starts naturally without anyone having to force it."
+      },
+      {
+        "q": "How much do social events in Calgary typically cost?",
+        "a": "Prices vary widely. Free events like pub quizzes at bars exist, but usually attract very different crowds. Paid workshops ($30-60) tend to attract people who are more intentional about being there. Mixler events fall in that range."
+      },
+      {
+        "q": "How often do social events happen in Calgary?",
+        "a": "Frequently enough that you can find something most weekends. Mixler runs multiple events per month. On top of that, venues around 17th Ave, Inglewood, and Kensington run their own programming regularly."
+      }
+    ],
+    "sidebar_cta": {
+      "heading": "Something happening near you.",
+      "body": "Browse all upcoming Mixler events in Calgary.",
+      "button_text": "Browse Events"
+    }
+  }
+}

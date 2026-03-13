@@ -1,0 +1,92 @@
+{
+  "slug": "how-to-meet-people-calgary",
+  "type": "authority",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "meta": {
+    "title": "How to Meet People in Calgary as an Adult | Mixler",
+    "description": "Meeting people in Calgary as an adult is harder than it should be. Here's how locals actually do it, and where Mixler fits in.",
+    "keywords": ["how to meet people in Calgary", "meet people Calgary adults", "social events Calgary"]
+  },
+  "content": {
+    "title": "How to Meet People in Calgary as an Adult",
+    "subtitle": "Straight talk on making friends in a city where everyone seems to already have their crew.",
+    "read_time": "6 min read",
+    "updated_date": "March 2026",
+    "intro": "Calgary is a great city, but it has a reputation for being hard to break into socially. People move here for work, get busy, and suddenly realize their whole social life lives inside Slack. If that sounds familiar, you're not alone and you're not doing anything wrong.",
+    "sections": [
+      {
+        "label": "The Problem",
+        "heading": "Why Meeting People in Calgary Feels So Hard",
+        "paragraphs": [
+          "A lot of Calgarians moved here from somewhere else. That sounds like it should make the city friendlier, but it often has the opposite effect. Everyone's in survival mode when they first arrive, building routines and work relationships, and by the time life settles down, the social window feels like it's closed.",
+          "The other factor is the city's geography. Calgary is spread out, people drive everywhere, and there aren't many natural gathering spots where you run into the same people week after week. Unlike a dense walkable neighbourhood, you don't accidentally meet your neighbours just by going outside."
+        ],
+        "tip_box": {
+          "label": "Local insight",
+          "body": "The friends-of-friends network is strong in Calgary. Getting into one social circle often opens several more within a few months."
+        }
+      },
+      {
+        "label": "What Works",
+        "heading": "The Approaches That Actually Build Friendships",
+        "paragraphs": [
+          "Recurring activities beat one-off events every time. Joining a recreational sports league, a climbing gym, a pottery class that runs for six weeks, or a book club that meets monthly puts you in the same room as the same people repeatedly. That repetition is what builds actual friendships, not a single great conversation at a party.",
+          "The best social activities in Calgary right now are structured ones. We run events at Mixler specifically because they give everyone a reason to be there and a shared thing to talk about. Nobody has to be the extrovert who drags the conversation. The activity does that work."
+        ],
+        "tip_box": {
+          "label": "The secret",
+          "body": "Show up twice. The first time you're a stranger. The second time you're someone people recognize."
+        }
+      },
+      {
+        "label": "Where to Start",
+        "heading": "Best Places to Actually Meet People in Calgary",
+        "paragraphs": [
+          "Recreational sports leagues (Calgary Sport and Social Club runs a good one), climbing gyms like Axiom or Boulder Basin, pottery studios, improv classes, and structured social events are all solid starting points. The common thread is that they're all repeated and they all give you something to do with your hands, which takes the social pressure off.",
+          "For one-off events that still feel low-pressure, look at what's happening around Inglewood, Kensington, and 17th Ave. These neighbourhoods have the highest density of independent venues running interesting programming. Mixler events rotate across the city and are designed specifically so you can show up knowing nobody and leave having talked to a dozen people."
+        ]
+      },
+      {
+        "label": "Mindset",
+        "heading": "The One Thing That Changes Everything",
+        "paragraphs": [
+          "Most people wait for the right moment or the right invite. In Calgary, that invite often doesn't come because everyone else is also waiting. Being the person who shows up to something without knowing anyone is actually a social superpower here, because you signal availability that most adults don't show.",
+          "Give it three months of consistent effort. That's the timeline we hear again and again from people who moved here and eventually built a real social life. It feels slow at first and then it compounds quickly."
+        ],
+        "tip_box": {
+          "label": "Timeline",
+          "body": "Three months of one recurring activity is usually enough to go from stranger to familiar face to actual friend."
+        }
+      }
+    ],
+    "mixler_cta": {
+      "heading": "We built Mixler to solve exactly this.",
+      "body": "Every event is designed so you can walk in solo and walk out with people you actually want to see again.",
+      "button_text": "See Upcoming Events"
+    },
+    "related_activities": ["painting-calgary", "pottery-calgary", "improv-classes-calgary", "trivia-night-calgary"],
+    "faq": [
+      {
+        "q": "Is it really hard to make friends in Calgary as an adult?",
+        "a": "Harder than most people expect, yes. Calgary has a high proportion of transplants and a spread-out geography that makes accidental social connection rare. But it's very doable with the right approach, and structured activities are the fastest path."
+      },
+      {
+        "q": "What are the best social events in Calgary for adults?",
+        "a": "Anything recurring and activity-based works best. Mixler events, sport and social leagues, pottery or painting classes, climbing gyms, and improv courses all create the repeated contact that builds real friendships."
+      },
+      {
+        "q": "How do I meet people in Calgary if I'm introverted?",
+        "a": "Activity-based events are perfect for introverts because the activity carries the conversation. You don't need to be \"on\" the whole time. Pottery classes, trivia nights, and cooking events all give you something to focus on while naturally chatting with the people next to you."
+      },
+      {
+        "q": "How long does it take to build a social life in Calgary after moving here?",
+        "a": "Most people we talk to say three to six months of consistent effort. The key word is consistent. Showing up to one thing every few weeks is enough if it's the same thing with the same people."
+      }
+    ],
+    "sidebar_cta": {
+      "heading": "Ready to meet some people?",
+      "body": "Browse upcoming Mixler events and find one that fits your vibe.",
+      "button_text": "Browse Events"
+    }
+  }
+}

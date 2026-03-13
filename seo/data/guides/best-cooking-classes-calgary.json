@@ -1,0 +1,88 @@
+{
+  "slug": "best-cooking-classes-calgary",
+  "type": "roundup",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "meta": {
+    "title": "The Best Cooking Classes in Calgary | Mixler",
+    "description": "Looking for cooking classes in Calgary? Here's a roundup of the best options for adults, from sushi-making to pasta, knife skills to baking.",
+    "keywords": ["best cooking classes Calgary", "cooking classes Calgary adults", "Calgary culinary classes"]
+  },
+  "content": {
+    "title": "The Best Cooking Classes in Calgary",
+    "subtitle": "Calgary's culinary class scene is better than most people realize.",
+    "read_time": "6 min read",
+    "updated_date": "March 2026",
+    "intro": "A good cooking class does two things: it teaches you something useful and it puts you in a room with interesting people doing something hands-on together. Calgary has solid options in this category, from professional culinary schools to casual social cooking events.",
+    "sections": [
+      {
+        "label": "Top Venues",
+        "heading": "Where to Take Cooking Classes in Calgary",
+        "paragraphs": [
+          "SAIT's culinary programs include public-facing cooking classes for adults that are taught by professional chefs in professional kitchen environments. These are more structured and technical than most options in the city. Inspired Kitchen runs regular public cooking events with a more casual, social format focused on approachability.",
+          "The Cookbook Co. Cooks on Macleod Trail has been a Calgary institution for years, offering hands-on cooking classes across a huge range of cuisines and skill levels. Their classes sell out regularly, which is a reliable indicator of quality. Rustic Sourdough and several neighbourhood bakeries also offer bread and pastry workshops."
+        ],
+        "tip_box": {
+          "label": "For beginners",
+          "body": "Look for classes explicitly labeled 'hands-on' or 'beginner-friendly.' Demo-only classes are educational but less memorable."
+        }
+      },
+      {
+        "label": "By Cuisine Type",
+        "heading": "Cooking Classes by Category in Calgary",
+        "paragraphs": [
+          "For Asian cuisine: sushi-making, dumpling-making, and noodle workshops come up regularly at various Calgary venues and through Mixler. These tend to be highly popular because the skills are transferable to home cooking and the process is tactile and engaging.",
+          "For European cuisines: pasta-making classes are perennially popular and available through multiple providers. Bread baking, charcuterie and cheese workshops, and knife skills classes round out the European cooking class landscape. Knife skills in particular is a class that almost everyone who takes it says they should have taken years earlier."
+        ]
+      },
+      {
+        "label": "Social Cooking Events",
+        "heading": "Cooking Classes That Are Also Great Social Events",
+        "paragraphs": [
+          "Mixler runs cooking-focused social events including pasta-making, sushi, dumpling workshops, and cocktail and cooking pairings. The format is designed to be social first, educational second, which means the ratio of fun to instruction is calibrated for adults who want to meet people as much as they want to learn to cook.",
+          "Urban Cultivator and various chef-led pop-ups also run cooking experiences that are less formal class and more communal dining experience. These work well for dates and small groups looking for something participatory."
+        ],
+        "tip_box": {
+          "label": "Social vs. technical",
+          "body": "If meeting people matters, choose a social cooking event. If skill development is the goal, choose a proper culinary class."
+        }
+      },
+      {
+        "label": "Booking Tips",
+        "heading": "How to Get Into the Best Calgary Cooking Classes",
+        "paragraphs": [
+          "Popular cooking classes in Calgary (especially at The Cookbook Co.) sell out weeks in advance. Check their calendars monthly and book as soon as you see something appealing. Many classes offer gift card options, which are genuinely useful to give and to receive.",
+          "For a more flexible booking experience, Mixler events in the food category are listed on a rolling basis and you can browse by date. If you're specifically looking for a date night cooking experience, we recommend booking 2-3 weeks ahead to get the session and time that works for you."
+        ]
+      }
+    ],
+    "mixler_cta": {
+      "heading": "Cook. Laugh. Meet people.",
+      "body": "Mixler runs food-focused social events in Calgary including pasta nights, sushi workshops, and more.",
+      "button_text": "See Upcoming Events"
+    },
+    "related_activities": ["cooking-classes-calgary", "sushi-making-calgary", "pasta-making-calgary", "dumpling-making-calgary"],
+    "faq": [
+      {
+        "q": "Where are the best cooking classes in Calgary?",
+        "a": "The Cookbook Co. Cooks, SAIT culinary public classes, Inspired Kitchen, and Mixler social cooking events are among the best options. Choice depends on whether you want professional instruction or a more social format."
+      },
+      {
+        "q": "How much do cooking classes cost in Calgary?",
+        "a": "Most hands-on cooking classes run $60-120 per person depending on the venue and cuisine. Mixler food events tend to be on the lower end of that range. SAIT and Cookbook Co. classes are priced in the middle to upper range."
+      },
+      {
+        "q": "Are there cooking classes in Calgary for beginners?",
+        "a": "Yes. Most Calgary cooking class providers offer beginner-friendly options. Look for classes that specify 'no experience required' or list a cuisine category you're genuinely curious about rather than something you already cook regularly."
+      },
+      {
+        "q": "Can I do a cooking class as a date in Calgary?",
+        "a": "Cooking classes make excellent dates. Sushi-making, pasta nights, and cocktail and cooking combos are all available in Calgary and work well for couples. Mixler runs several date-friendly food events throughout the year."
+      }
+    ],
+    "sidebar_cta": {
+      "heading": "Cooking nights at Mixler.",
+      "body": "Browse our upcoming food-focused social events in Calgary.",
+      "button_text": "Browse Events"
+    }
+  }
+}

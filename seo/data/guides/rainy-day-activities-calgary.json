@@ -1,0 +1,80 @@
+{
+  "slug": "rainy-day-activities-calgary",
+  "type": "roundup",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "meta": {
+    "title": "Rainy Day Activities in Calgary | Mixler",
+    "description": "A rainy day in Calgary doesn't mean a wasted day. Here are the best indoor activities for adults when the weather keeps you inside.",
+    "keywords": ["rainy day activities Calgary", "indoor things to do Calgary rain", "Calgary bad weather activities"]
+  },
+  "content": {
+    "title": "Rainy Day Activities in Calgary",
+    "subtitle": "Calgary gets rain. These activities make it an opportunity instead of an obstacle.",
+    "read_time": "5 min read",
+    "updated_date": "March 2026",
+    "intro": "Calgary summers can bring unexpected rainy stretches, and spring and fall are reliably wet. A rainy day is a built-in permission slip to do the things you keep meaning to do. This guide covers the best rainy day indoor activities in Calgary for adults who want more than Netflix.",
+    "sections": [
+      {
+        "label": "Creative Rainy Day Options",
+        "heading": "Creative Activities Perfect for a Rainy Day",
+        "paragraphs": [
+          "Pottery, painting, and creative workshops are ideal rainy day activities because they're tactile, absorbing, and time-passing in a way that's difficult to explain until you've tried it. A three-hour pottery session passes entirely differently from three hours on a couch, and you emerge with something to show for it.",
+          "Mixler events in the arts and craft category run year-round and are particularly popular on rainy weekends. Candle-making, resin art, macrame, and calligraphy workshops give the rainy day a productive quality that feels satisfying rather than wasted."
+        ],
+        "tip_box": {
+          "label": "Rainy day bonus",
+          "body": "Rainy days are the best time to try something you've been curious about. The weather removes the alternative options and makes trying something new feel like the obvious choice."
+        }
+      },
+      {
+        "label": "Social Rainy Day Activities",
+        "heading": "Rainy Day Social Events in Calgary",
+        "paragraphs": [
+          "Board game cafes are one of Calgary's more underrated rainy day options. Sentry Box (technically a game store with play space) and various cafe-game hybrid spaces provide hours of entertainment for groups and pairs. The selection of modern board games available to play in-store is usually much more interesting than what most people have at home.",
+          "Pub trivia, murder mystery dinners, and escape rooms are all excellent rainy day social options. Escape rooms in particular have a cozy underground quality that pairs well with grey, wet weather outside. Being completely immersed in a problem for 60 minutes while it rains is a surprisingly enjoyable experience."
+        ]
+      },
+      {
+        "label": "Cultural Rainy Day Options",
+        "heading": "Cultural Activities for a Rainy Day in Calgary",
+        "paragraphs": [
+          "Calgary's Glenbow Museum, the National Music Centre (Studio Bell), and the Esker Foundation Gallery are all excellent rainy day destinations. The Glenbow in particular has permanent collections that repay multiple visits and is one of the most underutilized resources in the city.",
+          "Reading a rainy afternoon in a Calgary independent bookstore, particularly Shelf Life Books in Inglewood, is a genuinely nice experience. The neighbourhood is well set up for a slow, culture-filled rainy day that includes coffee, books, and lunch without needing to travel far."
+        ],
+        "tip_box": {
+          "label": "Free option",
+          "body": "The Glenbow Museum admission is reasonable and the collections are extensive enough to fill an entire rainy afternoon without rushing."
+        }
+      }
+    ],
+    "mixler_cta": {
+      "heading": "Rainy day solved.",
+      "body": "Mixler runs indoor social events year-round in Calgary. Something is almost always on.",
+      "button_text": "See Upcoming Events"
+    },
+    "related_activities": ["pottery-calgary", "escape-rooms-calgary", "board-games-calgary", "candle-making-calgary"],
+    "faq": [
+      {
+        "q": "What are the best rainy day activities in Calgary for adults?",
+        "a": "Creative workshops (pottery, painting, candle-making), escape rooms, board game cafes, pub trivia, museum visits, and Mixler social events are all great Calgary rainy day options."
+      },
+      {
+        "q": "Are there walk-in indoor activity options on rainy days in Calgary?",
+        "a": "Yes. Board game cafes, climbing gyms, and some bowling alleys welcome walk-ins. For the best experience, booking ahead for escape rooms and workshops is recommended."
+      },
+      {
+        "q": "What free or cheap things can I do on a rainy day in Calgary?",
+        "a": "The Glenbow Museum is affordable. Public library branches have comfortable reading spaces and programming. Parks pathways under bridges provide covered walking. Bookshops and cafes in Inglewood are very rainy-day-friendly."
+      },
+      {
+        "q": "What's a good rainy day activity for couples in Calgary?",
+        "a": "A pottery class, cocktail-making session, escape room, or museum visit followed by lunch or dinner in Inglewood makes an excellent rainy day couple's outing in Calgary."
+      }
+    ],
+    "sidebar_cta": {
+      "heading": "Rain outside. Fun inside.",
+      "body": "Browse Mixler's indoor social events in Calgary.",
+      "button_text": "Browse Events"
+    }
+  }
+}

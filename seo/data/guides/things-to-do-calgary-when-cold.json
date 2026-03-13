@@ -1,0 +1,88 @@
+{
+  "slug": "things-to-do-calgary-when-cold",
+  "type": "roundup",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "meta": {
+    "title": "Things to Do in Calgary When It's Cold Outside | Mixler",
+    "description": "When Calgary temperatures drop, here are the best indoor activities for adults that are actually worth leaving your apartment for.",
+    "keywords": ["things to do Calgary cold weather", "indoor activities Calgary adults", "Calgary cold day activities"]
+  },
+  "content": {
+    "title": "Things to Do in Calgary When It's Cold Outside",
+    "subtitle": "Calgary cold is real. These activities make it irrelevant.",
+    "read_time": "6 min read",
+    "updated_date": "March 2026",
+    "intro": "When it hits -25 and the wind makes it feel like -35, there are two types of Calgarians: ones who hibernate, and ones who have a plan. The second group has a much better winter. Here are the best indoor activities in Calgary when the temperature drops.",
+    "sections": [
+      {
+        "label": "Creative Indoor Activities",
+        "heading": "Creative Workshops That Are Perfect for Cold Days",
+        "paragraphs": [
+          "Pottery studios are warm, tactile, and social in a way that few other indoor activities match. Calgary has a good selection of pottery studios and workshop formats, and there's something particularly satisfying about working with warm clay when the temperature outside is brutal. Muddy Paws Pottery and Fire Works Pottery both run regular beginner sessions.",
+          "Painting classes, candle-making workshops, macrame sessions, and resin art nights are all excellent cold-day activities. Mixler runs these throughout winter with rotating formats. Candle-making in particular is very popular from October through February because the result is literally something you can burn to make your home warmer."
+        ],
+        "tip_box": {
+          "label": "Cozy factor",
+          "body": "Candle-making and pottery are the warmest-feeling indoor activities on the coldest days. There's something poetic about making warmth when it's freezing outside."
+        }
+      },
+      {
+        "label": "Social Indoor Activities",
+        "heading": "Social Events That Get You Out of the House",
+        "paragraphs": [
+          "Trivia nights at bars, murder mystery dinners, and game show nights are all excellent cold-weather social options because they give you a specific reason to leave the apartment (you have a ticket, there's a start time) and you'll be warm and entertained as soon as you arrive.",
+          "Mixler events in winter are among our most popular. The mix of indoor warmth, social activity, and hands-on engagement creates an atmosphere that people find genuinely satisfying on grey February nights. We see strong repeat attendance in winter specifically because once people find something that works, they come back."
+        ]
+      },
+      {
+        "label": "Active Indoor Options",
+        "heading": "Active Things to Do Indoors in Calgary",
+        "paragraphs": [
+          "Rock climbing gyms are excellent cold-day activities that are physical, mentally engaging, and social. Axiom and Boulder Basin both have strong community cultures and welcome beginners. An afternoon climbing session followed by drinks nearby is a solid cold-weather formula.",
+          "Indoor curling, bowling, ping pong bars, and escape rooms are all reliable active indoor options in Calgary. Escape rooms in particular get a surge in bookings during extreme cold snaps because they provide two hours of warm, engaged entertainment that feels completely removed from the weather outside."
+        ],
+        "tip_box": {
+          "label": "Get moving",
+          "body": "Active indoor activities like climbing or curling combat the winter lethargy better than passive ones. Your body feels better afterward."
+        }
+      },
+      {
+        "label": "Wellness Indoors",
+        "heading": "Wellness Activities for Cold Calgary Days",
+        "paragraphs": [
+          "Sound bath sessions, yoga socials, meditation workshops, and breathwork classes are all popular when the weather discourages going outside. Several Calgary studios run these events regularly, and they offer a genuine reset from the grey-sky fatigue that can set in mid-January.",
+          "Puppy yoga events are a seasonal favourite at Mixler because the combination of yoga and playing with puppies is an extremely effective antidote to winter mood. These events book out fast when we run them in winter."
+        ]
+      }
+    ],
+    "mixler_cta": {
+      "heading": "Come in from the cold.",
+      "body": "Mixler runs warm, social, hands-on events all winter long in Calgary.",
+      "button_text": "See Upcoming Events"
+    },
+    "related_activities": ["pottery-calgary", "candle-making-calgary", "escape-rooms-calgary", "sound-bath-calgary"],
+    "faq": [
+      {
+        "q": "What can I do in Calgary when it's really cold outside?",
+        "a": "Pottery, painting, candle-making, escape rooms, rock climbing, trivia nights, yoga, and Mixler social events are all great cold-weather Calgary activities. The trick is having something booked so you're not deciding on the couch."
+      },
+      {
+        "q": "Are there fun indoor activities in Calgary for adults?",
+        "a": "Many. Creative workshops, escape rooms, social events, climbing gyms, bowling, and wellness classes all run year-round indoors in Calgary. Mixler specializes in warm, social indoor events."
+      },
+      {
+        "q": "What should I do in Calgary when it's -30?",
+        "a": "Have something already booked. The motivational math is different when you have a ticket to something. Pottery, escape rooms, trivia nights, and Mixler events all work perfectly for -30 days."
+      },
+      {
+        "q": "What are some last-minute indoor activity ideas for Calgary?",
+        "a": "Rock climbing gyms often allow walk-ins. Escape rooms sometimes have day-of availability. Board game cafes and bowling alleys are walk-in friendly. Mixler events can occasionally accommodate last-minute bookings depending on capacity."
+      }
+    ],
+    "sidebar_cta": {
+      "heading": "Warm nights in Calgary.",
+      "body": "Find something worth leaving the house for. Browse Mixler events.",
+      "button_text": "Browse Events"
+    }
+  }
+}

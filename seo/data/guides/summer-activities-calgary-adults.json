@@ -1,0 +1,88 @@
+{
+  "slug": "summer-activities-calgary-adults",
+  "type": "authority",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "meta": {
+    "title": "Summer Activities in Calgary for Adults | Mixler",
+    "description": "Calgary summer is short and spectacular. Here's how to make the most of it with adult activities worth actually planning for.",
+    "keywords": ["summer activities Calgary adults", "things to do Calgary summer", "Calgary summer events adults"]
+  },
+  "content": {
+    "title": "Summer Activities in Calgary for Adults",
+    "subtitle": "The summer is short. Make it count.",
+    "read_time": "6 min read",
+    "updated_date": "March 2026",
+    "intro": "Calgary summer is legitimately one of the best things about living here. The long days, the mountains forty-five minutes away, the outdoor patios, the festivals. But summer also has a way of slipping by without you actually doing the things you meant to do. The people who get the most out of Calgary summers are the ones with at least a loose plan.",
+    "sections": [
+      {
+        "label": "Outdoor Adventures",
+        "heading": "The Best Outdoor Summer Activities Around Calgary",
+        "paragraphs": [
+          "The Rocky Mountains are your closest asset. A day trip to Banff or Kananaskis for a hike is genuinely world-class and accessible from downtown Calgary in under an hour. Kayaking on the Bow River runs through the city itself and doesn't even require leaving town. Paddleboarding, cycling on the extensive trail network, and outdoor climbing in the Bow Valley are all within easy reach.",
+          "Photography walks through Calgary's river pathways and green spaces are underrated. The Elbow River trail, the pathway through Fish Creek Park, and the views from Scotsman's Hill over Inglewood are genuinely beautiful in summer. Mixler has run photography walk events that combine the outdoor experience with the social element."
+        ],
+        "tip_box": {
+          "label": "Day trip formula",
+          "body": "Mountains in the morning, Mixler event in the evening. That's the perfect Calgary summer day."
+        }
+      },
+      {
+        "label": "Social Summer Events",
+        "heading": "Social Activities That Make the Most of Summer",
+        "paragraphs": [
+          "Summer Mixler events tend to be more varied because we can use outdoor and pop-up venues that aren't available in winter. Outdoor cocktail evenings, social events on patios, and summer evening workshops are a different vibe than our winter events, and we love them for it.",
+          "Outdoor summer festivals create great spontaneous social opportunities. The Calgary Folk Music Festival, Stampede fringe events, outdoor movie nights in Prince's Island Park, and the many neighbourhood block parties that happen through July and August all create the kind of loose, warm-weather socializing that's harder to engineer in winter."
+        ]
+      },
+      {
+        "label": "Learning Something New",
+        "heading": "Summer Is the Best Time to Pick Up a New Skill",
+        "paragraphs": [
+          "For some reason, summer feels like the right time to start something new. Rock climbing, kayaking, salsa dancing, pottery. The energy is there, the days are long, and there's a generally experimental quality to summer that makes trying something unfamiliar feel lower stakes.",
+          "Mixler summer events often feature activities that have an outdoor or adventurous quality. We look at what people are genuinely curious about in summer and build programming around that. Classes that have waiting lists in winter sometimes have the best energy in July when people show up with fresh motivation."
+        ],
+        "tip_box": {
+          "label": "Summer resolution",
+          "body": "Pick one thing you've meant to learn for years and book it for July. The summer energy will carry you through."
+        }
+      },
+      {
+        "label": "Making It Social",
+        "heading": "How to Turn Summer Activities Into an Actual Social Life",
+        "paragraphs": [
+          "Summer is the easiest time of year to suggest activities to people you want to get to know better. 'Want to kayak on Saturday?' or 'I'm doing a cocktail class Friday, want to come?' land much more easily in summer than in winter. Use the season's energy to make moves you've been putting off.",
+          "One Mixler summer event can unlock a lot of secondary connections. People you meet at a summer cocktail night might invite you to a backyard BBQ the following weekend, which opens an entirely new social group. Summer social networks in Calgary are loosely connected in ways that are genuinely easy to navigate if you put yourself in a few rooms."
+        ]
+      }
+    ],
+    "mixler_cta": {
+      "heading": "Your best Calgary summer starts here.",
+      "body": "Mixler runs summer events across Calgary that are social, fun, and worth planning your evening around.",
+      "button_text": "See Upcoming Events"
+    },
+    "related_activities": ["kayaking-calgary", "photography-walks-calgary", "cocktail-making-calgary", "salsa-dancing-calgary"],
+    "faq": [
+      {
+        "q": "What are the best summer activities for adults in Calgary?",
+        "a": "Outdoor: hiking in Kananaskis, kayaking the Bow River, cycling the pathway network, and day trips to Banff. Social: Mixler events, outdoor festivals, patio evenings, and activity-based summer workshops."
+      },
+      {
+        "q": "Are there summer social events in Calgary for adults?",
+        "a": "Yes. Mixler runs events year-round including summer. Calgary also has a rich summer festival calendar, neighbourhood events, and recreational sports leagues that ramp up in summer."
+      },
+      {
+        "q": "What should I do in Calgary this summer?",
+        "a": "At minimum: one Banff or Kananaskis day trip, one Calgary festival (Folk Fest is great), and one hands-on experience like a cooking class or creative workshop. Mixler can handle the last category."
+      },
+      {
+        "q": "What outdoor activities can adults do in Calgary in summer?",
+        "a": "Kayaking, paddleboarding, cycling, hiking, outdoor rock climbing, photography walks, roller skating, and golf are all solid Calgary summer options. Most are accessible without a car, though having one opens up the mountains."
+      }
+    ],
+    "sidebar_cta": {
+      "heading": "Summer plans start here.",
+      "body": "Browse Mixler's summer event calendar and book something worth looking forward to.",
+      "button_text": "Browse Events"
+    }
+  }
+}

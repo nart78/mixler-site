@@ -1,0 +1,80 @@
+{
+  "slug": "things-to-do-calgary-this-weekend",
+  "type": "authority",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "meta": {
+    "title": "Things to Do in Calgary This Weekend | Mixler",
+    "description": "Don't waste your weekend. Here's what's worth doing in Calgary right now, from Mixler events to local favourites you might not know about.",
+    "keywords": ["things to do Calgary this weekend", "Calgary weekend activities", "what to do this weekend Calgary"]
+  },
+  "content": {
+    "title": "Things to Do in Calgary This Weekend",
+    "subtitle": "Weekends in Calgary are better when you actually plan them.",
+    "read_time": "5 min read",
+    "updated_date": "March 2026",
+    "intro": "The weekend planning conversation usually goes one of two ways. Either you spontaneously end up doing the same things you always do, or someone puts in the effort to find something new and everyone has a better time for it. This guide is for the second kind of weekend.",
+    "sections": [
+      {
+        "label": "Mixler Events",
+        "heading": "What We Have On This Weekend",
+        "paragraphs": [
+          "Mixler runs events most weekends, rotating through formats and venues across Calgary. Weekend events tend to be our most popular because people have more time and more social energy. You'll find everything from Saturday afternoon pottery sessions to Friday evening cocktail nights to Sunday creative workshops.",
+          "All of our events are bookable online and designed for solo attendees as well as groups. If you're trying to fill a Saturday evening with something genuinely worthwhile, checking our events page is the fastest route."
+        ],
+        "tip_box": {
+          "label": "Book it now",
+          "body": "Popular weekend events fill up mid-week. Check and book Tuesday or Wednesday to guarantee your spot."
+        }
+      },
+      {
+        "label": "Beyond Mixler",
+        "heading": "Other Great Weekend Options in Calgary",
+        "paragraphs": [
+          "Calgary has a solid rotating calendar of weekend events beyond what Mixler runs. Craft beer events at local breweries, art market pop-ups in East Village, live music at venues in Inglewood and Kensington, comedy nights, and neighbourhood markets all happen regularly. The challenge is that they require you to go looking for them because they're not aggregated anywhere obvious.",
+          "For outdoor weekends, Fish Creek Park is consistently underrated. It's the second-largest municipal park in North America and has cycling, walking, wildlife, and a completely different feel from the rest of the city. Paired with brunch in Inglewood or Marda Loop, it makes for a genuinely satisfying Calgary Saturday."
+        ]
+      },
+      {
+        "label": "Day Trips",
+        "heading": "Weekend Day Trips Worth the Drive from Calgary",
+        "paragraphs": [
+          "Banff is 90 minutes. Canmore is 75 minutes. Kananaskis is 45 minutes. If you have a car and reasonable weather, any of these makes for an exceptional day that you'll feel good about by Sunday evening. The mountains are Calgary's greatest proximity advantage and most people underuse them.",
+          "Drumheller is a different kind of day trip, two hours east through the prairies and into badlands that genuinely feel like another planet. It's particularly good for people with visiting friends and family who want to see something they won't see anywhere else."
+        ],
+        "tip_box": {
+          "label": "Mountain tip",
+          "body": "Check weather and road conditions on albertaroadsafety.com before any mountain day trip. Conditions change fast."
+        }
+      }
+    ],
+    "mixler_cta": {
+      "heading": "Don't default to the couch.",
+      "body": "Mixler has something on this weekend. Check what's available and book before it fills.",
+      "button_text": "See Upcoming Events"
+    },
+    "related_activities": ["pottery-calgary", "cooking-classes-calgary", "trivia-night-calgary", "escape-rooms-calgary"],
+    "faq": [
+      {
+        "q": "What's there to do in Calgary this weekend?",
+        "a": "Check Mixler for this weekend's events. Beyond that, look at what's on at local breweries, comedy venues, and arts spaces. Fish Creek Park and a day trip to Banff or Kananaskis are always strong weekend options."
+      },
+      {
+        "q": "What are some fun weekend activities in Calgary for adults?",
+        "a": "Hands-on workshops (pottery, cooking, cocktail-making), escape rooms, trivia nights, live music, outdoor hiking, day trips to the mountains, and art markets. Mixler runs weekend events in the first category regularly."
+      },
+      {
+        "q": "Are there last-minute things to do in Calgary on weekends?",
+        "a": "Some. Bar trivia nights often don't require booking. Certain Mixler events have last-minute spots. Walk-in options include bowling, climbing gyms, and bar patios. For the best experience, booking even 3-4 days ahead opens many more options."
+      },
+      {
+        "q": "What day trip options are there from Calgary on weekends?",
+        "a": "Banff (90 min), Canmore (75 min), Kananaskis (45 min), and Drumheller (2 hours) are the top four. Each offers a completely different experience and none requires an early start to make the most of the day."
+      }
+    ],
+    "sidebar_cta": {
+      "heading": "Weekend plans sorted.",
+      "body": "Browse this weekend's Mixler events before they fill up.",
+      "button_text": "Browse Events"
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "slug": "best-wine-tasting-calgary",
+  "type": "roundup",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "meta": {
+    "title": "The Best Wine Tasting Experiences in Calgary | Mixler",
+    "description": "Wine tasting in Calgary ranges from casual social nights to structured sommelier-led sessions. Here's how to find the right one for you.",
+    "keywords": ["wine tasting Calgary", "best wine tasting Calgary", "wine events Calgary adults"]
+  },
+  "content": {
+    "title": "The Best Wine Tasting Experiences in Calgary",
+    "subtitle": "You don't need to be a wine expert to enjoy a wine tasting. You just need to know where to go.",
+    "read_time": "5 min read",
+    "updated_date": "March 2026",
+    "intro": "Calgary's wine scene has matured significantly in recent years, with dedicated wine bars, regular tasting events, and an enthusiastic community of people who take wine seriously without being pretentious about it. Whether you want a structured education or a fun social evening around wine, there's a good option here.",
+    "sections": [
+      {
+        "label": "Wine Bars and Shops",
+        "heading": "The Best Wine Venues in Calgary",
+        "paragraphs": [
+          "Bin 905 on Macleod Trail is one of Calgary's most respected wine shops and regularly hosts tasting events that are open to the public. Their events range from region-focused deep dives to casual pour-and-mingle evenings. The depth of staff knowledge here is genuinely impressive without being intimidating.",
+          "Grape & Grain and Highlander Wine both run regular consumer tasting nights. The format is typically a guided flight with a host who explains what you're tasting without making you feel like you need a glossary. These events consistently attract a fun, curious crowd."
+        ],
+        "tip_box": {
+          "label": "Best for beginners",
+          "body": "Look for events described as 'casual' or 'guided tasting.' Avoid anything called a 'master class' until you've been to a few casual evenings."
+        }
+      },
+      {
+        "label": "Social Wine Events",
+        "heading": "Wine Events That Are Also Great for Meeting People",
+        "paragraphs": [
+          "Mixler runs wine tasting social events designed specifically as social experiences rather than pure education. The wine gives everyone something to talk about, the structured tasting gives the evening a shape, and the group format means you're guaranteed to meet people. These events work well for solo attendees, couples, and small groups.",
+          "The Vine Arts Wine and Spirits also hosts public tasting events with a community-minded approach. Their events feel less like a class and more like a gathering of people who enjoy wine and want to compare notes."
+        ]
+      },
+      {
+        "label": "Wine and Food Pairings",
+        "heading": "Wine Plus Food: The Best Calgary Pairing Experiences",
+        "paragraphs": [
+          "Wine and cheese, wine and charcuterie, and wine and chocolate pairing events combine two enjoyable things and create a more complete experience than wine alone. Several Calgary venues offer these formats, and they tend to be excellent date nights and small group events.",
+          "Some cooking schools and private event spaces offer wine and food pairing dinners where a local chef prepares several courses paired with a curated wine flight. These are typically priced higher than casual tastings but offer a significantly more memorable evening."
+        ],
+        "tip_box": {
+          "label": "Pairing tip",
+          "body": "Wine and charcuterie events are the most approachable pairing format. The food helps pace the drinking and gives less experienced tasters concrete anchors for what they're tasting."
+        }
+      }
+    ],
+    "mixler_cta": {
+      "heading": "Wine nights with good company.",
+      "body": "Mixler runs wine tasting social events designed for adults who want to sip, chat, and meet interesting people.",
+      "button_text": "See Upcoming Events"
+    },
+    "related_activities": ["wine-tasting-calgary", "cheese-charcuterie-calgary", "whisky-tasting-calgary", "olive-oil-tasting-calgary"],
+    "faq": [
+      {
+        "q": "Where can I do a wine tasting in Calgary?",
+        "a": "Bin 905, Grape & Grain, Highlander Wine, Vine Arts Wine and Spirits, and Mixler social wine events are among the best options. Each has a slightly different format from educational to casual-social."
+      },
+      {
+        "q": "Do I need to know about wine to attend a wine tasting in Calgary?",
+        "a": "Not at all. Most consumer-facing wine tastings in Calgary are designed for curious beginners. Hosts expect to explain terminology and context. Just bring an open mind and honest reactions."
+      },
+      {
+        "q": "Are wine tasting events in Calgary good for dates?",
+        "a": "Wine tastings make excellent dates. The guided format gives you something to react to together, and a shared glass of wine is a classic low-pressure social lubricant. Mixler wine events are specifically designed to work for couples."
+      },
+      {
+        "q": "How much do wine tastings cost in Calgary?",
+        "a": "Casual guided tastings typically run $30-60 per person. Pairing dinners or premium wine events can run $80-150 per person. Mixler wine events are generally at the more accessible end of the range."
+      }
+    ],
+    "sidebar_cta": {
+      "heading": "Wine nights worth attending.",
+      "body": "Browse Mixler's food and drink events in Calgary.",
+      "button_text": "Browse Events"
+    }
+  }
+}

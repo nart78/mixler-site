@@ -1,0 +1,88 @@
+{
+  "slug": "unique-experiences-calgary",
+  "type": "roundup",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "meta": {
+    "title": "Unique Experiences in Calgary Worth Trying | Mixler",
+    "description": "Calgary has more unique experiences than most people realize. Here's a guide to the ones that are genuinely surprising and worth doing.",
+    "keywords": ["unique experiences Calgary", "unusual things to do Calgary", "different activities Calgary adults"]
+  },
+  "content": {
+    "title": "Unique Experiences in Calgary Worth Trying",
+    "subtitle": "Calgary's best experiences are the ones most people haven't heard of yet.",
+    "read_time": "6 min read",
+    "updated_date": "March 2026",
+    "intro": "Calgary has a reputation for being a straightforward, practical city. That reputation is fair in some ways and completely wrong in others. Beneath the oil-patch-and-hockey surface is a genuinely curious, creative city with a growing set of experiences that you won't find anywhere else. Here's what's actually worth trying.",
+    "sections": [
+      {
+        "label": "Craft and Making",
+        "heading": "Unique Making Experiences in Calgary",
+        "paragraphs": [
+          "Stained glass workshops are one of Calgary's most underrated experiences. The process of cutting, foiling, and soldering coloured glass is surprisingly accessible for beginners and the finished pieces are beautiful. A small number of studios offer these workshops and spots fill quickly.",
+          "Leather craft workshops, where you hand-stitch and tool your own wallet or keychain, are another unusual option. The tactile satisfaction of working with leather and producing something genuinely useful is distinct from most other craft experiences. Several Calgary leather shops offer beginner workshops."
+        ],
+        "tip_box": {
+          "label": "Most surprising",
+          "body": "First-time stained glass workshop attendees are almost universally more impressed with what they made than they expected to be."
+        }
+      },
+      {
+        "label": "Mind and Body",
+        "heading": "Unique Wellness and Movement Experiences",
+        "paragraphs": [
+          "Sound bath sessions, where you lie in a room while singing bowls and gongs create resonant sound frequencies, have a Calgary following that's larger than you'd expect. Studio 108 and several yoga spaces offer regular sound bath events. If you've never been, the experience is genuinely hard to describe and worth trying once.",
+          "Breathwork workshops and aerial yoga are two other movement experiences that Calgary does well. Aerial yoga classes at studios like Atmosphere combine yoga, aerial silks, and strength training in a way that's physically challenging and completely different from regular fitness. Mixler has run puppy yoga social events, which combine the wellness category with the obvious delight of being in a room full of puppies."
+        ]
+      },
+      {
+        "label": "Social and Intellectual",
+        "heading": "Unique Social Experiences in Calgary",
+        "paragraphs": [
+          "Speed friending nights are a relatively recent addition to Calgary's social calendar and worth trying if you've heard of them but been skeptical. The format is structured conversation speed-dating style, but for platonic connection. Mixler runs these events and they consistently generate the most enthusiastic post-event feedback of anything we do.",
+          "Language exchange meetups, history walks through Calgary's Heritage neighbourhoods, and improv comedy shows with audience participation are three more unusually good social experiences in Calgary. The improv scene at Loose Moose Theatre in particular has a long and genuinely excellent history."
+        ],
+        "tip_box": {
+          "label": "Worth the skepticism",
+          "body": "Speed friending nights sound awkward on paper. In practice, they're one of the most consistently effective social events we run."
+        }
+      },
+      {
+        "label": "Calgary Exclusives",
+        "heading": "Experiences That Are Unique to Calgary",
+        "paragraphs": [
+          "The Badlands day trip to Drumheller is unlike anything within six hours of most North American cities. The hoodoo formations, the Atlas Coal Mine historic site, and the Royal Tyrrell Museum make it a genuinely world-class day trip that Calgarians radically underappreciate.",
+          "Curling is theoretically available anywhere in Canada but Calgary's culture around it is particular. Learn-to-curl nights at any of the city's numerous clubs are a genuinely fun two-hour experience with a deeply social après component. It's the most Canadian thing you can do on a weeknight and it's better than it sounds."
+        ]
+      }
+    ],
+    "mixler_cta": {
+      "heading": "We specialize in unexpected evenings.",
+      "body": "Mixler events include some of Calgary's most genuinely unusual social experiences.",
+      "button_text": "See Upcoming Events"
+    },
+    "related_activities": ["stained-glass-calgary", "speed-friending-calgary", "sound-bath-calgary", "puppy-yoga-calgary"],
+    "faq": [
+      {
+        "q": "What are the most unique things to do in Calgary?",
+        "a": "Stained glass workshops, sound bath sessions, speed friending nights, curling, a Drumheller day trip, and leather craft workshops are among Calgary's most genuinely unusual adult experiences."
+      },
+      {
+        "q": "What experiences in Calgary are actually worth the money?",
+        "a": "The Royal Tyrrell Museum, a stained glass workshop, an aerial yoga class, a structured social event at Mixler, or a curling night consistently receive the best 'was it worth it' scores from people who've tried them."
+      },
+      {
+        "q": "Are there unusual date ideas in Calgary?",
+        "a": "Stained glass workshops, sound bath sessions, and cocktail-making classes are all genuinely unusual date ideas. Puppy yoga events are a guaranteed crowd-pleaser. Mixler events span several of these categories."
+      },
+      {
+        "q": "What's a unique solo activity to try in Calgary?",
+        "a": "A speed friending night, an improv class, a sound bath, or a language exchange meetup are all excellent solo activities that are genuinely different from the typical solo-outing options."
+      }
+    ],
+    "sidebar_cta": {
+      "heading": "Find your unusual night out.",
+      "body": "Browse Mixler's most unique social events in Calgary.",
+      "button_text": "Browse Events"
+    }
+  }
+}

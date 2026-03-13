@@ -1,0 +1,80 @@
+{
+  "slug": "things-to-do-calgary-friday-night",
+  "type": "authority",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "meta": {
+    "title": "Best Things to Do in Calgary on a Friday Night | Mixler",
+    "description": "Friday night in Calgary doesn't have to mean the same bar. Here are the best options for adults who want something worth leaving the couch for.",
+    "keywords": ["things to do Calgary Friday night", "Friday night activities Calgary", "what to do Friday Calgary"]
+  },
+  "content": {
+    "title": "Best Things to Do in Calgary on a Friday Night",
+    "subtitle": "Your Friday night deserves better than the default.",
+    "read_time": "5 min read",
+    "updated_date": "March 2026",
+    "intro": "Friday night is the most wasted opportunity in most adults' social calendars. It has the most energy of any night of the week and the least planning behind it. Calgary has genuinely good options if you know where to look, and we've spent a lot of time figuring out what makes a Friday night actually feel worth it.",
+    "sections": [
+      {
+        "label": "The Friday Trap",
+        "heading": "Why Most Friday Nights Feel Like a Letdown",
+        "paragraphs": [
+          "The problem isn't lack of options. It's decision paralysis combined with low planning. By the time Friday afternoon rolls around and someone finally asks 'so what are we doing tonight?', the path of least resistance wins. The same bar, the same restaurant, the same couch with the same Netflix queue.",
+          "The fix is counterintuitively simple: plan it Tuesday. Not elaborately. Just book the thing. When you have a ticket to something on Friday, Friday has a shape. You know where you're going, you get a little anticipatory energy from it, and you actually show up."
+        ],
+        "tip_box": {
+          "label": "The Tuesday trick",
+          "body": "Book your Friday activity by Tuesday afternoon. It takes five minutes and completely changes how the week feels."
+        }
+      },
+      {
+        "label": "Best Options",
+        "heading": "The Best Friday Night Activities in Calgary Right Now",
+        "paragraphs": [
+          "Mixler events run frequently on Friday evenings and are one of our most popular night formats. A cocktail-making class, a trivia night, or a creative workshop on a Friday hits differently than on a Wednesday. People have more social energy, the atmosphere is more relaxed, and conversations flow more easily when everyone's genuinely unwound.",
+          "Beyond our events, Calgary's best Friday night options include live music at spots like the Blues Can or Broken City, trivia nights at bars like National or Craft, improv shows at Loose Moose Theatre, and comedy nights at the Laugh Shop. The common thread in the best Friday nights is that something is happening rather than people just inhabiting the same space."
+        ]
+      },
+      {
+        "label": "For Different Moods",
+        "heading": "Calgary Friday Night Options for Every Energy Level",
+        "paragraphs": [
+          "High energy: axe throwing, escape rooms, live music, trivia nights with a competitive team. These are for when you want to lean into the Friday feeling and stay out past midnight.",
+          "Lower key: pottery classes, painting nights, wine tastings, small cooking workshops. These are for when you want to genuinely relax and connect with people but still do something meaningful with the evening. They tend to wrap up by 9:30-10pm, which is perfect if you have an early Saturday."
+        ],
+        "tip_box": {
+          "label": "Low-key Fridays",
+          "body": "Creative workshops are great for Fridays when you want to decompress and still feel like you did something. Not every Friday needs to be a late night."
+        }
+      }
+    ],
+    "mixler_cta": {
+      "heading": "Make your Friday worth it.",
+      "body": "Mixler runs Friday events across Calgary designed for adults who want more than drinks and scrolling.",
+      "button_text": "See Upcoming Events"
+    },
+    "related_activities": ["cocktail-making-calgary", "trivia-night-calgary", "escape-rooms-calgary", "pottery-calgary"],
+    "faq": [
+      {
+        "q": "What's the best thing to do in Calgary on a Friday night?",
+        "a": "Depends on your energy. For active social nights: trivia events, escape rooms, axe throwing. For relaxed but meaningful: pottery, cocktail-making, or a cooking class. Mixler runs options in both categories on Friday evenings."
+      },
+      {
+        "q": "Are there social events in Calgary on Friday nights for adults?",
+        "a": "Yes. Mixler runs Friday evening events regularly. Bar trivia nights happen at multiple venues across the city. Improv shows, live music, and creative workshops all run on Fridays."
+      },
+      {
+        "q": "What's something fun to do Friday night in Calgary besides drinking?",
+        "a": "Pottery classes, escape rooms, cooking workshops, comedy shows, and photography walks are all great Calgary Friday options that don't centre around alcohol. Mixler events in particular are activity-first."
+      },
+      {
+        "q": "What are some Friday night activities in Calgary for a group?",
+        "a": "Escape rooms, trivia nights, axe throwing, and murder mystery events all work really well for groups. Most venues can accommodate parties of 4-12. Mixler group events can be arranged with advance notice."
+      }
+    ],
+    "sidebar_cta": {
+      "heading": "Friday just got better.",
+      "body": "See what Mixler has happening this and next Friday.",
+      "button_text": "Browse Events"
+    }
+  }
+}

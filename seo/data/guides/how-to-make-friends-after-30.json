@@ -1,0 +1,88 @@
+{
+  "slug": "how-to-make-friends-after-30",
+  "type": "authority",
+  "og_image": "images/mixler-logo-wide-color.png",
+  "meta": {
+    "title": "How to Make Friends After 30 in Calgary | Mixler",
+    "description": "Making friends after 30 in Calgary is genuinely harder than it was before. Here's what actually works based on what we see at our events.",
+    "keywords": ["how to make friends after 30 Calgary", "making friends as an adult Calgary", "social life Calgary over 30"]
+  },
+  "content": {
+    "title": "How to Make Friends After 30 in Calgary",
+    "subtitle": "It's harder. It's also completely doable. Here's the honest version.",
+    "read_time": "6 min read",
+    "updated_date": "March 2026",
+    "intro": "Making friends after 30 is one of those things that nobody warns you about. You assume adult friendships just happen the way they did in school or university, and then you're 34 and realize the last time you made a genuinely new friend was three years ago. Calgary's social landscape makes this especially pronounced.",
+    "sections": [
+      {
+        "label": "Why It's Hard",
+        "heading": "Why Friendship Gets Harder After 30",
+        "paragraphs": [
+          "The conditions that made friendship easy when you were younger, shared proximity, unstructured time, low-stakes repetition, basically disappear in your 30s. You no longer sit next to the same people every day, you have less free time, and the stakes of social interactions feel higher because you have less practice with new ones.",
+          "In Calgary specifically, the city's layout doesn't help. Car-dependent, spread out, with most socializing happening inside private homes or at bars where you're mostly with people you already know. There's no town square equivalent where you run into your neighbours and slowly build familiarity."
+        ],
+        "tip_box": {
+          "label": "The core problem",
+          "body": "Friendship after 30 requires intentionality. It won't happen accidentally. That's fine once you accept it."
+        }
+      },
+      {
+        "label": "What Actually Works",
+        "heading": "The Approaches That Build Real Friendships",
+        "paragraphs": [
+          "Recurring activities are the single most effective tool. Not one-off events, recurring ones. A six-week pottery series, a monthly book club, a weekly climbing gym habit. The repeated contact with the same people is what turns acquaintances into friends. First meeting: stranger. Third meeting: familiar face. Sixth meeting: you're texting to coordinate going for a beer afterward.",
+          "The activity matters less than the structure and repetition. We run events at Mixler that cover everything from candle-making to cocktail nights, and we see the same pattern every time. The people who come to multiple events are the ones who walk away with actual friendships. The ones who come once have a fun night but don't always build on it."
+        ]
+      },
+      {
+        "label": "Making It Happen",
+        "heading": "Practical Steps to Build Your Social Life in Calgary",
+        "paragraphs": [
+          "Pick one thing and commit to it for three months. Not four things. One. Depth of engagement with one group beats surface-level attendance at many events. A recreational sports league, an art class, an improv course, a social event series. Choose based on what genuinely interests you, not what seems most socially productive.",
+          "Say yes to secondary invitations. The first time a new acquaintance suggests grabbing a coffee or joining them for something, say yes even if it's slightly inconvenient. That's the moment friendships either progress or stall. Most adults are waiting for the other person to initiate a second hangout. Be the one who doesn't wait."
+        ],
+        "tip_box": {
+          "label": "The three-month rule",
+          "body": "Give any recurring social activity three months before judging whether it's working. The early weeks feel slow. They compound."
+        }
+      },
+      {
+        "label": "Where to Start in Calgary",
+        "heading": "Best Starting Points for Building a Social Life in Calgary",
+        "paragraphs": [
+          "Calgary Sport and Social Club runs recreational leagues across multiple sports and actively facilitates mixed teams for solo registrants. Climbing gyms like Axiom and Boulder Basin have strong community cultures. Improv courses at institutions like Loose Moose Theatre are specifically good because the curriculum builds trust quickly.",
+          "Mixler events are a good starting point because they're low-commitment and you'll quickly learn what kind of people and activities feel like your people. From there, it's easier to know where to invest more deeply. We've had attendees who met at our events and ended up joining the same recreational league or starting their own supper clubs."
+        ]
+      }
+    ],
+    "mixler_cta": {
+      "heading": "Start here. It gets easier.",
+      "body": "Mixler events are designed to create the repeated contact that actually builds friendships.",
+      "button_text": "See Upcoming Events"
+    },
+    "related_activities": ["pottery-calgary", "improv-classes-calgary", "rock-climbing-calgary", "cooking-classes-calgary"],
+    "faq": [
+      {
+        "q": "Is it normal to have trouble making friends after 30 in Calgary?",
+        "a": "Very normal. The structural conditions for easy friendship, shared proximity, unstructured time, repeated low-stakes contact, mostly disappear in your 30s. Calgary's layout makes it harder than denser cities. You're not failing at something that should be easy."
+      },
+      {
+        "q": "What's the fastest way to make friends in Calgary as an adult?",
+        "a": "Commit to one recurring activity for three months. That repetition is what converts strangers into friends. Mixler events, recreational sports leagues, climbing gyms, and improv classes are all solid options depending on your interests."
+      },
+      {
+        "q": "What are good places to meet people in Calgary after 30?",
+        "a": "Activity-based venues: climbing gyms, pottery studios, recreational sports leagues, improv classes, and structured social events. Places where you'll see the same faces repeatedly work better than one-off bars or parties."
+      },
+      {
+        "q": "Do social events in Calgary work for meeting people in their 30s and 40s?",
+        "a": "Yes. Mixler events attract a broad adult age range with a significant proportion in their late 20s through 40s. Activity-based events naturally attract people who are motivated and curious, which tends to skew toward older adults relative to bar-heavy nightlife."
+      }
+    ],
+    "sidebar_cta": {
+      "heading": "One event. New faces.",
+      "body": "Browse upcoming Mixler events and find your starting point.",
+      "button_text": "Browse Events"
+    }
+  }
+}
