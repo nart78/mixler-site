@@ -4,7 +4,7 @@
    ============================================= */
 
 /* Breadcrumb */
-.pseo-breadcrumb { background: #f5f5f7; padding: 12px 0; border-bottom: 1px solid #e5e7eb; }
+.pseo-breadcrumb { background: #f5f5f7; padding: 12px 0; border-bottom: 1px solid #e5e7eb; margin-top: 72px; }
 .pseo-breadcrumb-inner { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #6b7280; }
 .pseo-breadcrumb-inner a { color: #153db6; font-weight: 500; }
 .pseo-breadcrumb-inner span { color: #9ca3af; }
