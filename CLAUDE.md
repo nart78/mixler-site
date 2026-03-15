@@ -124,3 +124,17 @@ curl -s -X PATCH "{SUPABASE_URL}/rest/v1/events?slug=eq.{slug}" \
 - Always git commit and push changes
 - Price is stored in cents (multiply dollars by 100)
 - Slug must be unique. Check existing events before inserting.
+
+## Documentation
+
+- Architecture overview: `docs/architecture.md`
+- Adding a new event: `docs/runbooks/new-event.md`
+- Deploying to VPS: `docs/runbooks/deploy.md`
+- ADR: Why Supabase: `docs/decisions/ADR-001-supabase-backend.md`
+
+## Open Questions
+
+At the start of each session, check `UNKNOWNS.md`.
+If there are open questions, ask Johnny if any have been resolved before starting work.
+If the file has no open questions, skip this step.
+If you discover a new gap during the session, add it.
