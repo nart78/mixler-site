@@ -12,3 +12,17 @@ Thumbs.db
 *.swp
 *.swo
 supabase/.temp/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Superpowers working files
+.superpowers/
+
+# Large media
+videos/*.mp4
+
+# Working files
+scratchpad.md
