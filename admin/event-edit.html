@@ -80,6 +80,10 @@
                   <option value="completed">Completed</option>
                 </select>
               </div>
+              <div class="form-group" id="cancellation-reason-group" style="display:none;">
+                <label for="cancellation_reason">Cancellation reason <span style="font-weight:400;color:#999;">(optional — included in buyer email)</span></label>
+                <textarea id="cancellation_reason" rows="2" placeholder="e.g. Due to unforeseen circumstances, we've had to cancel this event."></textarea>
+              </div>
               <div class="form-group">
                 <label for="category_id">Category</label>
                 <select id="category_id">
@@ -486,6 +490,12 @@
       handleImageFile(e.dataTransfer.files[0]);
     });
 
+    // Show/hide cancellation reason when status changes
+    document.getElementById('status').addEventListener('change', (e) => {
+      const reasonGroup = document.getElementById('cancellation-reason-group');
+      reasonGroup.style.display = e.target.value === 'cancelled' ? '' : 'none';
+    });
+
     // Remove image
     document.getElementById('remove-image').addEventListener('click', () => {
       document.getElementById('image_url').value = '';
@@ -537,6 +547,10 @@
         document.getElementById('early_bird_deadline').value = event.early_bird_deadline ? event.early_bird_deadline.slice(0, 16) : '';
         document.getElementById('image_url').value = event.image_url || '';
         document.getElementById('status').value = event.status;
+        window._originalStatus = event.status;
+        if (event.status === 'cancelled') {
+          document.getElementById('cancellation-reason-group').style.display = '';
+        }
         document.getElementById('category_id').value = event.category_id || '';
         document.getElementById('tax_rate_pct').value = (event.tax_rate_bps ?? 500) / 100;
         document.getElementById('pass_cc_fee').checked = event.pass_cc_fee === true;
@@ -669,8 +683,39 @@
         }
       }
 
-      showToast(isEdit ? 'Event updated!' : 'Event created!', 'success');
-      setTimeout(() => window.location.href = '/admin/events.html', 500);
+      // If cancelling an event that was previously not cancelled, send buyer notification emails
+      const newStatus = eventData.status;
+      const wasCancelled = window._originalStatus === 'cancelled';
+      if (isEdit && newStatus === 'cancelled' && !wasCancelled) {
+        const cancellationReason = document.getElementById('cancellation_reason').value.trim();
+        showToast('Event cancelled. Notifying buyers...', 'info');
+        try {
+          const { data: { session } } = await db.auth.getSession();
+          const res = await fetch(`${SUPABASE_URL}/functions/v1/send-cancellation-email`, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${session?.access_token}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ event_id: savedEventId, cancellation_reason: cancellationReason || null }),
+          });
+          const result = await res.json();
+          if (result.emails_sent > 0) {
+            showToast(`Event cancelled. ${result.emails_sent} buyer${result.emails_sent !== 1 ? 's' : ''} notified.`, 'success');
+          } else if (result.emails_sent === 0) {
+            showToast('Event cancelled. No paid orders to notify.', 'success');
+          } else {
+            showToast('Event cancelled. Some notification emails failed — check email log.', 'warning');
+          }
+        } catch (emailErr) {
+          console.error('Cancellation email error:', emailErr);
+          showToast('Event cancelled, but buyer notification failed. Check email log.', 'warning');
+        }
+        setTimeout(() => window.location.href = '/admin/events.html', 2000);
+      } else {
+        showToast(isEdit ? 'Event updated!' : 'Event created!', 'success');
+        setTimeout(() => window.location.href = '/admin/events.html', 500);
+      }
     });
 
     // Duplicate
