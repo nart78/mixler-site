@@ -125,6 +125,24 @@ curl -s -X PATCH "{SUPABASE_URL}/rest/v1/events?slug=eq.{slug}" \
 - Price is stored in cents (multiply dollars by 100)
 - Slug must be unique. Check existing events before inserting.
 
+## Protected Files and Off-Limits Operations
+
+**Never modify without Johnny's explicit approval:**
+- `supabase/migrations/` — migrations run against the live DB and cannot be rolled back easily. Write new migration files; never edit existing ones.
+- `.env` — contains production keys. Never commit, overwrite, or log its contents.
+- `supabase/functions/stripe-webhook/index.ts` — payment processing. Any change here risks silent order failures or double-charges.
+- `admin/` — admin interface including check-in scanner. Changes here affect live event operations.
+
+**Never do these without asking first:**
+- Delete any row from `orders`, `attendees`, or `ticket_types` in the live DB.
+- Change `payment_status` on any order directly (always goes through Stripe webhook).
+- Run `git push --force` or reset the main branch.
+- Modify Stripe webhook endpoint URL or secret in the Supabase dashboard.
+- Change Nginx config on the VPS (`/etc/nginx/sites-available/mixler.ca`).
+
+**Known incident log:**
+- 2026-03: `client_actions` migration from AEOthis was accidentally applied to the Mixler Supabase project. Dropped manually. Root cause: wrong project selected during migration run.
+
 ## Documentation
 
 - Architecture overview: `docs/architecture.md`
