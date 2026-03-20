@@ -1,65 +1,38 @@
 import { serve } from 'https://deno.land/std@0.177.0/http/server.ts';
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': 'https://mixler.ca',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-};
+const DELAY_MINUTES = 15;
 
 serve(async (req) => {
-  if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders });
-  }
-
+  // Only callable server-to-server (cron). No CORS headers needed.
   try {
     const supabase = createClient(
       Deno.env.get('SUPABASE_URL')!,
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
     );
 
-    const { event_id, cancellation_reason } = await req.json();
-    if (!event_id) {
-      return new Response(
-        JSON.stringify({ error: 'event_id required' }),
-        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
+    const cutoff = new Date(Date.now() - DELAY_MINUTES * 60 * 1000).toISOString();
 
-    // Fetch event details
-    const { data: event, error: eventError } = await supabase
+    // Find cancelled events whose 15-minute window has passed and email not yet sent
+    const { data: events, error: eventsError } = await supabase
       .from('events')
-      .select('id, title, event_date, start_time, end_time, location_name')
-      .eq('id', event_id)
-      .single();
+      .select('id, title, event_date, start_time, end_time, location_name, cancellation_reason')
+      .eq('status', 'cancelled')
+      .eq('cancellation_email_sent', false)
+      .not('cancellation_scheduled_at', 'is', null)
+      .lte('cancellation_scheduled_at', cutoff);
 
-    if (eventError || !event) {
-      return new Response(
-        JSON.stringify({ error: 'Event not found' }),
-        { status: 404, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
+    if (eventsError) throw eventsError;
 
-    // Fetch all paid orders for this event
-    const { data: orders, error: ordersError } = await supabase
-      .from('orders')
-      .select('id, buyer_email, buyer_name, order_number, quantity, total_cents')
-      .eq('event_id', event_id)
-      .eq('payment_status', 'completed');
-
-    if (ordersError) throw ordersError;
-
-    if (!orders || orders.length === 0) {
-      return new Response(
-        JSON.stringify({ success: true, emails_sent: 0, message: 'No paid orders to notify' }),
-        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
+    if (!events || events.length === 0) {
+      return new Response(JSON.stringify({ processed: 0 }), {
+        headers: { 'Content-Type': 'application/json' },
+      });
     }
 
     const resendApiKey = Deno.env.get('RESEND_API_KEY');
     if (!resendApiKey) throw new Error('RESEND_API_KEY not configured');
 
-    // Format helpers
     const formatDate = (d: string) => {
       const date = new Date(d + 'T00:00:00');
       return date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
@@ -71,24 +44,48 @@ serve(async (req) => {
       return d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
     };
 
-    const eventDate = formatDate(event.event_date);
-    const timeStr = formatTime(event.start_time) + (event.end_time ? ' - ' + formatTime(event.end_time) : '');
-    const location = event.location_name || '';
+    let totalSent = 0;
+    let totalFailed = 0;
 
-    const reasonBlock = cancellation_reason
-      ? `<div style="background:#f5f5f7;border-left:4px solid #153db6;border-radius:4px;padding:16px 20px;margin:24px 0 0;"><p style="margin:0;font-size:15px;color:#444444;line-height:1.6;">${cancellation_reason}</p></div>`
-      : '';
+    for (const event of events) {
+      // Mark as sent immediately to prevent double-sends if cron overlaps
+      await supabase
+        .from('events')
+        .update({ cancellation_email_sent: true })
+        .eq('id', event.id);
 
-    let emailsSent = 0;
-    let emailsFailed = 0;
+      // Fetch all paid orders for this event
+      const { data: orders, error: ordersError } = await supabase
+        .from('orders')
+        .select('id, buyer_email, buyer_name, order_number, quantity, total_cents')
+        .eq('event_id', event.id)
+        .eq('payment_status', 'completed');
 
-    for (const order of orders) {
-      const firstName = order.buyer_name.split(' ')[0];
-      const dateLocation = location
-        ? `<strong>${eventDate} at ${timeStr}</strong> at ${location}`
-        : `<strong>${eventDate} at ${timeStr}</strong>`;
+      if (ordersError) {
+        console.error(`Failed to fetch orders for event ${event.id}:`, ordersError);
+        continue;
+      }
 
-      const html = `<!DOCTYPE html>
+      if (!orders || orders.length === 0) {
+        console.log(`Event ${event.id}: no paid orders, skipping email send.`);
+        continue;
+      }
+
+      const eventDate = formatDate(event.event_date);
+      const timeStr = formatTime(event.start_time) + (event.end_time ? ' - ' + formatTime(event.end_time) : '');
+      const location = event.location_name || '';
+
+      const reasonBlock = event.cancellation_reason
+        ? `<div style="background:#f5f5f7;border-left:4px solid #153db6;border-radius:4px;padding:16px 20px;margin:24px 0 0;"><p style="margin:0;font-size:15px;color:#444444;line-height:1.6;">${event.cancellation_reason}</p></div>`
+        : '';
+
+      for (const order of orders) {
+        const firstName = order.buyer_name.split(' ')[0];
+        const dateLocation = location
+          ? `<strong>${eventDate} at ${timeStr}</strong> at ${location}`
+          : `<strong>${eventDate} at ${timeStr}</strong>`;
+
+        const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -145,58 +142,60 @@ serve(async (req) => {
 </body>
 </html>`;
 
-      try {
-        const res = await fetch('https://api.resend.com/emails', {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${resendApiKey}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            from: 'Mixler <hello@mixler.ca>',
-            to: [order.buyer_email],
+        try {
+          const res = await fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${resendApiKey}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              from: 'Mixler <hello@mixler.ca>',
+              to: [order.buyer_email],
+              subject: `${event.title} has been cancelled`,
+              html,
+            }),
+          });
+
+          const emailStatus = res.ok ? 'sent' : 'failed';
+          const errorBody = res.ok ? null : await res.text();
+
+          if (!res.ok) {
+            console.error(`Failed to send to ${order.buyer_email}:`, errorBody);
+            totalFailed++;
+          } else {
+            totalSent++;
+          }
+
+          await supabase.from('email_log').insert({
+            id: crypto.randomUUID(),
+            event_id: event.id,
+            order_id: order.id,
+            recipient_email: order.buyer_email,
+            template_name: 'event_cancellation',
             subject: `${event.title} has been cancelled`,
-            html,
-          }),
-        });
-
-        const emailStatus = res.ok ? 'sent' : 'failed';
-        const errorBody = res.ok ? null : await res.text();
-
-        if (!res.ok) {
-          console.error(`Failed to send to ${order.buyer_email}:`, errorBody);
-          emailsFailed++;
-        } else {
-          emailsSent++;
+            status: emailStatus,
+            error_message: errorBody || null,
+            sent_at: res.ok ? new Date().toISOString() : null,
+          });
+        } catch (emailErr: any) {
+          console.error(`Email error for ${order.buyer_email}:`, emailErr.message);
+          totalFailed++;
         }
-
-        await supabase.from('email_log').insert({
-          id: crypto.randomUUID(),
-          event_id: event.id,
-          order_id: order.id,
-          recipient_email: order.buyer_email,
-          template_name: 'event_cancellation',
-          subject: `${event.title} has been cancelled`,
-          status: emailStatus,
-          error_message: errorBody || null,
-          sent_at: res.ok ? new Date().toISOString() : null,
-        });
-      } catch (emailErr: any) {
-        console.error(`Email error for ${order.buyer_email}:`, emailErr.message);
-        emailsFailed++;
       }
     }
 
+    console.log(`Cancellation cron: sent=${totalSent} failed=${totalFailed}`);
     return new Response(
-      JSON.stringify({ success: true, emails_sent: emailsSent, emails_failed: emailsFailed }),
-      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      JSON.stringify({ processed: events.length, emails_sent: totalSent, emails_failed: totalFailed }),
+      { headers: { 'Content-Type': 'application/json' } }
     );
 
   } catch (err: any) {
     console.error('send-cancellation-email error:', err);
     return new Response(
       JSON.stringify({ error: err.message }),
-      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      { status: 500, headers: { 'Content-Type': 'application/json' } }
     );
   }
 });

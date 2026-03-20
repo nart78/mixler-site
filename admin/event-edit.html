@@ -683,35 +683,29 @@
         }
       }
 
-      // If cancelling an event that was previously not cancelled, send buyer notification emails
+      // Cancellation scheduling logic
       const newStatus = eventData.status;
       const wasCancelled = window._originalStatus === 'cancelled';
+
       if (isEdit && newStatus === 'cancelled' && !wasCancelled) {
+        // Newly cancelled — schedule the email (15-min delay gives time to undo)
         const cancellationReason = document.getElementById('cancellation_reason').value.trim();
-        showToast('Event cancelled. Notifying buyers...', 'info');
-        try {
-          const { data: { session } } = await db.auth.getSession();
-          const res = await fetch(`${SUPABASE_URL}/functions/v1/send-cancellation-email`, {
-            method: 'POST',
-            headers: {
-              'Authorization': `Bearer ${session?.access_token}`,
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ event_id: savedEventId, cancellation_reason: cancellationReason || null }),
-          });
-          const result = await res.json();
-          if (result.emails_sent > 0) {
-            showToast(`Event cancelled. ${result.emails_sent} buyer${result.emails_sent !== 1 ? 's' : ''} notified.`, 'success');
-          } else if (result.emails_sent === 0) {
-            showToast('Event cancelled. No paid orders to notify.', 'success');
-          } else {
-            showToast('Event cancelled. Some notification emails failed — check email log.', 'warning');
-          }
-        } catch (emailErr) {
-          console.error('Cancellation email error:', emailErr);
-          showToast('Event cancelled, but buyer notification failed. Check email log.', 'warning');
-        }
+        await db.from('events').update({
+          cancellation_scheduled_at: new Date().toISOString(),
+          cancellation_reason: cancellationReason || null,
+          cancellation_email_sent: false,
+        }).eq('id', savedEventId);
+        showToast('Event cancelled. Buyers will be notified in 15 minutes.', 'warning');
         setTimeout(() => window.location.href = '/admin/events.html', 2000);
+      } else if (isEdit && newStatus !== 'cancelled' && wasCancelled) {
+        // Re-published before email went out — cancel the scheduled send
+        await db.from('events').update({
+          cancellation_scheduled_at: null,
+          cancellation_reason: null,
+          cancellation_email_sent: false,
+        }).eq('id', savedEventId);
+        showToast('Event re-published. Cancellation email cancelled.', 'success');
+        setTimeout(() => window.location.href = '/admin/events.html', 1500);
       } else {
         showToast(isEdit ? 'Event updated!' : 'Event created!', 'success');
         setTimeout(() => window.location.href = '/admin/events.html', 500);
