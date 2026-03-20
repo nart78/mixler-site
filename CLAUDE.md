@@ -225,7 +225,14 @@ curl -s -X PATCH "{SUPABASE_URL}/rest/v1/events?slug=eq.{slug}" \
 
 ## Planned Features (Not Yet Built)
 
-- **Admin-triggered refunds**: Issuing a refund from `admin/orders.html` should automatically trigger a refund in Stripe. Currently refunds require going into the Stripe dashboard directly.
+### Admin-triggered refunds
+Issuing a refund from `admin/orders.html` should automatically trigger a refund in Stripe. Currently refunds require going into the Stripe dashboard manually.
+
+What needs to be built:
+- New Edge Function `process-refund` — takes `order_id`, calls Stripe API to refund `stripe_payment_id`, updates `payment_status` to `refunded` and `refund_amount_cents` in the orders table
+- Refund button in `admin/orders.html` order detail view
+- Safety checks: block if already refunded, block if no `stripe_payment_id` on the order, confirm dialog before firing
+- The existing `charge.refunded` handler in `stripe-webhook` already updates the DB when Stripe fires the refund event, so the DB update may be handled automatically once Stripe processes it — verify this before writing duplicate update logic
 
 ## Documentation
 
