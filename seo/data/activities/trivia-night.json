@@ -4,15 +4,23 @@
   "category": "games-social",
   "category_slug": "trivia-night",
   "og_image": "images/mixler-logo-wide-color.png",
-  "tags": ["All Skill Levels", "Groups Welcome", "Great for Solo"],
+  "tags": [
+    "All Skill Levels",
+    "Groups Welcome",
+    "Great for Solo"
+  ],
   "meta": {
     "title": "Trivia Nights in Calgary | Mixler",
     "description": "Join a trivia night in Calgary and test your knowledge across fun, varied categories. Great for groups, date nights, and solo attendees. All skill levels welcome.",
-    "keywords": ["trivia night Calgary", "trivia Calgary", "quiz night Calgary"]
+    "keywords": [
+      "trivia night Calgary",
+      "trivia Calgary",
+      "quiz night Calgary"
+    ]
   },
   "content": {
     "subtitle": "Show up, join a team, and find out how much you actually know.",
-    "intro": "Trivia nights in Calgary are one of the best low-pressure social events you can find. Teams of 4 to 6 compete across rounds of general knowledge, pop culture, history, and sometimes specialty categories that catch everyone off guard. The atmosphere is competitive enough to be exciting and relaxed enough that you can have a great time even if your team finishes last.",
+    "intro": "Trivia nights in Calgary are one of the best low-pressure social events you can find. Teams of 4 to 6 compete across rounds of general knowledge, pop culture, history, and sometimes specialty categories that catch everyone off guard. The atmosphere is competitive enough to be exciting and relaxed enough that you can have a great time even if your team finishes last.\n\nYou will find trivia nights running across the city, from neighbourhood pubs in Kensington and Inglewood to busier spots on 17th Ave. The format varies by host and venue but the core experience is consistent: a good host, a roomful of teams taking things just seriously enough, and the satisfying feeling of pulling an answer out of nowhere when your team needs it most.\n\nTrivia nights are also one of the more effortless ways to get a group of people out during the week. There is nothing to plan, no skill to develop in advance, and the evening structures itself. Calgary's long winters make mid-week outings harder to motivate, and trivia gives you a specific reason to go out on a Tuesday that has a clear start time, an end time, and a genuine chance of winning something.",
     "breadcrumb_label": "Trivia Nights Calgary",
     "what_to_expect": [
       {
@@ -41,11 +49,24 @@
       "Don't second-guess your team's first answer. The initial instinct is right more often than the deliberated one.",
       "Calgary trivia nights fill up fast, especially at popular venues. Show up early or book a table in advance.",
       "Specialty theme nights (80s, sports, movies) are especially fun if they match your team's strengths.",
-      "Mixler lists trivia nights in Calgary when we run them. Join the waitlist and we'll reach out when one is scheduled."
+      "Mixler lists trivia nights in Calgary when we run them. Join the waitlist and we'll reach out when one is scheduled.",
+      "If you are building a team for a Calgary trivia night, include someone who keeps up with local news and a Flames or Stampeders fan. Calgary-specific sports and local current events categories show up more often than you might expect."
     ],
     "waitlist_heading": "Want to know when we run trivia nights?",
     "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
-    "related_activities": ["pub-quiz-calgary", "board-games-calgary", "escape-rooms-calgary", "murder-mystery-calgary"]
+    "related_activities": [
+      "pub-quiz-calgary",
+      "board-games-calgary",
+      "escape-rooms-calgary",
+      "murder-mystery-calgary"
+    ],
+    "local_section": {
+      "heading": "Why Trivia Nights in Calgary",
+      "paragraphs": [
+        "Calgary has the kind of mid-week social culture where trivia nights genuinely thrive. The city's professional crowd is competitive enough to care about winning but laid-back enough to enjoy losing gracefully over a beer. Venues that run consistent trivia nights tend to build regular followings quickly, with the same teams showing up week after week and developing a low-key rivalry with each other that makes the whole thing more fun.",
+        "Trivia is also one of the few social formats that works equally well for a tight group of friends, a loose collection of coworkers, or a team of people who met on Mixler. The shared goal of getting answers right gives everyone something to do and talk about from the moment they sit down. In a city where people are constantly growing their social circles, that built-in structure is worth more than it sounds."
+      ]
+    }
   },
   "faq": [
     {
@@ -63,6 +84,14 @@
     {
       "q": "Are there prizes?",
       "a": "Usually yes. First and second place typically get prizes. Check the event listing for specifics."
+    },
+    {
+      "q": "What is the difference between trivia night and pub quiz?",
+      "a": "Pub quiz always happens in a bar and typically uses written answers. Trivia nights can happen in various venues and sometimes incorporate digital answer systems or different formats. The experience is similar but the setting and rules can vary."
+    },
+    {
+      "q": "Can my team have a theme name?",
+      "a": "Absolutely, and a good team name is part of the fun. Hosts read them out at the start and between rounds. Calgary trivia regulars take their team names seriously."
     }
   ]
 }

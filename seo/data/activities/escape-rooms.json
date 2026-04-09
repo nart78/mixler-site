@@ -4,34 +4,42 @@
   "category": "games-social",
   "category_slug": "escape-rooms",
   "og_image": "images/mixler-logo-wide-color.png",
-  "tags": ["All Skill Levels", "Groups Welcome", "Active"],
+  "tags": [
+    "All Skill Levels",
+    "Groups Welcome",
+    "Active"
+  ],
   "meta": {
     "title": "Escape Rooms in Calgary | Mixler",
     "description": "Try an escape room in Calgary with friends, family, or coworkers. Solve puzzles, crack codes, and get out before the clock runs out. All skill levels welcome.",
-    "keywords": ["escape rooms Calgary", "escape room Calgary", "best escape rooms Calgary"]
+    "keywords": [
+      "escape rooms Calgary",
+      "escape room Calgary",
+      "best escape rooms Calgary"
+    ]
   },
   "content": {
     "subtitle": "Lock yourself in, solve the puzzles, and get out before the hour is up.",
-    "intro": "Escape rooms in Calgary are one of the most popular group activities in the city, and they've only gotten better as venues have raised the bar on production quality and puzzle design. You're given a scenario, a locked room, and 60 minutes to find your way out using clues and logic. It sounds simple and it's genuinely challenging in the best way.",
+    "intro": "Escape rooms in Calgary are one of the most popular group activities in the city, and they've only gotten better as venues have raised the bar on production quality and puzzle design. You're given a scenario, a locked room, and 60 minutes to find your way out using clues and logic. It sounds simple and it's genuinely challenging in the best way.\n\nThe escape room scene in Calgary has matured significantly over the past several years. Early venues have been replaced by purpose-built experiences with cinematic set design, layered narrative, and puzzles that require genuine lateral thinking rather than just finding hidden keys. Downtown and inner-city neighbourhoods like the Beltline have become home to some of the highest-quality venues, with others scattered through the suburbs for easy access across the city.\n\nWhat makes escape rooms work as a social activity is how fast they surface people's personalities. You immediately see who communicates well under pressure, who fixates on one puzzle while the clock ticks, and who turns into an unexpected problem-solving machine. The debrief afterward is always revealing and always entertaining.",
     "breadcrumb_label": "Escape Rooms Calgary",
     "what_to_expect": [
       {
-        "icon": "🔐",
+        "icon": "\ud83d\udd10",
         "heading": "A themed scenario and room",
         "body": "Most escape rooms have a narrative, from mystery to horror to adventure. The best ones in Calgary have real set design and atmosphere."
       },
       {
-        "icon": "🧩",
+        "icon": "\ud83e\udde9",
         "heading": "Layered puzzles to solve",
         "body": "Puzzles involve logic, observation, pattern recognition, and sometimes physical tasks. Every room is different."
       },
       {
-        "icon": "📟",
+        "icon": "\ud83d\udcdf",
         "heading": "A game master watching",
         "body": "Someone monitors your progress via camera and can send hints if you get stuck. You're never completely on your own."
       },
       {
-        "icon": "⏱️",
+        "icon": "\u23f1\ufe0f",
         "heading": "60 minutes on the clock",
         "body": "Most rooms run 60 minutes. The countdown creates real pressure that makes every breakthrough more satisfying."
       }
@@ -41,11 +49,16 @@
       "Communicate constantly. Calling out what you find and where means the group doesn't duplicate effort.",
       "Calgary has escape rooms ranging from beginner-friendly to genuinely difficult. Pick a difficulty level that matches your group.",
       "Don't be too proud to ask for a hint. Using a hint to keep the energy high is smarter than grinding to a halt.",
-      "Mixler lists escape room events in Calgary when we run group bookings. Join the waitlist and we'll let you know when spots open up."
+      "Mixler lists escape room events in Calgary when we run group bookings. Join the waitlist and we'll let you know when spots open up.",
+      "Book a private room for your group if the venue offers it. Mixing with strangers can be fun, but a private booking lets your group move at its own pace and talk freely without holding back."
     ],
     "waitlist_heading": "Want to know when we run escape room events?",
     "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
-    "related_activities": ["murder-mystery-calgary", "trivia-night-calgary", "board-games-calgary", "game-show-night-calgary"]
+    "related_activities": [
+      "murder-mystery-calgary",
+      "trivia-night-calgary",
+      "board-games-calgary"
+    ]
   },
   "faq": [
     {
@@ -63,6 +76,21 @@
     {
       "q": "Is it suitable for beginners?",
       "a": "Yes. Many rooms are rated by difficulty. Start with a beginner or intermediate room if it's your first time."
+    },
+    {
+      "q": "Can escape rooms be booked for corporate team building?",
+      "a": "Absolutely. Escape rooms are one of the most popular corporate team building formats in Calgary because they encourage real communication and problem-solving in a low-stakes environment. Most venues offer group packages."
+    },
+    {
+      "q": "Do escape rooms accommodate accessibility needs?",
+      "a": "Some Calgary escape rooms are wheelchair accessible and others are not, depending on the room design. Contact the venue directly before booking if mobility access is a concern."
     }
-  ]
+  ],
+  "local_section": {
+    "heading": "Why Escape Rooms in Calgary",
+    "paragraphs": [
+      "Calgary's indoor entertainment options get a real workout from October through April, and escape rooms sit at the top of the list for a reason. They're immersive in a way that a restaurant dinner or a movie isn't. For an hour, your phone stays in your pocket, the outside world disappears, and the only thing that matters is the puzzle in front of you. In a city where people are genuinely busy, that kind of enforced focus feels like a luxury.",
+      "The escape room venues in Calgary have also invested heavily in their production quality, and it shows. You'll find rooms built around everything from western frontier settings that nod to Alberta's history through to sci-fi and horror themes that wouldn't feel out of place in a film set. The city has enough venues spread across different neighbourhoods that repeat visitors can keep finding new experiences without much repetition, making escape rooms a reliable go-to for Calgarians who want to keep their social calendar interesting."
+    ]
+  }
 }

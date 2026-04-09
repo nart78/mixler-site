@@ -4,37 +4,93 @@
   "category": "active-outdoors",
   "category_slug": "kayaking",
   "og_image": "images/mixler-logo-wide-color.png",
-  "tags": ["Active", "Outdoors", "All Skill Levels"],
+  "tags": [
+    "Active",
+    "Outdoors",
+    "All Skill Levels"
+  ],
   "meta": {
     "title": "Kayaking in Calgary | Mixler",
     "description": "Kayaking near Calgary puts you on the Bow River or mountain lakes within minutes. Rentals available and guided social paddles run all summer for beginners.",
-    "keywords": ["kayaking Calgary", "kayak rentals Calgary", "Bow River kayaking Calgary"]
+    "keywords": [
+      "kayaking Calgary",
+      "kayak rentals Calgary",
+      "Bow River kayaking Calgary"
+    ]
   },
   "content": {
     "subtitle": "Paddle the Bow River or head to the mountains for a stunning flatwater session.",
-    "intro": "Kayaking near Calgary ranges from a leisurely float down the Bow River to a paddling session on a glassy mountain lake with peaks reflected in the water. Rentals are available at several points along the Bow and at most lake access areas in Banff and Kananaskis. Social kayaking events have been growing in popularity because they combine exercise, nature, and genuine conversation without anyone looking at their phone.",
+    "intro": "Kayaking near Calgary ranges from a leisurely float down the Bow River to a paddling session on a glassy mountain lake with peaks reflected in the water. Rentals are available at several points along the Bow and at most lake access areas in Banff and Kananaskis. Social kayaking events have been growing in popularity because they combine exercise, nature, and genuine conversation without anyone looking at their phone.\n\nThe Bow River through the city is more accessible than most people realize. You can put in near Edworthy Park or Inglewood and float through a stretch of the city that feels completely removed from urban life. Eagles are a common sighting, and on a calm morning the water is genuinely peaceful. For groups, the river format works well because everyone is moving in the same direction and it naturally keeps the group together.\n\nFor anyone wanting more scenery, Barrier Lake in Kananaskis is about an hour west of the city and consistently delivers the kind of mountain-reflected-in-water view that looks fake in photos. The drive out there is half the experience. Calgary's proximity to both urban waterways and proper mountain lakes is something most cities would kill for.",
     "breadcrumb_label": "Kayaking Calgary",
     "what_to_expect": [
-      {"icon": "🛶", "heading": "Rental kayaks and gear", "body": "Most launch points and rental shops provide single or tandem kayaks along with paddles, PFDs, and basic instruction before you push off."},
-      {"icon": "🌊", "heading": "Calm and moving water options", "body": "The Bow River offers a gentle current suitable for beginners. Mountain lakes like Barrier Lake or Two Jack Lake provide still water with stunning scenery."},
-      {"icon": "🧭", "heading": "Guided paddles available", "body": "Guided kayaking tours and social paddles run regularly from May through September. A guide handles navigation and safety so you can focus on the experience."},
-      {"icon": "☀️", "heading": "A genuinely refreshing workout", "body": "Paddling works your core, back, and shoulders without the joint impact of land-based exercise. Two hours on the water flies by."}
+      {
+        "icon": "\ud83d\udef6",
+        "heading": "Rental kayaks and gear",
+        "body": "Most launch points and rental shops provide single or tandem kayaks along with paddles, PFDs, and basic instruction before you push off."
+      },
+      {
+        "icon": "\ud83c\udf0a",
+        "heading": "Calm and moving water options",
+        "body": "The Bow River offers a gentle current suitable for beginners. Mountain lakes like Barrier Lake or Two Jack Lake provide still water with stunning scenery."
+      },
+      {
+        "icon": "\ud83e\udded",
+        "heading": "Guided paddles available",
+        "body": "Guided kayaking tours and social paddles run regularly from May through September. A guide handles navigation and safety so you can focus on the experience."
+      },
+      {
+        "icon": "\u2600\ufe0f",
+        "heading": "A genuinely refreshing workout",
+        "body": "Paddling works your core, back, and shoulders without the joint impact of land-based exercise. Two hours on the water flies by."
+      }
     ],
     "tips": [
       "Keep your paddle blades angled consistently throughout your stroke. Rotating your torso drives the stroke. Your arms mostly just hold on.",
       "Wear layers you don't mind getting wet. Even on calm days, splashes happen, and the water in Calgary and the mountains is cold.",
       "Apply sunscreen before you launch. Water reflects UV and you'll burn faster than you expect, especially on a clear mountain day.",
       "For river kayaking on the Bow, check the flow rate before you go. The river runs faster after heavy rain or peak snowmelt.",
-      "Mixler organizes group kayaking outings near Calgary in the summer. Join the waitlist and we'll send you details when the next one is planned."
+      "Mixler organizes group kayaking outings near Calgary in the summer. Join the waitlist and we'll send you details when the next one is planned.",
+      "Book your rental ahead on summer weekends, especially for Kananaskis lakes. Popular launch points run out of single kayaks quickly on long weekends and mid-July through August is the busiest stretch of the season."
     ],
     "waitlist_heading": "Want to know when we run kayaking events?",
     "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
-    "related_activities": ["mountain-hikes-calgary", "rock-climbing-calgary", "photography-walks-calgary", "ice-skating-calgary"]
+    "local_section": {
+      "heading": "Why Kayaking in Calgary",
+      "paragraphs": [
+        "Calgary is one of the few major Canadian cities where you can be on a world-class river or a mountain lake within the span of a single morning. The Bow River runs right through the city and has long stretches that are genuinely enjoyable to paddle, with the river valley providing a natural buffer from the surrounding urban environment. It feels remote even when you're technically in the city.",
+        "The mountain option seals it. Within an hour of downtown you can be putting a kayak in at Barrier Lake or Two Jack Lake with views that feel like a screensaver but are completely real. Calgary's outdoor culture runs deep and kayaking fits squarely into how people here prefer to spend their summers. It's active, social, and fully unplugged in a way that's hard to find anywhere else."
+      ]
+    },
+    "related_activities": [
+      "mountain-hikes-calgary",
+      "rock-climbing-calgary",
+      "ice-skating-calgary"
+    ]
   },
   "faq": [
-    {"q": "Do I need kayaking experience?", "a": "No. Flatwater kayaking on the Bow River or a mountain lake is accessible to complete beginners. Rental shops provide basic instruction and all required safety gear."},
-    {"q": "When is kayaking season near Calgary?", "a": "The main season runs from May through September. The Bow River is accessible earlier some years, while mountain lakes open later once ice-off happens."},
-    {"q": "Is the Bow River safe for beginners?", "a": "The urban stretch of the Bow is generally calm and suitable for beginners. Avoid sections with rapids near Harvie Passage unless you have experience with moving water."},
-    {"q": "What should I bring for a kayaking day?", "a": "Water, sunscreen, snacks, a dry bag for your phone and wallet, and layers. The rental shop provides the kayak, paddle, and PFD."}
+    {
+      "q": "Do I need kayaking experience?",
+      "a": "No. Flatwater kayaking on the Bow River or a mountain lake is accessible to complete beginners. Rental shops provide basic instruction and all required safety gear."
+    },
+    {
+      "q": "When is kayaking season near Calgary?",
+      "a": "The main season runs from May through September. The Bow River is accessible earlier some years, while mountain lakes open later once ice-off happens."
+    },
+    {
+      "q": "Is the Bow River safe for beginners?",
+      "a": "The urban stretch of the Bow is generally calm and suitable for beginners. Avoid sections with rapids near Harvie Passage unless you have experience with moving water."
+    },
+    {
+      "q": "What should I bring for a kayaking day?",
+      "a": "Water, sunscreen, snacks, a dry bag for your phone and wallet, and layers. The rental shop provides the kayak, paddle, and PFD."
+    },
+    {
+      "q": "Is tandem or solo kayaking better for a first-timer?",
+      "a": "Tandem kayaks are more stable and easier to manage for beginners because you share the paddling load. Solo kayaks give you more independence and are worth trying once you have the basic stroke down."
+    },
+    {
+      "q": "Are Kananaskis lakes accessible for kayaking without a permit?",
+      "a": "A Kananaskis Conservation Pass is required for all vehicles entering Kananaskis Country. Boating permits are also required for some lakes. Check Alberta Parks for current regulations before you go."
+    }
   ]
 }

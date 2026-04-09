@@ -5,7 +5,11 @@
   "meta": {
     "title": "The Best Wine Tasting Experiences in Calgary | Mixler",
     "description": "Wine tasting in Calgary ranges from casual social nights to structured sommelier-led sessions. Here's how to find the right one for you.",
-    "keywords": ["wine tasting Calgary", "best wine tasting Calgary", "wine events Calgary adults"]
+    "keywords": [
+      "wine tasting Calgary",
+      "best wine tasting Calgary",
+      "wine events Calgary adults"
+    ]
   },
   "content": {
     "title": "The Best Wine Tasting Experiences in Calgary",
@@ -52,7 +56,12 @@
       "body": "Mixler runs wine tasting social events designed for adults who want to sip, chat, and meet interesting people.",
       "button_text": "See Upcoming Events"
     },
-    "related_activities": ["wine-tasting-calgary", "cheese-charcuterie-calgary", "whisky-tasting-calgary", "olive-oil-tasting-calgary"],
+    "related_activities": [
+      "wine-tasting-calgary",
+      "whisky-tasting-calgary",
+      "archery-calgary",
+      "axe-throwing-calgary"
+    ],
     "faq": [
       {
         "q": "Where can I do a wine tasting in Calgary?",

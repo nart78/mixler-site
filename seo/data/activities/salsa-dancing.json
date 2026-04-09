@@ -4,37 +4,94 @@
   "category": "active-outdoors",
   "category_slug": "salsa-dancing",
   "og_image": "images/mixler-logo-wide-color.png",
-  "tags": ["All Skill Levels", "Great for Solo", "Active"],
+  "tags": [
+    "All Skill Levels",
+    "Great for Solo",
+    "Active"
+  ],
   "meta": {
     "title": "Salsa Dancing in Calgary | Mixler",
     "description": "Salsa dancing in Calgary is vibrant, welcoming, and a great way to meet people. Beginner classes run regularly and the social dance scene is full of energy.",
-    "keywords": ["salsa dancing Calgary", "salsa classes Calgary", "latin dance Calgary"]
+    "keywords": [
+      "salsa dancing Calgary",
+      "salsa classes Calgary",
+      "latin dance Calgary"
+    ]
   },
   "content": {
     "subtitle": "Move to the rhythm and meet people on the dance floor in Calgary.",
-    "intro": "Calgary's salsa scene is more active than most people realize, with regular social nights, beginner workshops, and a community that genuinely welcomes newcomers. Salsa is a partner dance, which makes it inherently social, and the rotating partner culture at socials means you'll meet a dozen people in a single night. You don't need any dance experience to start, just a willingness to move and laugh at yourself a little.",
+    "intro": "Calgary's salsa scene is more active than most people realize, with regular social nights, beginner workshops, and a community that genuinely welcomes newcomers. Salsa is a partner dance, which makes it inherently social, and the rotating partner culture at socials means you'll meet a dozen people in a single night. You don't need any dance experience to start, just a willingness to move and laugh at yourself a little.\n\nSalsa nights in Calgary tend to happen in the Beltline and downtown core, where studio spaces and event venues have the right floors and sound systems to make the experience feel real. The city's Latin community has built something genuinely vibrant here, and the events that come out of that culture tend to have a warmth that makes first-timers feel welcome rather than out of place.\n\nFor people in Calgary who want a social activity that is also physical and a bit challenging, salsa lands differently than most options. You leave genuinely tired, you have met people, and there is always a clear thing to work on next time. During the winter it is one of the best reasons to get dressed up and go out on a Friday night when the temperature outside makes staying in seem very appealing.",
     "breadcrumb_label": "Salsa Dancing Calgary",
     "what_to_expect": [
-      {"icon": "💃", "heading": "Beginner class before the social", "body": "Most salsa socials in Calgary include a short beginner lesson at the start. You'll learn the basic step and a few turns before the open floor begins."},
-      {"icon": "🔄", "heading": "Rotating partners", "body": "Partner rotation is common at salsa socials. You'll dance with many different people throughout the night, which is how you improve fastest."},
-      {"icon": "🎵", "heading": "Live music or DJ", "body": "The music is everything in salsa. Whether it's a DJ or a live band, expect a mix of classic and contemporary salsa and bachata tracks."},
-      {"icon": "👠", "heading": "Dance shoes make a difference", "body": "Smooth-soled shoes that let you spin easily are ideal. If you're just starting out, avoid rubber soles. Dancing in socks is fine at many venues."}
+      {
+        "icon": "💃",
+        "heading": "Beginner class before the social",
+        "body": "Most salsa socials in Calgary include a short beginner lesson at the start. You'll learn the basic step and a few turns before the open floor begins."
+      },
+      {
+        "icon": "🔄",
+        "heading": "Rotating partners",
+        "body": "Partner rotation is common at salsa socials. You'll dance with many different people throughout the night, which is how you improve fastest."
+      },
+      {
+        "icon": "🎵",
+        "heading": "Live music or DJ",
+        "body": "The music is everything in salsa. Whether it's a DJ or a live band, expect a mix of classic and contemporary salsa and bachata tracks."
+      },
+      {
+        "icon": "👠",
+        "heading": "Dance shoes make a difference",
+        "body": "Smooth-soled shoes that let you spin easily are ideal. If you're just starting out, avoid rubber soles. Dancing in socks is fine at many venues."
+      }
     ],
     "tips": [
       "Count out loud when you're learning. It feels silly but wiring the rhythm into your body through counting speeds up the learning curve dramatically.",
       "Lead or follow clearly. Ambiguous signals confuse your partner. Commit to your lead or listen closely if you're following.",
       "Accept every dance invitation early on. The more partners you dance with, the faster you adapt to different styles.",
       "Dress comfortably but put a little effort in. The salsa scene has a fun fashion culture and people appreciate the vibe you bring.",
-      "Mixler keeps tabs on salsa social nights in Calgary. Join the waitlist and we'll let you know when a beginner-friendly one is coming up."
+      "Mixler keeps tabs on salsa social nights in Calgary. Join the waitlist and we'll let you know when a beginner-friendly one is coming up.",
+      "In winter, Calgary salsa nights are one of the only social events where you will genuinely work up a sweat. Dress in layers you can peel off and bring deodorant. The dancing is real exercise."
     ],
     "waitlist_heading": "Want to know when we run salsa dancing events?",
     "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
-    "related_activities": ["swing-dancing-calgary", "aerial-yoga-calgary", "roller-skating-calgary", "yoga-socials-calgary"]
+    "related_activities": [
+      "yoga-socials-calgary",
+      "archery-calgary",
+      "axe-throwing-calgary",
+      "bowling-calgary"
+    ],
+    "local_section": {
+      "heading": "Why Salsa Dancing in Calgary",
+      "paragraphs": [
+        "Calgary's winters give people a real incentive to find indoor social activities that feel lively rather than just functional. Salsa fills that gap in a way that a bar night or a movie can't. You arrive a little stiff and awkward, and two hours later you're sweating, laughing, and genuinely connected to people you didn't know when you walked in. The city's Latin community has anchored a real scene here, and the events that come out of it tend to have a warmth that makes the city feel smaller and more connected.",
+        "Calgary is also a city full of people who moved here for work and are still building their social circle. Salsa socials are one of the most effective ways to meet people outside your immediate professional bubble. The rotating partner format means you interact with everyone in the room, and dancing together creates a kind of easy familiarity that takes much longer to develop over drinks at a bar."
+      ]
+    }
   },
   "faq": [
-    {"q": "Do I need a partner to try salsa?", "a": "No. Salsa socials welcome solo attendees and the rotating partner culture means you'll always have someone to dance with."},
-    {"q": "How long does it take to learn basic salsa?", "a": "One or two classes gets you moving with the basic step and a couple of moves. Feeling comfortable on the floor takes a few months of regular dancing."},
-    {"q": "What should I wear to a salsa night?", "a": "Something you can move in comfortably. Smooth-soled shoes are strongly recommended. Avoid thick rubber soles that grab the floor when you try to turn."},
-    {"q": "Is salsa hard if I have no dance experience?", "a": "The basics are approachable for anyone. Beginner classes at social nights are designed to get you on the floor fast, no prior experience assumed."}
+    {
+      "q": "Do I need a partner to try salsa?",
+      "a": "No. Salsa socials welcome solo attendees and the rotating partner culture means you'll always have someone to dance with."
+    },
+    {
+      "q": "How long does it take to learn basic salsa?",
+      "a": "One or two classes gets you moving with the basic step and a couple of moves. Feeling comfortable on the floor takes a few months of regular dancing."
+    },
+    {
+      "q": "What should I wear to a salsa night?",
+      "a": "Something you can move in comfortably. Smooth-soled shoes are strongly recommended. Avoid thick rubber soles that grab the floor when you try to turn."
+    },
+    {
+      "q": "Is salsa hard if I have no dance experience?",
+      "a": "The basics are approachable for anyone. Beginner classes at social nights are designed to get you on the floor fast, no prior experience assumed."
+    },
+    {
+      "q": "Is there a difference between salsa and bachata nights?",
+      "a": "Yes. Salsa is faster and more structured with a distinct eight-count rhythm. Bachata is slower, more romantic, and often easier for absolute beginners to feel. Many Calgary social nights mix both, so you'll likely get exposure to each."
+    },
+    {
+      "q": "How do I ask someone to dance at a social?",
+      "a": "Just ask. A simple 'Would you like to dance?' is completely standard. Salsa culture is built on this exchange and almost everyone at a social is there to dance with different partners. Rejection is rare and never personal."
+    }
   ]
 }

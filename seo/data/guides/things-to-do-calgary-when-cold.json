@@ -5,7 +5,11 @@
   "meta": {
     "title": "Things to Do in Calgary When It's Cold Outside | Mixler",
     "description": "When Calgary temperatures drop, here are the best indoor activities for adults that are actually worth leaving your apartment for.",
-    "keywords": ["things to do Calgary cold weather", "indoor activities Calgary adults", "Calgary cold day activities"]
+    "keywords": [
+      "things to do Calgary cold weather",
+      "indoor activities Calgary adults",
+      "Calgary cold day activities"
+    ]
   },
   "content": {
     "title": "Things to Do in Calgary When It's Cold Outside",
@@ -60,7 +64,12 @@
       "body": "Mixler runs warm, social, hands-on events all winter long in Calgary.",
       "button_text": "See Upcoming Events"
     },
-    "related_activities": ["pottery-calgary", "candle-making-calgary", "escape-rooms-calgary", "sound-bath-calgary"],
+    "related_activities": [
+      "pottery-calgary",
+      "escape-rooms-calgary",
+      "archery-calgary",
+      "axe-throwing-calgary"
+    ],
     "faq": [
       {
         "q": "What can I do in Calgary when it's really cold outside?",

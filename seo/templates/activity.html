@@ -66,6 +66,15 @@
           {% endfor %}
         </ul>
 
+        <!-- Local Section -->
+        {% if page.content.local_section %}
+        <div class="pseo-section-label">Local Insight</div>
+        <h2 class="pseo-section-title">{{ page.content.local_section.heading }}</h2>
+        {% for para in page.content.local_section.paragraphs %}
+        <p class="pseo-local-para">{{ para }}</p>
+        {% endfor %}
+        {% endif %}
+
         <!-- FAQ -->
         <div class="pseo-section-label">Common Questions</div>
         <h2 class="pseo-section-title">FAQ</h2>

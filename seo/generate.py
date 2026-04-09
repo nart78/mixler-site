@@ -23,7 +23,7 @@ REPO_ROOT = SEO_DIR.parent
 TEMPLATES_DIR = SEO_DIR / 'templates'
 DATA_ACTIVITIES_DIR = SEO_DIR / 'data' / 'activities'
 DATA_GUIDES_DIR = SEO_DIR / 'data' / 'guides'
-SITE_BASE_URL = 'https://mixler.ca'
+SITE_BASE_URL = 'https://www.mixler.ca'
 
 
 def load_env():
@@ -107,12 +107,88 @@ def render_guide(env, page: dict, related_names: dict, output_root: Path):
     print(f"  Generated: guides/{page['slug']}/index.html")
 
 
+CATEGORY_LABELS = {
+    'creative': 'Creative',
+    'food-drink': 'Food & Drink',
+    'games-social': 'Games & Social',
+    'active-outdoors': 'Active & Outdoors',
+    'learning-culture': 'Learning & Culture',
+    'wellness': 'Wellness',
+}
+
+
+def render_activities_hub(env, activities: list[dict], output_root: Path):
+    """Render the /activities/ hub index page."""
+    template = env.get_template('activities-hub.html')
+
+    # Group activities by category
+    by_category: dict[str, list[dict]] = {}
+    for a in activities:
+        cat = a.get('category', 'other')
+        by_category.setdefault(cat, []).append(a)
+
+    # Build ordered list of (label, activities)
+    categories = []
+    for key, label in CATEGORY_LABELS.items():
+        if key in by_category:
+            categories.append((label, by_category[key]))
+    # Catch any uncategorized
+    for key, items in by_category.items():
+        if key not in CATEGORY_LABELS:
+            categories.append((key.replace('-', ' ').title(), items))
+
+    page = {
+        'meta': {
+            'title': 'Things to Do in Calgary for Adults | Mixler Activities',
+            'description': 'Browse fun activities for adults in Calgary. Paint nights, axe throwing, cooking classes, escape rooms, and more. All beginner-friendly.',
+        },
+        'og_image': 'images/mixler-logo-wide-color.png',
+        'canonical_path': 'activities',
+        'breadcrumb_section': 'Activities',
+        'breadcrumb_section_path': 'activities',
+        'breadcrumb_label': 'All Activities',
+        'faq': None,
+    }
+
+    html = template.render(page=page, categories=categories)
+    out_dir = output_root / 'activities'
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / 'index.html').write_text(html, encoding='utf-8')
+    print("  Generated: activities/index.html (hub)")
+
+
+def render_guides_hub(env, guides: list[dict], output_root: Path):
+    """Render the /guides/ hub index page."""
+    template = env.get_template('guides-hub.html')
+
+    page = {
+        'meta': {
+            'title': 'Calgary Social Guides for Adults | Mixler',
+            'description': 'Practical guides for making friends, finding fun, and getting the most out of Calgary social scene. Written by the Mixler team.',
+        },
+        'og_image': 'images/mixler-logo-wide-color.png',
+        'canonical_path': 'guides',
+        'breadcrumb_section': 'Guides',
+        'breadcrumb_section_path': 'guides',
+        'breadcrumb_label': 'All Guides',
+        'faq': None,
+    }
+
+    html = template.render(page=page, guides=guides)
+    out_dir = output_root / 'guides'
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / 'index.html').write_text(html, encoding='utf-8')
+    print("  Generated: guides/index.html (hub)")
+
+
 def write_sitemap(output_root: Path, activity_slugs: list[str], guide_slugs: list[str]):
     """Write sitemap.xml to output_root."""
     today = date.today().isoformat()
     urls = [
         f"  <url><loc>{SITE_BASE_URL}/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>",
         f"  <url><loc>{SITE_BASE_URL}/events.html</loc><changefreq>daily</changefreq><priority>0.9</priority></url>",
+        f"  <url><loc>{SITE_BASE_URL}/activities/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>",
+        f"  <url><loc>{SITE_BASE_URL}/guides/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>",
     ]
     for slug in activity_slugs:
         urls.append(
@@ -176,6 +252,10 @@ def generate_pages(
     print(f"\nGenerating {len(guides)} guide pages...")
     for page in guides:
         render_guide(env, page, related_names, output_root)
+
+    print("\nGenerating hub pages...")
+    render_activities_hub(env, activities, output_root)
+    render_guides_hub(env, guides, output_root)
 
     print("\nWriting sitemap and robots.txt...")
     write_sitemap(output_root, [a['slug'] for a in activities], [g['slug'] for g in guides])

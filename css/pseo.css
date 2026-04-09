@@ -56,6 +56,9 @@
 .pseo-tips-list li:last-child { border-bottom: none; }
 .pseo-tip-num { background: #153db6; color: #fff; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; font-family: 'League Spartan', sans-serif; }
 
+/* Local section */
+.pseo-local-para { font-size: 0.95rem; color: #4b5563; line-height: 1.8; margin-bottom: 14px; }
+
 /* FAQ */
 .pseo-faq-item { border-bottom: 1px solid #e5e7eb; padding: 18px 0; }
 .pseo-faq-q { font-family: 'League Spartan', sans-serif; font-size: 1rem; font-weight: 700; color: #1f2937; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
@@ -131,6 +134,20 @@
 .pseo-waitlist-success { color: #16a34a; font-size: 0.9rem; font-weight: 600; margin-top: 12px; }
 .pseo-waitlist-error { color: #dc2626; font-size: 0.85rem; margin-top: 8px; }
 
+/* Hub pages (activities + guides index) */
+.pseo-hub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+.pseo-hub-grid--guides { grid-template-columns: repeat(2, 1fr); }
+.pseo-hub-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 24px; display: block; transition: border-color 0.15s, background 0.15s; }
+.pseo-hub-card:hover { background: #f0f4ff; border-color: #c7d4ff; }
+.pseo-hub-card h3 { font-family: 'League Spartan', sans-serif; font-size: 1.1rem; font-weight: 700; color: #153db6; margin-bottom: 8px; }
+.pseo-hub-card p { font-size: 0.85rem; color: #6b7280; line-height: 1.6; margin-bottom: 12px; }
+.pseo-hub-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.pseo-hub-tags .pseo-hero-tag { background: rgba(21,61,182,0.08); color: #153db6; font-size: 0.72rem; padding: 4px 10px; }
+.pseo-hub-meta { font-size: 0.78rem; color: #9ca3af; }
+.pseo-hub-cta { text-align: center; padding: 48px 0; }
+.pseo-hub-cta h2 { font-family: 'League Spartan', sans-serif; font-size: 1.8rem; font-weight: 800; color: #153db6; margin-bottom: 12px; }
+.pseo-hub-cta p { font-size: 1rem; color: #6b7280; margin-bottom: 24px; }
+
 /* Responsive */
 @media (max-width: 768px) {
   .pseo-grid { grid-template-columns: 1fr; }
@@ -141,4 +158,6 @@
   .pseo-hero--guide h1 { font-size: 2rem; }
   .pseo-mixler-cta { flex-direction: column; }
   .pseo-waitlist-form { flex-direction: column; }
+  .pseo-hub-grid { grid-template-columns: 1fr; }
+  .pseo-hub-grid--guides { grid-template-columns: 1fr; }
 }

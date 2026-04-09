@@ -4,34 +4,42 @@
   "category": "games-social",
   "category_slug": "murder-mystery",
   "og_image": "images/mixler-logo-wide-color.png",
-  "tags": ["All Skill Levels", "Groups Welcome", "Active"],
+  "tags": [
+    "All Skill Levels",
+    "Groups Welcome",
+    "Active"
+  ],
   "meta": {
     "title": "Murder Mystery in Calgary | Mixler",
     "description": "Join a murder mystery night in Calgary. Roleplay a character, gather clues, and solve the crime in a fun, theatrical group event. No experience needed.",
-    "keywords": ["murder mystery Calgary", "murder mystery dinner Calgary", "mystery night Calgary"]
+    "keywords": [
+      "murder mystery Calgary",
+      "murder mystery dinner Calgary",
+      "mystery night Calgary"
+    ]
   },
   "content": {
     "subtitle": "Step into a character, investigate the suspects, and solve the murder.",
-    "intro": "Murder mystery events in Calgary are theatrical, social, and genuinely entertaining. You receive a character, get a backstory, and spend the evening gathering information, accusing suspects, and trying to figure out who did it before the big reveal. The best events blend improv with structure and give everyone enough to do that no one feels like a bystander.",
+    "intro": "Murder mystery events in Calgary are theatrical, social, and genuinely entertaining. You receive a character, get a backstory, and spend the evening gathering information, accusing suspects, and trying to figure out who did it before the big reveal. The best events blend improv with structure and give everyone enough to do that no one feels like a bystander.\n\nThe format works especially well for groups who already know each other a bit and want to do something more interactive than dinner or drinks. It also works surprisingly well for strangers, because the character gives you a built-in reason to start a conversation with everyone in the room. You're not introducing yourself awkwardly, you're interrogating a suspect. That social lubricant makes a real difference.\n\nCalgary has a few different operators and venues running murder mystery nights, from casual dinner formats at restaurants in the Beltline to more immersive productions in dedicated event spaces. The scripts range from 1920s speakeasy settings to contemporary thrillers, and the quality of writing has gotten noticeably better in recent years. If you haven't done one since the cheesy versions of ten years ago, it's worth giving the format another shot.",
     "breadcrumb_label": "Murder Mystery Calgary",
     "what_to_expect": [
       {
-        "icon": "🎭",
+        "icon": "\ud83c\udfad",
         "heading": "You play a character",
         "body": "You receive a character packet with your backstory, motivations, and secrets before the event begins."
       },
       {
-        "icon": "🔍",
+        "icon": "\ud83d\udd0d",
         "heading": "Investigating and gathering clues",
         "body": "You talk to other characters, ask questions, and share information strategically. Who you trust matters."
       },
       {
-        "icon": "🗣️",
+        "icon": "\ud83d\udde3\ufe0f",
         "heading": "Accusations and discussion",
         "body": "At various points the group compares notes and makes accusations. The debate is often the most entertaining part."
       },
       {
-        "icon": "🎉",
+        "icon": "\ud83c\udf89",
         "heading": "The big reveal",
         "body": "At the end of the evening, the murderer is revealed. There's usually a prize for whoever solved it correctly."
       }
@@ -41,11 +49,23 @@
       "Stay in character as much as you can. Breaking it too often pulls everyone out of the experience.",
       "Take notes. There's more information flying around than you can hold in your head, and the details matter.",
       "Calgary murder mystery events range from casual dinner formats to more immersive theatrical productions. Pick the format that suits your group.",
-      "Mixler lists murder mystery nights in Calgary when we run them. Join the waitlist and we'll email you when one is added."
+      "Mixler lists murder mystery nights in Calgary when we run them. Join the waitlist and we'll email you when one is added.",
+      "If your group includes people who are more reserved, look for events where the format uses written clue-sharing alongside verbal interaction. It gives quieter players a way to contribute meaningfully without having to command the room."
     ],
     "waitlist_heading": "Want to know when we run murder mystery events?",
     "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
-    "related_activities": ["escape-rooms-calgary", "trivia-night-calgary", "game-show-night-calgary", "board-games-calgary"]
+    "local_section": {
+      "heading": "Why Murder Mystery in Calgary",
+      "paragraphs": [
+        "Murder mystery events have found a strong home in Calgary's event scene because the format suits how people here like to socialize. It's active, it's structured enough to take the pressure off small talk, and it works well for both groups of friends and strangers who signed up solo. The city's restaurant and event space scene, particularly around the Beltline and 17th Ave, has given operators great venues to run immersive formats that feel genuinely theatrical.",
+        "There's also a practical appeal in a city with long winters. A murder mystery night is a compelling reason to get out of the house on a February evening when the usual options feel tired. The event has a clear beginning, middle, and end, which makes it easier to commit to than an open-ended social gathering. Calgary's young professional and creative communities have taken to the format enthusiastically, and the quality of local productions has risen to match that interest."
+      ]
+    },
+    "related_activities": [
+      "escape-rooms-calgary",
+      "trivia-night-calgary",
+      "board-games-calgary"
+    ]
   },
   "faq": [
     {
@@ -63,6 +83,14 @@
     {
       "q": "Is there a meal included?",
       "a": "Some murder mystery events include a dinner, others are standalone. Check the event listing for what's included."
+    },
+    {
+      "q": "What's a good group size for a murder mystery event?",
+      "a": "Most murder mystery scripts are written for 10 to 20 players. Smaller groups mean more screen time per character. Larger events can feel chaotic if the script isn't designed for it. The sweet spot for most formats is 12 to 16 people."
+    },
+    {
+      "q": "Can murder mystery events work for team building in Calgary?",
+      "a": "They're one of the better corporate event formats because they require communication, listening, and collaboration without feeling like a workshop. The theatrical wrapper makes it feel like an event rather than a meeting."
     }
   ]
 }

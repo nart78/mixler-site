@@ -4,34 +4,42 @@
   "category": "creative",
   "category_slug": "painting",
   "og_image": "images/mixler-logo-wide-color.png",
-  "tags": ["All Skill Levels", "Groups Welcome", "No Experience Needed"],
+  "tags": [
+    "All Skill Levels",
+    "Groups Welcome",
+    "No Experience Needed"
+  ],
   "meta": {
     "title": "Painting Events in Calgary | Mixler",
     "description": "Join a painting event in Calgary and unleash your creativity. Fun, guided sessions for all skill levels. No experience needed, just show up and paint.",
-    "keywords": ["painting events Calgary", "paint night Calgary", "painting classes Calgary"]
+    "keywords": [
+      "painting events Calgary",
+      "paint night Calgary",
+      "painting classes Calgary"
+    ]
   },
   "content": {
     "subtitle": "Pick up a brush and paint something you're actually proud of.",
-    "intro": "Painting events in Calgary have exploded in popularity, and for good reason. Whether you're a total beginner or someone who dabbles on weekends, a guided painting session is one of the most satisfying ways to spend an evening. You follow along, chat with people around you, and walk away with something you made yourself.",
+    "intro": "Painting events in Calgary have exploded in popularity, and for good reason. Whether you're a total beginner or someone who dabbles on weekends, a guided painting session is one of the most satisfying ways to spend an evening. You follow along, chat with people around you, and walk away with something you made yourself.\n\nThe format has landed in a sweet spot between art class and social night out. Sessions typically run two to three hours, they're held in studios or event spaces around areas like the Beltline and 17th Ave, and there's usually wine or beer involved if that's your thing. The host walks the room, adjusts your brush technique, and keeps things moving. It never feels like school.\n\nWhat surprises most first-timers is how much they actually like their finished painting. The guided format is designed so that everyone ends up with something they're genuinely proud of, not just a muddy canvas to hide in the car. That takeaway is part of what makes the experience stick. Calgary winters being what they are, a warm studio with music and good company on a Tuesday night is hard to beat.",
     "breadcrumb_label": "Painting Events Calgary",
     "what_to_expect": [
       {
-        "icon": "🎨",
+        "icon": "\ud83c\udfa8",
         "heading": "All supplies included",
         "body": "Canvas, brushes, and paint are provided. Just show up ready to have fun."
       },
       {
-        "icon": "👩‍🎨",
+        "icon": "\ud83d\udc69\u200d\ud83c\udfa8",
         "heading": "Guided instruction",
         "body": "A host walks you through the painting step by step, so no one gets left behind."
       },
       {
-        "icon": "🍷",
+        "icon": "\ud83c\udf77",
         "heading": "Social and relaxed vibe",
         "body": "Most painting events have drinks flowing and music on. It's more of a hangout than an art class."
       },
       {
-        "icon": "🖼️",
+        "icon": "\ud83d\uddbc\ufe0f",
         "heading": "You take your art home",
         "body": "Every attendee leaves with their own finished piece. It makes a surprisingly great gift too."
       }
@@ -41,11 +49,24 @@
       "Don't stress about making it perfect. The fun is in the process, not the result.",
       "Calgary winters are long, so a cozy paint night is a great way to get out of the house mid-week.",
       "Going with a group? Painting side by side makes for a great photo at the end of the night.",
-      "Keep an eye on Mixler for upcoming painting events in Calgary. We list them as they're added and you can join the waitlist to hear first."
+      "Keep an eye on Mixler for upcoming painting events in Calgary. We list them as they're added and you can join the waitlist to hear first.",
+      "If you want to keep painting after an event, Arts Commons and a handful of studios along 17th Ave offer open studio time where you can drop in and paint on your own without signing up for a full class. It's a low-commitment way to keep the habit going."
     ],
     "waitlist_heading": "Want to know when we run painting events?",
     "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
-    "related_activities": ["pottery-calgary", "resin-art-calgary", "calligraphy-calgary", "life-drawing-calgary"]
+    "local_section": {
+      "heading": "Why Painting Events in Calgary",
+      "paragraphs": [
+        "Paint nights have become one of the most reliable weeknight social options in Calgary, and the scene has matured well beyond the early wine-and-paint format. You'll find sessions with genuinely skilled hosts, interesting subject matter, and spaces that feel more like a studio than a rec centre. Areas like Inglewood and the Beltline have become natural homes for this kind of creative social event because the neighbourhoods already attract people who are looking for something a bit different.",
+        "For a city that skews active and outdoorsy in summer, painting events fill an important niche in the colder months when outdoor options shrink. They're warm, creative, and social without requiring athletic effort or significant coordination to organize. Calgary's foodie and creative communities overlap with the paint night crowd, and many events pair well with a meal or drinks before or after on one of the city's walkable commercial strips."
+      ]
+    },
+    "related_activities": [
+      "pottery-calgary",
+      "archery-calgary",
+      "axe-throwing-calgary",
+      "beer-brewing-calgary"
+    ]
   },
   "faq": [
     {
@@ -63,6 +84,14 @@
     {
       "q": "How long does a painting event usually last?",
       "a": "Most sessions run 2 to 3 hours, which is enough time to finish a painting without feeling rushed."
+    },
+    {
+      "q": "What kind of painting will I make at a guided session?",
+      "a": "Most Calgary paint nights use acrylic paint on canvas and follow a single featured design for the evening. The subject changes by session, usually landscapes, abstract pieces, or seasonal themes. You'll know what you're painting before you register."
+    },
+    {
+      "q": "Do I need to book in advance?",
+      "a": "Yes, most painting events in Calgary have fixed capacity because of the number of easels and canvases. Booking a day or two ahead is usually enough, but popular sessions on weekends can sell out faster. Check early if you're bringing a group."
     }
   ]
 }

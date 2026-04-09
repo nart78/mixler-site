@@ -1,0 +1,51 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div class="pseo-breadcrumb">
+  <div class="container">
+    <div class="pseo-breadcrumb-inner">
+      <a href="/">Home</a>
+      <span>›</span>
+      <span>Activities</span>
+    </div>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="pseo-hero pseo-hero--activity">
+  <div class="container">
+    <div class="pseo-hero-eyebrow"><span class="pseo-eyebrow-dot"></span> Calgary Activity Guides</div>
+    <h1>Things to Do in Calgary for Adults</h1>
+    <p class="pseo-hero-subtitle">From paint nights to axe throwing, find your next social outing in Calgary. Every activity is beginner-friendly and designed for groups or solo adventurers.</p>
+  </div>
+</div>
+
+<!-- Body -->
+<div class="pseo-body">
+  <div class="container">
+    {% for category_name, activities in categories %}
+    <div class="pseo-section-label">{{ category_name }}</div>
+    <div class="pseo-hub-grid">
+      {% for activity in activities %}
+      <a href="/activities/{{ activity.slug }}/" class="pseo-hub-card">
+        <h3>{{ activity.name }}</h3>
+        <p>{{ activity.meta.description[:120] }}{% if activity.meta.description|length > 120 %}...{% endif %}</p>
+        <div class="pseo-hub-tags">
+          {% for tag in activity.tags[:3] %}
+          <span class="pseo-hero-tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% endfor %}
+
+    <div class="pseo-hub-cta">
+      <h2>Ready to try something new?</h2>
+      <p>Browse upcoming Mixler events and grab your spot before they fill up.</p>
+      <a href="/events.html" class="pseo-btn-pink">See Upcoming Events</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

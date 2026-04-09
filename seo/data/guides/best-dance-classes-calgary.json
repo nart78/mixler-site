@@ -5,7 +5,11 @@
   "meta": {
     "title": "The Best Dance Classes in Calgary | Mixler",
     "description": "A roundup of the best dance classes in Calgary for adults, from salsa and swing to aerial, line dancing, and social dance nights.",
-    "keywords": ["best dance classes Calgary", "dance classes Calgary adults", "salsa swing dance Calgary"]
+    "keywords": [
+      "best dance classes Calgary",
+      "dance classes Calgary adults",
+      "salsa swing dance Calgary"
+    ]
   },
   "content": {
     "title": "The Best Dance Classes in Calgary",
@@ -52,7 +56,12 @@
       "body": "Mixler runs social dance events in Calgary that welcome absolute beginners.",
       "button_text": "See Upcoming Events"
     },
-    "related_activities": ["salsa-dancing-calgary", "swing-dancing-calgary", "aerial-yoga-calgary", "roller-skating-calgary"],
+    "related_activities": [
+      "salsa-dancing-calgary",
+      "archery-calgary",
+      "axe-throwing-calgary",
+      "beer-brewing-calgary"
+    ],
     "faq": [
       {
         "q": "What are the best dance classes for beginners in Calgary?",

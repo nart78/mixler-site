@@ -4,15 +4,23 @@
   "category": "food-drink",
   "category_slug": "wine-tasting",
   "og_image": "images/mixler-logo-wide-color.png",
-  "tags": ["All Skill Levels", "Groups Welcome", "Great for Solo"],
+  "tags": [
+    "All Skill Levels",
+    "Groups Welcome",
+    "Great for Solo"
+  ],
   "meta": {
     "title": "Wine Tasting in Calgary | Mixler",
     "description": "Discover great wine at a tasting event in Calgary. Learn to taste, identify, and talk about wine in a relaxed, social setting. All experience levels welcome.",
-    "keywords": ["wine tasting Calgary", "wine tasting events Calgary", "wine classes Calgary"]
+    "keywords": [
+      "wine tasting Calgary",
+      "wine tasting events Calgary",
+      "wine classes Calgary"
+    ]
   },
   "content": {
     "subtitle": "Taste your way through a curated pour with people who love good wine.",
-    "intro": "Wine tasting events in Calgary bring together curious palates in the most enjoyable way possible. A knowledgeable host guides you through a selection of wines, sharing context about regions, grapes, and production while you taste alongside a room full of people who are just as interested as you are. No snobbery, just good wine and good conversation.",
+    "intro": "Wine tasting events in Calgary bring together curious palates in the most enjoyable way possible. A knowledgeable host guides you through a selection of wines, sharing context about regions, grapes, and production while you taste alongside a room full of people who are just as interested as you are. No snobbery, just good wine and good conversation.\n\nCalgary's wine scene has grown steadily over the past decade. The city's restaurant culture along 17th Ave and in the Mission neighbourhood has pushed the quality of wine programming higher, and that rising standard has carried over into the tasting event scene. You will find events themed around everything from Burgundy to natural wine to BC VQA, reflecting a genuine local curiosity about the subject.\n\nWine tasting is one of those formats that feels equally appropriate for a first date, a group of close friends, or a team outing that needs something more memorable than a restaurant dinner. The pacing allows for real conversation, the learning element gives everyone something to engage with, and the shared experience of tasting the same glass at the same moment creates a natural point of connection across a whole room of people.",
     "breadcrumb_label": "Wine Tasting Calgary",
     "what_to_expect": [
       {
@@ -41,11 +49,24 @@
       "Don't be intimidated by tasting notes. Describing what you smell and taste in plain language is completely valid.",
       "Calgary's wine scene has grown significantly. Local wine shops and venues host regular tasting events worth checking out.",
       "Vertical tastings (same wine, different vintages) are especially interesting if you want to understand how wine evolves.",
-      "Mixler lists wine tasting events in Calgary when they're added. Join the waitlist and we'll email you when one is coming up."
+      "Mixler lists wine tasting events in Calgary when they're added. Join the waitlist and we'll email you when one is coming up.",
+      "BC wines are often underrepresented at broader tastings but are worth seeking out specifically. Okanagan reds and whites have been winning international awards and you can find them at good Calgary wine shops. A BC-focused tasting event is a genuinely worthwhile way to explore what is being produced just over the mountains."
     ],
     "waitlist_heading": "Want to know when we run wine tasting events?",
     "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
-    "related_activities": ["cocktail-making-calgary", "whisky-tasting-calgary", "cheese-charcuterie-calgary", "olive-oil-tasting-calgary"]
+    "related_activities": [
+      "cocktail-making-calgary",
+      "whisky-tasting-calgary",
+      "beer-brewing-calgary",
+      "chocolate-making-calgary"
+    ],
+    "local_section": {
+      "heading": "Why Wine Tasting in Calgary",
+      "paragraphs": [
+        "Calgary's food and drink culture has matured considerably, and wine is a big part of that. The city has excellent wine shops, strong restaurant programs, and an audience that is genuinely curious about what is in their glass. Tasting events tap into that curiosity in a way that a bottle at a restaurant can't, because you get context, comparison, and conversation all at once. It is the most efficient way to actually improve your palate.",
+        "Calgary's winter also plays a role. When outdoor activities go quiet and the novelty of a regular bar night wears thin, a wine tasting gives the evening a sense of occasion without requiring a lot of planning. You dress up a little, you learn something, you meet people who are curious about similar things. It is the kind of activity that makes a Tuesday in January feel like something rather than nothing."
+      ]
+    }
   },
   "faq": [
     {
@@ -63,6 +84,14 @@
     {
       "q": "Can I come alone?",
       "a": "Absolutely. Wine tastings are one of the better solo social events. The format naturally gets people talking."
+    },
+    {
+      "q": "Is there a dress code at Calgary wine tasting events?",
+      "a": "Most wine events in Calgary are smart casual. You don't need to dress up but people generally put a bit of effort in. It matches the relaxed-but-polished vibe of the evening."
+    },
+    {
+      "q": "What if I don't like certain types of wine?",
+      "a": "Tell the host or organizer when you arrive. Good tastings accommodate preferences, and there is usually enough range in the selection that you will find something you enjoy even if you typically avoid, say, heavy tannic reds."
     }
   ]
 }

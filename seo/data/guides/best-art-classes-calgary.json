@@ -5,7 +5,11 @@
   "meta": {
     "title": "The Best Art Classes in Calgary | Mixler",
     "description": "A guide to the best art classes in Calgary for adults, from painting and pottery to life drawing, stained glass, and everything in between.",
-    "keywords": ["best art classes Calgary", "art classes Calgary adults", "Calgary painting classes pottery"]
+    "keywords": [
+      "best art classes Calgary",
+      "art classes Calgary adults",
+      "Calgary painting classes pottery"
+    ]
   },
   "content": {
     "title": "The Best Art Classes in Calgary",
@@ -60,7 +64,12 @@
       "body": "Mixler runs art and craft social events throughout the year for Calgary adults.",
       "button_text": "See Upcoming Events"
     },
-    "related_activities": ["painting-calgary", "pottery-calgary", "stained-glass-calgary", "macrame-calgary"],
+    "related_activities": [
+      "painting-calgary",
+      "pottery-calgary",
+      "archery-calgary",
+      "axe-throwing-calgary"
+    ],
     "faq": [
       {
         "q": "What are the best art classes for beginners in Calgary?",

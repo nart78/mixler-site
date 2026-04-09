@@ -5,7 +5,11 @@
   "meta": {
     "title": "Summer Activities in Calgary for Adults | Mixler",
     "description": "Calgary summer is short and spectacular. Here's how to make the most of it with adult activities worth actually planning for.",
-    "keywords": ["summer activities Calgary adults", "things to do Calgary summer", "Calgary summer events adults"]
+    "keywords": [
+      "summer activities Calgary adults",
+      "things to do Calgary summer",
+      "Calgary summer events adults"
+    ]
   },
   "content": {
     "title": "Summer Activities in Calgary for Adults",
@@ -60,7 +64,11 @@
       "body": "Mixler runs summer events across Calgary that are social, fun, and worth planning your evening around.",
       "button_text": "See Upcoming Events"
     },
-    "related_activities": ["kayaking-calgary", "photography-walks-calgary", "cocktail-making-calgary", "salsa-dancing-calgary"],
+    "related_activities": [
+      "kayaking-calgary",
+      "cocktail-making-calgary",
+      "salsa-dancing-calgary"
+    ],
     "faq": [
       {
         "q": "What are the best summer activities for adults in Calgary?",

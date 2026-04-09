@@ -5,7 +5,11 @@
   "meta": {
     "title": "Cheap Things to Do in Calgary | Mixler",
     "description": "Calgary doesn't have to be expensive. Here are the best cheap and free activities for adults in Calgary that are actually worth your time.",
-    "keywords": ["cheap things to do Calgary", "free activities Calgary adults", "affordable Calgary activities"]
+    "keywords": [
+      "cheap things to do Calgary",
+      "free activities Calgary adults",
+      "affordable Calgary activities"
+    ]
   },
   "content": {
     "title": "Cheap Things to Do in Calgary",
@@ -52,7 +56,11 @@
       "body": "Some Mixler events start at $30. Browse the calendar and find something within your budget.",
       "button_text": "See Upcoming Events"
     },
-    "related_activities": ["trivia-night-calgary", "board-games-calgary", "language-exchange-calgary", "pub-quiz-calgary"],
+    "related_activities": [
+      "trivia-night-calgary",
+      "board-games-calgary",
+      "pub-quiz-calgary"
+    ],
     "faq": [
       {
         "q": "What are the best free things to do in Calgary?",

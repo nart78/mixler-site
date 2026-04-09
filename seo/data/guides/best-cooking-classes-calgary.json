@@ -5,7 +5,11 @@
   "meta": {
     "title": "The Best Cooking Classes in Calgary | Mixler",
     "description": "Looking for cooking classes in Calgary? Here's a roundup of the best options for adults, from sushi-making to pasta, knife skills to baking.",
-    "keywords": ["best cooking classes Calgary", "cooking classes Calgary adults", "Calgary culinary classes"]
+    "keywords": [
+      "best cooking classes Calgary",
+      "cooking classes Calgary adults",
+      "Calgary culinary classes"
+    ]
   },
   "content": {
     "title": "The Best Cooking Classes in Calgary",
@@ -60,7 +64,12 @@
       "body": "Mixler runs food-focused social events in Calgary including pasta nights, sushi workshops, and more.",
       "button_text": "See Upcoming Events"
     },
-    "related_activities": ["cooking-classes-calgary", "sushi-making-calgary", "pasta-making-calgary", "dumpling-making-calgary"],
+    "related_activities": [
+      "cooking-classes-calgary",
+      "sushi-making-calgary",
+      "archery-calgary",
+      "axe-throwing-calgary"
+    ],
     "faq": [
       {
         "q": "Where are the best cooking classes in Calgary?",

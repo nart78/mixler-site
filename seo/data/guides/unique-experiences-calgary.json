@@ -5,7 +5,11 @@
   "meta": {
     "title": "Unique Experiences in Calgary Worth Trying | Mixler",
     "description": "Calgary has more unique experiences than most people realize. Here's a guide to the ones that are genuinely surprising and worth doing.",
-    "keywords": ["unique experiences Calgary", "unusual things to do Calgary", "different activities Calgary adults"]
+    "keywords": [
+      "unique experiences Calgary",
+      "unusual things to do Calgary",
+      "different activities Calgary adults"
+    ]
   },
   "content": {
     "title": "Unique Experiences in Calgary Worth Trying",
@@ -51,7 +55,7 @@
         "heading": "Experiences That Are Unique to Calgary",
         "paragraphs": [
           "The Badlands day trip to Drumheller is unlike anything within six hours of most North American cities. The hoodoo formations, the Atlas Coal Mine historic site, and the Royal Tyrrell Museum make it a genuinely world-class day trip that Calgarians radically underappreciate.",
-          "Curling is theoretically available anywhere in Canada but Calgary's culture around it is particular. Learn-to-curl nights at any of the city's numerous clubs are a genuinely fun two-hour experience with a deeply social après component. It's the most Canadian thing you can do on a weeknight and it's better than it sounds."
+          "Curling is theoretically available anywhere in Canada but Calgary's culture around it is particular. Learn-to-curl nights at any of the city's numerous clubs are a genuinely fun two-hour experience with a deeply social apr\u00e8s component. It's the most Canadian thing you can do on a weeknight and it's better than it sounds."
         ]
       }
     ],
@@ -60,7 +64,12 @@
       "body": "Mixler events include some of Calgary's most genuinely unusual social experiences.",
       "button_text": "See Upcoming Events"
     },
-    "related_activities": ["stained-glass-calgary", "speed-friending-calgary", "sound-bath-calgary", "puppy-yoga-calgary"],
+    "related_activities": [
+      "puppy-yoga-calgary",
+      "archery-calgary",
+      "axe-throwing-calgary",
+      "beer-brewing-calgary"
+    ],
     "faq": [
       {
         "q": "What are the most unique things to do in Calgary?",

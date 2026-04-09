@@ -4,15 +4,23 @@
   "category": "games-social",
   "category_slug": "pub-quiz",
   "og_image": "images/mixler-logo-wide-color.png",
-  "tags": ["All Skill Levels", "Groups Welcome", "Great for Solo"],
+  "tags": [
+    "All Skill Levels",
+    "Groups Welcome",
+    "Great for Solo"
+  ],
   "meta": {
     "title": "Pub Quiz in Calgary | Mixler",
     "description": "Join a pub quiz night in Calgary. Team up, answer questions across fun categories, and compete for prizes. Great for groups, date nights, and solo players.",
-    "keywords": ["pub quiz Calgary", "pub trivia Calgary", "quiz night Calgary"]
+    "keywords": [
+      "pub quiz Calgary",
+      "pub trivia Calgary",
+      "quiz night Calgary"
+    ]
   },
   "content": {
     "subtitle": "Grab a drink, form a team, and put your knowledge to work.",
-    "intro": "Pub quiz nights in Calgary are a staple of the city's social scene for good reason. The combination of competitive trivia, a relaxed pub environment, and a good host adds up to one of the most consistently enjoyable evenings out. Whether you come with a group or fly solo, it's easy to get into it and even easier to want to come back.",
+    "intro": "Pub quiz nights in Calgary are a staple of the city's social scene for good reason. The combination of competitive trivia, a relaxed pub environment, and a good host adds up to one of the most consistently enjoyable evenings out. Whether you come with a group or fly solo, it's easy to get into it and even easier to want to come back.\n\nYou'll find pub quiz running in neighbourhoods across the city, from laid-back spots in Kensington to busier venues along 17th Ave. Some nights draw a loyal regular crew that knows each other by team name; others are more of a mixed crowd. Either way, the format is the great equalizer. It doesn't matter if you know nothing about sports if you're an encyclopedia of 90s music.\n\nFor anyone newer to Calgary or looking to get out more during the long winter months, pub quiz is a genuinely low-effort way to meet people. You show up, you're immediately part of a team, and you leave knowing at least a few names. It's the kind of social activity the city does well and takes for granted.",
     "breadcrumb_label": "Pub Quiz Calgary",
     "what_to_expect": [
       {
@@ -41,11 +49,24 @@
       "Don't discuss your answers too loudly. Other teams are listening.",
       "Calgary pub quiz nights often have a loyal regular crowd. Show up a few weeks running and you'll quickly feel like a regular too.",
       "Team names matter. Hosts read them out loud, and a good one gets the room laughing before you've answered a single question.",
-      "Mixler lists pub quiz events in Calgary when we schedule them. Join the waitlist and we'll reach out when one is added."
+      "Mixler lists pub quiz events in Calgary when we schedule them. Join the waitlist and we'll reach out when one is added.",
+      "If your team is struggling with a category, use it strategically. Make your confident answers count on the categories where you can wager bonus points."
     ],
     "waitlist_heading": "Want to know when we run pub quiz events?",
     "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
-    "related_activities": ["trivia-night-calgary", "board-games-calgary", "bingo-calgary", "card-games-calgary"]
+    "related_activities": [
+      "trivia-night-calgary",
+      "board-games-calgary",
+      "escape-rooms-calgary",
+      "murder-mystery-calgary"
+    ],
+    "local_section": {
+      "heading": "Why Pub Quiz in Calgary",
+      "paragraphs": [
+        "Calgary winters are long and the temptation to stay home is real. Pub quiz gives you a proper reason to get out on a Tuesday or Wednesday night, and the pub setting takes care of the atmosphere for you. There's no venue to worry about, no activity to plan. Just show up, grab a pint, and compete.",
+        "The city's young professional scene has embraced pub quiz as a go-to team outing. Whether it's a group of coworkers from the Energy Corridor or neighbours from the Beltline meeting up mid-week, it consistently delivers. Calgary pub quiz hosts tend to lean into local references and Western Canadian content, which makes it feel like a genuine local experience rather than a generic trivia format."
+      ]
+    }
   },
   "faq": [
     {
@@ -63,6 +84,14 @@
     {
       "q": "Is there a cost to enter?",
       "a": "Some events are free, others charge a small entry fee. Check the event listing for details."
+    },
+    {
+      "q": "How long does a pub quiz night usually last?",
+      "a": "Most pub quiz nights run between 2 and 3 hours, including breaks between rounds. It's a full evening out rather than a quick activity."
+    },
+    {
+      "q": "What happens if two teams tie?",
+      "a": "Most hosts have a tiebreaker question ready, usually a closest-guess numerical answer. It's often the most tense moment of the night."
     }
   ]
 }

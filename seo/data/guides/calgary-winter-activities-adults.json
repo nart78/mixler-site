@@ -5,7 +5,11 @@
   "meta": {
     "title": "Calgary Winter Activities for Adults Who Hate Staying In | Mixler",
     "description": "Winter in Calgary is long. These adult activities will get you out of the house and into something worth talking about, chinook or no chinook.",
-    "keywords": ["Calgary winter activities adults", "indoor activities Calgary winter", "winter things to do Calgary"]
+    "keywords": [
+      "Calgary winter activities adults",
+      "indoor activities Calgary winter",
+      "winter things to do Calgary"
+    ]
   },
   "content": {
     "title": "Calgary Winter Activities for Adults Who Hate Staying In",
@@ -60,7 +64,11 @@
       "body": "Mixler runs indoor social events all winter long in Calgary. Come warm up.",
       "button_text": "See Upcoming Events"
     },
-    "related_activities": ["pottery-calgary", "candle-making-calgary", "cocktail-making-calgary", "curling-calgary"],
+    "related_activities": [
+      "pottery-calgary",
+      "cocktail-making-calgary",
+      "curling-calgary"
+    ],
     "faq": [
       {
         "q": "What are the best winter activities for adults in Calgary?",

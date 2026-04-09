@@ -4,34 +4,42 @@
   "category": "food-drink",
   "category_slug": "chocolate-making",
   "og_image": "images/mixler-logo-wide-color.png",
-  "tags": ["All Skill Levels", "Groups Welcome", "No Experience Needed"],
+  "tags": [
+    "All Skill Levels",
+    "Groups Welcome",
+    "No Experience Needed"
+  ],
   "meta": {
     "title": "Chocolate Making in Calgary | Mixler",
     "description": "Make your own chocolate in Calgary at a hands-on workshop. Temper, fill, and mould real chocolates to take home. Beginner-friendly and genuinely delicious.",
-    "keywords": ["chocolate making Calgary", "chocolate workshop Calgary", "make chocolate Calgary"]
+    "keywords": [
+      "chocolate making Calgary",
+      "chocolate workshop Calgary",
+      "make chocolate Calgary"
+    ]
   },
   "content": {
     "subtitle": "Temper real chocolate and make truffles or bonbons to take home.",
-    "intro": "Chocolate making workshops in Calgary are one of the more indulgent creative experiences available, and they're more technical than you'd expect. A chocolatier walks you through tempering, flavouring, and moulding real couverture chocolate into finished pieces you can actually be proud of. You taste a lot along the way, which is part of the deal.",
+    "intro": "Chocolate making workshops in Calgary are one of the more indulgent creative experiences available, and they're more technical than you'd expect. A chocolatier walks you through tempering, flavouring, and moulding real couverture chocolate into finished pieces you can actually be proud of. You taste a lot along the way, which is part of the deal.\n\nCalgary's foodie scene has grown significantly, and with it a real appreciation for artisan chocolate. Local chocolatiers and specialty shops have raised the bar for what people expect from handmade confections, and a workshop gives you the skills to understand exactly what goes into producing chocolate at that level. It's humbling and impressive in equal measure.\n\nThis is also one of the best gift-forward activities in the city. You walk out with a box of chocolates you made yourself, which makes it perfect for an anniversary, a Valentine's, or just a thoughtful gesture for someone you want to impress. The Beltline and Kensington have a few quality chocolate shops worth visiting afterward to compare your work against the pros.",
     "breadcrumb_label": "Chocolate Making Calgary",
     "what_to_expect": [
       {
-        "icon": "🍫",
+        "icon": "\ud83c\udf6b",
         "heading": "Tempering chocolate",
         "body": "Tempering is what gives chocolate its glossy finish and satisfying snap. The instructor teaches you the method, which is part science and part feel."
       },
       {
-        "icon": "🎨",
+        "icon": "\ud83c\udfa8",
         "heading": "Flavouring and fillings",
         "body": "You'll choose or prepare fillings like ganache, caramel, or flavoured creams to pipe into your chocolates."
       },
       {
-        "icon": "🍬",
+        "icon": "\ud83c\udf6c",
         "heading": "Moulding and finishing",
         "body": "You'll pour and tap moulds, wait for them to set, and demould your finished pieces. It's deeply satisfying."
       },
       {
-        "icon": "📦",
+        "icon": "\ud83d\udce6",
         "heading": "Take them home packaged",
         "body": "Your chocolates are boxed up to take home. They make a great gift or a very enjoyable commute snack."
       }
@@ -41,11 +49,17 @@
       "Work quickly when the chocolate is fluid. It sets faster than you'd expect once you start pouring.",
       "Calgary's dry climate is actually good for chocolate work. Humidity is the enemy of a clean temper.",
       "Dark chocolate is the easiest to temper for beginners. Milk and white chocolate are more sensitive to heat.",
-      "Mixler lists chocolate making workshops in Calgary when they're added. Join the waitlist and we'll let you know first."
+      "Mixler lists chocolate making workshops in Calgary when they're added. Join the waitlist and we'll let you know first.",
+      "Bring a rigid bag or small box to transport your chocolates home safely. Finished pieces can get damaged in a soft bag, especially in warm weather."
     ],
     "waitlist_heading": "Want to know when we run chocolate making events?",
     "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
-    "related_activities": ["bread-baking-calgary", "candle-making-calgary", "cooking-classes-calgary", "cheese-charcuterie-calgary"]
+    "related_activities": [
+      "cooking-classes-calgary",
+      "beer-brewing-calgary",
+      "cocktail-making-calgary",
+      "sushi-making-calgary"
+    ]
   },
   "faq": [
     {
@@ -63,6 +77,21 @@
     {
       "q": "How long does the workshop take?",
       "a": "Most chocolate making sessions run 2 to 3 hours. There's waiting involved as pieces set, but you stay busy throughout."
+    },
+    {
+      "q": "Is this a good date activity?",
+      "a": "It's one of the best. You're doing something creative together, there's chocolate everywhere, and you leave with a shared project. It works well for couples at any stage."
+    },
+    {
+      "q": "Can I customize the flavours in my chocolates?",
+      "a": "Most workshops offer some choice of fillings or toppings. The instructor will tell you what options are available at the start of the session."
     }
-  ]
+  ],
+  "local_section": {
+    "heading": "Why Chocolate Making in Calgary",
+    "paragraphs": [
+      "Calgary's cold climate makes warm, indoor craft activities especially appealing for a big chunk of the year. A chocolate making workshop is a natural fit for an autumn or winter evening when you want something more memorable than dinner and a movie. The fact that you produce something real and delicious by the end of the session makes it satisfying in a way that's hard to replicate.",
+      "The city's growing food culture has also made Calgarians more curious about where their food comes from and how it's made. Chocolate is one of those products people consume without thinking much about the craft behind it. A workshop changes that. You gain a genuine respect for the skill involved, and that appreciation carries over every time you walk past a chocolate shop on 17th Ave or pick up a bar from a local artisan."
+    ]
+  }
 }

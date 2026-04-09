@@ -4,34 +4,42 @@
   "category": "food-drink",
   "category_slug": "cocktail-making",
   "og_image": "images/mixler-logo-wide-color.png",
-  "tags": ["All Skill Levels", "Groups Welcome", "No Experience Needed"],
+  "tags": [
+    "All Skill Levels",
+    "Groups Welcome",
+    "No Experience Needed"
+  ],
   "meta": {
     "title": "Cocktail Making in Calgary | Mixler",
     "description": "Learn to make cocktails in Calgary at a fun, hands-on class. Shake, stir, and taste your way through the session. All skill levels welcome, no experience needed.",
-    "keywords": ["cocktail making Calgary", "cocktail class Calgary", "mixology class Calgary"]
+    "keywords": [
+      "cocktail making Calgary",
+      "cocktail class Calgary",
+      "mixology class Calgary"
+    ]
   },
   "content": {
     "subtitle": "Learn the techniques behind great cocktails and mix your own.",
-    "intro": "Cocktail making classes in Calgary are a seriously fun evening. A bartender or mixologist walks you through the fundamentals of balance, technique, and flavour, then lets you practice making the drinks yourself. You taste as you go, and by the end of the session you'll actually know how to recreate what you made at home.",
+    "intro": "Cocktail making classes in Calgary are a seriously fun evening. A bartender or mixologist walks you through the fundamentals of balance, technique, and flavour, then lets you practice making the drinks yourself. You taste as you go, and by the end of the session you'll actually know how to recreate what you made at home.\n\nCalgary has a legitimately strong cocktail bar scene. From the craft spots along 17th Ave to the hotel bars downtown and the neighbourhood gems scattered through Inglewood and Kensington, the city has developed a real appreciation for a well-made drink. Taking a class gives you insider knowledge that makes those nights out hit differently when you understand what went into the glass.\n\nCoktail classes also have an effortless social energy. Everyone is doing the same thing, making the same mistakes, and tasting each other's results. The shared experience breaks the ice fast, and the mild buzz that comes from tasting your work along the way only helps. It's consistently one of the top-rated group activity formats for a reason.",
     "breadcrumb_label": "Cocktail Making Calgary",
     "what_to_expect": [
       {
-        "icon": "🍹",
+        "icon": "\ud83c\udf79",
         "heading": "Hands-on time at the bar",
         "body": "You're not just watching. You shake, stir, strain, and garnish your own cocktails throughout the class."
       },
       {
-        "icon": "🔬",
+        "icon": "\ud83d\udd2c",
         "heading": "Understanding flavour and balance",
         "body": "The instructor explains how sweetness, acidity, and spirits interact. It changes how you think about drinks."
       },
       {
-        "icon": "🧊",
+        "icon": "\ud83e\uddca",
         "heading": "Tools and technique",
         "body": "You'll learn proper use of a shaker, jigger, muddler, and bar spoon. Small techniques that make a big difference."
       },
       {
-        "icon": "📋",
+        "icon": "\ud83d\udccb",
         "heading": "Recipes to take home",
         "body": "Most classes send you home with the recipes you made. You'll be able to remake them the same week."
       }
@@ -41,11 +49,16 @@
       "Shake vigorously for 10 to 15 seconds. Most people under-shake, which leaves the drink too warm and under-diluted.",
       "Calgary's bar scene is strong. A cocktail class is a great way to appreciate what goes into the drinks you order.",
       "Classic cocktails are the best place to start. Once you understand a Negroni or a Daiquiri, you understand the logic behind most drinks.",
-      "Mixler lists cocktail making events in Calgary when they're added. Join the waitlist and we'll let you know first."
+      "Mixler lists cocktail making events in Calgary when they're added. Join the waitlist and we'll let you know first.",
+      "Pick up a good jigger and a basic shaker after the class. Having the right tools at home is the difference between recreating the drink properly and guessing your way through it."
     ],
     "waitlist_heading": "Want to know when we run cocktail making events?",
     "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
-    "related_activities": ["wine-tasting-calgary", "whisky-tasting-calgary", "beer-brewing-calgary", "cheese-charcuterie-calgary"]
+    "related_activities": [
+      "wine-tasting-calgary",
+      "whisky-tasting-calgary",
+      "beer-brewing-calgary"
+    ]
   },
   "faq": [
     {
@@ -63,6 +76,21 @@
     {
       "q": "Will I drink alcohol at the class?",
       "a": "Yes, you'll taste the cocktails you make. If you don't drink alcohol, check with the organizer about mocktail options."
+    },
+    {
+      "q": "What spirits will we be working with?",
+      "a": "It depends on the class theme. Common sessions focus on gin, whisky, rum, or tequila-based cocktails. The event listing will specify which spirits are featured."
+    },
+    {
+      "q": "How many cocktails will I make during the class?",
+      "a": "Most classes have you make between three and five cocktails, covering different techniques like shaking, stirring, and building. You taste each one as you go."
     }
-  ]
+  ],
+  "local_section": {
+    "heading": "Why Cocktail Making in Calgary",
+    "paragraphs": [
+      "Calgary's bar and hospitality scene has matured a lot over the past decade. The city now has bartenders winning national recognition and craft cocktail programs at venues across the downtown core and inner-city neighbourhoods. That context makes a cocktail class here more than just a fun activity. It connects you to a real culture of craft that the city has been quietly building for years.",
+      "From a practical standpoint, Calgary's long winters mean people spend a lot of time hosting at home. Knowing how to make a genuinely great cocktail is a skill that pays off every single time someone comes over. A two-hour class gives you that foundation, and the recipes you learn during the session become your go-to entertaining toolkit for the rest of the season."
+    ]
+  }
 }

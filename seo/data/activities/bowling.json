@@ -4,37 +4,93 @@
   "category": "active-outdoors",
   "category_slug": "bowling",
   "og_image": "images/mixler-logo-wide-color.png",
-  "tags": ["Groups Welcome", "All Skill Levels", "Great for Solo"],
+  "tags": [
+    "Groups Welcome",
+    "All Skill Levels",
+    "Great for Solo"
+  ],
   "meta": {
     "title": "Bowling Nights in Calgary | Mixler",
     "description": "Bowling nights in Calgary are a classic group outing that never gets old. Grab lanes with friends or join a social bowling event and meet new people.",
-    "keywords": ["bowling Calgary", "bowling nights Calgary", "social bowling Calgary"]
+    "keywords": [
+      "bowling Calgary",
+      "bowling nights Calgary",
+      "social bowling Calgary"
+    ]
   },
   "content": {
     "subtitle": "Strikes, spares, and good company on the lanes in Calgary.",
-    "intro": "Bowling is one of those activities that works for literally everyone, which is exactly why it's still one of the most popular group outings in Calgary. You don't need any athletic ability, the competitive format keeps everyone engaged, and the vibe is always relaxed. Whether you're organizing a team outing or just want a fun night out with mixed company, bowling delivers every time.",
+    "intro": "Bowling is one of those activities that works for literally everyone, which is exactly why it's still one of the most popular group outings in Calgary. You don't need any athletic ability, the competitive format keeps everyone engaged, and the vibe is always relaxed. Whether you're organizing a team outing or just want a fun night out with mixed company, bowling delivers every time.\n\nCalgary has a solid mix of bowling alleys from classic full-service lanes to the newer boutique-style venues that have added cocktail bars, better food menus, and lighting that actually makes the place look good on a Friday night. You'll find options across the city, from the north end down through the southwest, and most of them are easy to get to without a long drive.\n\nWhat makes bowling consistently great is that the stakes feel just right. You're competing, but nobody takes it too seriously. The gutter ball gets as many laughs as the strike, and that shared energy is what turns a Tuesday work night into something people genuinely look forward to. It's one of the few activities where the less skilled players often add the most fun to the room.",
     "breadcrumb_label": "Bowling Nights Calgary",
     "what_to_expect": [
-      {"icon": "🎳", "heading": "Lane rental by the hour or game", "body": "Calgary bowling alleys offer both options. Hourly works best for bigger groups, while per-game pricing suits smaller crews who want to play a few rounds."},
-      {"icon": "👟", "heading": "Shoe rentals included", "body": "Bowling shoes are required and available to rent at every alley. Bring your own ball if you have one, or use the house balls provided."},
-      {"icon": "📊", "heading": "Built-in scoring", "body": "Most modern lanes have digital scoring built into the screen above you. No manual math needed, which means more time focusing on your form."},
-      {"icon": "🍕", "heading": "Food and drinks nearby", "body": "Calgary alleys typically have a bar and food menu right at the lanes. Nachos and a game on the screen? A solid Tuesday night."}
+      {
+        "icon": "\ud83c\udfb3",
+        "heading": "Lane rental by the hour or game",
+        "body": "Calgary bowling alleys offer both options. Hourly works best for bigger groups, while per-game pricing suits smaller crews who want to play a few rounds."
+      },
+      {
+        "icon": "\ud83d\udc5f",
+        "heading": "Shoe rentals included",
+        "body": "Bowling shoes are required and available to rent at every alley. Bring your own ball if you have one, or use the house balls provided."
+      },
+      {
+        "icon": "\ud83d\udcca",
+        "heading": "Built-in scoring",
+        "body": "Most modern lanes have digital scoring built into the screen above you. No manual math needed, which means more time focusing on your form."
+      },
+      {
+        "icon": "\ud83c\udf55",
+        "heading": "Food and drinks nearby",
+        "body": "Calgary alleys typically have a bar and food menu right at the lanes. Nachos and a game on the screen? A solid Tuesday night."
+      }
     ],
     "tips": [
       "Pick a ball that fits your hand comfortably. Your thumb should slip in and out easily without too much grip needed.",
       "Aim for the arrows on the lane, not the pins. The arrows are closer to you and much easier to line up with.",
       "Keep your approach consistent. A repeatable walk to the line is more important than throwing power.",
       "Don't underestimate bumper lanes. They're genuinely fun for competitive rounds when the group can't agree on who's the best.",
-      "Mixler organizes group bowling nights in Calgary. Join the waitlist and we'll send you details when the next one is coming up."
+      "Mixler organizes group bowling nights in Calgary. Join the waitlist and we'll send you details when the next one is coming up.",
+      "Arrive 15 minutes early on group bookings. Getting shoes fitted and lanes assigned before the group arrives means you're throwing within minutes of everyone showing up."
     ],
     "waitlist_heading": "Want to know when we run bowling events?",
     "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
-    "related_activities": ["axe-throwing-calgary", "ping-pong-calgary", "curling-calgary", "pickleball-calgary"]
+    "related_activities": [
+      "axe-throwing-calgary",
+      "curling-calgary",
+      "pickleball-calgary"
+    ]
   },
   "faq": [
-    {"q": "Do I need to book a lane in advance?", "a": "On weekends, yes. Friday and Saturday nights fill up fast at Calgary bowling alleys. Weeknights are usually walk-in friendly."},
-    {"q": "How many people fit in a lane?", "a": "Most lanes comfortably fit four to six bowlers. You can book multiple adjacent lanes for larger groups."},
-    {"q": "Is bowling expensive?", "a": "It's one of the more affordable group outings. Lane rental, shoe rental, and a couple drinks usually works out to a reasonable per-person cost."},
-    {"q": "Can I go bowling solo?", "a": "Yes, some alleys offer open bowling where solo players are welcome. Social bowling events are also a great way to go alone and still have people to play with."}
-  ]
+    {
+      "q": "Do I need to book a lane in advance?",
+      "a": "On weekends, yes. Friday and Saturday nights fill up fast at Calgary bowling alleys. Weeknights are usually walk-in friendly."
+    },
+    {
+      "q": "How many people fit in a lane?",
+      "a": "Most lanes comfortably fit four to six bowlers. You can book multiple adjacent lanes for larger groups."
+    },
+    {
+      "q": "Is bowling expensive?",
+      "a": "It's one of the more affordable group outings. Lane rental, shoe rental, and a couple drinks usually works out to a reasonable per-person cost."
+    },
+    {
+      "q": "Can I go bowling solo?",
+      "a": "Yes, some alleys offer open bowling where solo players are welcome. Social bowling events are also a great way to go alone and still have people to play with."
+    },
+    {
+      "q": "Are there bowling leagues in Calgary?",
+      "a": "Several Calgary alleys run regular leagues for all skill levels. It's a great way to bowl consistently and build a regular social circle around the activity."
+    },
+    {
+      "q": "What is glow bowling?",
+      "a": "Glow bowling uses blacklights and fluorescent lane markings to create a nightclub-style atmosphere. Many Calgary alleys offer glow bowling on weekend nights and it's a popular choice for birthday groups."
+    }
+  ],
+  "local_section": {
+    "heading": "Why Bowling in Calgary",
+    "paragraphs": [
+      "Calgary's indoor social scene gets a serious workout from October through April, and bowling alleys fill a really specific gap in that landscape. They're accessible to everyone, family-friendly enough for mixed groups, and surprisingly affordable compared to most other social outings in the city. For teams and work groups especially, bowling has a way of flattening hierarchy and letting people actually relax together.",
+      "The newer bowling venues in Calgary have also done a lot to modernize the experience. Better food, stronger drink menus, and improved sound systems have made a bowling night feel less like a retro throwback and more like a legit evening out. Combined with the competitive edge that a few rounds of scoring naturally creates, bowling in Calgary has held its place as one of the city's most reliable group social activities for good reason."
+    ]
+  }
 }

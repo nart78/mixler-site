@@ -5,7 +5,11 @@
   "meta": {
     "title": "Rainy Day Activities in Calgary | Mixler",
     "description": "A rainy day in Calgary doesn't mean a wasted day. Here are the best indoor activities for adults when the weather keeps you inside.",
-    "keywords": ["rainy day activities Calgary", "indoor things to do Calgary rain", "Calgary bad weather activities"]
+    "keywords": [
+      "rainy day activities Calgary",
+      "indoor things to do Calgary rain",
+      "Calgary bad weather activities"
+    ]
   },
   "content": {
     "title": "Rainy Day Activities in Calgary",
@@ -52,7 +56,11 @@
       "body": "Mixler runs indoor social events year-round in Calgary. Something is almost always on.",
       "button_text": "See Upcoming Events"
     },
-    "related_activities": ["pottery-calgary", "escape-rooms-calgary", "board-games-calgary", "candle-making-calgary"],
+    "related_activities": [
+      "pottery-calgary",
+      "escape-rooms-calgary",
+      "board-games-calgary"
+    ],
     "faq": [
       {
         "q": "What are the best rainy day activities in Calgary for adults?",

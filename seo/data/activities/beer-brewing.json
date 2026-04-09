@@ -12,7 +12,7 @@
   },
   "content": {
     "subtitle": "Get into the process of brewing and actually understand how beer is made.",
-    "intro": "Beer brewing classes in Calgary pull back the curtain on one of the most satisfying DIY food skills there is. You work through the brewing process from grain to fermenter with a brewer who explains every decision along the way. Calgary's craft beer scene is strong, and a brewing class gives you a new lens for everything you drink from that point forward.",
+    "intro": "Beer brewing classes in Calgary pull back the curtain on one of the most satisfying DIY food skills there is. You work through the brewing process from grain to fermenter with a brewer who explains every decision along the way. Calgary's craft beer scene is strong, and a brewing class gives you a new lens for everything you drink from that point forward.\n\nThe city has developed a serious appreciation for craft beer over the last decade. Breweries have popped up across neighbourhoods from Inglewood to the East Village, and the local brewing community is genuinely generous with knowledge. That culture of sharing makes Calgary a great place to go deeper on the craft through a hands-on class.\n\nBrewing is also one of the few hands-on food activities where you leave understanding the whole process from start to finish. You're not just following a recipe. You're making decisions, tasting ingredients in their raw form, and connecting the dots between what goes in and what ends up in the glass. It changes the way you drink beer in the best possible way.",
     "breadcrumb_label": "Beer Brewing Calgary",
     "what_to_expect": [
       {
@@ -41,7 +41,8 @@
       "Keep temperature steady during fermentation. Wild temperature swings stress the yeast and affect flavour.",
       "Calgary has an excellent craft beer scene. Visiting local breweries after a brewing class makes for a genuinely richer experience.",
       "Start with an extract kit if you want to practice at home before moving to all-grain. It's much more forgiving.",
-      "Mixler lists beer brewing events in Calgary when they come up. Join the waitlist and we'll email you when one is on."
+      "Mixler lists beer brewing events in Calgary when they come up. Join the waitlist and we'll email you when one is on.",
+      "After the class, visit one of Calgary's local craft breweries to taste a similar style and see how a professional version compares to what you made. The contrast is genuinely eye-opening."
     ],
     "waitlist_heading": "Want to know when we run beer brewing events?",
     "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
@@ -63,6 +64,21 @@
     {
       "q": "Is brewing hard to learn?",
       "a": "The basic process is surprisingly approachable. The instructor handles the more technical aspects and explains the science as you go."
+    },
+    {
+      "q": "Can I brew beer at home after taking a class?",
+      "a": "Absolutely. Most instructors will point you toward starter equipment and beginner kits you can use at home. Extract brewing kits are a great starting point before investing in a full all-grain setup."
+    },
+    {
+      "q": "Is a brewing class a good group activity?",
+      "a": "It works really well for small to medium groups. Everyone participates in the same process, there's a lot to talk about, and tasting together at the end is a natural social moment."
     }
-  ]
+  ],
+  "local_section": {
+    "heading": "Why Beer Brewing in Calgary",
+    "paragraphs": [
+      "Calgary's craft beer scene has grown into something genuinely impressive over the last several years. Neighbourhood taprooms and independent breweries have become a core part of how locals socialize, especially through the long winter months when patio season feels far away. Taking a brewing class here connects you to that culture in a hands-on way that just drinking at a brewery doesn't quite offer.",
+      "The city also has access to excellent homebrew supply shops, and the community of home brewers in Calgary is active and welcoming. A single class is often the entry point to a hobby that people stick with for years. And practically speaking, producing your own beer in Calgary is a genuinely cost-effective habit once you have the equipment, which is part of why so many people make the jump from student to home brewer after their first class."
+    ]
+  }
 }

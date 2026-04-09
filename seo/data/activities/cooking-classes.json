@@ -4,34 +4,42 @@
   "category": "food-drink",
   "category_slug": "cooking-classes",
   "og_image": "images/mixler-logo-wide-color.png",
-  "tags": ["All Skill Levels", "Groups Welcome", "No Experience Needed"],
+  "tags": [
+    "All Skill Levels",
+    "Groups Welcome",
+    "No Experience Needed"
+  ],
   "meta": {
     "title": "Cooking Classes in Calgary | Mixler",
     "description": "Join a cooking class in Calgary and learn real techniques from professional chefs. Hands-on, fun, and delicious. All skill levels welcome.",
-    "keywords": ["cooking classes Calgary", "cooking class Calgary", "learn to cook Calgary"]
+    "keywords": [
+      "cooking classes Calgary",
+      "cooking class Calgary",
+      "learn to cook Calgary"
+    ]
   },
   "content": {
     "subtitle": "Cook alongside a chef and actually understand what you're doing.",
-    "intro": "Cooking classes in Calgary give you more than a recipe. A professional chef walks you through techniques, explains the why behind each step, and lets you do the actual cooking yourself. You eat what you make, and you leave with the confidence to recreate it at home. It's one of the most practical and satisfying evenings you can have.",
+    "intro": "Cooking classes in Calgary give you more than a recipe. A professional chef walks you through techniques, explains the why behind each step, and lets you do the actual cooking yourself. You eat what you make, and you leave with the confidence to recreate it at home. It's one of the most practical and satisfying evenings you can have.\n\nCalgary has a restaurant scene that punches well above its size, with chefs pushing into diverse cuisines and locally sourced ingredients from Alberta farms. Cooking classes here often reflect that range, covering everything from Italian technique nights to Korean street food to Moroccan tagine. The variety means you can find a class that actually excites you rather than settling for a generic experience.\n\nThere's also something genuinely bonding about cooking together. Whether you're coming with a partner, a few friends, or a group of coworkers, working around a kitchen together changes the dynamic. You share tasks, problem-solve under mild pressure, and sit down to eat a meal you built as a team. It's a kind of evening that produces real memories.",
     "breadcrumb_label": "Cooking Classes Calgary",
     "what_to_expect": [
       {
-        "icon": "👨‍🍳",
+        "icon": "\ud83d\udc68\u200d\ud83c\udf73",
         "heading": "Chef-led instruction",
         "body": "A professional chef leads the class, explaining techniques and the reasoning behind them as you cook."
       },
       {
-        "icon": "🔪",
+        "icon": "\ud83d\udd2a",
         "heading": "Hands-on cooking time",
         "body": "You're at the stove, not watching from a distance. Cooking classes are designed for participation."
       },
       {
-        "icon": "🍽️",
+        "icon": "\ud83c\udf7d\ufe0f",
         "heading": "Eat what you make",
         "body": "The meal you prepare is what you eat. It's a genuinely good dinner that you can claim full credit for."
       },
       {
-        "icon": "📖",
+        "icon": "\ud83d\udcd6",
         "heading": "Recipes and techniques to keep",
         "body": "You leave with the recipes and an understanding of the techniques. You're not just memorizing steps."
       }
@@ -41,11 +49,17 @@
       "Mise en place matters. Prepping all your ingredients before you start cooking keeps you from scrambling mid-recipe.",
       "Calgary has a growing restaurant and food culture. Taking a cooking class is a great way to connect with that community.",
       "Themed classes (Italian night, dim sum, Thai street food) are often more fun than general skills sessions. Pick a cuisine you love.",
-      "Mixler lists cooking classes in Calgary when they come up. Join the waitlist and we'll let you know what's scheduled."
+      "Mixler lists cooking classes in Calgary when they come up. Join the waitlist and we'll let you know what's scheduled.",
+      "Take a photo of the plated dish before you eat it. You'll want the reference when you try to recreate it at home, and the plating notes from the chef are easy to forget by the time you get to your own kitchen."
     ],
     "waitlist_heading": "Want to know when we run cooking events?",
     "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
-    "related_activities": ["knife-skills-calgary", "pasta-making-calgary", "sushi-making-calgary", "dumpling-making-calgary"]
+    "related_activities": [
+      "sushi-making-calgary",
+      "beer-brewing-calgary",
+      "chocolate-making-calgary",
+      "cocktail-making-calgary"
+    ]
   },
   "faq": [
     {
@@ -63,6 +77,21 @@
     {
       "q": "Are dietary restrictions accommodated?",
       "a": "Many classes can accommodate dietary needs if you let the organizer know in advance. Check the event listing for specifics."
+    },
+    {
+      "q": "What cuisines are typically offered?",
+      "a": "Calgary classes cover a wide range. Italian, Thai, Japanese, Indian, and French technique classes are common. Themed nights tied to a specific regional cuisine are some of the most popular formats."
+    },
+    {
+      "q": "Is a cooking class a good team-building activity?",
+      "a": "One of the best. Cooking together creates natural collaboration, shared stakes, and a shared meal at the end. It works well for work groups and is more engaging than most formal team-building formats."
     }
-  ]
+  ],
+  "local_section": {
+    "heading": "Why Cooking Classes in Calgary",
+    "paragraphs": [
+      "Calgary's food culture has evolved into something worth paying attention to. The city has a growing number of independent restaurants, farmers markets, and specialty food shops that reflect a genuine interest in where food comes from and how it's prepared. Cooking classes fit naturally into that landscape by giving people a way to participate in that culture rather than just consume it.",
+      "For Calgarians who love eating out but spend a lot of evenings cooking at home through the winter, a class is a meaningful upgrade to the routine. You pick up techniques that stick and expand what you're comfortable making. The province also has excellent local beef, game, and produce that instructors often incorporate into the curriculum, which gives Calgary cooking classes a flavour profile you won't always find in classes elsewhere."
+    ]
+  }
 }

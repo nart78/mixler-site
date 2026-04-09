@@ -4,37 +4,94 @@
   "category": "wellness",
   "category_slug": "meditation",
   "og_image": "images/mixler-logo-wide-color.png",
-  "tags": ["No Experience Needed", "Great for Solo", "All Skill Levels"],
+  "tags": [
+    "No Experience Needed",
+    "Great for Solo",
+    "All Skill Levels"
+  ],
   "meta": {
     "title": "Meditation Events in Calgary | Mixler",
     "description": "Meditation events in Calgary offer guided group practice for beginners and experienced meditators alike. Build a real practice with the support of a community around you.",
-    "keywords": ["meditation Calgary", "guided meditation Calgary", "meditation events Calgary"]
+    "keywords": [
+      "meditation Calgary",
+      "guided meditation Calgary",
+      "meditation events Calgary"
+    ]
   },
   "content": {
     "subtitle": "Start or deepen your practice with a group of people doing the same thing.",
-    "intro": "Meditating alone is hard. The mind wanders, you're not sure if you're doing it right, and it's easy to quietly skip the day. Group meditation events in Calgary solve all of that. With a guide, a room of people, and a dedicated time block, the practice becomes much easier to actually do. Calgary's meditation community includes everything from secular mindfulness events to tradition-based practices, so there's a format for everyone.",
+    "intro": "Meditating alone is hard. The mind wanders, you're not sure if you're doing it right, and it's easy to quietly skip the day. Group meditation events in Calgary solve all of that. With a guide, a room of people, and a dedicated time block, the practice becomes much easier to actually do. Calgary's meditation community includes everything from secular mindfulness events to tradition-based practices, so there's a format for everyone.\n\nYou'll find sessions running out of studios in Kensington, the Beltline, and the southwest communities, usually in the evenings after work. The format varies by facilitator but the vibe is consistently unhurried. Nobody is judging your posture or your focus. The room fills with people who are also just trying to slow down for an hour, and that shared intention is surprisingly powerful.\n\nCalgary winters, long as they are, actually make group meditation particularly appealing. When it's minus twenty outside and the city feels like it's running at full speed, having a dedicated weekly hour of stillness becomes something you genuinely look forward to rather than something you force yourself to do. A lot of regulars describe it as the anchor of their week.",
     "breadcrumb_label": "Meditation Events Calgary",
     "what_to_expect": [
-      {"icon": "🧘", "heading": "Guided by an experienced teacher", "body": "A facilitator leads the session, providing instruction, cues, and anchor points for attention. You follow along, and when your mind wanders you simply return."},
-      {"icon": "🕯️", "heading": "Calm, intentional environment", "body": "Most Calgary meditation events create a deliberately quiet atmosphere. Dim lighting, cushions or chairs, and minimal distractions help your nervous system settle."},
-      {"icon": "🔁", "heading": "Various techniques", "body": "Different events use different methods: breath awareness, body scan, loving-kindness, or visualization. Trying a few helps you discover which approach resonates most."},
-      {"icon": "🤝", "heading": "Community support makes it stick", "body": "People who meditate with others consistently tend to build more durable practices. Knowing others are showing up creates a gentle accountability that solo apps can't replicate."}
+      {
+        "icon": "\ud83e\uddd8",
+        "heading": "Guided by an experienced teacher",
+        "body": "A facilitator leads the session, providing instruction, cues, and anchor points for attention. You follow along, and when your mind wanders you simply return."
+      },
+      {
+        "icon": "\ud83d\udd6f\ufe0f",
+        "heading": "Calm, intentional environment",
+        "body": "Most Calgary meditation events create a deliberately quiet atmosphere. Dim lighting, cushions or chairs, and minimal distractions help your nervous system settle."
+      },
+      {
+        "icon": "\ud83d\udd01",
+        "heading": "Various techniques",
+        "body": "Different events use different methods: breath awareness, body scan, loving-kindness, or visualization. Trying a few helps you discover which approach resonates most."
+      },
+      {
+        "icon": "\ud83e\udd1d",
+        "heading": "Community support makes it stick",
+        "body": "People who meditate with others consistently tend to build more durable practices. Knowing others are showing up creates a gentle accountability that solo apps can't replicate."
+      }
     ],
     "tips": [
       "Expect your mind to wander. It's not a sign you're failing. Noticing the wander and returning is the actual practice.",
       "Sit in a position you can hold for 20 to 30 minutes without pain. Comfort supports focus. Suffering through discomfort doesn't make the meditation more valuable.",
       "Try several types of sessions before deciding meditation isn't for you. Body scan and loving-kindness practices feel very different from basic breath awareness.",
       "Arrive a few minutes early so you can settle before the session starts rather than still feeling rushed when the guide begins.",
-      "Mixler runs group meditation events in Calgary as part of our wellness calendar. Join the waitlist and we'll let you know when the next session opens up."
+      "Mixler runs group meditation events in Calgary as part of our wellness calendar. Join the waitlist and we'll let you know when the next session opens up.",
+      "If you find outdoor settings help you settle, Calgary's pathway system along the Bow River and the quiet corners of Prince's Island Park are worth exploring for informal solo sits between group sessions. The river valley has a genuinely calming quality year-round."
     ],
     "waitlist_heading": "Want to know when we run meditation events?",
     "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
-    "related_activities": ["mindfulness-calgary", "breathwork-calgary", "sound-bath-calgary", "journaling-night-calgary"]
+    "local_section": {
+      "heading": "Why Meditation in Calgary",
+      "paragraphs": [
+        "Calgary's pace of life is high. It's an energy city, a startup city, a place where people tend to work hard and move fast. That makes the case for meditation stronger here than in places with a more naturally slow rhythm. Group sessions give people a structured reason to stop and breathe, which turns out to be exactly what a significant portion of the population is quietly looking for.",
+        "The long winters also play a role. When the days get short and cold from November through March, the mental health case for a regular contemplative practice becomes pretty concrete. Calgary has a strong wellness community that has grown noticeably in the last five years, and meditation has moved from a niche practice to something you hear about from colleagues, neighbours, and friends. It's become part of how a lot of Calgarians manage a demanding city in a demanding climate."
+      ]
+    },
+    "related_activities": [
+      "puppy-yoga-calgary",
+      "yoga-socials-calgary",
+      "archery-calgary",
+      "axe-throwing-calgary"
+    ]
   },
   "faq": [
-    {"q": "Do I need meditation experience?", "a": "No. Group meditation events in Calgary regularly welcome complete beginners and the guided format means you don't need to know what you're doing to benefit."},
-    {"q": "Should I sit cross-legged?", "a": "Only if it's comfortable. Many meditators sit in chairs or use cushions and props. The position matters less than staying still and alert."},
-    {"q": "How long are meditation sessions?", "a": "Most events run 45 to 90 minutes including a brief intro, the guided practice itself, and optional discussion or sharing time after."},
-    {"q": "Is meditation associated with a religion?", "a": "Many traditions practice meditation, but secular mindfulness events draw on the technique without any religious context. Check the event description for the facilitator's approach."}
+    {
+      "q": "Do I need meditation experience?",
+      "a": "No. Group meditation events in Calgary regularly welcome complete beginners and the guided format means you don't need to know what you're doing to benefit."
+    },
+    {
+      "q": "Should I sit cross-legged?",
+      "a": "Only if it's comfortable. Many meditators sit in chairs or use cushions and props. The position matters less than staying still and alert."
+    },
+    {
+      "q": "How long are meditation sessions?",
+      "a": "Most events run 45 to 90 minutes including a brief intro, the guided practice itself, and optional discussion or sharing time after."
+    },
+    {
+      "q": "Is meditation associated with a religion?",
+      "a": "Many traditions practice meditation, but secular mindfulness events draw on the technique without any religious context. Check the event description for the facilitator's approach."
+    },
+    {
+      "q": "What should I bring to a group meditation event?",
+      "a": "Most venues provide cushions or chairs. Wear comfortable, loose clothing you can sit still in for 20 to 30 minutes. Bring a water bottle and arrive a few minutes early so you're not rushed when the session begins."
+    },
+    {
+      "q": "How is group meditation different from using a meditation app?",
+      "a": "Apps are great for building a solo practice, but group meditation adds real accountability and a shared energy that's genuinely different. Having other people in the room makes it much easier to stay present, and many people find a guide's live voice more grounding than a recording."
+    }
   ]
 }

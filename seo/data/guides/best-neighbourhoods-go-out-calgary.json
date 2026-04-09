@@ -5,7 +5,11 @@
   "meta": {
     "title": "Best Neighbourhoods to Go Out in Calgary | Mixler",
     "description": "Calgary's nightlife and social scene is spread across several distinct neighbourhoods. Here's where to go and what to expect from each one.",
-    "keywords": ["best neighbourhoods Calgary nightlife", "where to go out Calgary", "Calgary entertainment districts"]
+    "keywords": [
+      "best neighbourhoods Calgary nightlife",
+      "where to go out Calgary",
+      "Calgary entertainment districts"
+    ]
   },
   "content": {
     "title": "Best Neighbourhoods to Go Out in Calgary",
@@ -60,7 +64,11 @@
       "body": "Mixler events rotate across the city's best venues. Wherever you are, we're probably nearby.",
       "button_text": "See Upcoming Events"
     },
-    "related_activities": ["trivia-night-calgary", "wine-tasting-calgary", "photography-walks-calgary", "cocktail-making-calgary"],
+    "related_activities": [
+      "trivia-night-calgary",
+      "wine-tasting-calgary",
+      "cocktail-making-calgary"
+    ],
     "faq": [
       {
         "q": "What's the best neighbourhood to go out in Calgary?",

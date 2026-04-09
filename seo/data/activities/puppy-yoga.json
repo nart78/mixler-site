@@ -4,37 +4,94 @@
   "category": "wellness",
   "category_slug": "puppy-yoga",
   "og_image": "images/mixler-logo-wide-color.png",
-  "tags": ["No Experience Needed", "Great for Solo", "All Skill Levels"],
+  "tags": [
+    "No Experience Needed",
+    "Great for Solo",
+    "All Skill Levels"
+  ],
   "meta": {
     "title": "Puppy Yoga in Calgary | Mixler",
     "description": "Puppy yoga in Calgary combines a gentle yoga class with free-roaming puppies. It's as wonderful as it sounds and tickets sell out every single time.",
-    "keywords": ["puppy yoga Calgary", "dog yoga Calgary", "yoga with puppies Calgary"]
+    "keywords": [
+      "puppy yoga Calgary",
+      "dog yoga Calgary",
+      "yoga with puppies Calgary"
+    ]
   },
   "content": {
     "subtitle": "Downward dog, but make it literal. Puppy yoga in Calgary is everything.",
-    "intro": "Puppy yoga is exactly what it sounds like: a yoga class where rescue or foster puppies roam freely around the room while you try your best to hold poses. Calgary's puppy yoga events sell out quickly because the combination of gentle movement, stress relief, and unbearable puppy cuteness hits something genuinely therapeutic. You don't need yoga experience, and you will leave smiling.",
+    "intro": "Puppy yoga is exactly what it sounds like: a yoga class where rescue or foster puppies roam freely around the room while you try your best to hold poses. Calgary's puppy yoga events sell out quickly because the combination of gentle movement, stress relief, and unbearable puppy cuteness hits something genuinely therapeutic. You don't need yoga experience, and you will leave smiling.\n\nMost Calgary puppy yoga sessions are held in bright, open studio spaces across neighbourhoods like Inglewood and Kensington, where the local wellness community has made this kind of event part of the regular rotation. Classes tend to be capped small so the puppies have room to roam and every attendee gets real time with them, not just a distant glimpse from the back row.\n\nThere is something about the combination of movement and animals that genuinely resets your nervous system. In a city where winter drags on and the pace of work can be relentless, spending an hour on a mat with a puppy crawling across your back is a surprisingly effective way to decompress. It has become a staple of Calgary's wellness event scene for a reason.",
     "breadcrumb_label": "Puppy Yoga Calgary",
     "what_to_expect": [
-      {"icon": "🐶", "heading": "Free-roaming puppies throughout the class", "body": "Puppies wander the room during the session. Some will climb on you, some will sleep on your mat, and some will demand your full attention at the worst possible moment."},
-      {"icon": "🧘", "heading": "Gentle, beginner-friendly yoga", "body": "The yoga taught at puppy events is deliberately accessible. Instructors understand that concentration is harder than usual and keep the sequences light and forgiving."},
-      {"icon": "📸", "heading": "Photo time before and after", "body": "Most events build in time before the class and after for photos with the puppies. This is not optional. You will take photos."},
-      {"icon": "🐾", "heading": "Often supports rescue organizations", "body": "Many Calgary puppy yoga events partner with local rescues or foster networks, meaning the puppies are looking for homes. Adoption happens more than you might expect."}
+      {
+        "icon": "🐶",
+        "heading": "Free-roaming puppies throughout the class",
+        "body": "Puppies wander the room during the session. Some will climb on you, some will sleep on your mat, and some will demand your full attention at the worst possible moment."
+      },
+      {
+        "icon": "🧘",
+        "heading": "Gentle, beginner-friendly yoga",
+        "body": "The yoga taught at puppy events is deliberately accessible. Instructors understand that concentration is harder than usual and keep the sequences light and forgiving."
+      },
+      {
+        "icon": "📸",
+        "heading": "Photo time before and after",
+        "body": "Most events build in time before the class and after for photos with the puppies. This is not optional. You will take photos."
+      },
+      {
+        "icon": "🐾",
+        "heading": "Often supports rescue organizations",
+        "body": "Many Calgary puppy yoga events partner with local rescues or foster networks, meaning the puppies are looking for homes. Adoption happens more than you might expect."
+      }
     ],
     "tips": [
       "Book early. Puppy yoga events in Calgary regularly sell out days or weeks in advance.",
       "Wear clothes you don't mind getting puppy paws and possibly puppy drool on. Your nicest activewear is the wrong choice here.",
       "Don't eat right before the class. It's gentle yoga but a full stomach is uncomfortable, and you'll be moving around and possibly on the floor a lot.",
       "Be gentle with the puppies and follow the handlers' guidance. Their comfort and safety is always the priority.",
-      "Mixler runs puppy yoga events in Calgary through our wellness event series. Join the waitlist and get notified before tickets drop."
+      "Mixler runs puppy yoga events in Calgary through our wellness event series. Join the waitlist and get notified before tickets drop.",
+      "If you are attending in winter, bring a warm layer for after the class. Calgary studio spaces can get chilly once you stop moving, especially if it is minus twenty outside."
     ],
     "waitlist_heading": "Want to know when we run puppy yoga events?",
     "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
-    "related_activities": ["yoga-socials-calgary", "aerial-yoga-calgary", "sound-bath-calgary", "meditation-calgary"]
+    "related_activities": [
+      "yoga-socials-calgary",
+      "meditation-calgary",
+      "archery-calgary",
+      "axe-throwing-calgary"
+    ],
+    "local_section": {
+      "heading": "Why Puppy Yoga in Calgary",
+      "paragraphs": [
+        "Calgary winters are hard on the social calendar. When it is minus thirty and dark by five, the pull toward the couch is strong. Puppy yoga manages to cut through that resistance because the payoff is immediate and obvious. You book a spot, you show up to a warm studio, and within minutes you have a puppy asleep on your mat. It is a very effective antidote to seasonal flatness.",
+        "The city also has a strong culture of dog ownership and animal welfare, which means Calgary's puppy yoga events often tie into legitimate rescue and foster networks. Attending is not just a fun outing. It supports organizations doing real work to place animals in homes. Several attendees at Calgary puppy yoga events have walked out as new dog parents, which says something about the atmosphere these events create."
+      ]
+    }
   },
   "faq": [
-    {"q": "Do I need yoga experience for puppy yoga?", "a": "None at all. The yoga is designed to be easy and the puppies ensure no one is taking themselves too seriously. Total beginners are very welcome."},
-    {"q": "Are the puppies from a rescue?", "a": "Many Calgary puppy yoga events partner with local rescue organizations or foster homes. Check the specific event details for information on where the puppies come from."},
-    {"q": "What should I bring?", "a": "A yoga mat if you have one, though many events provide them. Water, comfortable clothes, and your phone for photos are the essentials."},
-    {"q": "Is puppy yoga suitable for people with allergies?", "a": "That depends on your allergy severity. If you have dog allergies, a puppy yoga event may not be the right choice. Antihistamines help some people, but check with your doctor first."}
+    {
+      "q": "Do I need yoga experience for puppy yoga?",
+      "a": "None at all. The yoga is designed to be easy and the puppies ensure no one is taking themselves too seriously. Total beginners are very welcome."
+    },
+    {
+      "q": "Are the puppies from a rescue?",
+      "a": "Many Calgary puppy yoga events partner with local rescue organizations or foster homes. Check the specific event details for information on where the puppies come from."
+    },
+    {
+      "q": "What should I bring?",
+      "a": "A yoga mat if you have one, though many events provide them. Water, comfortable clothes, and your phone for photos are the essentials."
+    },
+    {
+      "q": "Is puppy yoga suitable for people with allergies?",
+      "a": "That depends on your allergy severity. If you have dog allergies, a puppy yoga event may not be the right choice. Antihistamines help some people, but check with your doctor first."
+    },
+    {
+      "q": "Can I attend puppy yoga if I have never done yoga before?",
+      "a": "Absolutely. The instructors keep the sequences very gentle, and with puppies in the room nobody is expected to nail every pose. Total beginners fit right in."
+    },
+    {
+      "q": "Do the same puppies appear at every event?",
+      "a": "Not usually. Many puppy yoga events rotate puppies through foster networks, so each class tends to feature a fresh group. It is part of what makes returning worthwhile."
+    }
   ]
 }

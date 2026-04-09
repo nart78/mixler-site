@@ -4,37 +4,93 @@
   "category": "active-outdoors",
   "category_slug": "mountain-hikes",
   "og_image": "images/mixler-logo-wide-color.png",
-  "tags": ["Active", "Groups Welcome", "Outdoors"],
+  "tags": [
+    "Active",
+    "Groups Welcome",
+    "Outdoors"
+  ],
   "meta": {
     "title": "Mountain Hikes in Calgary | Mixler",
     "description": "Mountain hikes near Calgary put you in Banff and Kananaskis in under 90 minutes. Great solo and even better with a group. Trail options for every fitness level.",
-    "keywords": ["mountain hikes Calgary", "hiking near Calgary", "group hikes Calgary"]
+    "keywords": [
+      "mountain hikes Calgary",
+      "hiking near Calgary",
+      "group hikes Calgary"
+    ]
   },
   "content": {
     "subtitle": "The Rockies are right there. Calgary's mountain hiking scene is the real deal.",
-    "intro": "Living in Calgary means you're sitting less than 90 minutes from some of the most spectacular hiking in the world. Banff, Kananaskis, and the Bow Valley corridor have trails for every fitness level, from easy interpretive walks to serious summit scrambles. Group hikes have become a popular social format in Calgary because nothing bonds people faster than shared effort and a view at the top.",
+    "intro": "Living in Calgary means you're sitting less than 90 minutes from some of the most spectacular hiking in the world. Banff, Kananaskis, and the Bow Valley corridor have trails for every fitness level, from easy interpretive walks to serious summit scrambles. Group hikes have become a popular social format in Calgary because nothing bonds people faster than shared effort and a view at the top.\n\nKananaskis is the local favourite for good reason. The trails are well-maintained, the parking situation is more manageable than Banff on a busy weekend, and the scenery is just as dramatic. Troll Falls and Rawson Lake are solid picks for anyone newer to hiking, while Centennial Ridge and Prairie View offer more of a workout with genuinely stunning rewards. Grassi Lakes is a perennial favourite that almost always delivers.\n\nThe social dynamic of a group hike is different from most Calgary activities. You're spending four to six hours together, you're working your body, and conversation happens naturally because there's nothing else competing for your attention. The people who show up for group hikes tend to be curious, active, and easy to talk to. It's one of the better ways to meet people in this city.",
     "breadcrumb_label": "Mountain Hikes Calgary",
     "what_to_expect": [
-      {"icon": "🏔️", "heading": "World-class scenery", "body": "You won't find views like this anywhere else close to a major city. The Rockies deliver every time, rain or shine."},
-      {"icon": "🥾", "heading": "Trails for all levels", "body": "Johnston Canyon is accessible and stunning. Ha Ling Peak is a classic summit scramble. There are dozens of options between those two extremes."},
-      {"icon": "🐻", "heading": "Wildlife awareness is part of it", "body": "Bears, elk, and other wildlife are common in the Rockies. Group hikes include bear awareness as a standard part of the experience."},
-      {"icon": "🌤️", "heading": "Weather changes fast", "body": "Mountain weather can shift dramatically in an hour. Starting with sun and finishing in a cloud system is normal and manageable with the right prep."}
+      {
+        "icon": "\ud83c\udfd4\ufe0f",
+        "heading": "World-class scenery",
+        "body": "You won't find views like this anywhere else close to a major city. The Rockies deliver every time, rain or shine."
+      },
+      {
+        "icon": "\ud83e\udd7e",
+        "heading": "Trails for all levels",
+        "body": "Johnston Canyon is accessible and stunning. Ha Ling Peak is a classic summit scramble. There are dozens of options between those two extremes."
+      },
+      {
+        "icon": "\ud83d\udc3b",
+        "heading": "Wildlife awareness is part of it",
+        "body": "Bears, elk, and other wildlife are common in the Rockies. Group hikes include bear awareness as a standard part of the experience."
+      },
+      {
+        "icon": "\ud83c\udf24\ufe0f",
+        "heading": "Weather changes fast",
+        "body": "Mountain weather can shift dramatically in an hour. Starting with sun and finishing in a cloud system is normal and manageable with the right prep."
+      }
     ],
     "tips": [
       "Start earlier than you think you need to. Trailhead parking fills up fast on weekends, especially at popular Banff trails.",
       "Carry bear spray and know how to use it. It's not optional in the Rockies and makes a real safety difference.",
       "Layer your clothing. A light base, insulating mid-layer, and wind-resistant shell cover most mountain weather scenarios.",
       "Pack more water and snacks than you expect to need. Altitude and elevation gain increase your needs more than a casual walk does.",
-      "Mixler organizes group mountain hikes near Calgary regularly. Join the waitlist and we'll invite you to the next one."
+      "Mixler organizes group mountain hikes near Calgary regularly. Join the waitlist and we'll invite you to the next one.",
+      "Download the AllTrails or Gaia GPS app before you head out. Cell coverage disappears quickly once you're in the mountains, and having the trail map cached offline has saved more than a few Calgary hikers from an unplanned detour."
     ],
     "waitlist_heading": "Want to know when we run mountain hike events?",
     "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
-    "related_activities": ["kayaking-calgary", "rock-climbing-calgary", "photography-walks-calgary", "ice-skating-calgary"]
+    "local_section": {
+      "heading": "Why Mountain Hikes Near Calgary",
+      "paragraphs": [
+        "No other major Canadian city has what Calgary has on its western doorstep. The access to Kananaskis and Banff is genuinely rare, and Calgarians who grew up here sometimes take for granted how extraordinary that is. For people who have moved here for work and are discovering it for the first time, the first trip to the mountains tends to be a turning point. The Rockies have a way of putting everything else in perspective.",
+        "The hiking culture in Calgary is also seriously active. Trailhead parking fills up on sunny weekends because thousands of people are making the same decision at the same time. That shared enthusiasm creates a community feeling that extends beyond the trail itself. Group hiking events have grown out of that culture as a way to share the experience with new people and explore trails you might not tackle alone. It's one of the better ways to make friends in this city."
+      ]
+    },
+    "related_activities": [
+      "kayaking-calgary",
+      "rock-climbing-calgary",
+      "ice-skating-calgary"
+    ]
   },
   "faq": [
-    {"q": "How far are the mountains from Calgary?", "a": "The closest mountain trails are about 60 to 90 minutes from the city. Kananaskis is closer; Banff National Park is slightly further."},
-    {"q": "Do I need hiking boots?", "a": "For most mountain trails, yes. Trail runners work for easier paths. Proper ankle support matters on rocky or uneven terrain."},
-    {"q": "Are mountain hikes near Calgary suitable for beginners?", "a": "Many are. Johnston Canyon, Troll Falls, and Grassi Lakes are popular beginner-friendly options with impressive payoffs for the effort."},
-    {"q": "Is a national park pass required for Banff hikes?", "a": "Yes. A Parks Canada day pass or annual Discovery Pass is required to enter Banff National Park. Kananaskis requires a Kananaskis Conservation Pass."}
+    {
+      "q": "How far are the mountains from Calgary?",
+      "a": "The closest mountain trails are about 60 to 90 minutes from the city. Kananaskis is closer; Banff National Park is slightly further."
+    },
+    {
+      "q": "Do I need hiking boots?",
+      "a": "For most mountain trails, yes. Trail runners work for easier paths. Proper ankle support matters on rocky or uneven terrain."
+    },
+    {
+      "q": "Are mountain hikes near Calgary suitable for beginners?",
+      "a": "Many are. Johnston Canyon, Troll Falls, and Grassi Lakes are popular beginner-friendly options with impressive payoffs for the effort."
+    },
+    {
+      "q": "Is a national park pass required for Banff hikes?",
+      "a": "Yes. A Parks Canada day pass or annual Discovery Pass is required to enter Banff National Park. Kananaskis requires a Kananaskis Conservation Pass."
+    },
+    {
+      "q": "What time should I leave Calgary to beat the crowds at popular trailheads?",
+      "a": "For busy Banff trails on weekends, aim to be at the trailhead by 7:30 to 8 a.m. Lots fill fast and Parks Canada has implemented shuttle systems at some locations. Weekday hikes have far less competition for parking."
+    },
+    {
+      "q": "Can I hike in Kananaskis without a national park pass?",
+      "a": "Yes. Kananaskis Country is a provincial protected area, not a national park. You need a Kananaskis Conservation Pass for any vehicle parked in the area, but not a Parks Canada pass. It's an annual or daily purchase through Alberta Parks."
+    }
   ]
 }

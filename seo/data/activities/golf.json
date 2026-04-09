@@ -12,7 +12,7 @@
   },
   "content": {
     "subtitle": "From the driving range to the fairway, golf in Calgary is always a good call.",
-    "intro": "Calgary's golf scene runs much longer than people from warmer climates might expect, and the social side of the game is genuinely fantastic. Golf scrambles, simulator nights, and casual range sessions have become popular ways for groups to connect without needing a full round. Whether you're a seasoned player or someone who's never held a club, there's a format that works for you.",
+    "intro": "Calgary's golf scene runs much longer than people from warmer climates might expect, and the social side of the game is genuinely fantastic. Golf scrambles, simulator nights, and casual range sessions have become popular ways for groups to connect without needing a full round. Whether you're a seasoned player or someone who's never held a club, there's a format that works for you.\n\nThe city has a surprising number of courses within easy reach, from the classic layouts in the southwest near Lakeview to the newer facilities out toward Springbank. When the snow flies and the outdoor season wraps up, the indoor simulator scene takes over, and Calgary has some really solid options there too. It makes golf genuinely year-round in a way most people don't expect.\n\nWhat draws people to social golf events, especially the scramble format, is that the pressure is completely off. You're playing alongside people, not against them. The conversation flows, there's usually food and drinks involved, and even a rough tee shot becomes a funny story by the 19th hole.",
     "breadcrumb_label": "Golf Events Calgary",
     "what_to_expect": [
       {"icon": "⛳", "heading": "Multiple formats available", "body": "Social golf events in Calgary range from casual scrambles on the course to simulator nights indoors. The simulator format is great for beginners and works year-round."},
@@ -25,16 +25,26 @@
       "A driving range session before your first course round is a worthwhile investment. Even 30 minutes of practice builds real confidence.",
       "Don't rush. Golf etiquette values pace of play but rushing your shots leads to worse results. Take your time when it's your turn.",
       "Simulator golf is a great way to get comfortable with clubs in a zero-pressure environment before heading to a real course.",
-      "Mixler organizes golf social events in Calgary, including simulator nights and scrambles. Join the waitlist to get notified."
+      "Mixler organizes golf social events in Calgary, including simulator nights and scrambles. Join the waitlist to get notified.",
+      "If you're new to the game and going to a real course for the first time, choose a nine-hole round over eighteen. Calgary has several courses that do nine-hole walk-on rates, and finishing strong beats trudging through the back nine exhausted."
     ],
     "waitlist_heading": "Want to know when we run golf events?",
     "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
+    "local_section": {
+      "heading": "Why Golf in Calgary",
+      "paragraphs": [
+        "Calgary's golf season is genuinely longer than the city gets credit for. Courses in the south and southwest often open in late March and stay playable into late October thanks to the chinook winds that roll through and clear the snow. The light in the evenings from May through August is spectacular and a five o'clock tee time can stretch comfortably until eight without rushing.",
+        "The proximity to the mountains also means some of the most scenic golf in Canada is within an hour or two of the city. But even within Calgary, the course quality is high for a city of its size, and the indoor simulator scene has grown enough that serious players are working on their game year-round. Golf fits Calgary's active outdoor culture well, and the social layer around the game has never been stronger."
+      ]
+    },
     "related_activities": ["axe-throwing-calgary", "pickleball-calgary", "mountain-hikes-calgary", "curling-calgary"]
   },
   "faq": [
     {"q": "Can beginners join social golf events?", "a": "Yes. Scramble formats and simulator events are designed to be fun regardless of your skill level. No one's keeping a serious scorecard."},
     {"q": "What's a golf scramble?", "a": "A scramble is a team format where everyone tees off and the team plays from the best ball position. It's forgiving and keeps things moving."},
     {"q": "When is golf season in Calgary?", "a": "The outdoor season typically runs from April through October, weather depending. Indoor simulator events run year-round."},
-    {"q": "Do I need my own clubs?", "a": "No. Rental sets are available at virtually every course and simulator venue. Your own clubs will always fit better, but rentals work fine for social rounds."}
+    {"q": "Do I need my own clubs?", "a": "No. Rental sets are available at virtually every course and simulator venue. Your own clubs will always fit better, but rentals work fine for social rounds."},
+    {"q": "What's the difference between a scramble and a best-ball format?", "a": "In a scramble, the whole team plays from one chosen ball position after each shot. In best-ball, each player plays their own ball and the team scores with the lowest individual score on each hole. Scrambles are more collaborative and beginner-friendly."},
+    {"q": "Are there social golf events for people who have never played before?", "a": "Yes. Simulator nights and driving range socials are great entry points because there's no pressure to keep pace on a full course. You learn the basics in a relaxed setting before ever setting foot on an actual fairway."}
   ]
 }

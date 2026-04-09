@@ -4,37 +4,93 @@
   "category": "active-outdoors",
   "category_slug": "archery",
   "og_image": "images/mixler-logo-wide-color.png",
-  "tags": ["All Skill Levels", "No Experience Needed", "Active"],
+  "tags": [
+    "All Skill Levels",
+    "No Experience Needed",
+    "Active"
+  ],
   "meta": {
     "title": "Archery in Calgary | Mixler",
     "description": "Try archery in Calgary at a local range or social event. No experience needed, and instructors help you nail your form from the very first arrow.",
-    "keywords": ["archery Calgary", "archery classes Calgary", "beginner archery Calgary"]
+    "keywords": [
+      "archery Calgary",
+      "archery classes Calgary",
+      "beginner archery Calgary"
+    ]
   },
   "content": {
     "subtitle": "Pull back, focus, and find out if you have what it takes.",
-    "intro": "Archery is one of those activities that looks intimidating but becomes weirdly meditative once you get the hang of it. Calgary has a handful of ranges and social events that welcome total beginners, and the focus required to land a good shot makes it a surprisingly effective way to unwind. Whether you're going solo or with friends, it's a satisfying skill to pick up.",
+    "intro": "Archery is one of those activities that looks intimidating but becomes weirdly meditative once you get the hang of it. Calgary has a handful of ranges and social events that welcome total beginners, and the focus required to land a good shot makes it a surprisingly effective way to unwind. Whether you're going solo or with friends, it's a satisfying skill to pick up.\n\nThe city's indoor ranges are particularly popular through the long winter months when Calgarians are looking for ways to stay active without braving the cold. You'll find venues tucked into communities across the city, from the northeast to the southwest, each with a slightly different vibe but the same welcoming attitude toward newcomers.\n\nWhat makes archery special as a social activity is the shared rhythm of it. Everyone shoots, everyone retrieves, and there's always something to talk about between rounds. You end up genuinely cheering for the people in the lane next to you, even if you just met them.",
     "breadcrumb_label": "Archery Calgary",
     "what_to_expect": [
-      {"icon": "🏹", "heading": "Equipment provided", "body": "You won't need to bring your own bow or gear. Venues supply everything you need, sized appropriately for beginners and experienced shooters alike."},
-      {"icon": "🎯", "heading": "Instructor-led technique", "body": "An instructor covers stance, draw, aim, and release before you take your first shot. Good form from the start makes a huge difference."},
-      {"icon": "🧘", "heading": "Focus and calm", "body": "Archery demands concentration. Between shots, you'll notice everything else fades out. It's unexpectedly good for clearing your head."},
-      {"icon": "📈", "heading": "Fast visible progress", "body": "Within an hour you'll see your groupings tighten noticeably. That measurable improvement keeps people coming back for more sessions."}
+      {
+        "icon": "\ud83c\udff9",
+        "heading": "Equipment provided",
+        "body": "You won't need to bring your own bow or gear. Venues supply everything you need, sized appropriately for beginners and experienced shooters alike."
+      },
+      {
+        "icon": "\ud83c\udfaf",
+        "heading": "Instructor-led technique",
+        "body": "An instructor covers stance, draw, aim, and release before you take your first shot. Good form from the start makes a huge difference."
+      },
+      {
+        "icon": "\ud83e\uddd8",
+        "heading": "Focus and calm",
+        "body": "Archery demands concentration. Between shots, you'll notice everything else fades out. It's unexpectedly good for clearing your head."
+      },
+      {
+        "icon": "\ud83d\udcc8",
+        "heading": "Fast visible progress",
+        "body": "Within an hour you'll see your groupings tighten noticeably. That measurable improvement keeps people coming back for more sessions."
+      }
     ],
     "tips": [
       "Don't pull the string with your back muscles, not just your arm. Instructors will show you the difference.",
       "Stand perpendicular to the target, not facing it straight on. Your stance is half the shot.",
       "Focus on a specific spot on the target, not just the general ring. Specificity improves accuracy significantly.",
       "Let the bow arm stay up after the release. Dropping it early pulls your shots low.",
-      "Mixler keeps an eye on archery social events in Calgary. Join the waitlist and we'll let you know when one's scheduled."
+      "Mixler keeps an eye on archery social events in Calgary. Join the waitlist and we'll let you know when one's scheduled.",
+      "Book the last lane slot of the evening if you can. The range gets quieter toward the end and you'll have more space to practice without distraction."
     ],
     "waitlist_heading": "Want to know when we run archery events?",
     "waitlist_body": "Join the waitlist and we'll email you when we add one. We use this to plan what to run next.",
-    "related_activities": ["axe-throwing-calgary", "rock-climbing-calgary", "pickleball-calgary", "ping-pong-calgary"]
+    "related_activities": [
+      "axe-throwing-calgary",
+      "rock-climbing-calgary",
+      "pickleball-calgary"
+    ]
   },
   "faq": [
-    {"q": "Can I try archery if I've never done it before?", "a": "Yes. Most venues and social events are designed for beginners, and an instructor walks you through everything before your first shot."},
-    {"q": "What age is archery suitable for?", "a": "Archery social events in Calgary typically cater to adults 19 and up, though family-oriented ranges exist for all ages."},
-    {"q": "How long is a typical archery session?", "a": "Expect one to two hours, depending on the format. That's enough time to get comfortable and see real improvement."},
-    {"q": "Is archery physical?", "a": "It uses muscles you don't often train, particularly in the back and shoulders. You'll feel it the next day, but it's not intense cardio."}
-  ]
+    {
+      "q": "Can I try archery if I've never done it before?",
+      "a": "Yes. Most venues and social events are designed for beginners, and an instructor walks you through everything before your first shot."
+    },
+    {
+      "q": "What age is archery suitable for?",
+      "a": "Archery social events in Calgary typically cater to adults 19 and up, though family-oriented ranges exist for all ages."
+    },
+    {
+      "q": "How long is a typical archery session?",
+      "a": "Expect one to two hours, depending on the format. That's enough time to get comfortable and see real improvement."
+    },
+    {
+      "q": "Is archery physical?",
+      "a": "It uses muscles you don't often train, particularly in the back and shoulders. You'll feel it the next day, but it's not intense cardio."
+    },
+    {
+      "q": "Can I bring my own equipment?",
+      "a": "Most ranges welcome personal bows as long as they meet the venue's draw weight limits. If you're just starting out, use the house equipment until you know what style suits you."
+    },
+    {
+      "q": "Is archery a good activity to do with coworkers or a team?",
+      "a": "It works really well for groups. The format is naturally competitive without being physical, so it levels the playing field and everyone has a genuine shot at winning."
+    }
+  ],
+  "local_section": {
+    "heading": "Why Archery in Calgary",
+    "paragraphs": [
+      "Calgary winters push people toward finding indoor activities that still feel active and purposeful. Archery fills that gap perfectly. It's not a gym workout, but it's not passive either. The mental focus it requires is genuinely restorative, and indoor ranges are warm, calm spaces that are easy to get to from anywhere in the city.",
+      "There's also a strong outdoor archery culture in the warmer months, with ranges taking advantage of Calgary's wide-open green spaces and sunny summers. Whether you're after a weeknight escape from a long workday in the Beltline or planning a weekend outing from the suburbs, archery is one of those rare activities that delivers every single time."
+    ]
+  }
 }

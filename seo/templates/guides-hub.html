@@ -1,0 +1,46 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div class="pseo-breadcrumb">
+  <div class="container">
+    <div class="pseo-breadcrumb-inner">
+      <a href="/">Home</a>
+      <span>›</span>
+      <span>Guides</span>
+    </div>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="pseo-hero pseo-hero--guide">
+  <div class="container">
+    <div class="pseo-hero-eyebrow"><span class="pseo-eyebrow-dot"></span> Mixler Guides</div>
+    <h1>Calgary Social Guides for Adults</h1>
+    <p class="pseo-hero-subtitle">Practical guides for making friends, finding fun, and getting the most out of Calgary's social scene. Written by the Mixler team.</p>
+  </div>
+</div>
+
+<!-- Body -->
+<div class="pseo-body">
+  <div class="container">
+    <div class="pseo-hub-grid pseo-hub-grid--guides">
+      {% for guide in guides %}
+      <a href="/guides/{{ guide.slug }}/" class="pseo-hub-card pseo-hub-card--guide">
+        <h3>{{ guide.content.title }}</h3>
+        <p>{{ guide.meta.description[:140] }}{% if guide.meta.description|length > 140 %}...{% endif %}</p>
+        <div class="pseo-hub-meta">
+          <span>{{ guide.content.read_time }}</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+    <div class="pseo-hub-cta">
+      <h2>Looking for something to do this week?</h2>
+      <p>Check out upcoming Mixler events in Calgary.</p>
+      <a href="/events.html" class="pseo-btn-pink">See Upcoming Events</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
