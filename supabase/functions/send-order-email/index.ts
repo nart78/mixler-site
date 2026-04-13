@@ -72,7 +72,7 @@ serve(async (req) => {
 
     const timeStr = formatTime(event.start_time) + (event.end_time ? ' - ' + formatTime(event.end_time) : '');
     const location = [event.location_name, event.location_address].filter(Boolean).join(', ');
-    const confirmationUrl = `https://staging.mixler.ca/order-confirmation.html?order=${order.order_number}`;
+    const confirmationUrl = `https://www.mixler.ca/order-confirmation.html?order=${order.order_number}`;
 
     // Mailerlite API - upsert subscriber with order data
     const mailerliteToken = Deno.env.get('MAILERLITE_API_TOKEN');

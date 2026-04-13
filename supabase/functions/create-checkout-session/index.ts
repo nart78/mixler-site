@@ -329,8 +329,8 @@ serve(async (req) => {
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-      success_url: `${req.headers.get('origin') || 'https://staging.mixler.ca'}/order-confirmation.html?order=${order.order_number}`,
-      cancel_url: `${req.headers.get('origin') || 'https://staging.mixler.ca'}/checkout.html?slug=${event_slug}`,
+      success_url: `${req.headers.get('origin') || 'https://www.mixler.ca'}/order-confirmation.html?order=${order.order_number}`,
+      cancel_url: `${req.headers.get('origin') || 'https://www.mixler.ca'}/checkout.html?slug=${event_slug}`,
       customer_email: buyer_email,
       metadata: {
         order_id: order.id,
