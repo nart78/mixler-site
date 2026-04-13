@@ -141,7 +141,7 @@ serve(async (req) => {
     const spotsLeft = event.capacity - event.tickets_sold;
     if (quantity > spotsLeft) {
       return new Response(
-        JSON.stringify({ error: `Only ${spotsLeft} spot${spotsLeft !== 1 ? 's' : ''} left` }),
+        JSON.stringify({ error: 'Not enough tickets available for this order' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }

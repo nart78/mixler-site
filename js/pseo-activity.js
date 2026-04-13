@@ -80,7 +80,6 @@ function formatTime(timeStr) {
 function renderEvents(slot, events) {
   const cards = events.map(ev => {
     const { day, month } = formatDate(ev.event_date);
-    const spotsLeft = ev.capacity - (ev.tickets_sold || 0);
     const timeStr = ev.start_time ? `${formatTime(ev.start_time)}${ev.end_time ? ' – ' + formatTime(ev.end_time) : ''}` : '';
     return `
       <div class="pseo-event-card">
@@ -90,7 +89,7 @@ function renderEvents(slot, events) {
         </div>
         <div class="pseo-event-info">
           <h4>${escHtml(ev.title)}</h4>
-          <p>${escHtml(ev.location_name || '')}${timeStr ? ' · ' + timeStr : ''}${spotsLeft > 0 && spotsLeft <= 20 ? ' · ' + spotsLeft + ' spots left' : ''}</p>
+          <p>${escHtml(ev.location_name || '')}${timeStr ? ' · ' + timeStr : ''}</p>
         </div>
         <div class="pseo-event-price">${formatPrice(ev.price_cents)}</div>
       </div>

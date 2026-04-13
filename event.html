@@ -172,10 +172,7 @@
             ` : ''}
             ${ticketTypesHtml}
             <div class="ticket-availability">
-              ${soldOut
-                ? '<span class="sold-out">Sold Out</span>'
-                : `<span class="spots-left">${spotsLeft} spot${spotsLeft !== 1 ? 's' : ''} left</span>`
-              }
+              ${soldOut ? '<span class="sold-out">Sold Out</span>' : ''}
             </div>
             ${soldOut ? `
               <div class="waitlist-form" id="waitlist-form">
