@@ -11,12 +11,15 @@ SUPABASE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZ
 
 if [ -d "/var/www/mixler.ca" ]; then
   OG_DIR="/var/www/mixler.ca/og"
+  EVENTS_DIR="/var/www/mixler.ca/events"
 else
-  OG_DIR="$(dirname "$(readlink -f "$0")")/../og"
+  REPO_ROOT="$(dirname "$(readlink -f "$0")")/.."
+  OG_DIR="${REPO_ROOT}/og"
+  EVENTS_DIR="${REPO_ROOT}/events"
 fi
 SITE="https://www.mixler.ca"
 
-mkdir -p "$OG_DIR"
+mkdir -p "$OG_DIR" "$EVENTS_DIR"
 
 fields="slug,title,description,short_description,image_url,event_date,start_time,end_time,location_name,location_address,price_cents,capacity,tickets_sold,status"
 events=$(curl -sf "${SUPABASE_URL}/rest/v1/events?select=${fields}&status=eq.published&apikey=${SUPABASE_KEY}")
@@ -25,6 +28,45 @@ if [ -z "$events" ] || [ "$events" = "[]" ]; then
   echo "No events found or API error"
   exit 1
 fi
+
+# Emit public events.json (all published events, past + future).
+echo "$events" | python3 -c '
+import json, sys
+from datetime import datetime
+
+events = json.load(sys.stdin)
+
+def fmt_time(t):
+    if not t:
+        return ""
+    try:
+        return datetime.strptime(t, "%H:%M:%S").strftime("%-I:%M %p")
+    except Exception:
+        return t
+
+out = {"events": []}
+for e in events:
+    cap = e.get("capacity") or 0
+    sold = e.get("tickets_sold") or 0
+    out["events"].append({
+        "slug": e["slug"],
+        "name": e.get("title") or "",
+        "date": e.get("event_date") or "",
+        "time": fmt_time(e.get("start_time")),
+        "venue_name": e.get("location_name") or "",
+        "venue_address": e.get("location_address") or "",
+        "price": round((e.get("price_cents") or 0) / 100, 2),
+        "spots_total": cap,
+        "spots_remaining": max(0, cap - sold),
+        "description": e.get("short_description") or (e.get("description") or ""),
+        "ticket_url": "https://www.mixler.ca/event.html?slug=" + e["slug"],
+    })
+
+# Sort future-first by date
+out["events"].sort(key=lambda x: x["date"] or "9999-99-99")
+print(json.dumps(out, indent=2))
+' > "${EVENTS_DIR}/events.json"
+echo "Generated: ${EVENTS_DIR}/events.json"
 
 # Word-boundary truncation: cut at the last whole word within the limit.
 trunc() {

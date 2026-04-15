@@ -23,6 +23,7 @@ rsync -avz --delete "${REPO_ROOT}/" "${VPS_HOST}:${VPS_PATH}" \
   --exclude='CLAUDE.md' \
   --exclude='.github' \
   --exclude='og' \
+  --exclude='events' \
   --exclude='seo' \
   --exclude='GEO-AUDIT-REPORT.md' \
   --exclude='JAI_HANDOFF.md' \
