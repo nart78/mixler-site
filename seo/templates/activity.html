@@ -38,7 +38,25 @@
 
         <p class="pseo-intro">{{ page.content.intro }}</p>
 
-        <!-- Events slot: injected by pseo-activity.js -->
+        {% if upcoming_events %}
+        <!-- Upcoming Sessions (server-rendered for SEO) -->
+        <div class="pseo-section-label">Upcoming Sessions</div>
+        <h2 class="pseo-section-title">Next {{ page.name }} events in Calgary</h2>
+        <ul class="pseo-events-list">
+          {% for event in upcoming_events %}
+          <li class="pseo-event-item">
+            <a href="{{ event.canonical }}">
+              <strong>{{ event.title }}</strong>
+              <span class="pseo-event-date">{{ event.date_human }}</span>
+              {% if event.location_name %}<span class="pseo-event-loc">{{ event.location_name }}</span>{% endif %}
+              <span class="pseo-event-price">{{ event.price_display }}</span>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+
+        <!-- Events slot: injected by pseo-activity.js with live ticket availability -->
         <div id="events-slot" data-category-slug="{{ page.category_slug }}" data-activity-name="{{ page.name }}"></div>
 
         <!-- What to Expect -->
@@ -109,6 +127,50 @@
     </div>
   </div>
 </div>
+{% endblock %}
+
+{% block extra_head %}
+{% if upcoming_events %}
+{% for event in upcoming_events %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": {{ event.title | tojson }},
+  "description": {{ event.description_oneline | tojson }},
+  "startDate": {{ event.start_iso | tojson }},
+  "endDate": {{ event.end_iso | tojson }},
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": {{ (event.location_name or "Mixler Event") | tojson }},
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": {{ (event.location_address or "Calgary, AB, Canada") | tojson }},
+      "addressLocality": "Calgary",
+      "addressRegion": "AB",
+      "addressCountry": "CA"
+    }
+  },
+  "image": {{ event.image_absolute | tojson }},
+  "offers": {
+    "@type": "Offer",
+    "url": {{ event.canonical | tojson }},
+    "price": {{ event.price_value | tojson }},
+    "priceCurrency": "CAD",
+    "availability": {{ event.availability | tojson }},
+    "validFrom": {{ event.valid_from | tojson }}
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Mixler",
+    "url": "{{ site_base_url }}/"
+  }
+}
+</script>
+{% endfor %}
+{% endif %}
 {% endblock %}
 
 {% block page_scripts %}

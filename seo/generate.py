@@ -12,7 +12,9 @@ Run from repo root (~/mixler-site/).
 import json
 import os
 import sys
-from datetime import date
+import urllib.parse
+import urllib.request
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -24,6 +26,122 @@ TEMPLATES_DIR = SEO_DIR / 'templates'
 DATA_ACTIVITIES_DIR = SEO_DIR / 'data' / 'activities'
 DATA_GUIDES_DIR = SEO_DIR / 'data' / 'guides'
 SITE_BASE_URL = 'https://www.mixler.ca'
+SUPABASE_URL = 'https://dnuygqdmzjswroyzvkjb.supabase.co'
+
+
+def fetch_upcoming_events(anon_key: str) -> list[dict]:
+    """Fetch published events with event_date >= today from Supabase REST.
+
+    Returns an empty list on any failure -- build must not block on network.
+    """
+    if not anon_key:
+        return []
+    today = date.today().isoformat()
+    fields = (
+        'slug,title,description,short_description,image_url,event_date,'
+        'start_time,end_time,location_name,location_address,price_cents,'
+        'capacity,tickets_sold,updated_at'
+    )
+    qs = urllib.parse.urlencode({
+        'select': fields,
+        'status': 'eq.published',
+        'event_date': f'gte.{today}',
+        'order': 'event_date.asc',
+    })
+    url = f'{SUPABASE_URL}/rest/v1/events?{qs}'
+    req = urllib.request.Request(url, headers={
+        'apikey': anon_key,
+        'Authorization': f'Bearer {anon_key}',
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            return json.loads(resp.read().decode('utf-8'))
+    except Exception as exc:
+        print(f"  Warning: could not fetch upcoming events from Supabase: {exc}")
+        return []
+
+
+def calgary_tz_offset(month: int) -> str:
+    """Approximate Calgary timezone. DST April-October: -06:00, else -07:00."""
+    return '-06:00' if 4 <= month <= 10 else '-07:00'
+
+
+def format_event_iso(event_date: str, start_time: str | None, end_time: str | None) -> tuple[str, str]:
+    """Return (start_iso, end_iso) with Calgary timezone suffix."""
+    if not event_date:
+        return ('', '')
+    month = int(event_date[5:7])
+    tz = calgary_tz_offset(month)
+    start = f"{event_date}T{(start_time or '00:00:00')}{tz}"
+    end = f"{event_date}T{(end_time or start_time or '00:00:00')}{tz}"
+    return (start, end)
+
+
+def match_events_to_activity(events: list[dict], activity: dict) -> list[dict]:
+    """Return events whose title contains the activity name (case-insensitive).
+
+    Activity names like "Puppy Yoga" match events titled "Puppy Yoga", "Puppy Yoga Spring", etc.
+    """
+    name = (activity.get('name') or '').strip().lower()
+    if not name:
+        return []
+    return [e for e in events if name in (e.get('title') or '').lower()]
+
+
+def enrich_event_for_template(event: dict) -> dict:
+    """Add computed fields (iso dates, price display, canonical, etc.) for templating."""
+    e = {**event}
+    e['canonical'] = f"{SITE_BASE_URL}/event.html?slug={event['slug']}"
+    start_iso, end_iso = format_event_iso(
+        event.get('event_date', ''),
+        event.get('start_time'),
+        event.get('end_time'),
+    )
+    e['start_iso'] = start_iso
+    e['end_iso'] = end_iso
+
+    # Human-readable date
+    try:
+        dt = datetime.strptime(event['event_date'], '%Y-%m-%d')
+        e['date_human'] = dt.strftime('%A, %B %-d, %Y')
+    except Exception:
+        e['date_human'] = event.get('event_date', 'Date to be announced')
+
+    # Price
+    price_cents = event.get('price_cents') or 0
+    if price_cents > 0:
+        e['price_display'] = f"${price_cents / 100:.2f}"
+        e['price_value'] = f"{price_cents / 100:.2f}"
+    else:
+        e['price_display'] = 'Free'
+        e['price_value'] = '0.00'
+
+    # Availability
+    capacity = event.get('capacity') or 0
+    sold = event.get('tickets_sold') or 0
+    if capacity > 0 and sold >= capacity:
+        e['availability'] = 'https://schema.org/SoldOut'
+    else:
+        e['availability'] = 'https://schema.org/InStock'
+
+    # Absolute image URL
+    image_url = event.get('image_url') or ''
+    if image_url and not image_url.startswith('http'):
+        image_url = f"{SITE_BASE_URL}/{image_url.lstrip('/')}"
+    elif not image_url:
+        image_url = f"{SITE_BASE_URL}/images/mixler-logo-wide-color.png"
+    e['image_absolute'] = image_url
+
+    # Description with collapsed whitespace (for JSON-LD)
+    desc = (event.get('description') or '').replace('\n', ' ')
+    while '  ' in desc:
+        desc = desc.replace('  ', ' ')
+    e['description_oneline'] = desc.strip()
+
+    # validFrom timestamp
+    e['valid_from'] = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+
+    return e
 
 
 def load_env():
@@ -54,7 +172,7 @@ def build_related_names(activities: list[dict]) -> dict:
     return {a['slug']: a['name'] for a in activities}
 
 
-def render_activity(env, page: dict, related_names: dict, output_root: Path, anon_key: str):
+def render_activity(env, page: dict, related_names: dict, output_root: Path, anon_key: str, upcoming_events: list[dict] | None = None):
     """Render one activity page and write to output_root/activities/{slug}/index.html."""
     template = env.get_template('activity.html')
 
@@ -71,7 +189,11 @@ def render_activity(env, page: dict, related_names: dict, output_root: Path, ano
     # breadcrumb_label for base template
     page['breadcrumb_label'] = page['content']['breadcrumb_label']
 
-    html = template.render(page=page, related_names=related_names)
+    matched = []
+    if upcoming_events:
+        matched = [enrich_event_for_template(e) for e in match_events_to_activity(upcoming_events, page)]
+
+    html = template.render(page=page, related_names=related_names, upcoming_events=matched, site_base_url=SITE_BASE_URL)
     # Inject actual anon key
     if 'REPLACED_BY_GENERATE_PY' not in html:
         print(f"  WARNING: anon key placeholder not found in {page['slug']} -- check activity.html template")
@@ -181,7 +303,7 @@ def render_guides_hub(env, guides: list[dict], output_root: Path):
     print("  Generated: guides/index.html (hub)")
 
 
-def write_sitemap(output_root: Path, activity_slugs: list[str], guide_slugs: list[str]):
+def write_sitemap(output_root: Path, activity_slugs: list[str], guide_slugs: list[str], upcoming_events: list[dict] | None = None):
     """Write sitemap.xml to output_root."""
     today = date.today().isoformat()
     urls = [
@@ -200,12 +322,21 @@ def write_sitemap(output_root: Path, activity_slugs: list[str], guide_slugs: lis
             f"  <url><loc>{SITE_BASE_URL}/guides/{slug}/</loc>"
             f"<lastmod>{today}</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>"
         )
+    event_count = 0
+    for event in upcoming_events or []:
+        lastmod = (event.get('updated_at') or '')[:10] or today
+        urls.append(
+            f"  <url><loc>{SITE_BASE_URL}/event.html?slug={event['slug']}</loc>"
+            f"<lastmod>{lastmod}</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>"
+        )
+        event_count += 1
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n'
     sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     sitemap += '\n'.join(urls) + '\n'
     sitemap += '</urlset>\n'
     (output_root / 'sitemap.xml').write_text(sitemap, encoding='utf-8')
-    print(f"  Created: sitemap.xml ({len(activity_slugs) + len(guide_slugs) + 2} URLs)")
+    total = len(urls)
+    print(f"  Created: sitemap.xml ({total} URLs, including {event_count} events)")
 
 
 def write_robots_txt(output_root: Path):
@@ -245,9 +376,13 @@ def generate_pages(
 
     related_names = build_related_names(activities)
 
+    print("\nFetching upcoming events from Supabase...")
+    upcoming_events = fetch_upcoming_events(supabase_anon_key)
+    print(f"  Fetched {len(upcoming_events)} upcoming events")
+
     print(f"\nGenerating {len(activities)} activity pages...")
     for page in activities:
-        render_activity(env, page, related_names, output_root, supabase_anon_key)
+        render_activity(env, page, related_names, output_root, supabase_anon_key, upcoming_events)
 
     print(f"\nGenerating {len(guides)} guide pages...")
     for page in guides:
@@ -258,7 +393,7 @@ def generate_pages(
     render_guides_hub(env, guides, output_root)
 
     print("\nWriting sitemap and robots.txt...")
-    write_sitemap(output_root, [a['slug'] for a in activities], [g['slug'] for g in guides])
+    write_sitemap(output_root, [a['slug'] for a in activities], [g['slug'] for g in guides], upcoming_events)
     write_robots_txt(output_root)
 
     total = len(activities) + len(guides)
