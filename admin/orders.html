@@ -250,7 +250,161 @@
     }
 
     function bindManualOrderHandlers() {
-      // Real handlers added in Task 8
+      const $ = (id) => document.getElementById(id);
+      const eventSel = $('mo-event');
+      const ttSel = $('mo-ticket-type');
+      const qtyInput = $('mo-quantity');
+      const priceInput = $('mo-price');
+      const priceHint = $('mo-price-hint');
+      const attendeesList = $('mo-attendees-list');
+      const buyerName = $('mo-buyer-name');
+      const buyerEmail = $('mo-buyer-email');
+      const buyerPhone = $('mo-buyer-phone');
+
+      async function onEventChange() {
+        const eventId = eventSel.value;
+        manualOrderState.event = (events || []).find(e => e.id === eventId) || null;
+        ttSel.innerHTML = '<option value="">Loading...</option>';
+        ttSel.disabled = true;
+        manualOrderState.ticketType = null;
+        if (!eventId) {
+          ttSel.innerHTML = '<option value="">Select an event first</option>';
+          updateSummary();
+          return;
+        }
+        const { data: tts, error } = await db
+          .from('ticket_types')
+          .select('id, name, price_cents, capacity, tickets_sold, is_active')
+          .eq('event_id', eventId)
+          .eq('is_active', true)
+          .order('sort_order');
+        if (error || !tts || tts.length === 0) {
+          ttSel.innerHTML = '<option value="">No active ticket types</option>';
+          return;
+        }
+        ttSel.innerHTML = tts.map(tt => `<option value="${tt.id}">${tt.name} ($${(tt.price_cents/100).toFixed(2)})</option>`).join('');
+        ttSel.disabled = false;
+        ttSel.value = tts[0].id;
+        manualOrderState._ticketTypes = tts;
+        onTicketTypeChange();
+      }
+
+      function onTicketTypeChange() {
+        const ttId = ttSel.value;
+        const tt = (manualOrderState._ticketTypes || []).find(t => t.id === ttId) || null;
+        manualOrderState.ticketType = tt;
+        if (tt) {
+          priceInput.value = (tt.price_cents / 100).toFixed(2);
+          manualOrderState.pricePerTicketDollars = tt.price_cents / 100;
+        }
+        updatePriceHint();
+        if (manualOrderState.event) {
+          qtyInput.max = manualOrderState.event.max_tickets_per_order || 10;
+        }
+        updateAttendees();
+        updateSummary();
+      }
+
+      function updatePriceHint() {
+        const price = parseFloat(priceInput.value) || 0;
+        manualOrderState.pricePerTicketDollars = price;
+        if (price === 0) {
+          priceHint.textContent = 'Comp ticket (free)';
+          priceHint.style.color = '#153db6';
+        } else {
+          priceHint.textContent = 'E-transfer order (customer pays via e-transfer)';
+          priceHint.style.color = '#6b7280';
+        }
+        updateSummary();
+      }
+
+      function onQuantityChange() {
+        const q = Math.max(1, parseInt(qtyInput.value, 10) || 1);
+        qtyInput.value = q;
+        manualOrderState.quantity = q;
+        updateAttendees();
+        updateSummary();
+      }
+
+      function updateAttendees() {
+        const q = manualOrderState.quantity;
+        while (manualOrderState.attendees.length < q) {
+          manualOrderState.attendees.push({ full_name: '', email: '', phone: '' });
+        }
+        while (manualOrderState.attendees.length > q) {
+          manualOrderState.attendees.pop();
+        }
+        manualOrderState.attendees.forEach((a, i) => {
+          if (!a.full_name) a.full_name = manualOrderState.buyer.name || '';
+          if (i === 0 && !a.email) a.email = manualOrderState.buyer.email || '';
+        });
+        renderAttendees();
+      }
+
+      function renderAttendees() {
+        attendeesList.innerHTML = manualOrderState.attendees.map((a, i) => `
+          <div class="form-group" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:6px;">
+            <input type="text" placeholder="Full name (ticket ${i+1})" data-idx="${i}" data-field="full_name" value="${a.full_name || ''}" required>
+            <input type="email" placeholder="Email (optional)" data-idx="${i}" data-field="email" value="${a.email || ''}">
+            <input type="tel" placeholder="Phone (optional)" data-idx="${i}" data-field="phone" value="${a.phone || ''}">
+          </div>
+        `).join('');
+        attendeesList.querySelectorAll('input').forEach(el => {
+          el.addEventListener('input', (e) => {
+            const idx = parseInt(el.dataset.idx, 10);
+            const field = el.dataset.field;
+            manualOrderState.attendees[idx][field] = el.value;
+          });
+        });
+      }
+
+      function updateSummary() {
+        const q = manualOrderState.quantity;
+        const priceDollars = manualOrderState.pricePerTicketDollars;
+        const subtotal = q * priceDollars;
+        const taxRateBps = manualOrderState.event?.tax_rate_bps || 500;
+        const tax = subtotal * (taxRateBps / 10000);
+        const total = subtotal + tax;
+        document.getElementById('mo-sum-subtotal').textContent = `$${subtotal.toFixed(2)}`;
+        document.getElementById('mo-sum-tax').textContent = `$${tax.toFixed(2)}`;
+        document.getElementById('mo-sum-total').textContent = `$${total.toFixed(2)}`;
+      }
+
+      eventSel.addEventListener('change', onEventChange);
+      ttSel.addEventListener('change', onTicketTypeChange);
+      qtyInput.addEventListener('input', onQuantityChange);
+      priceInput.addEventListener('input', updatePriceHint);
+
+      [['mo-buyer-name', 'name'], ['mo-buyer-email', 'email'], ['mo-buyer-phone', 'phone']].forEach(([id, field]) => {
+        document.getElementById(id).addEventListener('input', (e) => {
+          manualOrderState.buyer[field] = e.target.value;
+          if (field === 'name' && manualOrderState.attendees[0]) {
+            if (!manualOrderState.attendees[0].full_name ||
+                manualOrderState.attendees[0].full_name === manualOrderState.buyer.name) {
+              manualOrderState.attendees[0].full_name = e.target.value;
+              renderAttendees();
+            }
+          }
+          if (field === 'email' && manualOrderState.attendees[0]) {
+            manualOrderState.attendees[0].email = e.target.value;
+            renderAttendees();
+          }
+        });
+      });
+
+      updateAttendees();
+      updateSummary();
+
+      bindCustomerPicker();
+      bindSubmit();
+    }
+
+    function bindCustomerPicker() {
+      // Added in Task 9
+    }
+
+    function bindSubmit() {
+      // Added in Task 10
     }
 
     // Load events for filter
