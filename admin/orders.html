@@ -38,7 +38,10 @@
     <main class="admin-main">
       <div class="admin-header">
         <h1>Orders</h1>
-        <button id="export-csv" class="btn btn-pink">Export CSV</button>
+        <div style="display:flex;gap:8px;">
+          <button id="create-manual-order" class="btn btn-primary">Create Manual Order</button>
+          <button id="export-csv" class="btn btn-pink">Export CSV</button>
+        </div>
       </div>
 
       <!-- Filters -->
@@ -105,6 +108,17 @@
           <div id="modal-body"></div>
         </div>
       </div>
+
+      <!-- Create Manual Order Modal -->
+      <div id="manual-order-modal" class="admin-modal" style="display:none;">
+        <div class="admin-modal-content" style="max-width:760px;">
+          <div class="admin-modal-header">
+            <h3>Create Manual Order</h3>
+            <button class="modal-close" id="manual-order-close">&times;</button>
+          </div>
+          <div id="manual-order-body"></div>
+        </div>
+      </div>
     </main>
   </div>
 
@@ -120,6 +134,37 @@
       e.preventDefault();
       await signOut();
     });
+
+    // Create Manual Order modal open/close
+    const manualModal = document.getElementById('manual-order-modal');
+    const manualBody = document.getElementById('manual-order-body');
+    document.getElementById('create-manual-order').addEventListener('click', () => {
+      renderManualOrderForm();
+      manualModal.style.display = 'flex';
+    });
+    document.getElementById('manual-order-close').addEventListener('click', () => {
+      manualModal.style.display = 'none';
+    });
+    manualModal.addEventListener('click', (e) => {
+      if (e.target === manualModal) manualModal.style.display = 'none';
+    });
+
+    // Manual order form state
+    const manualOrderState = {
+      event: null,
+      ticketType: null,
+      quantity: 1,
+      pricePerTicketDollars: 0,
+      buyer: { name: '', email: '', phone: '' },
+      attendees: [{ full_name: '', email: '', phone: '' }],
+      sendBuyerEmail: true,
+      sendAttendeeEmails: true,
+    };
+
+    function renderManualOrderForm() {
+      // Real form added in Task 7
+      manualBody.innerHTML = '<p>Form placeholder</p>';
+    }
 
     // Load events for filter
     const { data: events } = await db.from('events').select('id, title, event_date').order('event_date', { ascending: false });
