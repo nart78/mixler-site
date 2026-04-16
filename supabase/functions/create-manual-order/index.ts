@@ -247,3 +247,90 @@ function jsonResponse(data: unknown, status: number) {
     headers: { ...corsHeaders, 'Content-Type': 'application/json' },
   });
 }
+
+// Upserts buyer + attendees (with email) into MailerLite and adds them to the event-specific group.
+// Does NOT add them to MAILERLITE_ORDER_CONFIRM_GROUP_ID, so no confirmation email fires.
+// Returns a warning string on partial failure, or null on success.
+async function enrollInMailerLite(opts: {
+  mailerliteToken: string | undefined;
+  eventGroupId: string | null;
+  buyer: { name: string; email: string };
+  attendees: Array<{ full_name: string; email?: string | null }>;
+}): Promise<string | null> {
+  const { mailerliteToken, eventGroupId, buyer, attendees } = opts;
+  if (!mailerliteToken) {
+    console.log('MAILERLITE_API_TOKEN not set, skipping enrollment');
+    return 'MailerLite is not configured; buyer and attendees were not added to the mailing list.';
+  }
+  if (!eventGroupId) {
+    console.log('Event has no mailerlite_group_id, skipping enrollment');
+    return 'Event has no MailerLite group; buyer and attendees were not added to the event mailing list.';
+  }
+
+  let anyFailure = false;
+
+  const upsertAndAdd = async (email: string, fullName: string) => {
+    const nameParts = (fullName || '').trim().split(/\s+/);
+    const first = nameParts[0] || '';
+    const last = nameParts.slice(1).join(' ') || '';
+    try {
+      const subRes = await fetch('https://connect.mailerlite.com/api/subscribers', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${mailerliteToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          fields: { name: first, last_name: last },
+          status: 'active',
+        }),
+      });
+      if (!subRes.ok) {
+        console.error('MailerLite subscriber upsert failed for', email, await subRes.text());
+        anyFailure = true;
+        return;
+      }
+      const subData = await subRes.json();
+      const subscriberId = subData?.data?.id;
+      if (!subscriberId) {
+        anyFailure = true;
+        return;
+      }
+      const groupRes = await fetch(
+        `https://connect.mailerlite.com/api/subscribers/${subscriberId}/groups/${eventGroupId}`,
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${mailerliteToken}`,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      if (!groupRes.ok) {
+        console.error('MailerLite group add failed for', email, await groupRes.text());
+        anyFailure = true;
+      }
+    } catch (err: any) {
+      console.error('MailerLite enrollment error for', email, err.message);
+      anyFailure = true;
+    }
+  };
+
+  // Enroll buyer
+  await upsertAndAdd(buyer.email, buyer.name);
+
+  // Enroll each attendee with an email (dedupe against buyer email)
+  const buyerEmailLower = buyer.email.toLowerCase();
+  const seen = new Set<string>([buyerEmailLower]);
+  for (const a of attendees) {
+    const aEmail = a.email?.trim();
+    if (!aEmail) continue;
+    const key = aEmail.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    await upsertAndAdd(aEmail, a.full_name);
+  }
+
+  return anyFailure ? 'Some emails could not be added to the MailerLite mailing list. Check the logs.' : null;
+}
