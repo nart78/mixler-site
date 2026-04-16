@@ -162,12 +162,99 @@
     };
 
     function renderManualOrderForm() {
-      // Real form added in Task 7
-      manualBody.innerHTML = '<p>Form placeholder</p>';
+      manualBody.innerHTML = `
+        <form id="manual-order-form" class="admin-form" onsubmit="return false">
+          <div class="form-group">
+            <label>Event</label>
+            <select id="mo-event" required>
+              <option value="">Select an event...</option>
+              ${(events || []).filter(e => e.status !== 'draft').map(e =>
+                `<option value="${e.id}">${e.title} (${e.event_date})</option>`
+              ).join('')}
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Ticket type</label>
+            <select id="mo-ticket-type" required disabled>
+              <option value="">Select an event first</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Quantity</label>
+            <input type="number" id="mo-quantity" min="1" value="1" required>
+          </div>
+
+          <div class="form-group">
+            <label>Price per ticket (CAD)</label>
+            <input type="number" id="mo-price" min="0" step="0.01" value="0" required>
+            <small id="mo-price-hint" style="color:#6b7280;"></small>
+          </div>
+
+          <div class="form-group">
+            <label style="display:flex;align-items:center;gap:8px;">
+              <input type="checkbox" id="mo-send-buyer-email" checked>
+              Send confirmation email to buyer
+            </label>
+            <label style="display:flex;align-items:center;gap:8px;margin-top:6px;">
+              <input type="checkbox" id="mo-send-attendee-emails" checked>
+              Send ticket email to each attendee (with PDF)
+            </label>
+          </div>
+
+          <fieldset style="border:1px solid #e5e7eb;padding:12px;border-radius:8px;margin-top:12px;">
+            <legend style="padding:0 6px;font-weight:600;">Buyer</legend>
+            <div id="mo-buyer-picker-wrap">
+              <div class="form-group">
+                <label>Search past customers</label>
+                <input type="text" id="mo-buyer-search" placeholder="Start typing a name or email...">
+                <div id="mo-buyer-suggestions" style="display:none;border:1px solid #e5e7eb;border-radius:6px;margin-top:4px;max-height:200px;overflow-y:auto;"></div>
+              </div>
+              <button type="button" id="mo-buyer-new" class="btn btn-sm">Or enter a new customer</button>
+            </div>
+            <div id="mo-buyer-fields" style="margin-top:8px;">
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" id="mo-buyer-name" required>
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="mo-buyer-email" required>
+              </div>
+              <div class="form-group">
+                <label>Phone (optional)</label>
+                <input type="tel" id="mo-buyer-phone">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset style="border:1px solid #e5e7eb;padding:12px;border-radius:8px;margin-top:12px;">
+            <legend style="padding:0 6px;font-weight:600;">Attendees</legend>
+            <div id="mo-attendees-list"></div>
+          </fieldset>
+
+          <div id="mo-summary" style="background:#f9fafb;padding:12px;border-radius:8px;margin-top:12px;">
+            <div style="display:flex;justify-content:space-between;"><span>Subtotal</span><span id="mo-sum-subtotal">$0.00</span></div>
+            <div style="display:flex;justify-content:space-between;"><span>GST (5%)</span><span id="mo-sum-tax">$0.00</span></div>
+            <div style="display:flex;justify-content:space-between;font-weight:700;border-top:1px solid #e5e7eb;margin-top:6px;padding-top:6px;"><span>Total</span><span id="mo-sum-total">$0.00</span></div>
+          </div>
+
+          <div id="mo-error" class="form-error" style="display:none;margin-top:8px;"></div>
+
+          <button type="submit" id="mo-submit" class="btn btn-primary" style="margin-top:12px;width:100%;">Create Order</button>
+        </form>
+      `;
+
+      bindManualOrderHandlers();
+    }
+
+    function bindManualOrderHandlers() {
+      // Real handlers added in Task 8
     }
 
     // Load events for filter
-    const { data: events } = await db.from('events').select('id, title, event_date').order('event_date', { ascending: false });
+    const { data: events } = await db.from('events').select('id, title, event_date, status, max_tickets_per_order, tax_rate_bps, mailerlite_group_id').order('event_date', { ascending: false });
     const eventSelect = document.getElementById('filter-event');
     (events || []).forEach(e => {
       const opt = document.createElement('option');
