@@ -497,7 +497,112 @@
     }
 
     function bindSubmit() {
-      // Added in Task 10
+      const form = document.getElementById('manual-order-form');
+      const submitBtn = document.getElementById('mo-submit');
+      const errEl = document.getElementById('mo-error');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        errEl.style.display = 'none';
+        errEl.textContent = '';
+
+        manualOrderState.sendBuyerEmail = document.getElementById('mo-send-buyer-email').checked;
+        manualOrderState.sendAttendeeEmails = document.getElementById('mo-send-attendee-emails').checked;
+
+        const event = manualOrderState.event;
+        const tt = manualOrderState.ticketType;
+        if (!event || !tt) {
+          errEl.textContent = 'Select an event and ticket type.';
+          errEl.style.display = 'block';
+          return;
+        }
+        if (!manualOrderState.buyer.name || !manualOrderState.buyer.email) {
+          errEl.textContent = 'Buyer name and email are required.';
+          errEl.style.display = 'block';
+          return;
+        }
+        for (let i = 0; i < manualOrderState.attendees.length; i++) {
+          if (!manualOrderState.attendees[i].full_name?.trim()) {
+            errEl.textContent = `Attendee ${i+1} needs a full name.`;
+            errEl.style.display = 'block';
+            return;
+          }
+        }
+
+        const q = manualOrderState.quantity;
+        const pricePerCents = Math.round((parseFloat(document.getElementById('mo-price').value) || 0) * 100);
+
+        let allowOversell = false;
+        const spotsLeft = (event.capacity || 0) - (event.tickets_sold || 0);
+        if (event.capacity > 0 && q > spotsLeft) {
+          const overBy = q - spotsLeft;
+          if (!confirm(`This will oversell the event by ${overBy} ticket(s). Continue?`)) {
+            return;
+          }
+          allowOversell = true;
+        }
+
+        const payload = {
+          event_id: event.id,
+          ticket_type_id: tt.id,
+          quantity: q,
+          price_per_ticket_cents: pricePerCents,
+          attendees: manualOrderState.attendees.map(a => ({
+            full_name: a.full_name.trim(),
+            email: a.email?.trim() || null,
+            phone: a.phone?.trim() || null,
+          })),
+          buyer: {
+            name: manualOrderState.buyer.name.trim(),
+            email: manualOrderState.buyer.email.trim(),
+            phone: manualOrderState.buyer.phone?.trim() || null,
+          },
+          allow_oversell: allowOversell,
+          send_buyer_email: manualOrderState.sendBuyerEmail,
+          send_attendee_emails: manualOrderState.sendAttendeeEmails,
+        };
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Creating order...';
+
+        try {
+          const { data: { session } } = await db.auth.getSession();
+          if (!session?.access_token) throw new Error('Not logged in');
+
+          const res = await fetch(`${SUPABASE_URL}/functions/v1/create-manual-order`, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${session.access_token}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+          });
+          const result = await res.json();
+          if (!res.ok) {
+            errEl.textContent = result.error || 'Failed to create order.';
+            errEl.style.display = 'block';
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Create Order';
+            return;
+          }
+
+          await onManualOrderSuccess(result, payload);
+
+        } catch (err) {
+          console.error(err);
+          errEl.textContent = err.message || 'Unexpected error.';
+          errEl.style.display = 'block';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Create Order';
+        }
+      });
+    }
+
+    async function onManualOrderSuccess(result, payload) {
+      // Placeholder for Task 11, which adds PDF generation + send-attendee-ticket calls.
+      showToast(`Order ${result.order_number} created (${result.payment_method}).`, 'success');
+      document.getElementById('manual-order-modal').style.display = 'none';
+      if (typeof loadOrders === 'function') await loadOrders();
     }
 
     // Load events for filter
