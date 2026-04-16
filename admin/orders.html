@@ -400,7 +400,100 @@
     }
 
     function bindCustomerPicker() {
-      // Added in Task 9
+      const searchInput = document.getElementById('mo-buyer-search');
+      const suggestions = document.getElementById('mo-buyer-suggestions');
+      const newBtn = document.getElementById('mo-buyer-new');
+      const buyerFields = document.getElementById('mo-buyer-fields');
+      let debounceTimer = null;
+
+      newBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        suggestions.style.display = 'none';
+        document.getElementById('mo-buyer-name').value = '';
+        document.getElementById('mo-buyer-email').value = '';
+        document.getElementById('mo-buyer-phone').value = '';
+        manualOrderState.buyer = { name: '', email: '', phone: '' };
+        document.getElementById('mo-buyer-name').focus();
+      });
+
+      searchInput.addEventListener('input', () => {
+        clearTimeout(debounceTimer);
+        const q = searchInput.value.trim();
+        if (q.length < 2) {
+          suggestions.style.display = 'none';
+          suggestions.innerHTML = '';
+          return;
+        }
+        debounceTimer = setTimeout(async () => {
+          const { data, error } = await db
+            .from('orders')
+            .select('buyer_name, buyer_email, buyer_phone')
+            .or(`buyer_name.ilike.%${q}%,buyer_email.ilike.%${q}%`)
+            .limit(50);
+          if (error || !data) {
+            suggestions.style.display = 'none';
+            return;
+          }
+          const seen = new Set();
+          const unique = [];
+          for (const row of data) {
+            const key = (row.buyer_email || '').toLowerCase();
+            if (!key || seen.has(key)) continue;
+            seen.add(key);
+            unique.push(row);
+            if (unique.length >= 10) break;
+          }
+          if (unique.length === 0) {
+            suggestions.innerHTML = '<div style="padding:8px;color:#6b7280;">No past customers found. Use "Or enter a new customer".</div>';
+          } else {
+            suggestions.innerHTML = unique.map(r => `
+              <div class="mo-suggestion" data-name="${escapeAttr(r.buyer_name)}" data-email="${escapeAttr(r.buyer_email)}" data-phone="${escapeAttr(r.buyer_phone || '')}" style="padding:8px;cursor:pointer;border-bottom:1px solid #f3f4f6;">
+                <div><strong>${escapeHtml(r.buyer_name)}</strong></div>
+                <div style="font-size:0.85rem;color:#6b7280;">${escapeHtml(r.buyer_email)}${r.buyer_phone ? ' · ' + escapeHtml(r.buyer_phone) : ''}</div>
+              </div>
+            `).join('');
+            suggestions.querySelectorAll('.mo-suggestion').forEach(el => {
+              el.addEventListener('click', () => {
+                document.getElementById('mo-buyer-name').value = el.dataset.name;
+                document.getElementById('mo-buyer-email').value = el.dataset.email;
+                document.getElementById('mo-buyer-phone').value = el.dataset.phone;
+                manualOrderState.buyer = {
+                  name: el.dataset.name,
+                  email: el.dataset.email,
+                  phone: el.dataset.phone,
+                };
+                if (manualOrderState.attendees[0]) {
+                  manualOrderState.attendees[0].full_name = el.dataset.name;
+                  manualOrderState.attendees[0].email = el.dataset.email;
+                  document.querySelectorAll('#mo-attendees-list input').forEach(inp => {
+                    if (inp.dataset.idx === '0') {
+                      if (inp.dataset.field === 'full_name') inp.value = el.dataset.name;
+                      if (inp.dataset.field === 'email') inp.value = el.dataset.email;
+                    }
+                  });
+                }
+                suggestions.style.display = 'none';
+                searchInput.value = '';
+              });
+            });
+          }
+          suggestions.style.display = 'block';
+        }, 250);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target) && !suggestions.contains(e.target)) {
+          suggestions.style.display = 'none';
+        }
+      });
+    }
+
+    function escapeHtml(s) {
+      if (s == null) return '';
+      return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+    function escapeAttr(s) {
+      return escapeHtml(s);
     }
 
     function bindSubmit() {
