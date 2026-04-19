@@ -79,6 +79,14 @@ async function signInWithProvider(provider, redirectTo) {
   return data;
 }
 
+// Send password reset email
+async function resetPassword(email) {
+  const { error } = await db.auth.resetPasswordForEmail(email, {
+    redirectTo: window.location.origin + '/account.html',
+  });
+  if (error) throw error;
+}
+
 // Sign out
 async function signOut() {
   const { error } = await db.auth.signOut();
@@ -123,4 +131,4 @@ function onAuthChange(callback) {
   });
 }
 
-export { getSession, getCurrentUser, signUp, signUpAutoConfirm, signIn, signInWithProvider, signOut, isAdmin, requireAuth, requireAdmin, onAuthChange };
+export { getSession, getCurrentUser, signUp, signUpAutoConfirm, signIn, signInWithProvider, signOut, resetPassword, isAdmin, requireAuth, requireAdmin, onAuthChange };

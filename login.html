@@ -50,7 +50,9 @@
             <input type="password" id="login-password" required placeholder="Your password">
           </div>
           <div id="login-error" class="form-error"></div>
+          <div id="login-success" class="form-success"></div>
           <button type="submit" class="btn btn-primary" style="width:100%;">Log In</button>
+          <p style="text-align:center;margin-top:12px;"><a href="#" id="forgot-password" style="color:#153db6;font-size:14px;">Forgot your password?</a></p>
         </form>
 
         <!-- Signup Form -->
@@ -85,7 +87,7 @@
 
   <script type="module">
     import { renderNav, renderFooter, showToast } from './js/components.js';
-    import { signIn, signUp, signInWithProvider, getSession } from './js/auth.js';
+    import { signIn, signUp, signInWithProvider, resetPassword, getSession } from './js/auth.js';
     import { getParam } from './js/utils.js';
 
     renderNav('login');
@@ -166,6 +168,28 @@
           const returnUrl = getParam('return') || '/account.html';
           window.location.href = returnUrl;
         }
+      } catch (err) {
+        errorEl.textContent = err.message;
+      }
+    });
+
+    // Forgot password handler
+    document.getElementById('forgot-password').addEventListener('click', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value;
+      const errorEl = document.getElementById('login-error');
+      const successEl = document.getElementById('login-success');
+      errorEl.textContent = '';
+      successEl.textContent = '';
+
+      if (!email) {
+        errorEl.textContent = 'Enter your email address above, then click Forgot your password.';
+        return;
+      }
+
+      try {
+        await resetPassword(email);
+        successEl.textContent = 'Password reset link sent. Check your email.';
       } catch (err) {
         errorEl.textContent = err.message;
       }

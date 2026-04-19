@@ -26,7 +26,7 @@
 
   <section class="checkout-section">
     <div class="container">
-      <a href="javascript:history.back()" class="back-link">&larr; Back to event</a>
+      <a id="back-to-event" href="/events.html" class="back-link">&larr; Back to event</a>
       <div id="checkout-content">
         <div class="loading-spinner"><div class="spinner"></div></div>
       </div>
@@ -38,7 +38,7 @@
   <script type="module">
     import { renderNav, renderFooter, showToast } from './js/components.js';
     import { db, SUPABASE_URL, SUPABASE_ANON_KEY } from './js/supabase-client.js';
-    import { getSession, getCurrentUser, signIn, signUpAutoConfirm, signInWithProvider, signOut } from './js/auth.js';
+    import { getSession, getCurrentUser, signIn, signUpAutoConfirm, signInWithProvider, signOut, resetPassword } from './js/auth.js';
     import { formatDate, formatTime, formatPrice, getParam } from './js/utils.js';
 
     renderNav();
@@ -47,6 +47,12 @@
     const slug = getParam('slug');
     if (!slug) {
       window.location.href = '/events.html';
+    }
+
+    // Set back link to the specific event page
+    const backLink = document.getElementById('back-to-event');
+    if (slug && backLink) {
+      backLink.href = '/event.html?slug=' + encodeURIComponent(slug);
     }
 
     let currentEvent = null;
@@ -182,7 +188,9 @@
                       <input type="password" id="auth-login-password" required placeholder="Your password">
                     </div>
                     <div id="auth-login-error" class="form-error"></div>
+                    <div id="auth-login-success" class="form-success"></div>
                     <button type="submit" class="btn btn-primary" style="width:100%;">Log In</button>
+                    <p style="text-align:center;margin-top:12px;"><a href="#" id="checkout-forgot-password" style="color:#153db6;font-size:14px;">Forgot your password?</a></p>
                   </form>
 
                   <form id="checkout-signup-form" class="checkout-auth-form" style="display:none;">
@@ -490,6 +498,29 @@
               : err.message;
             submitBtn.disabled = false;
             submitBtn.textContent = 'Log In';
+          }
+        });
+      }
+
+      // Forgot password in checkout
+      const forgotLink = document.getElementById('checkout-forgot-password');
+      if (forgotLink) {
+        forgotLink.addEventListener('click', async (e) => {
+          e.preventDefault();
+          const email = document.getElementById('auth-login-email').value;
+          const errorEl = document.getElementById('auth-login-error');
+          const successEl = document.getElementById('auth-login-success');
+          errorEl.textContent = '';
+          successEl.textContent = '';
+          if (!email) {
+            errorEl.textContent = 'Enter your email address above, then click Forgot your password.';
+            return;
+          }
+          try {
+            await resetPassword(email);
+            successEl.textContent = 'Password reset link sent. Check your email.';
+          } catch (err) {
+            errorEl.textContent = err.message;
           }
         });
       }

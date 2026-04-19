@@ -1474,12 +1474,16 @@ section {
   top: 72px;
   left: 0;
   right: 0;
+  bottom: 0;
   background: #153db6;
   padding: 24px;
   gap: 16px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   z-index: 999;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 48px;
 }
 
 .nav-links.active a {

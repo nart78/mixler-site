@@ -206,7 +206,22 @@
             <h1>${event.title}</h1>
             ${metaHtml}
             <div class="event-description">
-              ${event.description ? event.description.split('\n').map(p => `<p>${p}</p>`).join('') : ''}
+              ${event.description ? (() => {
+                const lines = event.description.split('\n');
+                let html = '';
+                let inList = false;
+                for (const line of lines) {
+                  if (line.startsWith('- ')) {
+                    if (!inList) { html += '<ul>'; inList = true; }
+                    html += `<li>${line.slice(2)}</li>`;
+                  } else {
+                    if (inList) { html += '</ul>'; inList = false; }
+                    html += `<p>${line}</p>`;
+                  }
+                }
+                if (inList) html += '</ul>';
+                return html;
+              })() : ''}
             </div>
             ${event.custom_fields?.puppies ? `
               <div class="meet-the-puppies">
