@@ -87,7 +87,7 @@
 
   <script type="module">
     import { renderNav, renderFooter, showToast } from './js/components.js';
-    import { signIn, signUp, signInWithProvider, resetPassword, getSession } from './js/auth.js';
+    import { signIn, signUp, signInWithProvider, getSession } from './js/auth.js';
     import { getParam } from './js/utils.js';
 
     renderNav('login');
@@ -188,6 +188,7 @@
       }
 
       try {
+        const { resetPassword } = await import('./js/auth.js');
         await resetPassword(email);
         successEl.textContent = 'Password reset link sent. Check your email.';
       } catch (err) {

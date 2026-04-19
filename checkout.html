@@ -38,7 +38,7 @@
   <script type="module">
     import { renderNav, renderFooter, showToast } from './js/components.js';
     import { db, SUPABASE_URL, SUPABASE_ANON_KEY } from './js/supabase-client.js';
-    import { getSession, getCurrentUser, signIn, signUpAutoConfirm, signInWithProvider, signOut, resetPassword } from './js/auth.js';
+    import { getSession, getCurrentUser, signIn, signUpAutoConfirm, signInWithProvider, signOut } from './js/auth.js';
     import { formatDate, formatTime, formatPrice, getParam } from './js/utils.js';
 
     renderNav();
@@ -517,6 +517,7 @@
             return;
           }
           try {
+            const { resetPassword } = await import('./js/auth.js');
             await resetPassword(email);
             successEl.textContent = 'Password reset link sent. Check your email.';
           } catch (err) {
