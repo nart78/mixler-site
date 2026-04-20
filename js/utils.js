@@ -27,11 +27,11 @@ function formatTime(timeStr) {
 // Generate Google Calendar URL
 function googleCalendarUrl(event) {
   const startDate = event.event_date.replace(/-/g, '');
-  const startTime = event.start_time.replace(/:/g, '') + '00';
+  const startTime = event.start_time.replace(/:/g, '').padEnd(6, '0').slice(0, 6);
 
   let endTime;
   if (event.end_time) {
-    endTime = event.end_time.replace(/:/g, '') + '00';
+    endTime = event.end_time.replace(/:/g, '').padEnd(6, '0').slice(0, 6);
   } else {
     // Default to 2 hours after start
     const [h, m] = event.start_time.split(':');
@@ -54,8 +54,8 @@ function googleCalendarUrl(event) {
 // Generate .ics file content (Apple Calendar / Outlook)
 function generateICS(event) {
   const startDate = event.event_date.replace(/-/g, '');
-  const startTime = event.start_time.replace(/:/g, '') + '00';
-  const endTime = event.end_time ? event.end_time.replace(/:/g, '') + '00' : startTime;
+  const startTime = event.start_time.replace(/:/g, '').padEnd(6, '0').slice(0, 6);
+  const endTime = event.end_time ? event.end_time.replace(/:/g, '').padEnd(6, '0').slice(0, 6) : startTime;
 
   const ics = [
     'BEGIN:VCALENDAR',
@@ -98,9 +98,10 @@ function downloadICS(event) {
 
 // Generate Outlook web URL
 function outlookCalendarUrl(event) {
-  const startDate = event.event_date + 'T' + event.start_time + ':00';
+  const ensureSec = (t) => t.length > 5 ? t : t + ':00';
+  const startDate = event.event_date + 'T' + ensureSec(event.start_time);
   const endDate = event.end_time
-    ? event.event_date + 'T' + event.end_time + ':00'
+    ? event.event_date + 'T' + ensureSec(event.end_time)
     : startDate;
 
   const params = new URLSearchParams({

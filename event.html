@@ -216,7 +216,7 @@
                     html += `<li>${line.slice(2)}</li>`;
                   } else {
                     if (inList) { html += '</ul>'; inList = false; }
-                    html += `<p>${line}</p>`;
+                    if (line.trim()) html += `<p>${line}</p>`;
                   }
                 }
                 if (inList) html += '</ul>';
