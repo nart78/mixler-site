@@ -50,17 +50,25 @@ serve(async (req) => {
 
         console.log(`Order ${session.metadata?.order_number} completed`);
 
-        // Trigger confirmation email (fire-and-forget)
+        // Trigger confirmation email + admin alert
         const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
         const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-        fetch(`${supabaseUrl}/functions/v1/send-order-email`, {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${serviceKey}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ order_id: orderId }),
-        }).catch(err => console.error('Email trigger failed:', err));
+        try {
+          const emailRes = await fetch(`${supabaseUrl}/functions/v1/send-order-email`, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${serviceKey}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ order_id: orderId }),
+          });
+          if (!emailRes.ok) {
+            const body = await emailRes.text();
+            console.error(`send-order-email failed (${emailRes.status}):`, body);
+          }
+        } catch (err) {
+          console.error('Email trigger failed:', err);
+        }
 
         break;
       }
